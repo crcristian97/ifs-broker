@@ -2,6 +2,7 @@ import Image from "next/image"
 import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
 import { FeatureBar } from "../ui/feature-bar"
+import AnimatedHeadline from "../ui/animated-headline"
 
 export function HeroSection() {
   return (
@@ -34,11 +35,6 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[#071a3a]/80" />
 
       {/* Diagonal geometric accent shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 left-1/3 h-[140%] w-[400px] rotate-12 bg-[#0d3b7a]/20" />
-        <div className="absolute -top-20 left-1/2 h-[140%] w-[300px] -rotate-6 bg-[#1a5bb5]/10" />
-        <div className="absolute -top-20 right-1/4 h-[140%] w-[250px] rotate-[20deg] bg-[#0d3b7a]/15" />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
@@ -46,19 +42,17 @@ export function HeroSection() {
         <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Left column */}
           <div className="flex flex-col justify-end">
-            <h1 className="text-balance text-4xl font-regular  text-[#FEFEFE] ">
-              Planificacion financiera internacional para proteger lo que importa
+            <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
+              <AnimatedHeadline text="Planificacion financiera internacional para proteger lo que importa" as="h1" delay={0.3}/>
             </h1>
-            <p className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
-              Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional.
-            </p>
+            <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
+              <AnimatedHeadline text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional." as="h2" delay={1.5}/>
+            </h2>
           </div>
 
           {/* Right column */}
           <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
-            <p className="max-w-lg text-center text-[16px]  text-[#FEFEFE] font-regular noto-sans lg:text-right">
-              Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida.
-            </p>
+            <AnimatedHeadline text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida." as="h3" delay={0.5}/>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <ButtonPrimary
                 href="#cotiza"
