@@ -28,7 +28,7 @@ export function WhatWeDoSection() {
         </p>
 
         {/* Feature Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+        <div className="grid md:grid-cols-2 gap-6 w-full">
           <FeatureCard 
             text="Nuestro enfoque no se basa en la venta de productos aislados, sino en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente."
           />
