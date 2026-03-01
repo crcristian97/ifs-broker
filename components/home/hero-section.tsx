@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
 import { FeatureBar } from "../ui/feature-bar"
@@ -6,30 +5,16 @@ import AnimatedHeadline from "../ui/animated-headline"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background rounded-b-3xl">
-      {/* Background images */}
-      <div className="absolute inset-0 flex">
-        {/* Left image */}
-        <div className="relative w-1/2">
-          <Image
-            src="/images/hero-meeting-1.jpg"
-            alt="Equipo profesional en reunion"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        {/* Right image */}
-        <div className="relative w-1/2">
-          <Image
-            src="/images/hero-meeting-2.jpg"
-            alt="Asesores financieros revisando documentos"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-      </div>
+    <section className="relative min-h-screen w-full overflow-hidden bg-background rounded-b-3xl">
+      {/* Background video */}
+      <video
+        src="/seguros-vida-ifs-broker.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full min-h-screen min-w-full object-cover"
+      />
 
       {/* Dark blue overlay */}
       <div className="absolute inset-0 bg-[#071a3a]/80" />
