@@ -2,6 +2,7 @@ import Image from "next/image"
 import { ShieldCheck } from "lucide-react"
 import Link from "next/link"
 import { ButtonPrimary } from "../ui/button-primary"
+import { ButtonSecondary } from "../ui/button-secondary"
 const features = [
   "Asesoramiento personalizado",
   "Relacion a largo plazo",
@@ -71,12 +72,11 @@ export function HeroSection() {
               >
                 Cotiza seguro de vida
               </ButtonPrimary>  
-              <Link
+              <ButtonSecondary    
                 href="#agenda"
-                      className="inline-flex items-center justify-center rounded-full border-2 border-foreground/40 bg-transparent px-8 py-3 text-sm font-semibold text-[#006fc4] transition-colors hover:border-foreground/70 hover:bg-foreground/5"
               >
                 Agenda una reunion
-              </Link>
+              </ButtonSecondary>
             </div>
           </div>
         </div>
