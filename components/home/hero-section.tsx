@@ -17,7 +17,7 @@ export function HeroSection() {
       />
 
       {/* Dark blue overlay */}
-      <div className="absolute inset-0 bg-[#071a3a]/80" />
+      <div className="absolute inset-0 bg-[#071a3a]/80 rounded-b-3xl" />
 
       {/* Diagonal geometric accent shapes */}
 
