@@ -6,7 +6,7 @@ type FeatureCardProps = {
 
 export const FeatureCard = ({ text }: FeatureCardProps) => {
   return (
-    <div className="bg-[#E5EEF5]/20 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+    <div className="bg-gradient-to-br from-[#E5EEF5]/20 to-[#E5EEF5]/10 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
       <div className="flex flex-col items-start gap-4">
         <div className="shrink-0">
           <div className="w-12 h-12 rounded-full bg-[#E5EEF5] flex items-center justify-center">
