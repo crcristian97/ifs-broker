@@ -51,31 +51,31 @@ export function HeroSection() {
         <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Left column */}
           <div className="flex flex-col justify-end">
-            <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-              {"Planificacion financiera internacional para proteger lo que importa"}
+            <h1 className="text-balance text-4xl font-regular  text-[#FEFEFE] ">
+              Planificacion financiera internacional para proteger lo que importa
             </h1>
-            <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-foreground/70 md:text-lg">
-              {"Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional."}
+            <p className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
+              Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional.
             </p>
           </div>
 
           {/* Right column */}
           <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
-            <p className="max-w-lg text-center text-sm leading-relaxed text-foreground/60 lg:text-right lg:text-base">
-              {"Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida."}
+            <p className="max-w-lg text-center text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans lg:text-right">
+              Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link
                 href="#cotiza"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                className="inline-flex items-center justify-center rounded-full bg-[#006fc4] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#006fc4]/90"
               >
-                {"Cotiza seguro de vida"}
+                Cotiza seguro de vida
               </Link>
               <Link
                 href="#agenda"
-                className="inline-flex items-center justify-center rounded-full border-2 border-foreground/40 bg-transparent px-8 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground/70 hover:bg-foreground/5"
+                      className="inline-flex items-center justify-center rounded-full border-2 border-foreground/40 bg-transparent px-8 py-3 text-sm font-semibold text-[#006fc4] transition-colors hover:border-foreground/70 hover:bg-foreground/5"
               >
-                {"Agenda una reunion"}
+                Agenda una reunion
               </Link>
             </div>
           </div>

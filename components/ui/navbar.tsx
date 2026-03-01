@@ -18,7 +18,7 @@ export function Navbar() {
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl bg-[#0a1628]/80 px-6 py-4 backdrop-blur-md">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-md">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold tracking-wide text-foreground md:text-2xl">
           IFS Broker
@@ -71,12 +71,13 @@ export function Navbar() {
         {/* Right side */}
         <div className="hidden items-center gap-3 lg:flex">
           {/* Language Switcher */}
-          <div className="flex overflow-hidden rounded-lg border border-foreground/20">
+          <div className="flex overflow-hidden rounded-md border border-foreground/20">
             <button
+              className="rounded-md"
               onClick={() => setActiveLanguage("ES")}
-              className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
+              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
                 activeLanguage === "ES"
-                  ? "bg-[#033163] text-foreground"
+                  ? "bg-foreground/10 text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
@@ -87,7 +88,7 @@ export function Navbar() {
               onClick={() => setActiveLanguage("EN")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
                 activeLanguage === "EN"
-                  ? "bg-[#033163] text-foreground"
+                  ? "bg-foreground/10 text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
@@ -130,7 +131,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex items-center gap-3 pt-4 border-t border-foreground/10">
-              <div className="flex overflow-hidden rounded-md border border-foreground/20">
+              <div className="flex overflow-hidden rounded-lg border border-foreground/20">
                 <button
                   onClick={() => setActiveLanguage("ES")}
                   className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
