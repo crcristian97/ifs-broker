@@ -71,12 +71,12 @@ export function Navbar() {
         {/* Right side */}
         <div className="hidden items-center gap-3 lg:flex">
           {/* Language Switcher */}
-          <div className="flex overflow-hidden rounded-md border border-foreground/20">
+          <div className="flex overflow-hidden rounded-lg border border-foreground/20">
             <button
               onClick={() => setActiveLanguage("ES")}
-              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
+              className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
                 activeLanguage === "ES"
-                  ? "bg-foreground/10 text-foreground"
+                  ? "bg-[#033163] text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
@@ -85,9 +85,9 @@ export function Navbar() {
             </button>
             <button
               onClick={() => setActiveLanguage("EN")}
-              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
+              className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
                 activeLanguage === "EN"
-                  ? "bg-foreground/10 text-foreground"
+                  ? "bg-[#033163] text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
