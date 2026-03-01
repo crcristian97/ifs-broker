@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import { Menu as HoverMenu, MenuItem, ProductItem } from "./navbar-menu"
+import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
+import { ButtonPrimary } from "../ui/button-primary"
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -98,12 +99,7 @@ export function Navbar() {
           </div>
 
           {/* Contact Button */}
-          <Link
-            href="#contacto"
-            className="rounded-lg bg-[#006fc4] px-6 py-2 text-18px font-bold text-white transition-colors hover:bg-[#006fc4]/90"
-          >
-            Contacto
-          </Link>
+          <ButtonPrimary href="#contacto">Contacto</ButtonPrimary>
         </div>
 
         {/* Mobile menu toggle */}

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { ShieldCheck } from "lucide-react"
 import Link from "next/link"
-
+import { ButtonPrimary } from "../ui/button-primary"
 const features = [
   "Asesoramiento personalizado",
   "Relacion a largo plazo",
@@ -61,16 +61,16 @@ export function HeroSection() {
 
           {/* Right column */}
           <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
-            <p className="max-w-lg text-center text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans lg:text-right">
+            <p className="max-w-lg text-center text-[16px]  text-[#FEFEFE] font-regular noto-sans lg:text-right">
               Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
+              <ButtonPrimary
                 href="#cotiza"
-                className="inline-flex items-center justify-center rounded-full bg-[#006fc4] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#006fc4]/90"
+                
               >
                 Cotiza seguro de vida
-              </Link>
+              </ButtonPrimary>  
               <Link
                 href="#agenda"
                       className="inline-flex items-center justify-center rounded-full border-2 border-foreground/40 bg-transparent px-8 py-3 text-sm font-semibold text-[#006fc4] transition-colors hover:border-foreground/70 hover:bg-foreground/5"

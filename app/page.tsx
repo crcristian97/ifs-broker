@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/ui/navbar"
-import { HeroSection } from "@/components/ui/hero-section"
+import { Navbar } from "@/components/layout/navbar"
+import { HeroSection } from "@/components/home/hero-section"
 
 export default function Home() {
   return (
