@@ -3,10 +3,11 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { Menu as HoverMenu, MenuItem, ProductItem } from "./navbar-menu"
 
 const navLinks = [
   { label: "Home", href: "#" },
-  { label: "Soluciones", href: "#soluciones" },
+  { label: "Soluciones", href: "#soluciones", hasDropdown: true },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Blog", href: "#blog" },
   { label: "Trabaja con nosotros", href: "#trabaja" },
@@ -15,6 +16,7 @@ const navLinks = [
 export function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState<"ES" | "EN">("ES")
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
@@ -26,15 +28,45 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label === "Soluciones" && link.hasDropdown) {
+              return (
+                <HoverMenu key={link.label} setActive={setActiveMenuItem}>
+                  <MenuItem setActive={setActiveMenuItem} active={activeMenuItem} item={link.label}>
+                    <div className="text-sm grid grid-cols-2 gap-4 p-4">
+                      <ProductItem
+                        title="Seguro de vida"
+                        href="#seguro-vida"
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=280&h=140&fit=crop"
+                        description="Protección financiera ante el fallecimiento del asegurado"
+                      />
+                      <ProductItem
+                        title="Fondos de retiro"
+                        href="#fondos-retiro"
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=280&h=140&fit=crop"
+                        description="Construcción de ingresos futuros para el retiro"
+                      />
+                      <ProductItem
+                        title="Salud internacional"
+                        href="#salud-internacional"
+                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=280&h=140&fit=crop"
+                        description="Cobertura médica internacional con acceso a redes globales"
+                      />
+                    </div>
+                  </MenuItem>
+                </HoverMenu>
+              )
+            }
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            )
+          })}
         </div>
 
         {/* Right side */}
