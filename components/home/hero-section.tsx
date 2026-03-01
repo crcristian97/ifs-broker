@@ -56,12 +56,13 @@ export function HeroSection() {
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <ButtonPrimary
                 href="#cotiza"
-                
+                hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
               >
                 Cotiza seguro de vida
               </ButtonPrimary>  
               <ButtonSecondary    
                 href="#agenda"
+                hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
               >
                 Agenda una reunion
               </ButtonSecondary>
