@@ -5,7 +5,7 @@ import { FeatureBar } from "../ui/feature-bar"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background">
+    <section className="relative min-h-screen overflow-hidden bg-background rounded-b-3xl">
       {/* Background images */}
       <div className="absolute inset-0 flex">
         {/* Left image */}
