@@ -32,7 +32,8 @@ export const MenuItem = ({
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+        className="cursor-pointer text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+        style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
       >
         {item}
       </motion.p>
@@ -103,10 +104,16 @@ export const ProductItem = ({
         className="shrink-0 rounded-md shadow-2xl object-cover"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-foreground">
+        <h4 
+          className="text-[18px] font-normal mb-1 text-[#FEFEFE]"
+          style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+        >
           {title}
         </h4>
-        <p className="text-foreground/70 text-sm max-w-40">
+        <p 
+          className="text-[18px] font-normal text-[#FEFEFE] max-w-40"
+          style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+        >
           {description}
         </p>
       </div>

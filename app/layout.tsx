@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"] });
+const notoSans = Noto_Sans({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: '--font-noto-sans'
+});
 
 export const metadata: Metadata = {
   title: 'IFS Broker - Planificacion Financiera Internacional',
@@ -34,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="font-sans antialiased">
+      <body className={`${notoSans.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

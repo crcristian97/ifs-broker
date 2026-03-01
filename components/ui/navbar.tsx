@@ -9,8 +9,6 @@ const navLinks = [
   { label: "Home", href: "#" },
   { label: "Soluciones", href: "#soluciones", hasDropdown: true },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Blog", href: "#blog" },
-  { label: "Trabaja con nosotros", href: "#trabaja" },
 ]
 
 export function Navbar() {
@@ -61,7 +59,8 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                className="text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+                style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
               >
                 {link.label}
               </Link>
@@ -75,21 +74,23 @@ export function Navbar() {
           <div className="flex overflow-hidden rounded-md border border-foreground/20">
             <button
               onClick={() => setActiveLanguage("ES")}
-              className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
+              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
                 activeLanguage === "ES"
                   ? "bg-foreground/10 text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
+              style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
             >
               ES
             </button>
             <button
               onClick={() => setActiveLanguage("EN")}
-              className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
+              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
                 activeLanguage === "EN"
                   ? "bg-foreground/10 text-foreground"
                   : "text-foreground/60 hover:text-foreground/80"
               }`}
+              style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
             >
               EN
             </button>
