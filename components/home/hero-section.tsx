@@ -1,13 +1,7 @@
 import Image from "next/image"
-import { ShieldCheck } from "lucide-react"
-import Link from "next/link"
 import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
-const features = [
-  "Asesoramiento personalizado",
-  "Relacion a largo plazo",
-  "Respaldo internacional",
-]
+import { FeatureBar } from "../ui/feature-bar"
 
 export function HeroSection() {
   return (
@@ -83,14 +77,7 @@ export function HeroSection() {
 
         {/* Bottom feature bar */}
         <div className="flex justify-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-6 rounded-xl border border-foreground/10 bg-[#0a1628]/60 px-8 py-4 backdrop-blur-sm md:gap-10">
-            {features.map((feature) => (
-              <div key={feature} className="flex items-center gap-2.5">
-                <ShieldCheck className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm font-medium text-foreground/80">{feature}</span>
-              </div>
-            ))}
-          </div>
+            <FeatureBar />
         </div>
       </div>
     </section>
