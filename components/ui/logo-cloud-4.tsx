@@ -1,0 +1,56 @@
+import type * as React from "react";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import Image from "next/image";
+
+type Logo = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
+type LogoCloudProps = React.ComponentProps<"div"> & {
+  logos: Logo[];
+};
+
+export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
+  return (
+    <div
+      className="relative mx-auto max-w-3xl bg-gradient-to-r from-secondary via-transparent to-secondary py-6 md:border-x"
+      {...props}
+    >
+      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+
+      <InfiniteSlider gap={42} reverse duration={60} durationOnHover={20}>
+        {logos.map((logo) => (
+          <Image
+            alt={logo.alt}
+            className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+            key={`logo-${logo.alt}`}
+            loading="lazy"
+            src={logo.src}
+            width={logo.width}
+            height={logo.height}
+          />
+        ))}
+      </InfiniteSlider>
+
+      <ProgressiveBlur
+        blurIntensity={1}
+        className="pointer-events-none absolute top-0 left-0 h-full w-[160px]"
+        direction="left"
+      />
+      <ProgressiveBlur
+        blurIntensity={1}
+        className="pointer-events-none absolute top-0 right-0 h-full w-[160px]"
+        direction="right"
+      />
+
+      {/* Texto institucional agregado debajo del logo, inspirado en la imagen */}
+     
+
+      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+    </div>
+  );
+}
