@@ -5,59 +5,62 @@ import AnimatedHeadline from "../ui/animated-headline"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background rounded-b-3xl">
-      {/* Background video */}
-      <video
-        src="/seguros-vida-ifs-broker.webm"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full min-h-screen min-w-full object-cover"
-      />
+    <section className="relative w-full bg-background">
+      {/* Wrapper con borde redondeado que contiene video, overlay y contenido */}
+      <div className="relative min-h-screen w-full overflow-hidden rounded-b-4xl">
+        {/* Background video */}
+        <video
+          src="/seguros-vida-ifs-broker.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          // El video siempre se ajusta al contenedor redondeado
+          className="absolute inset-0 h-full w-full object-cover rounded-b-4xl"
+        />
 
-      {/* Dark blue overlay */}
-      <div className="absolute inset-0 bg-[#071a3a]/80 rounded-b-3xl" />
+        {/* Dark blue overlay */}
+        <div className="absolute inset-0 bg-[#071a3a]/80 rounded-b-4xl" />
 
-      {/* Diagonal geometric accent shapes */}
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
-        {/* Main content area */}
-        <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
-          {/* Left column */}
-          <div className="flex flex-col justify-end">
-            <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
-              <AnimatedHeadline text="Planificacion financiera internacional para proteger lo que importa" as="h1" delay={0.3}/>
-            </h1>
-            <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
-              <AnimatedHeadline text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional." as="h2" delay={1.5}/>
-            </h2>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
+          {/* Main content area */}
+          <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
+            {/* Left column */}
+            <div className="flex flex-col justify-end">
+              <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
+                <AnimatedHeadline text="Planificacion financiera internacional para proteger lo que importa" as="h1" delay={0.3}/>
+              </h1>
+              <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
+                <AnimatedHeadline text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional." as="h2" delay={1.5}/>
+              </h2>
+            </div>
 
-          {/* Right column */}
-          <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
-            <AnimatedHeadline text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida." as="h3" delay={0.5}/>
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <ButtonPrimary
-                href="#cotiza"
-                hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-              >
-                Cotiza seguro de vida
-              </ButtonPrimary>  
-              <ButtonSecondary    
-                href="#agenda"
-                hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-              >
-                Agenda una reunion
-              </ButtonSecondary>
+            {/* Right column */}
+            <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
+              <AnimatedHeadline text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida." as="h3" delay={0.5}/>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <ButtonPrimary
+                  href="#cotiza"
+                  hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                >
+                  Cotiza seguro de vida
+                </ButtonPrimary>  
+                <ButtonSecondary    
+                  href="#agenda"
+                  hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+                >
+                  Agenda una reunion
+                </ButtonSecondary>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom feature bar */}
-        <div className="flex justify-center">
-            <FeatureBar />
+          {/* Bottom feature bar */}
+          <div className="flex justify-center">
+              <FeatureBar />
+          </div>
         </div>
       </div>
     </section>
