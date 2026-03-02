@@ -25,6 +25,11 @@ const DEFAULT_MARKERS = [
   { lat: 19.43, lng: -99.13, label: "Mexico City" },
   { lat: 28.61, lng: 77.21, label: "Delhi" },
   { lat: 36.19, lng: 44.01, label: "Erbil" },
+  // Added Latam cities
+  { lat: -34.60, lng: -58.38, label: "Buenos Aires" },
+  { lat: -12.05, lng: -77.04, label: "Lima" },
+  { lat: -2.17, lng: -79.92, label: "Guayaquil" }, // Ecuador
+  { lat: -0.18, lng: -78.47, label: "Quito" }       // Ecuador
 ];
 
 const DEFAULT_CONNECTIONS: { from: [number, number]; to: [number, number] }[] =
