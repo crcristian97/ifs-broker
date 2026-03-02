@@ -67,15 +67,12 @@ export function ScrollingFeatureShowcase() {
     transition: 'background-color 0.7s ease, color 0.7s ease',
   };
 
-  // Styles for the grid pattern on the right side
+  // Background image para el panel derecho
   const gridPatternStyle = {
-    '--grid-color': 'rgba(0, 0, 0, 0.12)',
-    backgroundImage: `
-      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)
-    `,
-    backgroundSize: '3.5rem 3.5rem',
-  };
+    backgroundImage: 'url("/services/fondo-servicios-home.webp")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  } as const;
 
   return (
     <div 
@@ -88,7 +85,7 @@ export function ScrollingFeatureShowcase() {
           <div className="grid grid-cols-1 md:grid-cols-2 h-full w-full max-w-7xl mx-auto">
             
             {/* Left Column: Text Content, Pagination & Button */}
-            <div className="relative flex flex-col justify-center p-8 md:p-16 border-r border-[#006FC4]">
+            <div className="relative flex flex-col justify-center p-8 md:p-16 ">
               {/* Pagination Bars */}
               <div className="absolute top-16 left-16 flex space-x-2">
                 {slidesData.map((_, index) => (
@@ -142,7 +139,7 @@ export function ScrollingFeatureShowcase() {
 
             {/* Right Column: Image Content with Grid Background */}
             <div className="hidden md:flex items-center justify-center p-8" style={gridPatternStyle}>
-              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-black/5">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden  ">
                 <div 
                   className="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out"
                   style={{ transform: `translateY(-${activeIndex * 100}%)` }}
