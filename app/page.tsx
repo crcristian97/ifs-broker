@@ -5,6 +5,7 @@ import ServiceSection from "@/components/home/service"
 import { HeroPlanificacion } from "@/components/home/hero-planificacion"
 import LogoCloudSection from "@/components/home/logo-cloud-demo"
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section"
+import IFSHero from "@/components/layout/footer"
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
       </div>
       <ExperienceGlobeSection />
-
+    <IFSHero />
     </main>
   )
 }
