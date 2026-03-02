@@ -4,6 +4,7 @@ import { WhatWeDoSection } from "@/components/home/what-we-do-section"
 import ServiceSection from "@/components/home/service"
 import { HeroPlanificacion } from "@/components/home/hero-planificacion"
 import LogoCloudSection from "@/components/home/logo-cloud-demo"
+import { ExperienceGlobeSection } from "@/components/home/experience-globe-section"
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ExperienceGlobeSection />
+
     </main>
   )
 }

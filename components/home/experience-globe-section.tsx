@@ -1,0 +1,29 @@
+import { InteractiveGlobe } from "@/components/ui/interactive-globe";
+
+export function ExperienceGlobeSection() {
+  return (
+    <section className=" w-full bg-[#033163] py-20 lg:py-32">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-12 px-6 md:flex-row md:px-12 lg:px-16">
+        <div className="flex-1 flex flex-col justify-center">
+          <h2 className="text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}>
+            EXPERIENCIA <span className="text-[#FFFFFF]">QUE GENERA CONFIANZA</span>
+          </h2>
+         
+          <p className="text-xl text-[#FFFFFF] leading-relaxed mb-4" style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}>
+            Nuestro equipo está conformado por profesionales con más de 20 años
+            de experiencia en la industria financiera y aseguradora, con
+            trayectoria en <span className="text-[#91D8F7]">compañías líderes a nivel internacional.</span>
+          </p>
+          <p className="text-lg text-[#FFFFFF] leading-relaxed">
+            Ese recorrido nos permite acompañar decisiones complejas con
+            criterio, claridad y responsabilidad.
+          </p>
+        </div>
+        <div className="flex-1 flex items-center justify-center min-h-[320px] md:min-h-[420px]">
+            <InteractiveGlobe size={460} className="relative z-10" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
