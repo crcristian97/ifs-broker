@@ -1,6 +1,5 @@
 import type * as React from "react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import Image from "next/image";
 
 type Logo = {
@@ -17,10 +16,10 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
   return (
     <div
-      className="relative w-full py-6"
+      className="relative w-full py-6 overflow-hidden"
       {...props}
     >
-      <InfiniteSlider gap={72} reverse duration={40} durationOnHover={80}>
+      <InfiniteSlider gap={72} reverse duration={60} durationOnHover={100}>
         {logos.map((logo) => (
           <Image
             alt={logo.alt}
@@ -34,16 +33,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
         ))}
       </InfiniteSlider>
 
-      <ProgressiveBlur
-        blurIntensity={1}
-        className="pointer-events-none absolute top-0 left-0 h-full w-[160px]"
-        direction="left"
-      />
-      <ProgressiveBlur
-        blurIntensity={1}
-        className="pointer-events-none absolute top-0 right-0 h-full w-[160px]"
-        direction="right"
-      />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-background via-background/0 to-background" />
     </div>
   );
 }
