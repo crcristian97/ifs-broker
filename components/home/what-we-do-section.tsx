@@ -1,10 +1,21 @@
 import { FeatureCard } from "../ui/feature-card";
+import { AnimatedGridPattern } from "../ui/background-wedosection";
+import { cn } from "@/lib/utils";
 
 export function WhatWeDoSection() {
   return (
-    <section className="relative w-full bg-white py-16 px-6 md:px-12 lg:px-16">
+    <section className="relative w-full bg-white py-16 px-6 md:px-12 lg:px-16 overflow-hidden">
       {/* Background pattern */}
-      
+      <AnimatedGridPattern
+        numSquares={50}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-10%] h-[200%] skew-y-12",
+        )}
+      />
       
       <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* Logo */}
@@ -30,7 +41,7 @@ export function WhatWeDoSection() {
         {/* Feature Cards */}
         <div className="grid md:grid-cols-2 gap-6 w-full">
           <FeatureCard 
-            text="Nuestro enfoque no se basa en la venta de productos aislados, sino en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente."
+            text="Nuestro enfoque se basa en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente."
           />
           <FeatureCard 
             text="Trabajamos con personas y empresas que buscan proteger su patrimonio, planificar el futuro y tomar decisiones financieras con información clara y acompañamiento profesional."
