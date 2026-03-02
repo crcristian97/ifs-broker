@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ConocerMasButton } from './button-terciary';
 import Image from 'next/image';
 
@@ -25,7 +25,7 @@ const slidesData = [
     title: "Salud Internacional",
     subttitle: "",
     description: "Cobertura médica internacional para personas y empresas que buscan acceso a atención de alta calidad y protección ante gastos médicos mayores..",
-    image: "https://images.unsplash.com/photo-1608306448197-e83633f1261c?q=80&w=1974&auto=format&fit=crop",
+    image: "/services/salud-internacional.webp",
     textColor: "#000000",
     textButton: "Conocer más"
   },
@@ -125,16 +125,7 @@ export function ScrollingFeatureShowcase() {
                   </div>
                 ))}
               </div>
-
-              {/* Get Started Button */}
-              <div className="absolute bottom-16 left-16">
-                <a
-                  href="#get-started"
-                  className="px-10 py-4 bg-black text-white font-semibold rounded-full uppercase tracking-wider hover:bg-gray-800 transition-colors"
-                >
-                  Get Started
-                </a>
-              </div>
+             
             </div>
 
             {/* Right Column: Image Content with Grid Background */}

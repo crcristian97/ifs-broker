@@ -17,16 +17,14 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
   return (
     <div
-      className="relative mx-auto max-w-3xl bg-gradient-to-r from-secondary via-transparent to-secondary py-6 md:border-x"
+      className="relative w-full py-6"
       {...props}
     >
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-full border-t" />
-
-      <InfiniteSlider gap={42} reverse duration={60} durationOnHover={20}>
+      <InfiniteSlider gap={72} reverse duration={40} durationOnHover={80}>
         {logos.map((logo) => (
           <Image
             alt={logo.alt}
-            className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+            className="pointer-events-none h-auto max-h-16 w-auto md:max-h-20 select-none"
             key={`logo-${logo.alt}`}
             loading="lazy"
             src={logo.src}
@@ -46,11 +44,6 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
         className="pointer-events-none absolute top-0 right-0 h-full w-[160px]"
         direction="right"
       />
-
-      {/* Texto institucional agregado debajo del logo, inspirado en la imagen */}
-     
-
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-full border-b" />
     </div>
   );
 }
