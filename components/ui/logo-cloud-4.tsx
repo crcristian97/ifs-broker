@@ -20,7 +20,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
       className="relative mx-auto max-w-3xl bg-gradient-to-r from-secondary via-transparent to-secondary py-6 md:border-x"
       {...props}
     >
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-full border-t" />
 
       <InfiniteSlider gap={42} reverse duration={60} durationOnHover={20}>
         {logos.map((logo) => (
@@ -50,7 +50,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
       {/* Texto institucional agregado debajo del logo, inspirado en la imagen */}
      
 
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-full border-b" />
     </div>
   );
 }
