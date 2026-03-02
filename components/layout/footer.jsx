@@ -23,10 +23,10 @@ const features = [
 export default function IFSHero() {
   return (
     <section
-      className="relative w-full min-h-[500px] flex flex-col justify-end"
+      className="relative w-full min-h-[700px] flex flex-col justify-end"
       style={{
         backgroundImage:
-          "linear-gradient(135deg, #E5EEF5 0%, #006FC4 50%, #033163 100%), url('/services/fondo-servicios-especificos.webp')",
+          "linear-gradient(to bottom, #E5EEF5 15%, #006FC4 50%, #033163 100%), url('/services/fondo-servicios-especificos.webp')",
         backgroundBlendMode: "overlay",
         backgroundSize: "cover",
         backgroundPosition: "center",
