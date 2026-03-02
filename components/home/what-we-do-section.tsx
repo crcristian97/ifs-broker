@@ -13,7 +13,7 @@ export function WhatWeDoSection() {
         repeatDelay={1}
         className={cn(
           "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-10%] h-[200%] skew-y-12",
+          "inset-x-0 inset-y-[-10%] h-[200%] skew-y-12 -z-10",
         )}
       />
       
