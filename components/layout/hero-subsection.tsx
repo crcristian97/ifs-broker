@@ -6,9 +6,15 @@ import { cn } from "@/lib/utils";
 // que el Hero principal (`HeroSection`), pero con fondo claro e imagen estática.
 export function HeroSubsection() {
   return (
-    <section className="relative w-full bg-white">
+    <section
+      className="relative w-full"
+      style={{
+        background:
+          "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
+      }}
+    >
       {/* Wrapper con alto completo y bordes redondeados abajo, igual que HeroSection */}
-      <div className="relative min-h-screen w-full overflow-hidden rounded-b-4xl bg-white">
+      <div className="relative min-h-screen w-full overflow-hidden rounded-b-4xl bg-transparent">
         {/* Grid animado de fondo */}
         <AnimatedGridPattern
           numSquares={50}
@@ -26,17 +32,17 @@ export function HeroSubsection() {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Columna izquierda: texto */}
             <div className="flex flex-col justify-end">
-              <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#033163] md:text-5xl xl:text-6xl">
+              <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
                 Protección para tu familia,
                 <br />
-                tranquilidad para vos
+                 <span className="text-[#91d8f7]">Tranquilidad para vos</span>
               </h1>
-              <p className="max-w-2xl mb-4 font-regular text-[#033163] md:text-lg lg:text-xl">
+              <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
                 Los seguros de vida permiten resguardar los ingresos, sostener
                 el nivel de vida familiar y proteger proyectos como la educación
                 cuando más se necesita.
               </p>
-              <p className="max-w-2xl font-regular text-[#033163] md:text-lg lg:text-xl">
+              <p className="max-w-2xl font-regular text-[#FFFFFF] text-base">
                 Más que una cobertura, es una decisión de cuidado que permite
                 anticiparse y proteger la estabilidad del hogar a largo plazo.
               </p>
@@ -63,5 +69,4 @@ export function HeroSubsection() {
 }
 
 export default HeroSubsection;
-
 
