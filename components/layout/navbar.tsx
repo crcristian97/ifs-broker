@@ -82,7 +82,6 @@ export function Navbar() {
           {/* Language Switcher */}
           <div className="flex overflow-hidden rounded-md border border-foreground/20">
             <button
-              className="rounded-md"
               onClick={() => setActiveLanguage("ES")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors ${
                 activeLanguage === "ES"
@@ -160,7 +159,6 @@ export function Navbar() {
               <Link
                 href="#contacto"
                 className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                hover="hover:bg-gradient-to-b from-[#E5EEF5]/10 to-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]"
                 onClick={() => setMobileOpen(false)}
               >
                 Contacto

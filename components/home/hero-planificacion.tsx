@@ -60,12 +60,12 @@ export function HeroPlanificacion() {
             </div>
   
             {/* Right Column */}
-            <div className="flex-1 flex flex-col items-end gap-5">
+            <div className="flex-1 flex flex-col items-center md:items-end gap-5">
               <p className="text-[#000A15] text-lg font-regular leading-relaxed text-center md:text-right max-w-[400px]">
                 Cada propuesta se construye sobre un diagnóstico patrimonial integral que permite definir
                 prioridades, evaluar riesgos y proyectar estabilidad en el tiempo.
               </p>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 items-center md:items-end">
               <ButtonPrimary
                   href="#cotiza"
                   hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"

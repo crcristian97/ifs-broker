@@ -22,7 +22,12 @@ export default function AnimatedHeadline({
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(ref.current?.querySelectorAll(".line span"), {
+      if (!ref.current) return
+
+      const spans = ref.current.querySelectorAll(".line span")
+      if (!spans.length) return
+
+      gsap.from(spans, {
         y: 100,
         opacity: 0,
         duration: duration,

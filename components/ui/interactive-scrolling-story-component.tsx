@@ -11,7 +11,8 @@ const slidesData = [
     description: "Nuestro enfoque se basa en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente.",
     image: "/services/seguro-de-vida.webp",
     textColor: "#000000",
-    textButton: "Conocer más"
+    textButton: "Conocer más",
+    bgColor: "#f3f7fb",
   },
   {
     title: "Retiro e Inversión",
@@ -19,7 +20,8 @@ const slidesData = [
     description: "Brindamos soluciones de ahorro e inversión orientadas a mediano y largo plazo, pensadas para complementar ingresos futuros, planificar estudios y potenciar el crecimiento de tu capital con visión estratégica",
     image: "/services/retiro-e-inversion.webp",
     textColor: "#000000",
-    textButton: "Conocer más"
+    textButton: "Conocer más",
+    bgColor: "#f0f5ff",
   },
   {
     title: "Salud Internacional",
@@ -27,7 +29,8 @@ const slidesData = [
     description: "Cobertura médica internacional para personas y empresas que buscan acceso a atención de alta calidad y protección ante gastos médicos mayores..",
     image: "/services/salud-internacional.webp",
     textColor: "#000000",
-    textButton: "Conocer más"
+    textButton: "Conocer más",
+    bgColor: "#f5fbff",
   },
  
 ];
@@ -37,9 +40,9 @@ export function ScrollingFeatureShowcase() {
   // State to track the currently active slide index
   const [activeIndex, setActiveIndex] = useState(0);
   // Ref to the main scrollable container
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   // Ref to the sticky content panel
-  const stickyPanelRef = useRef(null);
+  const stickyPanelRef = useRef<HTMLDivElement | null>(null);
 
   // --- Scroll Handler ---
   useEffect(() => {

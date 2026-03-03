@@ -1,11 +1,13 @@
 'use client'
 
 import * as React from 'react'
-import {
-  ThemeProvider as NextThemesProvider,
-  type ThemeProviderProps,
-} from 'next-themes'
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+type ThemeProviderProps = {
+  children: React.ReactNode
+}
+
+// Simplified theme provider: if you don't need dark/light theme toggling,
+// we just render children without relying on `next-themes`.
+export function ThemeProvider({ children }: ThemeProviderProps) {
+  return <>{children}</>
 }
