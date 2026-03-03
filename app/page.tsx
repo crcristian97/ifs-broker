@@ -7,6 +7,7 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo"
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section"
 import Footer from "@/components/layout/footer"
 import BlogSection from "@/components/home/blog-section"
+import HowWeWork from "@/components/home/how-we-work"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <WhatWeDoSection />
       <ServiceSection />
       <HeroPlanificacion />
+      <HowWeWork />
       <LogoCloudSection />
       <div className=" w-full bg-[#e6f3fa]">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">

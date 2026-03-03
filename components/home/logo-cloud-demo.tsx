@@ -66,7 +66,7 @@ export default function LogoCloudSection() {
 
         <div className="relative w-full">
           <h4 className="mb-7 text-center flex flex-col items-center gap-2">
-            <span className="text-5xl text-[#033163] font-bold leading-tight" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}><span className="text-[#006FC4]">RESPALDO INTERNACIONAL Y</span> SOLIDEZ FINANCIERA</span>
+            <span className="text-5xl text-[#033163] font-regular leading-tight" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}><span className="text-[#006FC4]">RESPALDO INTERNACIONAL Y</span> SOLIDEZ FINANCIERA</span>
             <p className="text-xl font-regular mt-3 text-[#033163] max-w-xl">
               Trabajamos con compañías de primer nivel, elegidas por su estabilidad financiera, trayectoria y alcance global.
             </p>
