@@ -32,7 +32,7 @@ export const MenuItem = ({
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+        className="nav-link cursor-pointer text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
         style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
       >
         {item}

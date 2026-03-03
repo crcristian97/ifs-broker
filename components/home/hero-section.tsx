@@ -2,6 +2,7 @@ import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
 import { FeatureBar } from "../ui/feature-bar"
 import AnimatedHeadline from "../ui/animated-headline"
+import { FadeInUp } from "../ui/fade-in-up"
 
 export function HeroSection() {
   return (
@@ -30,37 +31,53 @@ export function HeroSection() {
             {/* Left column */}
             <div className="flex flex-col justify-end">
               <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
-                <AnimatedHeadline text="Planificacion financiera internacional para proteger lo que importa" as="h1" delay={0.3}/>
+                <AnimatedHeadline
+                  text="Planificacion financiera internacional para proteger lo que importa"
+                  as="h1"
+                  delay={0.2}
+                />
               </h1>
               <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
-                <AnimatedHeadline text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional." as="h2" delay={1.5}/>
+                <AnimatedHeadline
+                  text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional."
+                  as="h2"
+                  delay={0.9}
+                />
               </h2>
             </div>
 
             {/* Right column */}
             <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
-              <AnimatedHeadline text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida." as="h3" delay={0.5}/>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <ButtonPrimary
-                  href="#cotiza"
-                  hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                >
-                  Cotiza seguro de vida
-                </ButtonPrimary>  
-                <ButtonSecondary    
-                  href="#agenda"
-                  hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-                >
-                  Agenda una reunion
-                </ButtonSecondary>
-              </div>
+              <AnimatedHeadline
+                text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida."
+                as="h3"
+                delay={2.0}
+              />
+              <FadeInUp delay={2.0}>
+                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                  <ButtonPrimary
+                    href="#cotiza"
+                    hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                  >
+                    Cotiza seguro de vida
+                  </ButtonPrimary>  
+                  <ButtonSecondary    
+                    href="#agenda"
+                    hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+                  >
+                    Agenda una reunion
+                  </ButtonSecondary>
+                </div>
+              </FadeInUp>
             </div>
           </div>
 
           {/* Bottom feature bar */}
-          <div className="flex justify-center">
+          <FadeInUp delay={2.8}>
+            <div className="flex justify-center">
               <FeatureBar />
-          </div>
+            </div>
+          </FadeInUp>
         </div>
       </div>
     </section>

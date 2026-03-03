@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Menu, X } from "lucide-react"
+import gsap from "gsap"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
 import { ButtonPrimary } from "../ui/button-primary"
 
@@ -17,12 +18,49 @@ export function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState<"ES" | "EN">("ES")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
+  const navRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!navRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.from(".nav-logo", {
+        y: -20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power4.out",
+        delay: 1.4,
+      })
+
+      gsap.from(".nav-link", {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power4.out",
+        stagger: 0.05,
+        delay: 1.5,
+      })
+
+      gsap.from(".nav-right", {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power4.out",
+        delay: 1.6,
+      })
+    }, navRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-md">
+      <div
+        ref={navRef}
+        className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-md"
+      >
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="nav-logo flex items-center">
           <Image
             src="/ifs_insurance.png"
             alt="IFS Insurance"
@@ -68,7 +106,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+                className="nav-link text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
                 style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
               >
                 {link.label}
@@ -78,7 +116,7 @@ export function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="nav-right hidden items-center gap-3 lg:flex">
           {/* Language Switcher */}
           <div className="flex overflow-hidden rounded-md border border-foreground/20">
             <button
