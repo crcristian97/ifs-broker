@@ -20,7 +20,7 @@ const features = [
   },
 ]
 
-export default function IFSHero() {
+export default function Footer() {
   return (
     <section
       className="relative w-full min-h-[700px] flex flex-col justify-end"

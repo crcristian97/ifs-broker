@@ -130,20 +130,25 @@ export function ScrollingFeatureShowcase() {
 
             {/* Right Column: Image Content with Grid Background */}
             <div className="hidden md:flex items-center justify-center p-8" style={gridPatternStyle}>
-              <div className="relative w-full h-full rounded-2xl overflow-hidden  ">
+              <div className="relative w-full h-full max-h-[520px] rounded-2xl overflow-hidden">
                 <div 
                   className="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out"
                   style={{ transform: `translateY(-${activeIndex * 100}%)` }}
                 >
                   {slidesData.map((slide, index) => (
-                    <div key={index} className="w-full h-full">
-                      <Image
-                        src={slide.image}
-                        alt={slide.title}
-                        width={1000}
-                        height={1000}
-                        className="h-full w-full object-contain"
-                      />
+                    <div
+                      key={index}
+                      className="flex w-full h-full items-center justify-center"
+                    >
+                      <div className="rounded-[22px] bg-white/70 backdrop-blur-md shadow-[0_6px_46px_0_rgba(43,70,109,0.17)] p-2 md:p-3">
+                        <Image
+                          src={slide.image}
+                          alt={slide.title}
+                          width={400}
+                          height={400}
+                          className="h-[420px] w-auto md:h-[420px] object-cover rounded-[18px]"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
