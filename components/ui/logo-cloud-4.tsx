@@ -19,7 +19,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
       className="relative w-full py-6 overflow-hidden"
       {...props}
     >
-      <InfiniteSlider gap={72} reverse duration={60} durationOnHover={100}>
+      <InfiniteSlider gap={120} reverse duration={60} durationOnHover={100}>
         {logos.map((logo) => (
           <Image
             alt={logo.alt}
