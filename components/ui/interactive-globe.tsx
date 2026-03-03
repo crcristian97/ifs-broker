@@ -34,15 +34,36 @@ const DEFAULT_MARKERS = [
 
 const DEFAULT_CONNECTIONS: { from: [number, number]; to: [number, number] }[] =
   [
-    { from: [37.78, -122.42], to: [51.51, -0.13] },
-    { from: [51.51, -0.13], to: [35.68, 139.69] },
-    { from: [35.68, 139.69], to: [-33.87, 151.21] },
-    { from: [37.78, -122.42], to: [1.35, 103.82] },
-    { from: [51.51, -0.13], to: [28.61, 77.21] },
-    { from: [37.78, -122.42], to: [-23.55, -46.63] },
-    { from: [1.35, 103.82], to: [-33.87, 151.21] },
-    { from: [28.61, 77.21], to: [36.19, 44.01] },
-    { from: [51.51, -0.13], to: [36.19, 44.01] },
+    { from: [37.78, -122.42], to: [51.51, -0.13] },           // SF -> London
+    { from: [51.51, -0.13], to: [35.68, 139.69] },            // London -> Tokyo
+    { from: [35.68, 139.69], to: [-33.87, 151.21] },          // Tokyo -> Sydney
+    { from: [37.78, -122.42], to: [1.35, 103.82] },           // SF -> Singapore
+    { from: [51.51, -0.13], to: [28.61, 77.21] },             // London -> Delhi
+    { from: [37.78, -122.42], to: [-23.55, -46.63] },         // SF -> São Paulo
+    { from: [1.35, 103.82], to: [-33.87, 151.21] },           // Singapore -> Sydney
+    { from: [28.61, 77.21], to: [36.19, 44.01] },             // Delhi -> Erbil
+    { from: [51.51, -0.13], to: [36.19, 44.01] },             // London -> Erbil
+
+    // New connections (Latam, NA, more global links)
+    { from: [-34.60, -58.38], to: [-23.55, -46.63] },         // Buenos Aires -> São Paulo
+    { from: [-23.55, -46.63], to: [-12.05, -77.04] },         // São Paulo -> Lima
+    { from: [-12.05, -77.04], to: [-2.17, -79.92] },          // Lima -> Guayaquil
+    { from: [-2.17, -79.92], to: [-0.18, -78.47] },           // Guayaquil -> Quito
+    { from: [-0.18, -78.47], to: [19.43, -99.13] },           // Quito -> Mexico City
+    { from: [19.43, -99.13], to: [37.78, -122.42] },          // Mexico City -> SF
+    { from: [-34.60, -58.38], to: [51.51, -0.13] },           // Buenos Aires -> London
+    { from: [51.51, -0.13], to: [-34.60, -58.38] },           // London -> Buenos Aires (return)
+    { from: [-23.55, -46.63], to: [1.35, 103.82] },           // São Paulo -> Singapore
+    { from: [55.76, 37.62], to: [36.19, 44.01] },             // Moscow -> Erbil
+    { from: [35.68, 139.69], to: [1.35, 103.82] },            // Tokyo -> Singapore
+    { from: [19.43, -99.13], to: [-23.55, -46.63] },          // Mexico City -> São Paulo
+    { from: [28.61, 77.21], to: [-12.05, -77.04] },           // Delhi -> Lima
+
+    // Add a few global intercontinental connections
+    { from: [37.78, -122.42], to: [35.68, 139.69] },          // SF -> Tokyo
+    { from: [51.51, -0.13], to: [55.76, 37.62] },             // London -> Moscow
+    { from: [19.43, -99.13], to: [51.51, -0.13] },            // Mexico City -> London
+    { from: [1.35, 103.82], to: [35.68, 139.69] },            // Singapore -> Tokyo
   ];
 
 function latLngToXYZ(
