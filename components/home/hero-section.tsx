@@ -21,7 +21,7 @@ export function HeroSection() {
         />
 
         {/* Dark blue overlay */}
-        <div className="absolute inset-0 bg-[#071a3a]/80 rounded-b-4xl" />
+        <div className="absolute inset-0 bg-[#033163]/50 rounded-b-4xl" />
 
 
         {/* Content */}

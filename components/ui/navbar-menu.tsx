@@ -105,13 +105,13 @@ export const ProductItem = ({
       />
       <div>
         <h4 
-          className="text-[18px] font-normal mb-1 text-[#FEFEFE]"
+          className="text-[16px] font-normal mb-1 text-[#FEFEFE]"
           style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
         >
           {title}
         </h4>
         <p 
-          className="text-[18px] font-normal text-[#FEFEFE] max-w-40"
+          className="text-[12px] font-normal text-[#FEFEFE] max-w-40"
           style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
         >
           {description}
