@@ -17,23 +17,9 @@ const oxanium = Oxanium({
 export const metadata: Metadata = {
   title: 'IFS Broker - Planificacion Financiera Internacional',
   description: 'Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional.',
-  generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/ifs_insurance.png',
+    apple: '/ifs_insurance.png',
   },
 }
 

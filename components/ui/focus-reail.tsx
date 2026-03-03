@@ -194,8 +194,8 @@ export function FocusRail({
                   filter: `blur(${blur}px) brightness(${brightness})`,
                 }}
                 transition={(val: string) => {
-                  if (val === "scale") return TAP_SPRING;
-                  return BASE_SPRING;
+                    if (val === "scale") return TAP_SPRING;
+                    return BASE_SPRING;
                 }}
                 style={{
                   transformStyle: "preserve-3d",
@@ -209,17 +209,17 @@ export function FocusRail({
                     {item.content}
                   </div>
                 ) : (
-                  <img
-                    src={item.imageSrc}
-                    alt={item.title}
-                    className="h-full w-full rounded-2xl object-cover pointer-events-none"
-                  />
+                <img
+                  src={item.imageSrc}
+                  alt={item.title}
+                  className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                />
                 )}
               </motion.div>
             );
           })}
         </motion.div>
-       
+
       </div>
     </div>
   );

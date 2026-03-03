@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
@@ -21,8 +22,15 @@ export function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-md">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-wide text-foreground md:text-2xl">
-          IFS Broker
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/ifs_insurance.png"
+            alt="IFS Insurance"
+            width={200}
+            height={40}
+            className="h-8 w-auto md:h-10"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav Links */}

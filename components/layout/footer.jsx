@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin } from "lucide-react"
 import { FeatureBar } from "@/components/ui/feature-bar"
 import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
+import Image from "next/image"
 
 const features = [
   {
@@ -35,7 +36,9 @@ export default function Footer() {
       {/* Main content area */}
       <div className="relative z-10 flex flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-12 md:py-16">
         {/* Left — Logo */}
-        <div className="flex justify-center md:justify-start"></div>
+        <div className="flex justify-center md:justify-start">
+          <Image src="/ifs_insurance.png" alt="IFS Insurance" width={200} height={200} />
+        </div>
 
         {/* Right — Copy + CTAs */}
         <div className="flex flex-col items-center gap-6 text-center md:items-end md:text-right">
