@@ -45,7 +45,6 @@ export function RetirementForm() {
      
     >
       {/* Overlay for Blur/Dim effect */}
-      <div className="absolute inset-0 z-0 rounded-2xl bg-white/90 backdrop-blur-[2px] md:backdrop-blur-md"></div>
       {/* Form card */}
       <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
         <div className="flex flex-col gap-6">
