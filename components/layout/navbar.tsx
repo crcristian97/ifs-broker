@@ -87,8 +87,8 @@ export function Navbar() {
                       />
                       <ProductItem
                         title="Fondos de retiro"
-                        href="#fondos-retiro"
-                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=280&h=140&fit=crop"
+                        href="/fondos-de-retiro"
+                        src="/retiro/fondos-de-retiro.webp"
                         description="Construcción de ingresos futuros para el retiro"
                       />
                       <ProductItem

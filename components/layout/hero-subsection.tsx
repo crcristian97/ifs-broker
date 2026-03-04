@@ -2,9 +2,22 @@ import Image from "next/image";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { cn } from "@/lib/utils";
 
-// Hero de "Seguros de vida" con la misma estructura de márgenes y contenedor
-// que el Hero principal (`HeroSection`), pero con fondo claro e imagen estática.
-export function HeroSubsection() {
+type HeroSubsectionProps = {
+  titlePrefix?: string;
+  titleHighlight?: string;
+  titleSuffix?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+// Hero reutilizable para secciones de producto (seguros de vida, fondos de retiro, etc.)
+export function HeroSubsection({
+  titlePrefix = "Protección para tu familia,",
+  titleHighlight = "Tranquilidad para vos",
+  titleSuffix = "",
+  imageSrc = "/seguro/seguro-de-vida.webp",
+  imageAlt = "Seguro de vida",
+}: HeroSubsectionProps) {
   return (
     <section
       className="relative w-full"
@@ -33,27 +46,28 @@ export function HeroSubsection() {
             {/* Columna izquierda: texto */}
             <div className="flex flex-col justify-end">
               <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                Protección para tu familia,
+                <span className="text-[#FFFFFF]">{titlePrefix}</span>
                 <br />
-                 <span className="text-[#91d8f7]">Tranquilidad para vos</span>
+                <span className="text-[#91d8f7]">{titleHighlight}</span>
+                {titleSuffix && (
+                  <>
+                    {" "}
+                    <span className="text-[#FFFFFF]">{titleSuffix}</span>
+                  </>
+                )}
               </h1>
               <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                Los seguros de vida permiten resguardar los ingresos, sostener
-                el nivel de vida familiar y proteger proyectos como la educación
-                cuando más se necesita.
+                Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos sgguún las necesiades de cada cliente.
               </p>
-              <p className="max-w-2xl font-regular text-[#FFFFFF] text-base">
-                Más que una cobertura, es una decisión de cuidado que permite
-                anticiparse y proteger la estabilidad del hogar a largo plazo.
-              </p>
+              
             </div>
 
             {/* Columna derecha: imagen */}
             <div className="hidden lg:flex items-center justify-end">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/seguro/seguro-de-vida.webp"
-                  alt="Seguro de vida"
+                  src={imageSrc}
+                  alt={imageAlt}
                   width={600}
                   height={600}
                   className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
