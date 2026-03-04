@@ -42,9 +42,18 @@ export function RetirementForm() {
   return (
     <div
       className="w-full max-w-3xl mx-auto relative"
-     
     >
-      {/* Overlay for Blur/Dim effect */}
+      {/* Título y subtítulo */}
+      <div className="mb-8 text-center">
+        <h2 className="text-5xl font-regular leading-tight" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}>
+          <span className="text-[#006FC4]">Cotiza tu </span>
+          <span className="text-[#033163]">fondo de retiro</span>
+        </h2>
+        <p className="mt-3 text-xl text-[#033163]">
+          Desliza el botón que está sobre la barra horizontal para modficiar su información
+        </p>
+      </div>
+
       {/* Form card */}
       <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
         <div className="flex flex-col gap-6">

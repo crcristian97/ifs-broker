@@ -8,7 +8,7 @@ import { ExperienceGlobeSection } from "@/components/home/experience-globe-secti
 import BlogSection from "@/components/home/blog-section";
 import Footer from "@/components/layout/footer";
 
-export function HomeHeroLayout() {
+export function  HomeHeroLayout() {
   return (
     <>
       <HeroSection />
