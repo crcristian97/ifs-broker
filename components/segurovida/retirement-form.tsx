@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react"
 import { RangeSlider } from "@/components/ui/range-slider"
+import { ButtonPrimary } from "../ui/button-primary"
 
 export function RetirementForm() {
   const [yearsToStart, setYearsToStart] = useState(16)
@@ -103,26 +104,24 @@ export function RetirementForm() {
         </div>
 
         {/* Result */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-accent bg-accent/20 p-4 md:p-5">
-          <p className="text-sm md:text-base text-card-foreground font-medium leading-relaxed flex-1">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
+          <p className="text-base text-[#000A15] font-bold leading-relaxed flex-1">
             Este es el déficit que debería ser cubierto por un seguro de vida
           </p>
-          <div className="rounded-lg bg-accent/30 border border-accent px-5 py-3 min-w-[180px] text-center">
-            <span className="text-lg md:text-xl font-bold text-primary">
+          <div className="rounded-lg bg-[#91D8F7] border border-[#91D8F7] px-5 py-3 min-w-[180px] text-center">
+            <span className="text-lg font-bold text-[#033163]">
               US {formattedDeficit}
             </span>
           </div>
         </div>
-      </div>
-
-      {/* CTA Button */}
-      <div className="relative z-10 flex justify-center mt-8 pb-8">
-        <button
-          type="button"
-          className="rounded-lg bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        <div className="relative z-10 flex justify-center mt-8 pb-8"> 
+          <ButtonPrimary        
+          href="#agenda"
+          hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
         >
           Agenda una reunión
-        </button>
+        </ButtonPrimary>
+        </div>
       </div>
     </div>
   )
