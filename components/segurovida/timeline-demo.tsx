@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
 export function TimelineDemo() {
@@ -13,22 +14,22 @@ export function TimelineDemo() {
       content: (
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
-            <img
-              src="https://assets.aceternity.com/templates/startup-1.webp"
+            <Image
+              src="/seguro/img-seguro de vida.webp"
               alt="Seguro de vida"
               width={600}
-              height={400}
-              className="h-48 md:h-56 lg:h-64 w-full object-cover"
+              height={600}
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-sm md:text-base font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Protección financiera ante el fallecimiento del asegurado.
             </p>
-            <p className="mb-3 text-sm md:text-base font-semibold text-[#003163]">
+            <p className="mb-3 text-2xl font-semibold text-[#003163]">
               Protección para tu familia cuando más lo necesita
             </p>
-            <p className="text-xs md:text-sm text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed">
               Permite cubrir obligaciones, proteger el patrimonio y brindar liquidez inmediata, asegurando el mantenimiento del hogar y la continuidad de proyectos como la educación.
             </p>
           </div>
@@ -46,19 +47,19 @@ export function TimelineDemo() {
       content: (
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="Enfermedades críticas"
+            <Image
+              src="/seguro/img-enfermedades-criticas.webp"
+              alt="Seguro de vida"
               width={600}
-              height={400}
-              className="h-48 md:h-56 lg:h-64 w-full object-cover"
+              height={600}
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-sm md:text-base font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Coberturas que brindan liquidez inmediata ante el diagnóstico de enfermedades graves específicas.
             </p>
-            <p className="text-xs md:text-sm text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed">
              Permite afrontar tratamientos, cubrir gastos médicos y compensar ingresos afectados, para enfocarse en la recuperación sin descuidar la dinámica y organización familiar.
             </p>
           </div>
@@ -74,19 +75,19 @@ export function TimelineDemo() {
         content: (
           <div className="flex flex-col gap-4 items-stretch">
             <div className="overflow-hidden rounded-3xl">
-              <img
-                src="https://assets.aceternity.com/pro/hero-sections.png"
-                alt="Enfermedades críticas"
+              <Image
+                src="/seguro/img-incapacidad.webp"
+                alt="Seguro de vida"
                 width={600}
-                height={400}
-                className="h-48 md:h-56 lg:h-64 w-full object-cover"
+                height={600}
+                className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
               />
             </div>
             <div>
-              <p className="mb-3 text-sm md:text-base font-semibold text-[#006FC4]">
+              <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
                 Protección económica ante incapaicdad total o parcial que afecte la generación de ingresos.
               </p>
-              <p className="text-xs md:text-sm text-[#003163] leading-relaxed">
+              <p className="text-lg text-[#003163] leading-relaxed">
                 Permite sostener ingresos y cubrir gastos del hogar cuando una incapacidad impide trabajar, protegiendo la estabilidad familiar y profesional.
               </p>
             </div>
@@ -103,19 +104,19 @@ export function TimelineDemo() {
       content: (
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="Enfermedades terminales"
+            <Image
+              src="/seguro/img-enfermedad-terminal.webp"
+              alt="Seguro de vida"
               width={600}
-              height={400}
-              className="h-48 md:h-56 lg:h-64 w-full object-cover"
+              height={600}
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-sm md:text-base font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Acompañamiento en etapas de alta sensibilidad.
             </p>
-            <p className="text-xs md:text-sm text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed">
               Facilita recursos para cuidados especiales, orden patrimonial y
               tranquilidad familiar, permitiendo enfocarse en lo verdaderamente
               importante en momentos delicados.

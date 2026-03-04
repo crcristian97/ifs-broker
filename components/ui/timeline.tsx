@@ -43,7 +43,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-10 md:pt-40 md:gap-10 bg-[url('/services/fondo-servicios-especificos.webp')] "
           >
             {/* Columna izquierda: solo el punto de la línea de tiempo */}
             <div className="sticky z-40 top-40 self-start w-10 flex items-start justify-center">
@@ -57,7 +57,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] items-stretch">
                 {/* Título + botones (columna izquierda) */}
                 <div className="flex flex-col justify-center gap-6">
-                  <h3 className="text-left text-4xl md:text-5xl font-regular leading-tight">
+                  <h3 className="text-left text-5xl font-regular leading-tight">
                     {item.title}
                   </h3>
                   <div className="flex flex-col gap-3 max-w-xs">
@@ -76,7 +76,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
                 {/* Tarjeta principal (columna derecha) */}
                 <div className="flex justify-end">
-                  <div className="w-full max-w-3xl rounded-[32px] bg-white/95 shadow-[0_22px_60px_rgba(0,77,159,0.16)] border border-[#D4E7FF]/70 p-5 md:p-7 lg:p-10">
+                  <div className="w-full max-w-[640px] rounded-[32px] bg-cover bg-center shadow-[0_22px_60px_rgba(0,77,159,0.16)] border border-[#D4E7FF]/70 p-3 md:p-4 lg:p-6">
                     {item.content}
                   </div>
                 </div>
