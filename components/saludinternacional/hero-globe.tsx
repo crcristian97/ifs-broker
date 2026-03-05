@@ -33,7 +33,7 @@ export function HeroGlobe() {
         {/* Globo a la derecha, más grande */}
         <div className="flex flex-1 items-center justify-center py-6 md:py-10">
           <div className="relative h-[260px] w-full max-w-[420px] sm:h-[320px] sm:max-w-[480px] md:h-[420px] md:max-w-[520px]">
-            <Globe />
+            <Globe className="max-w-full" />
           </div>
         </div>
       </div>
