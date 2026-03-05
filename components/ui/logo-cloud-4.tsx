@@ -33,7 +33,7 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
         ))}
       </InfiniteSlider>
 
-      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-background via-background/0 to-background" />
+      <div className="pointer-events-none absolute inset-0 z-10 " />
     </div>
   );
 }
