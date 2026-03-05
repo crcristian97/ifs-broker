@@ -44,7 +44,7 @@ export default function BlogSection() {
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
-            className="font-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight text-[#006fc4]"
+            className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4]"
             style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
           >
             INFORMACIÓN PARA <span className="text-[#033163]">TOMAR MEJORES</span>

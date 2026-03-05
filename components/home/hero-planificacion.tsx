@@ -25,11 +25,11 @@ export function HeroPlanificacion() {
       
   
           <div className="relative z-10 text-center">
-            <p className="text-white text-sm sm:text-base md:text-lg font-bold tracking-wide mb-6 md:mb-8">
+            <p className="text-white text-lg font-bold tracking-wide mb-8">
               Una planificación financiera inteligente comienza por proteger lo esencial
             </p>
             <h3
-              className="text-3xl sm:text-4xl md:text-5xl font-regular uppercase tracking-tighter leading-tight"
+              className="text-5xl font-regular uppercase tracking-tighter leading-tight"
               style={{
                 fontFamily: 'var(--font-oxanium), sans-serif',
                 letterSpacing: '0.02em',
@@ -50,7 +50,7 @@ export function HeroPlanificacion() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
             {/* Left Column */}
             <div className="flex-1">
-              <p className="text-[#1a2b3d] text-lg sm:text-xl md:text-2xl font-regular leading-relaxed">
+              <p className="text-[#1a2b3d] text-3xl font-regular leading-relaxed">
                 {"En IFS desarrollamos "}
                 <span className="text-[#1479B7] font-regular">
                   soluciones patrimoniales personalizadas de alcance internacional
@@ -61,7 +61,7 @@ export function HeroPlanificacion() {
   
             {/* Right Column */}
             <div className="flex-1 flex flex-col items-center md:items-end gap-5">
-              <p className="text-[#000A15] text-sm sm:text-base md:text-lg font-regular leading-relaxed text-center md:text-right max-w-[400px]">
+              <p className="text-[#000A15] text-lg font-regular leading-relaxed text-center md:text-right max-w-[400px]">
                 Cada propuesta se construye sobre un diagnóstico patrimonial integral que permite definir
                 prioridades, evaluar riesgos y proyectar estabilidad en el tiempo.
               </p>

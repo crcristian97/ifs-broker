@@ -30,14 +30,14 @@ export function HeroSection() {
           <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
             {/* Left column */}
             <div className="flex flex-col justify-end">
-              <h1 className="text-balance text-3xl sm:text-4xl md:text-5xl font-regular text-[#FEFEFE]">
+              <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
                 <AnimatedHeadline
                   text="Planificacion financiera internacional para proteger lo que importa"
                   as="h1"
                   delay={0.2}
                 />
               </h1>
-              <h2 className="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-[#FEFEFE] font-regular noto-sans">
+              <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
                 <AnimatedHeadline
                   text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional."
                   as="h2"

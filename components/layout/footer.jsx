@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Right — Copy + CTAs */}
         <div className="flex flex-col items-center gap-6 text-center md:items-end md:text-right">
           <div className="space-y-2">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-[#033163] text-balance">
+            <h2 className="text-3xl font-regular text-[#033163] text-balance">
               Cada situación es distinta.
             </h2>
             <p className="max-w-sm text-base text-[#033163]">
@@ -71,7 +71,7 @@ export default function Footer() {
 
       {/* Tagline + WhatsApp */}
       <div className="relative z-10 flex items-end justify-between px-6 pb-4 md:px-12">
-        <p className="text-lg sm:text-xl md:text-2xl font-regular text-[#033163]">
+        <p className="text-3xl font-regular text-[#033163]">
           Diseñemos hoy la tranquilidad del futuro
         </p>
       </div>

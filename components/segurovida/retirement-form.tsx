@@ -45,14 +45,11 @@ export function RetirementForm() {
     >
       {/* Título y subtítulo */}
       <div className="mb-8 text-center">
-        <h2
-          className="text-3xl sm:text-4xl md:text-5xl font-regular leading-tight"
-          style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}
-        >
+        <h2 className="text-5xl font-regular leading-tight" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}>
           <span className="text-[#006FC4]">Cotiza tu </span>
           <span className="text-[#033163]">fondo de retiro</span>
         </h2>
-        <p className="mt-3 text-base sm:text-lg text-[#033163]">
+        <p className="mt-3 text-xl text-[#033163]">
           Desliza el botón que está sobre la barra horizontal para modficiar su información
         </p>
       </div>
@@ -120,7 +117,7 @@ export function RetirementForm() {
             Este es el déficit que debería ser cubierto por un seguro de vida
           </p>
           <div className="rounded-lg bg-[#91D8F7] border border-[#91D8F7] px-5 py-3 min-w-[180px] text-center">
-            <span className="text-base sm:text-lg font-bold text-[#033163]">
+            <span className="text-lg font-bold text-[#033163]">
               US {formattedDeficit}
             </span>
           </div>

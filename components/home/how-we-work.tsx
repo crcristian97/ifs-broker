@@ -96,12 +96,12 @@ export default function HowWeWork() {
     <section className="w-full bg-white py-20 lg:py-24">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-6 md:px-12 lg:px-16">
         {/* Title */}
-        <div className="mb-10 text-center max-w-4xl">
-          <h4 className="text-xl sm:text-2xl md:text-3xl font-regular text-[#033163] mb-2">
+        <div className="mb-12 text-center max-w-4xl">
+          <h4 className="text-3xl font-regular text-[#033163] mb-2">
             Cómo trabajamos
           </h4>
           <p
-            className="text-[#033163] text-2xl sm:text-3xl md:text-4xl font-regular leading-tight"
+            className="text-[#033163] text-4xl md:text-5xl font-regular leading-tight"
             style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
           >
             PROCESO CLARO, ESTRATÉGICO Y{" "}

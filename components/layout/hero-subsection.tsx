@@ -45,7 +45,7 @@ export function HeroSubsection({
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Columna izquierda: texto */}
             <div className="flex flex-col justify-end">
-            <h1 className="max-w-2xl mb-4 text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight leading-none text-[#FFFFFF]">
+              <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
                 <span className="text-[#FFFFFF]">{titlePrefix}</span>
                 <br />
                 <span className="text-[#91d8f7]">{titleHighlight}</span>
@@ -56,7 +56,7 @@ export function HeroSubsection({
                   </>
                 )}
               </h1>
-              <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-base sm:text-lg">
+              <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
                 Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos sgguún las necesiades de cada cliente.
               </p>
               

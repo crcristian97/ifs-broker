@@ -22,7 +22,7 @@ function BannerSection() {
 
           <div className="relative z-10 flex min-h-[220px] flex-col items-center justify-center text-center">
             <p
-              className="max-w-4xl text-base sm:text-lg md:text-xl font-regular leading-relaxed text-white"
+              className="max-w-4xl text-lg font-regular leading-relaxed text-white md:text-2xl"
               style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
             >
               Los seguros de salud internacional permiten acceder a atención

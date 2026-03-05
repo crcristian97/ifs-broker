@@ -120,18 +120,8 @@ export function ScrollingFeatureShowcase() {
                         : 'opacity-0 translate-y-10'
                     }`}
                   >
-                    <h2
-                      className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tighter text-[#006FC4] uppercase"
-                      style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}
-                    >
-                      {slide.title}
-                    </h2>
-                    <p
-                      className="mt-6 text-base sm:text-lg max-w-md text-[#033163] font-regular"
-                      style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
-                    >
-                      {slide.description}
-                    </p>
+                    <h2 className="text-5xl font-regular tracking-tighter text-[#006FC4] uppercase " style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}>{slide.title}</h2>
+                    <p className="mt-6 text-xl max-w-md text-[#033163] font-regular" style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}>{slide.description}</p>
                     <div className="mt-6">
                       <ConocerMasButton textButton={slide.textButton || "Conocer más"} />
                     </div>

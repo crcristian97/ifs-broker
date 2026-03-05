@@ -13,20 +13,20 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
+          <div className="overflow-hidden rounded-3xl">
             <Image
               src="/seguro/img-seguro de vida.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Protección financiera ante el fallecimiento del asegurado.
             </p>
-            <p className="mb-3 text-lg sm:text-xl md:text-2xl font-semibold text-[#003163]">
+            <p className="mb-3 text-2xl font-semibold text-[#003163]">
               Protección para tu familia cuando más lo necesita
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -46,17 +46,17 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
+          <div className="overflow-hidden rounded-3xl">
             <Image
               src="/seguro/img-enfermedades-criticas.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Coberturas que brindan liquidez inmediata ante el diagnóstico de enfermedades graves específicas.
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -74,17 +74,17 @@ export function TimelineDemo() {
         ),
         content: (
           <div className="flex flex-col gap-4 items-stretch">
-            <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
+            <div className="overflow-hidden rounded-3xl">
               <Image
                 src="/seguro/img-incapacidad.webp"
                 alt="Seguro de vida"
                 width={600}
                 height={600}
-                className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+                className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
               />
             </div>
             <div>
-              <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
+              <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
                 Protección económica ante incapaicdad total o parcial que afecte la generación de ingresos.
               </p>
               <p className="text-lg text-[#003163] leading-relaxed">
@@ -103,17 +103,17 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
+          <div className="overflow-hidden rounded-3xl">
             <Image
               src="/seguro/img-enfermedad-terminal.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
               Acompañamiento en etapas de alta sensibilidad.
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
