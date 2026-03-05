@@ -93,7 +93,7 @@ export function Navbar() {
                       />
                       <ProductItem
                         title="Salud internacional"
-                        href="#salud-internacional"
+                        href="/salud-internacional"
                         src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=280&h=140&fit=crop"
                         description="Cobertura médica internacional con acceso a redes globales"
                       />

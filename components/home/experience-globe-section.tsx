@@ -1,5 +1,3 @@
-import { InteractiveGlobe } from "@/components/ui/interactive-globe";
-
 export function ExperienceGlobeSection() {
   return (
     <section
@@ -9,8 +7,8 @@ export function ExperienceGlobeSection() {
           "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
       }}
     >
-      <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center gap-12 px-6 md:flex-row md:items-stretch md:px-12 lg:px-16">
-        <div className="flex flex-1 flex-col justify-center">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center gap-12 px-6 md:px-12 lg:px-16">
+        <div className="flex flex-1 flex-col justify-center py-12">
           <h2
             className="text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
@@ -34,13 +32,6 @@ export function ExperienceGlobeSection() {
             Ese recorrido nos permite acompañar decisiones complejas con
             criterio, claridad y responsabilidad.
           </p>
-        </div>
-        <div className="flex-1 flex items-center justify-center min-h-[320px] md:min-h-[420px] pb-6 md:items-end md:justify-end md:pb-12">
-          {/* 
-            Ajustamos el alineamiento del globo para que ocupe el margen/espacio inferior, 
-            similar a cómo el texto en el footer está pegado abajo.
-          */}
-          <InteractiveGlobe size={420} className="relative z-10" />
         </div>
       </div>
     </section>
