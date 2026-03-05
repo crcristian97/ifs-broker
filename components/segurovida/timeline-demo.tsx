@@ -13,13 +13,13 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl">
+          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
             <Image
               src="/seguro/img-seguro de vida.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
@@ -46,13 +46,13 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl">
+          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
             <Image
               src="/seguro/img-enfermedades-criticas.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
@@ -74,13 +74,13 @@ export function TimelineDemo() {
         ),
         content: (
           <div className="flex flex-col gap-4 items-stretch">
-            <div className="overflow-hidden rounded-3xl">
+            <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
               <Image
                 src="/seguro/img-incapacidad.webp"
                 alt="Seguro de vida"
                 width={600}
                 height={600}
-                className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+                className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
               />
             </div>
             <div>
@@ -103,13 +103,13 @@ export function TimelineDemo() {
       ),
       content: (
         <div className="flex flex-col gap-4 items-stretch">
-          <div className="overflow-hidden rounded-3xl">
+          <div className="overflow-hidden rounded-3xl h-[220px] sm:h-[260px] md:h-[300px]">
             <Image
               src="/seguro/img-enfermedad-terminal.webp"
               alt="Seguro de vida"
               width={600}
               height={600}
-              className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+              className="w-full h-full rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
