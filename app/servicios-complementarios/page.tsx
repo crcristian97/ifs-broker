@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import BannerSection from "@/components/saludinternacional/banner-section";
-
+import Footer from "@/components/layout/footer";
+import { HeroBanner } from "@/components/servicioscomplementarios/hero-banner";
 export default function ServiciosComplementariosPage() {
   return (
     <main className="relative min-h-screen bg-[#E5EEF54D]">
@@ -19,6 +20,8 @@ export default function ServiciosComplementariosPage() {
         minHeight={520}
         contentMinHeight={320}
       />
+      <HeroBanner />
+      <Footer />
     </main>
   );
 }
