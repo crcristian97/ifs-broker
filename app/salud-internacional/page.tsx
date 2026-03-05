@@ -3,7 +3,7 @@ import BannerSection from "@/components/saludinternacional/banner-section";
 import { SaludTimelineDemo } from "@/components/saludinternacional/salud-timeline-demo";
 import HeroGlobe from "@/components/saludinternacional/hero-globe";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
-import HowWeWork from "@/components/home/how-we-work";
+import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import Footer from "@/components/layout/footer";
 export default function SaludInternacionalPage() {
@@ -13,7 +13,7 @@ export default function SaludInternacionalPage() {
       <HeroGlobe />
       <BannerSection />
       <SaludTimelineDemo />
-      <HowWeWork />
+      <HeroPlanificacion />
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">

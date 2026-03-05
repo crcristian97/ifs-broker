@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 
 function BannerSection() {
   return (
-    <section className="w-full px-4 py-10 md:px-8 md:py-16">
+    <section className="w-full px-4 py-14 md:px-8 md:py-24"> {/* más altura aquí */}
       <div className="mx-auto flex w-full max-w-6xl items-center justify-center">
-        <div className="relative w-full overflow-hidden rounded-[40px] bg-[#033163] px-6 py-10 shadow-[0_24px_80px_rgba(15,35,80,0.35)] md:px-16 md:py-14">
+        <div className="relative w-full overflow-hidden rounded-[40px] bg-[#033163] px-6 py-16 shadow-[0_24px_80px_rgba(15,35,80,0.35)] md:px-16 md:py-24" style={{ minHeight: 320 }}> {/* más altura aquí */}
           <AnimatedGridPattern
             numSquares={50}
             maxOpacity={0.15}
@@ -20,7 +20,7 @@ function BannerSection() {
             )}
           />
 
-          <div className="relative z-10 flex min-h-[220px] flex-col items-center justify-center text-center">
+          <div className="relative z-10 flex min-h-[300px] flex-col items-center justify-center text-center"> {/* más altura aquí */}
             <p
               className="max-w-4xl text-lg font-regular leading-relaxed text-white md:text-2xl"
               style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
