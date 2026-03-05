@@ -97,6 +97,12 @@ export function Navbar() {
                         src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=280&h=140&fit=crop"
                         description="Cobertura médica internacional con acceso a redes globales"
                       />
+                      <ProductItem
+                        title="Servicios complementarios"
+                        href="/servicios-complementarios"
+                        src="/services/servicios-complementarios.webp"
+                        description="Servicios complementarios para tu planificación financiera"
+                      />
                     </div>
                   </MenuItem>
                 </HoverMenu>
