@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 function BannerSection() {
   return (
-    <section className="w-full px-4 py-10 md:px-8 md:py-16 min-h-screen">
+    <section className="w-full px-4 py-10 md:px-8 md:py-16">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-center">
         <div className="relative w-full overflow-hidden rounded-[40px] bg-[#033163] px-6 py-10 shadow-[0_24px_80px_rgba(15,35,80,0.35)] md:px-16 md:py-14">
           <AnimatedGridPattern

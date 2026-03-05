@@ -58,8 +58,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {/* Título + botones (columna izquierda) */}
                 <div className="flex flex-col justify-center gap-6">
                   <h3 className="text-left text-5xl font-regular leading-tight">
-                    {item.title}
-                  </h3>
+                {item.title}
+              </h3>
                   <div className="flex flex-col gap-3 max-w-xs">
                     <ButtonPrimary
                       href="#cotiza"
@@ -77,7 +77,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {/* Tarjeta principal (columna derecha) */}
                 <div className="flex justify-end">
                   <div className="w-full max-w-[640px] rounded-[32px] bg-cover bg-center shadow-[0_22px_60px_rgba(0,77,159,0.16)] border border-[#D4E7FF]/70 p-3 md:p-4 lg:p-6">
-                    {item.content}
+              {item.content}
                   </div>
                 </div>
               </div>
