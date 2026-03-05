@@ -52,13 +52,13 @@ export function InvestmentQuestionnaireForm() {
       {/* Título y subtítulo */}
       <div className="mb-8 text-center">
         <h2
-          className="text-5xl font-regular leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl font-regular leading-tight"
           style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
         >
           <span className="text-[#006FC4]">Conocé tu </span>
           <span className="text-[#033163]">perfil de inversión</span>
         </h2>
-        <p className="mt-3 text-xl text-[#033163]">
+        <p className="mt-3 text-base sm:text-lg text-[#033163]">
           Seleccioná una opción en cada pregunta para ayudarnos a entender tus
           objetivos y tolerancia al riesgo.
         </p>

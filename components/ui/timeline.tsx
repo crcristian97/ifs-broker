@@ -57,9 +57,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] items-stretch">
                 {/* Título + botones (columna izquierda) */}
                 <div className="flex flex-col justify-center gap-6">
-                  <h3 className="text-left text-5xl font-regular leading-tight">
-                {item.title}
-              </h3>
+                  <h3 className="text-left text-2xl sm:text-3xl md:text-4xl font-regular leading-tight">
+                    {item.title}
+                  </h3>
                   <div className="flex flex-col gap-3 max-w-xs">
                     <ButtonPrimary
                       href="#cotiza"

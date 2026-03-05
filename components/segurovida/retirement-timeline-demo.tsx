@@ -24,7 +24,7 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Construcción de ingresos futuros para el retiro
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -54,7 +54,7 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Capital en movimiento, con dirección estratégica
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -85,7 +85,7 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Invertir en educación es invertir en el futuro
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">

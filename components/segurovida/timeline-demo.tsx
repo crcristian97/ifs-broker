@@ -23,10 +23,10 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Protección financiera ante el fallecimiento del asegurado.
             </p>
-            <p className="mb-3 text-2xl font-semibold text-[#003163]">
+            <p className="mb-3 text-lg sm:text-xl md:text-2xl font-semibold text-[#003163]">
               Protección para tu familia cuando más lo necesita
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -56,7 +56,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Coberturas que brindan liquidez inmediata ante el diagnóstico de enfermedades graves específicas.
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
@@ -84,7 +84,7 @@ export function TimelineDemo() {
               />
             </div>
             <div>
-              <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+              <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
                 Protección económica ante incapaicdad total o parcial que afecte la generación de ingresos.
               </p>
               <p className="text-lg text-[#003163] leading-relaxed">
@@ -113,7 +113,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-[#006FC4]">
               Acompañamiento en etapas de alta sensibilidad.
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">

@@ -10,7 +10,7 @@ export function ExperienceGlobeSection() {
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center gap-12 px-6 md:px-12 lg:px-16">
         <div className="flex flex-1 flex-col justify-center py-12">
           <h2
-            className="text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
           >
             EXPERIENCIA{" "}
@@ -18,7 +18,7 @@ export function ExperienceGlobeSection() {
           </h2>
 
           <p
-            className="text-xl text-[#FFFFFF] leading-relaxed mb-4"
+            className="text-base sm:text-lg text-[#FFFFFF] leading-relaxed mb-4"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             Nuestro equipo está conformado por profesionales con más de 20 años
@@ -28,7 +28,7 @@ export function ExperienceGlobeSection() {
               compañías líderes a nivel internacional.
             </span>
           </p>
-          <p className="text-lg text-[#FFFFFF] leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-[#FFFFFF] leading-relaxed">
             Ese recorrido nos permite acompañar decisiones complejas con
             criterio, claridad y responsabilidad.
           </p>
