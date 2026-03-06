@@ -68,7 +68,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       Cotizá tu seguro de vida
                     </ButtonPrimary>
                     <ConocerMasButton
-                      textButton="Agenda una reunión"
+                      textButton="Agendá una reunión"
                       size="sm"
                     />
                   </div>

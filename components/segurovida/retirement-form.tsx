@@ -49,7 +49,7 @@ export function RetirementForm() {
           className="text-5xl font-regular leading-tight"
           style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
         >
-          <span className="text-[#006FC4]">Cotiza tu </span>
+          <span className="text-[#006FC4]">Cotizá tu </span>
           <span className="text-[#033163]">fondo de retiro</span>
         </h2>
         <p className="mt-3 text-xl text-[#033163]">
@@ -130,7 +130,7 @@ export function RetirementForm() {
           href="#agenda"
           hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
         >
-          Agenda una reunión
+          Agendá una reunión
         </ButtonPrimary>
         </div>
       </div>

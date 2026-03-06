@@ -42,7 +42,7 @@ export function HeroBanner() {
 
             <div className="inline-flex w-full max-w-xs">
               <ConocerMasButton
-                textButton="Agendar una reunión"
+                textButton="Agendá una reunión"
                 size="md"
                 className="w-full"
               />

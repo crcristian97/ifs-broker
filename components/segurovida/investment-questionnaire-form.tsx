@@ -160,7 +160,7 @@ export function InvestmentQuestionnaireForm() {
             href="#agenda"
             hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
           >
-            Agenda una reunión
+            Agendá una reunión
           </ButtonPrimary>
         </div>
       </div>

@@ -16,7 +16,7 @@ const slidesData = [
   },
   {
     title: "Retiro e Inversión",
-    subttitle: "Construí tu returo con inversiones globales",
+    subttitle: "Construí tu retiro con inversiones globales",
     description: "Brindamos soluciones de ahorro e inversión orientadas a mediano y largo plazo, pensadas para complementar ingresos futuros, planificar estudios y potenciar el crecimiento de tu capital con visión estratégica",
     image: "/services/retiro-e-inversion.webp",
     textColor: "#000000",

@@ -32,14 +32,14 @@ export function HeroSection() {
             <div className="flex flex-col justify-end">
               <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
                 <AnimatedHeadline
-                  text="Planificacion financiera internacional para proteger lo que importa"
+                  text="Planificación financiera internacional para proteger lo que importa"
                   as="h1"
                   delay={0.2}
                 />
               </h1>
               <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
                 <AnimatedHeadline
-                  text="Acompanamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversion y salud con una vision a largo plazo y respaldo internacional."
+                  text="Acompañamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversión y salud con una visión a largo plazo y respaldo internacional."
                   as="h2"
                   delay={0.9}
                 />
@@ -49,7 +49,7 @@ export function HeroSection() {
             {/* Right column */}
             <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
               <AnimatedHeadline
-                text="Planificamos el presente con una vision estrategica orientada al futuro, disenando soluciones financieras personalizadas para cada etapa de la vida."
+                text="Planificamos el presente con una visión estratégica orientada al futuro, diseñando soluciones financieras personalizadas para cada etapa de la vida."
                 as="h3"
                 delay={2.0}
               />
@@ -59,13 +59,13 @@ export function HeroSection() {
                     href="#cotiza"
                     hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                   >
-                    Cotiza seguro de vida
+                    Cotizá seguro de vida
                   </ButtonPrimary>  
                   <ButtonSecondary    
                     href="#agenda"
                     hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
                   >
-                    Agenda una reunion
+                    Agendá una reunión
                   </ButtonSecondary>
                 </div>
               </FadeInUp>

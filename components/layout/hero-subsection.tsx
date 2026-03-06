@@ -59,7 +59,7 @@ export function HeroSubsection({
                   )}
                 </h1>
                 <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                  Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos sgguún las necesiades de cada cliente.
+                  Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.
                 </p>
               </div>
             </FadeInUp>

@@ -57,7 +57,7 @@ export default function Footer() {
               href="#cotiza"
               hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
             >
-              Agenda una reunion
+              Agendá una reunión
             </ButtonPrimary>
             <ButtonSecondary
               href="#agenda"
