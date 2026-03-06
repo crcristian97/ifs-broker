@@ -14,8 +14,8 @@ export default function ServiciosComplementariosPage() {
         bgColor="linear-gradient(to right, #91D8F7, #91D8F7)"
         title={
           <span>
-            <span className="text-[#033163]">SOLUCIONES COMPLEMENTARIAS </span>
-            <span className="text-[#006FC4]">DE PROTECCIÓN</span>
+            <span className="text-[#033163] text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>SOLUCIONES COMPLEMENTARIAS </span>
+            <span className="text-[#006FC4] text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>DE PROTECCIÓN</span>
           </span>
         }
         subtitle="Complementamos nuestras soluciones principales con coberturas específicas que permiten abordar escenarios particulares y reforzar una planificación integral de protección."
@@ -29,7 +29,7 @@ export default function ServiciosComplementariosPage() {
       <div className="w-full bg-[#e6f3fa]">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">
           <div className="w-full min-h-[120px] rounded bg-transparent px-4 py-6 text-center flex items-center justify-center">
-            <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
+            <p className="text-[#1163b2] text-3xl font-regular leading-snug max-w-3xl mx-auto">
               Estas alianzas garantizan seguridad financiera en cada solución
               implementada, brindando un entorno de confianza y respaldo
               institucional a largo plazo.

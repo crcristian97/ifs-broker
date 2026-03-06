@@ -59,7 +59,7 @@ function BannerSection({
           >
             {title && (
               <h2
-                className="max-w-4xl text-xl font-semibold uppercase tracking-[0.18em] text-white md:text-2xl"
+                className="max-w-4xl text-4xl font-regular uppercase tracking-[0.18em] text-white md:text-4xl"
                     style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
               >
                 {title}
@@ -67,7 +67,7 @@ function BannerSection({
             )}
             {subtitle && (
               <p
-                className="max-w-4xl text-3xl font-regular leading-relaxed md:text-3xl"
+                className="max-w-4xl text-base xl:text-2xl font-regular leading-relaxed "
                 style={{
                   fontFamily: "var(--font-noto-sans), sans-serif",
                   color: subtitleColor,
