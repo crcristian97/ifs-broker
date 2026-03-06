@@ -52,7 +52,7 @@ export function ExperienceGlobeSection() {
           "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
       }}
     >
-      <div className="mx-auto flex w-full max-w-[1400px] flex-col md:flex-row items-center gap-12 px-6 md:px-12 lg:px-16">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 lg:px-16">
         <div className="flex flex-1 flex-col justify-center py-12">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
@@ -78,7 +78,8 @@ export function ExperienceGlobeSection() {
             criterio, claridad y responsabilidad.
           </p>
         </div>
-        <div className="flex flex-1 items-center justify-center py-12">
+        {/* Globo: solo se muestra en md+ para evitar espacio vacío en mobile */}
+        <div className="hidden md:flex flex-1 items-center justify-center py-12">
           <div className="relative h-[220px] sm:h-[260px] md:h-[320px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]">
             <Globe />
           </div>
