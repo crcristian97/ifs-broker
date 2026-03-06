@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Home", href: "#" },
   { label: "Soluciones", href: "#soluciones", hasDropdown: true },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Trabaja con nosotros", href: "#trabaja-con-nosotros" },
 ]
 
 export function Navbar() {
@@ -94,13 +95,13 @@ export function Navbar() {
                       <ProductItem
                         title="Salud internacional"
                         href="/salud-internacional"
-                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=280&h=140&fit=crop"
+                        src="/seguro/cobertura-salud-internacional.webp"
                         description="Cobertura médica internacional con acceso a redes globales"
                       />
                       <ProductItem
                         title="Servicios complementarios"
                         href="/servicios-complementarios"
-                        src="/services/servicios-complementarios.webp"
+                        src="/seguro/cebertura-viaje.webp"
                         description="Servicios complementarios para tu planificación financiera"
                       />
                     </div>
