@@ -18,11 +18,13 @@ export const MenuItem = ({
   active,
   item,
   children,
+  className,
 }: {
   setActive: (item: string | null) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <div 
@@ -32,7 +34,9 @@ export const MenuItem = ({
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="nav-link cursor-pointer text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+        className={`nav-link cursor-pointer text-[18px] font-normal transition-colors ${
+          className ?? "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
+        }`}
         style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
       >
         {item}

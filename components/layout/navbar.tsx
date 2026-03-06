@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import gsap from "gsap"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
@@ -16,6 +17,8 @@ const navLinks = [
 ]
 
 export function Navbar() {
+  const pathname = usePathname()
+  const isServiciosComplementarios = pathname === "/servicios-complementarios"
   const [activeLanguage, setActiveLanguage] = useState<"ES" | "EN">("ES")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
@@ -78,7 +81,16 @@ export function Navbar() {
             if (link.label === "Soluciones" && link.hasDropdown) {
               return (
                 <HoverMenu key={link.label} setActive={setActiveMenuItem}>
-                  <MenuItem setActive={setActiveMenuItem} active={activeMenuItem} item={link.label}>
+                  <MenuItem
+                    setActive={setActiveMenuItem}
+                    active={activeMenuItem}
+                    item={link.label}
+                    className={
+                      isServiciosComplementarios
+                        ? "text-[#033163] hover:text-[#033163]/80"
+                        : ""
+                    }
+                  >
                     <div className="text-sm grid grid-cols-2 gap-4 p-4">
                       <ProductItem
                         title="Seguro de vida"
@@ -113,7 +125,11 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="nav-link text-[18px] font-normal text-[#FEFEFE] transition-colors hover:text-[#FEFEFE]/80"
+                className={`nav-link text-[18px] font-normal transition-colors ${
+                  isServiciosComplementarios
+                    ? "text-[#033163] hover:text-[#033163]/80"
+                    : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
+                }`}
                 style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
               >
                 {link.label}
@@ -130,8 +146,12 @@ export function Navbar() {
               onClick={() => setActiveLanguage("ES")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors ${
                 activeLanguage === "ES"
-                  ? "bg-foreground/10 text-foreground"
-                  : "text-foreground/60 hover:text-foreground/80"
+                  ? isServiciosComplementarios
+                    ? "bg-[#033163]/10 text-[#033163]"
+                    : "bg-foreground/10 text-foreground"
+                  : isServiciosComplementarios
+                    ? "text-[#033163]/60 hover:text-[#033163]/80"
+                    : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
             >
@@ -141,8 +161,12 @@ export function Navbar() {
               onClick={() => setActiveLanguage("EN")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
                 activeLanguage === "EN"
-                  ? "bg-foreground/10 text-foreground"
-                  : "text-foreground/60 hover:text-foreground/80"
+                  ? isServiciosComplementarios
+                    ? "bg-[#033163]/10 text-[#033163]"
+                    : "bg-foreground/10 text-foreground"
+                  : isServiciosComplementarios
+                    ? "text-[#033163]/60 hover:text-[#033163]/80"
+                    : "text-foreground/60 hover:text-foreground/80"
               }`}
               style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
             >
@@ -156,7 +180,7 @@ export function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="text-foreground lg:hidden"
+          className={`lg:hidden ${isServiciosComplementarios ? "text-[#033163]" : "text-foreground"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -172,7 +196,11 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-base font-medium text-foreground/80 transition-colors hover:text-foreground"
+                className={`text-base font-medium transition-colors ${
+                  isServiciosComplementarios
+                    ? "text-[#033163]/80 hover:text-[#033163]"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -184,8 +212,12 @@ export function Navbar() {
                   onClick={() => setActiveLanguage("ES")}
                   className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
                     activeLanguage === "ES"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/60"
+                      ? isServiciosComplementarios
+                        ? "bg-[#033163]/10 text-[#033163]"
+                        : "bg-foreground/10 text-foreground"
+                      : isServiciosComplementarios
+                        ? "text-[#033163]/60"
+                        : "text-foreground/60"
                   }`}
                 >
                   ES
@@ -194,8 +226,12 @@ export function Navbar() {
                   onClick={() => setActiveLanguage("EN")}
                   className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
                     activeLanguage === "EN"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/60"
+                      ? isServiciosComplementarios
+                        ? "bg-[#033163]/10 text-[#033163]"
+                        : "bg-foreground/10 text-foreground"
+                      : isServiciosComplementarios
+                        ? "text-[#033163]/60"
+                        : "text-foreground/60"
                   }`}
                 >
                   EN
