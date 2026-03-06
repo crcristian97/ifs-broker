@@ -53,7 +53,7 @@ export function RetirementForm() {
           <span className="text-[#033163]">fondo de retiro</span>
         </h2>
         <p className="mt-3 text-xl text-[#033163]">
-          Desliza el botón que está sobre la barra horizontal para modficiar su información
+          Desliza el botón que está sobre la barra horizontal para modificar su información
         </p>
       </div>
 

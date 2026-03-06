@@ -8,8 +8,8 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">FONDOS </span>
-          <span className="text-[#003163]">DE RETIRO</span>
+          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>FONDOS </span>
+          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>DE RETIRO</span>
         </span>
       ),
       content: (
@@ -24,8 +24,8 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
-              Construcción de ingresos futuros para el retiro
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" >
+              <span style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>Construcción de ingresos futuros para el retiro</span>
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
               Herramientas diseñadas para generar y complementar ingresos
@@ -39,7 +39,7 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">INVERSIONES</span>
+          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>INVERSIONES</span>
         </span>
       ),
       content: (
@@ -54,10 +54,10 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
               Capital en movimiento, con dirección estratégica
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed" >
               Soluciones de inversión orientadas al crecimiento del capital,
               mediante estrategias diversificadas que combinan planificación,
               protección y acceso a mercados internacionales.
@@ -69,8 +69,8 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">FONDOS </span>
-          <span className="text-[#003163]">PARA ESTUDIOS</span>
+          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>FONDOS </span>
+          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>PARA ESTUDIOS</span>
         </span>
       ),
       content: (
@@ -85,10 +85,10 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
               Invertir en educación es invertir en el futuro
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed" >
               Planes de ahorro que permiten anticipar y asegurar el
               financiamiento de estudios universitarios o de posgrado, tanto en
               el país como en el exterior.
