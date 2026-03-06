@@ -4,6 +4,7 @@ type InvestmentProfile = {
   title: string;
   description: string;
   cardBg: string;
+  circleBg: string;
 };
 
 interface InvestmentProfilesProps {
