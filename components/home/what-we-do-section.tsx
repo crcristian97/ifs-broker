@@ -35,9 +35,8 @@ export function WhatWeDoSection() {
             className="text-[#006FC4] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight"
             style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}
           >
-            SOLUCIONES FINANCIERAS PENSADAS <span className="text-[#033163]">PARA</span>
-            <br />
-            <span className="text-[#033163]">CADA MOMENTO DE LA VIDA</span>
+            SOLUCIONES FINANCIERAS<span className="text-[#033163]"> PENSADAS PARA
+            CADA MOMENTO DE LA VIDA</span>
           </h3>
         </FadeInUp>
 
