@@ -9,7 +9,7 @@ import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
 import { ButtonPrimary } from "../ui/button-primary"
 
 const navLinks = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "/" },
   { label: "Soluciones", href: "#soluciones", hasDropdown: true },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Trabaja con nosotros", href: "#trabaja-con-nosotros" },
