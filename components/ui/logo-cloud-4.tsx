@@ -1,10 +1,12 @@
 import type * as React from "react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import Image from "next/image";
+import Link from "next/link";
 
 type Logo = {
   src: string;
   alt: string;
+  url: string;
   width?: number;
   height?: number;
 };
@@ -21,19 +23,25 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
     >
       <InfiniteSlider gap={120} reverse duration={60} durationOnHover={100}>
         {logos.map((logo) => (
-          <Image
-            alt={logo.alt}
-            className="pointer-events-none h-auto max-h-16 w-auto md:max-h-20 select-none"
+          <Link
             key={`logo-${logo.alt}`}
-            loading="lazy"
-            src={logo.src}
-            width={logo.width}
-            height={logo.height}
-          />
+            href={logo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-opacity hover:opacity-80"
+          >
+            <Image
+              alt={logo.alt}
+              className="h-auto max-h-16 w-auto md:max-h-20 select-none pointer-events-auto cursor-pointer"
+              loading="lazy"
+              src={logo.src}
+              width={logo.width}
+              height={logo.height}
+            />
+          </Link>
         ))}
       </InfiniteSlider>
 
-      <div className="pointer-events-none absolute inset-0 z-10 " />
     </div>
   );
 }
