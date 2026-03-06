@@ -19,7 +19,7 @@ type BannerSectionProps = {
   contentMinHeight?: number;
   /** Clases extra para el `<section>` raíz (por ejemplo para ajustar padding) */
   sectionClassName?: string;
-};
+    };
 
 function BannerSection({
   bgColor = "#033163",
@@ -48,8 +48,8 @@ function BannerSection({
             repeatDelay={1}
             className={cn(
               "absolute inset-0",
-              "mask-[radial-gradient(800px_circle_at_center,white,transparent)]",
-              "opacity-60",
+                  "mask-[radial-gradient(800px_circle_at_center,white,transparent)]",
+                  "opacity-60",
             )}
           />
 
@@ -60,7 +60,7 @@ function BannerSection({
             {title && (
               <h2
                 className="max-w-4xl text-xl font-semibold uppercase tracking-[0.18em] text-white md:text-2xl"
-                style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+                    style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
               >
                 {title}
               </h2>

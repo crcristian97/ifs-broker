@@ -14,7 +14,7 @@ export function HeroGlobe() {
         <div className="flex flex-1 flex-col justify-center">
           <h2
             className="mb-4 text-3xl font-regular leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
-            style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             <span className="text-[#006FC4]">
               Cobertura de salud internacional{" "}

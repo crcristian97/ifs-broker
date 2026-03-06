@@ -53,7 +53,7 @@ export function InvestmentQuestionnaireForm() {
       <div className="mb-8 text-center">
         <h2
           className="text-5xl font-regular leading-tight"
-          style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+          style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
         >
           <span className="text-[#006FC4]">Conocé tu </span>
           <span className="text-[#033163]">perfil de inversión</span>

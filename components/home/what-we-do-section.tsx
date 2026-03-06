@@ -33,7 +33,7 @@ export function WhatWeDoSection() {
         <FadeInUp delay={0.15}>
           <h3
             className="text-[#006FC4] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight"
-            style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             SOLUCIONES FINANCIERAS<span className="text-[#033163]"> PENSADAS PARA
             CADA MOMENTO DE LA VIDA</span>

@@ -56,7 +56,7 @@ export function ExperienceGlobeSection() {
         <div className="flex flex-1 flex-col justify-center py-12">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
-            style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             EXPERIENCIA{" "}
             <span className="text-[#FFFFFF]">QUE GENERA CONFIANZA</span>

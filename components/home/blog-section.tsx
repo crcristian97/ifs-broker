@@ -45,7 +45,7 @@ export default function BlogSection() {
         <div className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
             className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4]"
-            style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             INFORMACIÓN PARA <span className="text-[#033163]">TOMAR MEJORES</span>
             <br />

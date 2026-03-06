@@ -102,7 +102,7 @@ export default function HowWeWork() {
           </h4>
           <p
             className="text-[#033163] text-4xl md:text-5xl font-regular leading-tight"
-            style={{ fontFamily: "var(--font-oxanium), sans-serif" }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             PROCESO CLARO, ESTRATÉGICO Y{" "}
             <span className="text-[#006FC4]">ADAPTADO A CADA CLIENTE.</span>

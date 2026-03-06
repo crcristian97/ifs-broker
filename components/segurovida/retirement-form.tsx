@@ -45,7 +45,10 @@ export function RetirementForm() {
     >
       {/* Título y subtítulo */}
       <div className="mb-8 text-center">
-        <h2 className="text-5xl font-regular leading-tight" style={{ fontFamily: 'var(--font-oxanium), sans-serif' }}>
+        <h2
+          className="text-5xl font-regular leading-tight"
+          style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+        >
           <span className="text-[#006FC4]">Cotiza tu </span>
           <span className="text-[#033163]">fondo de retiro</span>
         </h2>

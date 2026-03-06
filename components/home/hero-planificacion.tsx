@@ -31,7 +31,7 @@ export function HeroPlanificacion() {
             <h3
               className="text-5xl font-regular uppercase tracking-tighter leading-tight"
               style={{
-                fontFamily: 'var(--font-oxanium), sans-serif',
+                fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif',
                 letterSpacing: '0.02em',
               }}
             >
