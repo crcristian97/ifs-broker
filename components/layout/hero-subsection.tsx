@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 import { cn } from "@/lib/utils";
 
 type HeroSubsectionProps = {
@@ -44,26 +45,27 @@ export function HeroSubsection({
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pb-8 pt-32 md:px-12 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Columna izquierda: texto */}
-            <div className="flex flex-col justify-end">
-              <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                <span className="text-[#FFFFFF]">{titlePrefix}</span>
-                <br />
-                <span className="text-[#91d8f7]">{titleHighlight}</span>
-                {titleSuffix && (
-                  <>
-                    {" "}
-                    <span className="text-[#FFFFFF]">{titleSuffix}</span>
-                  </>
-                )}
-              </h1>
-              <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos sgguún las necesiades de cada cliente.
-              </p>
-              
-            </div>
+            <FadeInUp>
+              <div className="flex flex-col justify-end">
+                <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
+                  <span className="text-[#FFFFFF]">{titlePrefix}</span>
+                  <br />
+                  <span className="text-[#91d8f7]">{titleHighlight}</span>
+                  {titleSuffix && (
+                    <>
+                      {" "}
+                      <span className="text-[#FFFFFF]">{titleSuffix}</span>
+                    </>
+                  )}
+                </h1>
+                <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
+                  Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos sgguún las necesiades de cada cliente.
+                </p>
+              </div>
+            </FadeInUp>
 
             {/* Columna derecha: imagen */}
-            <div className="hidden lg:flex items-center justify-end">
+            <FadeInUp delay={0.2} className="hidden lg:flex items-center justify-end">
               <div className="relative w-full max-w-md">
                 <Image
                   src={imageSrc}
@@ -74,7 +76,7 @@ export function HeroSubsection({
                   priority
                 />
               </div>
-            </div>
+            </FadeInUp>
           </div>
         </div>
       </div>

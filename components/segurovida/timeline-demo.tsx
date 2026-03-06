@@ -7,8 +7,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">Seguro </span>
-          <span className="text-[#003163]">de vida</span>
+          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>Seguro </span>
+          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>de vida</span>
         </span>
       ),
       content: (
@@ -23,13 +23,19 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p
+              className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]"
+              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            >
               Protección financiera ante el fallecimiento del asegurado.
             </p>
-            <p className="mb-3 text-2xl font-semibold text-[#003163]">
+            <p
+              className="mb-2 text-xl md:text-2xl font-regular text-[#003163]"
+              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            >
               Protección para tu familia cuando más lo necesita
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
               Permite cubrir obligaciones, proteger el patrimonio y brindar liquidez inmediata, asegurando el mantenimiento del hogar y la continuidad de proyectos como la educación.
             </p>
           </div>
@@ -40,8 +46,11 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">Enfermedades </span>
-          <span className="text-[#003163]">críticas</span>
+          <span className="text-[#006FC4] "
+              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+          
+          >Enfermedades </span>
+          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>críticas</span>
         </span>
       ),
       content: (
@@ -56,10 +65,13 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p
+              className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]"
+              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            >
               Coberturas que brindan liquidez inmediata ante el diagnóstico de enfermedades graves específicas.
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
              Permite afrontar tratamientos, cubrir gastos médicos y compensar ingresos afectados, para enfocarse en la recuperación sin descuidar la dinámica y organización familiar.
             </p>
           </div>
@@ -69,7 +81,7 @@ export function TimelineDemo() {
     {
         title: (
           <span>
-            <span className="text-[#006FC4]">Incapacidad </span>
+            <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>Incapacidad </span>
           </span>
         ),
         content: (
@@ -84,10 +96,13 @@ export function TimelineDemo() {
               />
             </div>
             <div>
-              <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+              <p
+                className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]"
+                style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+              >
                 Protección económica ante incapaicdad total o parcial que afecte la generación de ingresos.
               </p>
-              <p className="text-lg text-[#003163] leading-relaxed">
+              <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
                 Permite sostener ingresos y cubrir gastos del hogar cuando una incapacidad impide trabajar, protegiendo la estabilidad familiar y profesional.
               </p>
             </div>
@@ -97,8 +112,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]">Enfermedades </span>
-          <span className="text-[#003163]">terminales</span>
+          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>Enfermedades </span>
+          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }} >terminales</span>
         </span>
       ),
       content: (
@@ -113,10 +128,13 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-semibold text-[#006FC4]">
+            <p
+              className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]"
+              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            >
               Acompañamiento en etapas de alta sensibilidad.
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
               Facilita recursos para cuidados especiales, orden patrimonial y
               tranquilidad familiar, permitiendo enfocarse en lo verdaderamente
               importante en momentos delicados.
