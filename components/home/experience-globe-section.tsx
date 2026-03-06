@@ -46,7 +46,7 @@ const GLOBE_CONFIG: COBEOptions = {
 export function ExperienceGlobeSection() {
   return (
     <section
-      className="w-full min-h-[400px]"
+      className="w-full min-h-[500px]"
       style={{
         background:
           "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",

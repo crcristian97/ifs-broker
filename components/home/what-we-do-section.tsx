@@ -18,7 +18,7 @@ export function WhatWeDoSection() {
         )}
       />
       
-      <div className="relative z-10 max-w-[1400px] mx-auto flex min-h-[70vh] flex-col justify-between gap-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto flex min-h-[70vh] flex-col justify-start gap-10 pt-16 md:pt-24">
         {/* Logo */}
         
 

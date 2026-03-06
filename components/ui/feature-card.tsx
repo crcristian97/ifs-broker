@@ -41,7 +41,7 @@ export const FeatureCard = ({ text }: FeatureCardProps) => {
             </div>
           </div>
           <p
-            className="text-[#000a15] text-xl leading-relaxed font-regular text-left flex-1"
+            className="text-[#033163] text-xl leading-relaxed font-regular text-left flex-1"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             {text}
