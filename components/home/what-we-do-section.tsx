@@ -46,7 +46,7 @@ export function WhatWeDoSection() {
             className="text-[#033163] text-base sm:text-lg mb-10 max-w-3xl leading-relaxed font-regular"
             style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
           >
-            IFS Insurance & Financial Solutions es un broker internacional especializado en planificación financiera integral.
+            IFS Insurance Financial Solution somos un broker internacional especializado en planificación financiera integral.
           </p>
         </FadeInUp>
 
