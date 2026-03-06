@@ -8,8 +8,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase">salud </span>
-          <span className="text-[#003163] uppercase">internacional individual</span>
+          <span className="text-[#006FC4] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>salud </span>
+          <span className="text-[#003163] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>internacional individual</span>
         </span>
       ),
       content: (
@@ -24,7 +24,7 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-xl font-semibold text-[#006FC4] md:text-2xl">
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
               Mucho más que un plan de salud
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
@@ -34,7 +34,7 @@ export function SaludTimelineDemo() {
             </p>
           </div>
           <div>
-            <p className="mb-2 text-lg font-semibold text-[#006FC4] md:text-xl">
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
               Interconsultas médicas internacionales
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
@@ -51,8 +51,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase">salud </span>
-          <span className="text-[#003163] uppercase">corporativa</span>
+          <span className="text-[#006FC4] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>salud </span>
+          <span className="text-[#003163] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>corporativa</span>
         </span>
       ),
       content: (
@@ -67,7 +67,7 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-xl font-semibold text-[#006FC4] md:text-2xl">
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
               Protección estratégica para tu equipo
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
