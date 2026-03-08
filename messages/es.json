@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "soluciones": "Soluciones",
+    "nosotros": "Nosotros",
+    "trabajaConNosotros": "Trabaja con nosotros",
+    "contacto": "Contacto"
+  },
+  "solutions": {
+    "seguroVida": {
+      "title": "Seguro de vida",
+      "description": "Protección financiera ante el fallecimiento del asegurado"
+    },
+    "fondosRetiro": {
+      "title": "Fondos de retiro",
+      "description": "Construcción de ingresos futuros para el retiro"
+    },
+    "saludInternacional": {
+      "title": "Salud internacional",
+      "description": "Cobertura médica internacional con acceso a redes globales"
+    },
+    "serviciosComplementarios": {
+      "title": "Servicios complementarios",
+      "description": "Servicios complementarios para tu planificación financiera"
+    }
+  }
+}

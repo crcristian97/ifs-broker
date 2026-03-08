@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'IFS Broker - Planificación Financiera Internacional',
@@ -8,18 +8,19 @@ export const metadata: Metadata = {
     icon: '/ifs_insurance.png',
     apple: '/ifs_insurance.png',
   },
-}
+};
 
+// Root layout - Next.js requires this
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="es">
+    <html>
       <body className="font-sans antialiased">
         {children}
       </body>
     </html>
-  )
+  );
 }

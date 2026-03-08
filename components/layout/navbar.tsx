@@ -1,28 +1,34 @@
 "use client"
 
-import Link from "next/link"
+import { Link, usePathname, useRouter } from "@/i18n/navigation"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import gsap from "gsap"
+import { useTranslations, useLocale } from "next-intl"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
 import { ButtonPrimary } from "../ui/button-primary"
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Soluciones", href: "#soluciones", hasDropdown: true },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Trabaja con nosotros", href: "#trabaja-con-nosotros" },
-]
-
 export function Navbar() {
   const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations()
   const isServiciosComplementarios = pathname === "/servicios-complementarios"
-  const [activeLanguage, setActiveLanguage] = useState<"ES" | "EN">("ES")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/", key: "home" },
+    { label: t("nav.soluciones"), href: "#soluciones", hasDropdown: true, key: "soluciones" },
+    { label: t("nav.nosotros"), href: "#nosotros", key: "nosotros" },
+    { label: t("nav.trabajaConNosotros"), href: "#trabaja-con-nosotros", key: "trabajaConNosotros" },
+  ]
+
+  const handleLanguageChange = (newLocale: "es" | "en") => {
+    router.replace(pathname, { locale: newLocale })
+  }
 
   useEffect(() => {
     if (!navRef.current) return
@@ -78,9 +84,9 @@ export function Navbar() {
         {/* Desktop Nav Links */}
         <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => {
-            if (link.label === "Soluciones" && link.hasDropdown) {
+            if (link.key === "soluciones" && link.hasDropdown) {
               return (
-                <HoverMenu key={link.label} setActive={setActiveMenuItem}>
+                <HoverMenu key={link.key} setActive={setActiveMenuItem}>
                   <MenuItem
                     setActive={setActiveMenuItem}
                     active={activeMenuItem}
@@ -93,28 +99,28 @@ export function Navbar() {
                   >
                     <div className="text-sm grid grid-cols-2 gap-4 p-4">
                       <ProductItem
-                        title="Seguro de vida"
+                        title={t("solutions.seguroVida.title")}
                         href="/seguros-de-vida"
                         src="/seguro/seguro-de-vida.webp"
-                        description="Protección financiera ante el fallecimiento del asegurado"
+                        description={t("solutions.seguroVida.description")}
                       />
                       <ProductItem
-                        title="Fondos de retiro"
+                        title={t("solutions.fondosRetiro.title")}
                         href="/fondos-de-retiro"
                         src="/retiro/fondos-de-retiro.webp"
-                        description="Construcción de ingresos futuros para el retiro"
+                        description={t("solutions.fondosRetiro.description")}
                       />
                       <ProductItem
-                        title="Salud internacional"
+                        title={t("solutions.saludInternacional.title")}
                         href="/salud-internacional"
                         src="/seguro/cobertura-salud-internacional.webp"
-                        description="Cobertura médica internacional con acceso a redes globales"
+                        description={t("solutions.saludInternacional.description")}
                       />
                       <ProductItem
-                        title="Servicios complementarios"
+                        title={t("solutions.serviciosComplementarios.title")}
                         href="/servicios-complementarios"
                         src="/seguro/cebertura-viaje.webp"
-                        description="Servicios complementarios para tu planificación financiera"
+                        description={t("solutions.serviciosComplementarios.description")}
                       />
                     </div>
                   </MenuItem>
@@ -123,7 +129,7 @@ export function Navbar() {
             }
             return (
               <Link
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 className={`nav-link text-[18px] font-normal transition-colors ${
                   isServiciosComplementarios
@@ -143,9 +149,9 @@ export function Navbar() {
           {/* Language Switcher */}
           <div className="flex overflow-hidden rounded-md border border-foreground/20">
             <button
-              onClick={() => setActiveLanguage("ES")}
+              onClick={() => handleLanguageChange("es")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors ${
-                activeLanguage === "ES"
+                locale === "es"
                   ? isServiciosComplementarios
                     ? "bg-[#033163]/10 text-[#033163]"
                     : "bg-foreground/10 text-foreground"
@@ -158,9 +164,9 @@ export function Navbar() {
               ES
             </button>
             <button
-              onClick={() => setActiveLanguage("EN")}
+              onClick={() => handleLanguageChange("en")}
               className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
-                activeLanguage === "EN"
+                locale === "en"
                   ? isServiciosComplementarios
                     ? "bg-[#033163]/10 text-[#033163]"
                     : "bg-foreground/10 text-foreground"
@@ -175,7 +181,7 @@ export function Navbar() {
           </div>
 
           {/* Contact Button */}
-          <ButtonPrimary href="#contacto" hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]">Contacto</ButtonPrimary>
+          <ButtonPrimary href="#contacto" hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]">{t("nav.contacto")}</ButtonPrimary>
         </div>
 
         {/* Mobile menu toggle */}
@@ -194,7 +200,7 @@ export function Navbar() {
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 className={`text-base font-medium transition-colors ${
                   isServiciosComplementarios
@@ -209,9 +215,12 @@ export function Navbar() {
             <div className="flex items-center gap-3 pt-4 border-t border-foreground/10">
               <div className="flex overflow-hidden rounded-lg border border-foreground/20">
                 <button
-                  onClick={() => setActiveLanguage("ES")}
+                  onClick={() => {
+                    handleLanguageChange("es")
+                    setMobileOpen(false)
+                  }}
                   className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
-                    activeLanguage === "ES"
+                    locale === "es"
                       ? isServiciosComplementarios
                         ? "bg-[#033163]/10 text-[#033163]"
                         : "bg-foreground/10 text-foreground"
@@ -223,9 +232,12 @@ export function Navbar() {
                   ES
                 </button>
                 <button
-                  onClick={() => setActiveLanguage("EN")}
+                  onClick={() => {
+                    handleLanguageChange("en")
+                    setMobileOpen(false)
+                  }}
                   className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
-                    activeLanguage === "EN"
+                    locale === "en"
                       ? isServiciosComplementarios
                         ? "bg-[#033163]/10 text-[#033163]"
                         : "bg-foreground/10 text-foreground"
@@ -242,7 +254,7 @@ export function Navbar() {
                 className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 onClick={() => setMobileOpen(false)}
               >
-                Contacto
+                {t("nav.contacto")}
               </Link>
             </div>
           </div>

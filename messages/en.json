@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "soluciones": "Solutions",
+    "nosotros": "About Us",
+    "trabajaConNosotros": "Work With Us",
+    "contacto": "Contact"
+  },
+  "solutions": {
+    "seguroVida": {
+      "title": "Life Insurance",
+      "description": "Financial protection in the event of the insured's death"
+    },
+    "fondosRetiro": {
+      "title": "Retirement Funds",
+      "description": "Building future income for retirement"
+    },
+    "saludInternacional": {
+      "title": "International Health",
+      "description": "International medical coverage with access to global networks"
+    },
+    "serviciosComplementarios": {
+      "title": "Complementary Services",
+      "description": "Complementary services for your financial planning"
+    }
+  }
+}
