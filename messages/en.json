@@ -28,5 +28,52 @@
     "title": "Page Not Found",
     "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
     "button": "Back to Home"
+  },
+  "footer": {
+    "title": "Every situation is different.",
+    "subtitle": "A conversation can provide a new perspective on your current reality.",
+    "scheduleMeeting": "Schedule a meeting",
+    "institutionalContact": "Institutional contact",
+    "designFuture": "Let's design tomorrow's peace of mind today"
+  },
+  "heroPlanificacion": {
+    "label": "Intelligent financial planning begins with protecting what's essential",
+    "title": "Design a strategy to protect the family, ensure business continuity, and plan wealth with a long-term vision.",
+    "description1": "At IFS we develop customized international wealth solutions, designed according to the objectives and life stages of each client.",
+    "description2": "Each proposal is built on a comprehensive wealth assessment that allows defining priorities, evaluating risks, and projecting stability over time.",
+    "quoteLifeInsurance": "Quote your life insurance",
+    "speakWithAdvisor": "Speak with an advisor"
+  },
+  "experienceGlobe": {
+    "title1": "EXPERIENCE",
+    "title2": "THAT BUILDS TRUST",
+    "description1": "Our team consists of professionals with over 20 years of experience in the financial and insurance industry, with background in leading international companies.",
+    "description2": "This journey allows us to accompany complex decisions with criteria, clarity, and responsibility."
+  },
+  "heroSubsection": {
+    "titlePrefix": "Protection for your family,",
+    "titleHighlight": "Peace of mind for you",
+    "description": "We design savings strategies aligned with personal objectives, which integrate investments with guarantees and are structured in different terms according to the needs of each client.",
+    "retirementPrefix": "Plan today",
+    "retirementHighlight": "the financial freedom",
+    "retirementSuffix": "of tomorrow"
+  },
+  "serviciosComplementarios": {
+    "title1": "COMPLEMENTARY",
+    "title2": "PROTECTION SOLUTIONS",
+    "description": "We complement our main solutions with specific coverages that allow addressing particular scenarios and reinforcing comprehensive protection planning.",
+    "alliance": "These alliances guarantee financial security in each implemented solution, providing an environment of trust and long-term institutional backing."
+  },
+  "heroSection": {
+    "title": "International financial planning to protect what matters",
+    "subtitle": "We accompany individuals and companies in making key financial decisions, combining insurance, investment, and health with a long-term vision and international backing.",
+    "description": "We plan the present with a strategic vision oriented towards the future, designing personalized financial solutions for every stage of life."
+  },
+  "whatWeDo": {
+    "label": "What do we do?",
+    "title": "FINANCIAL SOLUTIONS DESIGNED FOR EVERY MOMENT OF LIFE",
+    "description": "IFS Insurance Financial Solution is an international broker specialized in comprehensive financial planning.",
+    "card1": "Our approach is based on designing financial strategies that adapt and evolve alongside each client.",
+    "card2": "We work with individuals and companies seeking to protect their wealth, plan for the future, and make financial decisions with clear information and professional guidance."
   }
 }

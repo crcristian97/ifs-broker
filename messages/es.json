@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Home",
+    "home": "Inicio",
     "soluciones": "Soluciones",
     "nosotros": "Nosotros",
     "trabajaConNosotros": "Trabaja con nosotros",
@@ -26,7 +26,54 @@
   },
   "notFound": {
     "title": "Página no encontrada",
-    "description": "Lo sentimos, la página que buscas no se encuentra disponible.",
+    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
     "button": "Volver al inicio"
+  },
+  "footer": {
+    "title": "Cada situación es distinta.",
+    "subtitle": "Una conversación puede aportar una nueva mirada sobre tu realidad actual.",
+    "scheduleMeeting": "Agendá una reunión",
+    "institutionalContact": "Contacto institucional",
+    "designFuture": "Diseñemos hoy la tranquilidad del futuro"
+  },
+  "heroPlanificacion": {
+    "label": "Una planificación financiera inteligente comienza por proteger lo esencial",
+    "title": "Diseñar una estrategia para proteger a la familia asegurar la continuidad de la empresa y planificar el patrimonio con visión a largo plazo.",
+    "description1": "En IFS desarrollamos soluciones patrimoniales personalizadas de alcance internacional, diseñadas en función de los objetivos y etapas de vida de cada cliente.",
+    "description2": "Cada propuesta se construye sobre un diagnóstico patrimonial integral que permite definir prioridades, evaluar riesgos y proyectar estabilidad en el tiempo.",
+    "quoteLifeInsurance": "Cotizá tu seguro de vida",
+    "speakWithAdvisor": "Habla con un asesor"
+  },
+  "experienceGlobe": {
+    "title1": "EXPERIENCIA",
+    "title2": "QUE GENERA CONFIANZA",
+    "description1": "Nuestro equipo está conformado por profesionales con más de 20 años de experiencia en la industria financiera y aseguradora, con trayectoria en compañías líderes a nivel internacional.",
+    "description2": "Ese recorrido nos permite acompañar decisiones complejas con criterio, claridad y responsabilidad."
+  },
+  "heroSubsection": {
+    "titlePrefix": "Protección para tu familia,",
+    "titleHighlight": "Tranquilidad para vos",
+    "description": "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.",
+    "retirementPrefix": "Planifica hoy",
+    "retirementHighlight": "la libertad financiera",
+    "retirementSuffix": "de mañana"
+  },
+  "serviciosComplementarios": {
+    "title1": "SOLUCIONES COMPLEMENTARIAS",
+    "title2": "DE PROTECCIÓN",
+    "description": "Complementamos nuestras soluciones principales con coberturas específicas que permiten abordar escenarios particulares y reforzar una planificación integral de protección.",
+    "alliance": "Estas alianzas garantizan seguridad financiera en cada solución implementada, brindando un entorno de confianza y respaldo institucional a largo plazo."
+  },
+  "heroSection": {
+    "title": "Planificación financiera internacional para proteger lo que importa",
+    "subtitle": "Acompañamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversión y salud con una visión a largo plazo y respaldo internacional.",
+    "description": "Planificamos el presente con una visión estratégica orientada al futuro, diseñando soluciones financieras personalizadas para cada etapa de la vida."
+  },
+  "whatWeDo": {
+    "label": "¿Qué hacemos?",
+    "title": "SOLUCIONES FINANCIERAS PENSADAS PARA CADA MOMENTO DE LA VIDA",
+    "description": "IFS Insurance Financial Solution somos un broker internacional especializado en planificación financiera integral.",
+    "card1": "Nuestro enfoque se basa en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente.",
+    "card2": "Trabajamos con personas y empresas que buscan proteger su patrimonio, planificar el futuro y tomar decisiones financieras con información clara y acompañamiento profesional."
   }
 }
