@@ -26,7 +26,7 @@
   },
   "notFound": {
     "title": "Página no encontrada",
-    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "description": "Lo sentimos, la página que buscas no se encuentra disponible.",
     "button": "Volver al inicio"
   }
 }
