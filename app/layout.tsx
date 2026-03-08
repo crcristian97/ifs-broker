@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Root layout - Next.js requires this
+// Root layout - Next.js requires <html> and <body> tags
 export default function RootLayout({
   children,
 }: {

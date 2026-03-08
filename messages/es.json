@@ -23,5 +23,10 @@
       "title": "Servicios complementarios",
       "description": "Servicios complementarios para tu planificación financiera"
     }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "button": "Volver al inicio"
   }
 }
