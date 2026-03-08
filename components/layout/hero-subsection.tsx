@@ -7,15 +7,20 @@ type HeroSubsectionProps = {
   titlePrefix?: string;
   titleHighlight?: string;
   titleSuffix?: string;
+  description?: string;
   imageSrc?: string;
   imageAlt?: string;
 };
+
+const DEFAULT_DESCRIPTION =
+  "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.";
 
 // Hero reutilizable para secciones de producto (seguros de vida, fondos de retiro, etc.)
 export function HeroSubsection({
   titlePrefix = "Protección para tu familia,",
   titleHighlight = "Tranquilidad para vos",
   titleSuffix = "",
+  description = DEFAULT_DESCRIPTION,
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
 }: HeroSubsectionProps) {
@@ -59,7 +64,7 @@ export function HeroSubsection({
                   )}
                 </h1>
                 <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                  Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.
+                  {description}
                 </p>
               </div>
             </FadeInUp>

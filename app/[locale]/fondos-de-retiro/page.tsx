@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import HeroSubsection from "@/components/layout/hero-subsection";
 import { RetirementTimelineDemo } from "@/components/segurovida/retirement-timeline-demo";
@@ -7,16 +8,18 @@ import { ExperienceGlobeSection } from "@/components/home/experience-globe-secti
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import Footer from "@/components/layout/footer";
 
-export default function FondosDeRetiroPage() {
+export default async function FondosDeRetiroPage() {
+  const t = await getTranslations();
   return (
     <main className="relative min-h-screen bg-white">
       <Navbar />
       <HeroSubsection
-        titlePrefix="Planifica hoy"
-        titleHighlight="la libertad financiera"
-        titleSuffix="de mañana"
+        titlePrefix={t("heroSubsection.retirementPrefix")}
+        titleHighlight={t("heroSubsection.retirementHighlight")}
+        titleSuffix={t("heroSubsection.retirementSuffix")}
+        description={t("heroSubsection.description")}
         imageSrc="/retiro/fondos-de-retiro.webp"
-        imageAlt="Fondos de retiro"
+        imageAlt={t("solutions.fondosRetiro.title")}
       />
       <RetirementTimelineDemo />
       <div
@@ -28,7 +31,6 @@ export default function FondosDeRetiroPage() {
         <InvestmentQuestionnaireForm />
       </div>
 
-   
       <HeroPlanificacion />
 
       <LogoCloudSection />
@@ -36,9 +38,7 @@ export default function FondosDeRetiroPage() {
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">
           <div className="w-full min-h-[120px] rounded bg-transparent px-4 py-6 text-center flex items-center justify-center">
             <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
-              Estas alianzas garantizan seguridad financiera en cada solución
-              implementada, brindando un entorno de confianza y respaldo
-              institucional a largo plazo.
+              {t("serviciosComplementarios.alliance")}
             </p>
           </div>
         </div>

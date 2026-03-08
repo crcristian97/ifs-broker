@@ -1,11 +1,13 @@
-import { Navbar } from "@/components/layout/navbar"
-import HomeHeroLayout from "@/components/layout/hero-section"
+import { getTranslations } from "next-intl/server";
+import { Navbar } from "@/components/layout/navbar";
+import HomeHeroLayout from "@/components/layout/hero-section";
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations();
   return (
     <main className="relative">
       <Navbar />
-      <HomeHeroLayout />
+      <HomeHeroLayout allianceText={t("serviciosComplementarios.alliance")} />
     </main>
-  )
+  );
 }

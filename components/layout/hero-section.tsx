@@ -8,7 +8,14 @@ import { ExperienceGlobeSection } from "@/components/home/experience-globe-secti
 import BlogSection from "@/components/home/blog-section";
 import Footer from "@/components/layout/footer";
 
-export function  HomeHeroLayout() {
+type HomeHeroLayoutProps = {
+  allianceText?: string;
+};
+
+const DEFAULT_ALLIANCE_TEXT =
+  "Estas alianzas garantizan seguridad financiera en cada solución implementada, brindando un entorno de confianza y respaldo institucional a largo plazo.";
+
+export function HomeHeroLayout({ allianceText }: HomeHeroLayoutProps) {
   return (
     <>
       <HeroSection />
@@ -21,9 +28,7 @@ export function  HomeHeroLayout() {
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">
           <div className="w-full min-h-[120px] rounded bg-transparent px-4 py-6 text-center flex items-center justify-center">
             <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
-              Estas alianzas garantizan seguridad financiera en cada solución
-              implementada, brindando un entorno de confianza y respaldo
-              institucional a largo plazo.
+              {allianceText ?? DEFAULT_ALLIANCE_TEXT}
             </p>
           </div>
         </div>
