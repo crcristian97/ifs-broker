@@ -1,11 +1,12 @@
 "use client";
+
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ButtonPrimary } from "./button-primary";
 import { ConocerMasButton } from "./button-terciary";
 
@@ -15,6 +16,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const t = useTranslations();
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -65,10 +67,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       href="#cotiza"
                       className="px-5 py-2.5 text-xs md:text-sm"
                     >
-                      Cotizá tu seguro de vida
+                      {t("heroPlanificacion.quoteLifeInsurance")}
                     </ButtonPrimary>
                     <ConocerMasButton
-                      textButton="Agendá una reunión"
+                      textButton={t("footer.scheduleMeeting")}
                       size="sm"
                     />
                   </div>

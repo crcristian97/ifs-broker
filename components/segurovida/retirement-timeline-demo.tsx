@@ -1,15 +1,19 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
+const fontStyle = { fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' };
+
 export function RetirementTimelineDemo() {
+  const t = useTranslations("retirementTimeline");
   const data = [
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>FONDOS </span>
-          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>DE RETIRO</span>
+          <span className="text-[#006FC4]" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163]" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -17,20 +21,18 @@ export function RetirementTimelineDemo() {
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="/retiro/img-fondos-de-retiro.webp"
-              alt="Fondos de retiro"
+              alt={t("tab1Desc1")}
               width={600}
               height={600}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" >
-              <span style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>Construcción de ingresos futuros para el retiro</span>
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+              {t("tab1Desc1")}
             </p>
             <p className="text-lg text-[#003163] leading-relaxed">
-              Herramientas diseñadas para generar y complementar ingresos
-              futuros, con alternativas flexibles según el horizonte elegido y
-              las metas personales.
+              {t("tab1Desc2")}
             </p>
           </div>
         </div>
@@ -39,7 +41,7 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>INVERSIONES</span>
+          <span className="text-[#006FC4]" style={fontStyle}>{t("tab2Title")}</span>
         </span>
       ),
       content: (
@@ -47,20 +49,18 @@ export function RetirementTimelineDemo() {
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="/retiro/img-inversiones.webp"
-              alt="Inversiones"
+              alt={t("tab2Desc1")}
               width={600}
               height={600}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              Capital en movimiento, con dirección estratégica
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+              {t("tab2Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed" >
-              Soluciones de inversión orientadas al crecimiento del capital,
-              mediante estrategias diversificadas que combinan planificación,
-              protección y acceso a mercados internacionales.
+            <p className="text-lg text-[#003163] leading-relaxed">
+              {t("tab2Desc2")}
             </p>
           </div>
         </div>
@@ -69,8 +69,8 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>FONDOS </span>
-          <span className="text-[#003163]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>PARA ESTUDIOS</span>
+          <span className="text-[#006FC4]" style={fontStyle}>{t("tab3Title")}</span>
+          <span className="text-[#003163]" style={fontStyle}>{t("tab3Highlight")}</span>
         </span>
       ),
       content: (
@@ -78,20 +78,18 @@ export function RetirementTimelineDemo() {
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="/retiro/fondos-para-estudio.webp"
-              alt="Fondos para estudios"
+              alt={t("tab3Desc1")}
               width={600}
               height={600}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              Invertir en educación es invertir en el futuro
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+              {t("tab3Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed" >
-              Planes de ahorro que permiten anticipar y asegurar el
-              financiamiento de estudios universitarios o de posgrado, tanto en
-              el país como en el exterior.
+            <p className="text-lg text-[#003163] leading-relaxed">
+              {t("tab3Desc2")}
             </p>
           </div>
         </div>
@@ -105,4 +103,3 @@ export function RetirementTimelineDemo() {
     </div>
   );
 }
-

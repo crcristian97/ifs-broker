@@ -1,15 +1,19 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
+const fontStyle = { fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' };
+
 export function SaludTimelineDemo() {
+  const t = useTranslations("saludTimeline");
   const data = [
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>salud </span>
-          <span className="text-[#003163] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>internacional individual</span>
+          <span className="text-[#006FC4] uppercase" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163] uppercase" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -17,32 +21,26 @@ export function SaludTimelineDemo() {
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="/services/img-salud-corporativa.png"
-              alt="Salud corporativa"
+              alt={t("tab1Block1Title")}
               width={600}
               height={600}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              Mucho más que un plan de salud
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+              {t("tab1Block1Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
-              Cobertura médica internacional con acceso a redes globales de
-              prestadores y atención médica de primer nivel para personas y
-              familias.
+              {t("tab1Block1Desc")}
             </p>
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              Interconsultas médicas internacionales
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+              {t("tab1Block2Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
-              El sistema de interconsultas médicas permite que diagnósticos y
-              tratamientos sean evaluados por más de 50.000 médicos
-              especialistas de prestigio internacional, brindando una segunda
-              opinión experta que aporta mayor claridad y seguridad al momento
-              de tomar decisiones médicas.
+              {t("tab1Block2Desc")}
             </p>
           </div>
         </div>
@@ -51,8 +49,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>salud </span>
-          <span className="text-[#003163] uppercase" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>corporativa</span>
+          <span className="text-[#006FC4] uppercase" style={fontStyle}>{t("tab2Title")}</span>
+          <span className="text-[#003163] uppercase" style={fontStyle}>{t("tab2Highlight")}</span>
         </span>
       ),
       content: (
@@ -60,27 +58,23 @@ export function SaludTimelineDemo() {
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="/services/img-salud-corporativa.png"
-              alt="Salud corporativa"
+              alt={t("tab2Block1Title")}
               width={600}
               height={600}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              Protección estratégica para tu equipo
+            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+              {t("tab2Block1Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
-              Soluciones de salud internacional diseñadas para empresas,
-              orientadas a proteger a ejecutivos clave, fortalecer los
-              beneficios corporativos y asegurar la continuidad operativa.
+              {t("tab2Block1Desc")}
             </p>
           </div>
           <div>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
-              Cobertura médica global que protege a ejecutivos y colaboradores
-              en cualquier lugar del mundo, aportando seguridad y tranquilidad
-              tanto al profesional como a la empresa.
+              {t("tab2Block2Desc")}
             </p>
           </div>
         </div>

@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { ButtonPrimary } from "../ui/button-primary"
-import { InvestmentProfiles } from "./investment-profiles"  
+import { InvestmentProfiles } from "./investment-profiles"
 
 type SelectOption = {
   value: string
@@ -14,9 +15,10 @@ interface QuestionSelectProps {
   options: SelectOption[]
   value: string
   onChange: (value: string) => void
+  placeholder?: string
 }
 
-function QuestionSelect({ label, options, value, onChange }: QuestionSelectProps) {
+function QuestionSelect({ label, options, value, onChange, placeholder = "Seleccionar" }: QuestionSelectProps) {
   return (
     <div className="flex flex-col gap-2">
       <label className="text-base text-[#000A15] leading-relaxed">
@@ -27,7 +29,7 @@ function QuestionSelect({ label, options, value, onChange }: QuestionSelectProps
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
-        <option value="">Seleccionar</option>
+        <option value="">{placeholder}</option>
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
@@ -39,6 +41,7 @@ function QuestionSelect({ label, options, value, onChange }: QuestionSelectProps
 }
 
 export function InvestmentQuestionnaireForm() {
+  const t = useTranslations("investmentQuestionnaire")
   const [q1, setQ1] = useState("")
   const [q2, setQ2] = useState("")
   const [q3, setQ3] = useState("")
@@ -47,111 +50,114 @@ export function InvestmentQuestionnaireForm() {
   const [q6, setQ6] = useState("")
   const [q7, setQ7] = useState("")
 
+  const profileItems = [
+    { title: t("profileGrowthTitle"), description: t("profileGrowthDesc"), cardBg: "#E6F2FF", circleBg: "#2F80ED" },
+    { title: t("profileConservativeTitle"), description: t("profileConservativeDesc"), cardBg: "#FDFDE5", circleBg: "#F2C94C" },
+    { title: t("profileBalancedTitle"), description: t("profileBalancedDesc"), cardBg: "#E9FDEE", circleBg: "#27AE60" },
+    { title: t("profileAggressiveTitle"), description: t("profileAggressiveDesc"), cardBg: "#FFECEF", circleBg: "#EB5757" },
+  ]
+
   return (
     <div className="w-full max-w-3xl mx-auto relative">
-      {/* Título y subtítulo */}
       <div className="mb-8 text-center">
         <h2
           className="text-5xl font-regular leading-tight"
           style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
         >
-          <span className="text-[#006FC4]">Conocé tu </span>
-          <span className="text-[#033163]">perfil de inversión</span>
+          <span className="text-[#006FC4]">{t("title1")}</span>
+          <span className="text-[#033163]">{t("title2")}</span>
         </h2>
         <p className="mt-3 text-xl text-[#033163]">
-          Seleccioná una opción en cada pregunta para ayudarnos a entender tus
-          objetivos y tolerancia al riesgo.
+          {t("subtitle")}
         </p>
       </div>
 
-      {/* Form card */}
       <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
         <div className="flex flex-col gap-6">
           <QuestionSelect
-            label="¿Qué porcentaje de sus activos líquidos piensa invertir?"
+            label={t("q1")}
             value={q1}
             onChange={setQ1}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "lt25", label: "Menos del 25%" },
-              { value: "25-50", label: "Entre 25% y 50%" },
-              { value: "50-75", label: "Entre 50% y 75%" },
-              { value: "gt75", label: "Más del 75%" },
+              { value: "lt25", label: t("q1_lt25") },
+              { value: "25-50", label: t("q1_25_50") },
+              { value: "50-75", label: t("q1_50_75") },
+              { value: "gt75", label: t("q1_gt75") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Cuál es su expectativa de rendimiento y volatilidad anualizada a largo plazo?"
+            label={t("q2")}
             value={q2}
             onChange={setQ2}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "baja", label: "Bajo rendimiento / baja volatilidad" },
-              { value: "media", label: "Rendimiento medio / volatilidad moderada" },
-              { value: "alta", label: "Alto rendimiento / alta volatilidad" },
+              { value: "baja", label: t("q2_baja") },
+              { value: "media", label: t("q2_media") },
+              { value: "alta", label: t("q2_alta") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Cuál es su actitud sobre la volatilidad de las inversiones?"
+            label={t("q3")}
             value={q3}
             onChange={setQ3}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "evita", label: "Prefiere evitarla" },
-              { value: "tolera", label: "La tolera si es razonable" },
-              { value: "busca", label: "Está dispuesto a asumir alta volatilidad" },
+              { value: "evita", label: t("q3_evita") },
+              { value: "tolera", label: t("q3_tolera") },
+              { value: "busca", label: t("q3_busca") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Qué espera que suceda con sus ingresos mientras usted mantenga su inversión?"
+            label={t("q4")}
             value={q4}
             onChange={setQ4}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "estable", label: "Que se mantengan estables" },
-              { value: "crecientes", label: "Que crezcan moderadamente" },
-              { value: "variables", label: "Acepta variaciones importantes" },
+              { value: "estable", label: t("q4_estable") },
+              { value: "crecientes", label: t("q4_crecientes") },
+              { value: "variables", label: t("q4_variables") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Cuál es el objetivo de su inversión?"
+            label={t("q5")}
             value={q5}
             onChange={setQ5}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "preservar", label: "Preservar capital" },
-              { value: "mixto", label: "Equilibrio entre crecimiento y preservación" },
-              { value: "crecer", label: "Maximizar crecimiento de capital" },
+              { value: "preservar", label: t("q5_preservar") },
+              { value: "mixto", label: t("q5_mixto") },
+              { value: "crecer", label: t("q5_crecer") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Qué haría si su inversión cayera 10% en 3 meses?"
+            label={t("q6")}
             value={q6}
             onChange={setQ6}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "vender", label: "Vendería toda o gran parte de la inversión" },
-              { value: "mantener", label: "Mantendría la inversión sin cambios" },
-              { value: "aumentar", label: "Aprovecharía para invertir más" },
+              { value: "vender", label: t("q6_vender") },
+              { value: "mantener", label: t("q6_mantener") },
+              { value: "aumentar", label: t("q6_aumentar") },
             ]}
           />
-
           <QuestionSelect
-            label="¿Por cuánto tiempo quiere invertir este dinero?"
+            label={t("q7")}
             value={q7}
             onChange={setQ7}
+            placeholder={t("selectPlaceholder")}
             options={[
-              { value: "lt3", label: "Menos de 3 años" },
-              { value: "3-7", label: "Entre 3 y 7 años" },
-              { value: "7-15", label: "Entre 7 y 15 años" },
-              { value: "gt15", label: "Más de 15 años" },
+              { value: "lt3", label: t("q7_lt3") },
+              { value: "3-7", label: t("q7_3_7") },
+              { value: "7-15", label: t("q7_7_15") },
+              { value: "gt15", label: t("q7_gt15") },
             ]}
           />
         </div>
 
-        {/* Info box */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
           <p className="text-base text-[#000A15] font-bold leading-relaxed flex-1">
-            Tus respuestas nos permiten definir un perfil de inversión alineado
-            a tus objetivos y tolerancia al riesgo.
+            {t("infoText")}
           </p>
         </div>
 
@@ -160,42 +166,11 @@ export function InvestmentQuestionnaireForm() {
             href="#agenda"
             hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
           >
-            Agendá una reunión
+            {t("button")}
           </ButtonPrimary>
         </div>
       </div>
-        <InvestmentProfiles
-          items={[
-            {
-              title: "Crecimiento",
-              description:
-                "Si está interesado en invertir más de US$ 10,000 y desea recibir opciones personalizadas de inversión, por favor, póngase en contacto con nosotros a través de las siguientes opciones.",
-              cardBg: "#E6F2FF",
-              circleBg: "#2F80ED",
-            },
-            {
-              title: "Conservador",
-              description:
-                "Perfil orientado a la preservación de capital, priorizando estabilidad y baja volatilidad en el tiempo.",
-              cardBg: "#FDFDE5",
-              circleBg: "#F2C94C",
-            },
-            {
-              title: "Balanceado",
-              description:
-                "Combina crecimiento y protección a través de una mezcla equilibrada de activos defensivos y de mayor retorno.",
-              cardBg: "#E9FDEE",
-              circleBg: "#27AE60",
-            },
-            {
-              title: "Agresivo",
-              description:
-                "Enfocado en maximizar el crecimiento del capital, aceptando una mayor volatilidad en el corto y mediano plazo.",
-              cardBg: "#FFECEF",
-              circleBg: "#EB5757",
-            },
-          ]}
-        />
+      <InvestmentProfiles items={profileItems} />
     </div>
   )
 }

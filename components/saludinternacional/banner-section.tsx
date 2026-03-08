@@ -1,35 +1,32 @@
 "use client";
 
 import { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { cn } from "@/lib/utils";
 
 type BannerSectionProps = {
-  /** Color de fondo del card principal (hex o cualquier valor CSS válido) */
   bgColor?: string;
-  /** Título principal opcional (puede ser texto o JSX) */
   title?: ReactNode;
-  /** Texto principal / subtítulo (puede ser texto o JSX) */
   subtitle?: ReactNode;
-  /** Color del subtítulo (por defecto blanco) */
   subtitleColor?: string;
-  /** Alto mínimo del card principal */
   minHeight?: number;
-  /** Alto mínimo del área de contenido interna */
   contentMinHeight?: number;
-  /** Clases extra para el `<section>` raíz (por ejemplo para ajustar padding) */
   sectionClassName?: string;
-    };
+};
 
 function BannerSection({
   bgColor = "#033163",
   title,
-  subtitle = "Los seguros de salud internacional permiten acceder a atención médica de alta calidad y proteger el patrimonio ante gastos médicos mayores.",
+  subtitle,
   subtitleColor = "#FFFFFF",
   minHeight = 320,
   contentMinHeight = 260,
   sectionClassName,
 }: BannerSectionProps) {
+  const t = useTranslations("bannerSection");
+  const defaultSubtitle = t("defaultSubtitle");
+  const resolvedSubtitle = subtitle ?? defaultSubtitle;
   return (
     <section
       className={
@@ -65,7 +62,7 @@ function BannerSection({
                 {title}
               </h2>
             )}
-            {subtitle && (
+            {resolvedSubtitle && (
               <p
                 className="max-w-4xl text-base xl:text-2xl font-regular leading-relaxed "
                 style={{
@@ -73,7 +70,7 @@ function BannerSection({
                   color: subtitleColor,
                 }}
               >
-                {subtitle}
+                {resolvedSubtitle}
               </p>
             )}
           </div>

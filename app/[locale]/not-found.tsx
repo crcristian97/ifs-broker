@@ -5,14 +5,15 @@ import NotFoundClient from './NotFoundClient';
 export default async function NotFound({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params?: Promise<{ locale?: string }>;
 }) {
-  // Get locale from params or use default
-  const { locale } = await params;
-  const validLocale = routing.locales.includes(locale as any) 
-    ? locale 
-    : routing.defaultLocale;
-  
+  const resolved = params ? await params : {};
+  const locale = resolved?.locale;
+  const validLocale =
+    locale && routing.locales.includes(locale as any)
+      ? locale
+      : routing.defaultLocale;
+
   const t = await getTranslations({ locale: validLocale, namespace: 'notFound' });
 
   return (

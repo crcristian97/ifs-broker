@@ -1,42 +1,42 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
-import { ConocerMasButton } from './button-terciary';
-import Image from 'next/image';
 
-// --- Data for each slide ---
-const slidesData = [
-  {
-    title: "Seguro de Personas",
-    subttitle: "",
-    description: "Nuestro enfoque se basa en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente.",
-    image: "/services/seguro-de-vida.webp",
-    textColor: "#000000",
-    textButton: "Conocer más",
-    bgColor: "#f3f7fb",
-  },
-  {
-    title: "Retiro e Inversión",
-    subttitle: "Construí tu retiro con inversiones globales",
-    description: "Brindamos soluciones de ahorro e inversión orientadas a mediano y largo plazo, pensadas para complementar ingresos futuros, planificar estudios y potenciar el crecimiento de tu capital con visión estratégica",
-    image: "/services/retiro-e-inversion.webp",
-    textColor: "#000000",
-    textButton: "Conocer más",
-    bgColor: "#f0f5ff",
-  },
-  {
-    title: "Salud Internacional",
-    subttitle: "",
-    description: "Cobertura médica internacional para personas y empresas que buscan acceso a atención de alta calidad y protección ante gastos médicos mayores..",
-    image: "/services/salud-internacional.webp",
-    textColor: "#000000",
-    textButton: "Conocer más",
-    bgColor: "#f5fbff",
-  },
- 
-];
+import { useState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
+import { ConocerMasButton } from "./button-terciary";
+import Image from "next/image";
 
-// --- Main App Component ---
 export function ScrollingFeatureShowcase() {
+  const t = useTranslations("scrollingStory");
+  const knowMore = t("knowMore");
+  const slidesData = [
+    {
+      title: t("slide1Title"),
+      subttitle: t("slide1Subtitle"),
+      description: t("slide1Description"),
+      image: "/services/seguro-de-vida.webp",
+      textColor: "#000000",
+      textButton: knowMore,
+      bgColor: "#f3f7fb",
+    },
+    {
+      title: t("slide2Title"),
+      subttitle: t("slide2Subtitle"),
+      description: t("slide2Description"),
+      image: "/services/retiro-e-inversion.webp",
+      textColor: "#000000",
+      textButton: knowMore,
+      bgColor: "#f0f5ff",
+    },
+    {
+      title: t("slide3Title"),
+      subttitle: t("slide3Subtitle"),
+      description: t("slide3Description"),
+      image: "/services/salud-internacional.webp",
+      textColor: "#000000",
+      textButton: knowMore,
+      bgColor: "#f5fbff",
+    },
+  ];
   // State to track the currently active slide index
   const [activeIndex, setActiveIndex] = useState(0);
   // Ref to the main scrollable container
@@ -128,7 +128,7 @@ export function ScrollingFeatureShowcase() {
                     </h2>
                     <p className="mt-6 text-xl max-w-md text-[#033163] font-regular" style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}>{slide.description}</p>
                     <div className="mt-6">
-                      <ConocerMasButton textButton={slide.textButton || "Conocer más"} />
+                      <ConocerMasButton textButton={slide.textButton || knowMore} />
                     </div>
                   </div>
                 ))}

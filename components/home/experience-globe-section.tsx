@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import createGlobe, { type COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -44,6 +45,7 @@ const GLOBE_CONFIG: COBEOptions = {
 };
 
 export function ExperienceGlobeSection() {
+  const t = useTranslations("experienceGlobe");
   return (
     <section
       className="w-full min-h-[500px]"
@@ -58,24 +60,18 @@ export function ExperienceGlobeSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
-            EXPERIENCIA{" "}
-            <span className="text-[#FFFFFF]">QUE GENERA CONFIANZA</span>
+            {t("title1")}{" "}
+            <span className="text-[#FFFFFF]">{t("title2")}</span>
           </h2>
 
           <p
             className="text-base sm:text-lg text-[#FFFFFF] leading-relaxed mb-4"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
-            Nuestro equipo está conformado por profesionales con más de 20 años
-            de experiencia en la industria financiera y aseguradora, con
-            trayectoria en{" "}
-            <span className="text-[#91D8F7]">
-              compañías líderes a nivel internacional.
-            </span>
+            {t("description1")}
           </p>
           <p className="text-sm sm:text-base md:text-lg text-[#FFFFFF] leading-relaxed">
-            Ese recorrido nos permite acompañar decisiones complejas con
-            criterio, claridad y responsabilidad.
+            {t("description2")}
           </p>
         </div>
         {/* Globo: solo se muestra en md+ para evitar espacio vacío en mobile */}

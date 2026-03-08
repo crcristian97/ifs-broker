@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
@@ -58,6 +61,7 @@ const logos = [
 ];
 
 export default function LogoCloudSection() {
+  const t = useTranslations("logoCloud");
   return (
     <section className="relative w-full py-16 px-6 md:px-12 lg:px-16 overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1400px]">
@@ -65,7 +69,6 @@ export default function LogoCloudSection() {
           aria-hidden="true"
           className={cn(
             "-top-1/2 -translate-x-1/2 pointer-events-none absolute left-1/2 h-[120vmin] w-[120vmin] rounded-b-full",
-            // Ajusta la opacidad del fondo para que sea más ténue
             "bg-[radial-gradient(ellipse_at_center,rgba(3,49,99,0.08),transparent_70%)]",
             "blur-[30px]",
           )}
@@ -77,10 +80,11 @@ export default function LogoCloudSection() {
               className="text-5xl text-[#033163] font-regular leading-tight"
               style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
             >
-              <span className="text-[#006FC4]">RESPALDO INTERNACIONAL Y</span> SOLIDEZ FINANCIERA
+              <span className="text-[#006FC4]">{t("title")}</span>
+              {t("titleHighlight")}
             </span>
             <p className="text-xl font-regular mt-3 text-[#033163] max-w-xl">
-              Trabajamos con compañías de primer nivel, elegidas por su estabilidad financiera, trayectoria y alcance global.
+              {t("subtitle")}
             </p>
           </h4>
 

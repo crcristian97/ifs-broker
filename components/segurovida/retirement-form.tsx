@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useMemo } from "react"
+import { useTranslations } from "next-intl"
 import { RangeSlider } from "@/components/ui/range-slider"
 import { ButtonPrimary } from "../ui/button-primary"
 
 export function RetirementForm() {
+  const t = useTranslations("retirementForm")
   const [yearsToStart, setYearsToStart] = useState(16)
   const [yearsOfRent, setYearsOfRent] = useState(16)
   const [monthlyRent, setMonthlyRent] = useState(3000)
@@ -43,17 +45,16 @@ export function RetirementForm() {
     <div
       className="w-full max-w-3xl mx-auto relative"
     >
-      {/* Título y subtítulo */}
       <div className="mb-8 text-center">
         <h2
           className="text-5xl font-regular leading-tight"
           style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
         >
-          <span className="text-[#006FC4]">Cotizá tu </span>
-          <span className="text-[#033163]">fondo de retiro</span>
+          <span className="text-[#006FC4]">{t("title1")}</span>
+          <span className="text-[#033163]">{t("title2")}</span>
         </h2>
         <p className="mt-3 text-xl text-[#033163]">
-          Desliza el botón que está sobre la barra horizontal para modificar su información
+          {t("subtitle")}
         </p>
       </div>
 
@@ -61,7 +62,7 @@ export function RetirementForm() {
       <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
         <div className="flex flex-col gap-6">
           <RangeSlider
-            label="¿En cuántos años quisiera empezar a recibir una renta mensual?"
+            label={t("labelYearsStart")}
             min={1}
             max={40}
             value={yearsToStart}
@@ -69,7 +70,7 @@ export function RetirementForm() {
           />
 
           <RangeSlider
-            label="¿Cuántos años desea que le dure la renta de su jubilación?"
+            label={t("labelYearsRent")}
             min={1}
             max={40}
             value={yearsOfRent}
@@ -77,7 +78,7 @@ export function RetirementForm() {
           />
 
           <RangeSlider
-            label="A valor de hoy ¿Qué renta mensual desearía recibir cuando se jubile? (en $UDS)"
+            label={t("labelMonthlyRent")}
             min={500}
             max={20000}
             step={100}
@@ -87,7 +88,7 @@ export function RetirementForm() {
           />
 
           <RangeSlider
-            label="Elija el porcentaje de inflación anual en $US que desea utilizar para estos cálculos (en %)"
+            label={t("labelInflation")}
             min={1}
             max={15}
             value={inflation}
@@ -96,7 +97,7 @@ export function RetirementForm() {
           />
 
           <RangeSlider
-            label="Elija la rentabilidad anual porcentual que espera obtener por su fondo una vez que empiecen los retiros (en %)"
+            label={t("labelProfitability")}
             min={1}
             max={20}
             value={profitability}
@@ -105,7 +106,7 @@ export function RetirementForm() {
           />
 
           <RangeSlider
-            label="¿Qué porcentaje del fondo de pensión desea que este plan le cubra? (en %)"
+            label={t("labelCoverage")}
             min={1}
             max={100}
             value={coveragePercent}
@@ -117,7 +118,7 @@ export function RetirementForm() {
         {/* Result */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
           <p className="text-base text-[#000A15] font-bold leading-relaxed flex-1">
-            Este es el déficit que debería ser cubierto por un seguro de vida
+            {t("resultText")}
           </p>
           <div className="rounded-lg bg-[#91D8F7] border border-[#91D8F7] px-5 py-3 min-w-[180px] text-center">
             <span className="text-lg font-bold text-[#033163]">
@@ -130,7 +131,7 @@ export function RetirementForm() {
           href="#agenda"
           hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
         >
-          Agendá una reunión
+          {t("button")}
         </ButtonPrimary>
         </div>
       </div>

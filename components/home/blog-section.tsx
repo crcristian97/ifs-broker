@@ -1,37 +1,38 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const articlesData = [
-  {
-    category: "FINANZAS",
-    title: "¿Por qué un fondo de emergencia es esencial?",
-    description:
-      "Descubre cómo un fondo de emergencia puede proteger tus ahorros ante imprevistos y brindarte mayor tranquilidad financiera.",
-    image: "/services/img-salud-corporativa.png",
-    publishDate: "Jun 5, 2024",
-    readMoreLink: "#",
-  },
-  {
-    category: "SALUD",
-    title: "Cobertura médica internacional: ventajas y recomendaciones",
-    description:
-      "Analizamos los beneficios de contar con un seguro de salud internacional y qué tener en cuenta al elegirlo para ti o tu familia.",
-    image: "/services/img-salud-corporativa.png",
-    publishDate: "May 18, 2024",
-    readMoreLink: "#",
-  },
-  {
-    category: "DÓLAR",
-    title: "Dólar vs. Peso: estrategias para proteger tu patrimonio",
-    description:
-      "¿Es momento de dolarizar tus ahorros? Exploramos alternativas en un contexto de incertidumbre cambiaria en Latinoamérica.",
-    image: "/services/img-salud-corporativa.png",
-    publishDate: "Apr 28, 2024",
-    readMoreLink: "#",
-  },
-];
 export default function BlogSection() {
+  const t = useTranslations("blog");
+  const articlesData = [
+    {
+      category: t("article1Category"),
+      title: t("article1Title"),
+      description: t("article1Description"),
+      image: "/services/img-salud-corporativa.png",
+      publishDate: t("article1Date"),
+      readMoreLink: "#",
+    },
+    {
+      category: t("article2Category"),
+      title: t("article2Title"),
+      description: t("article2Description"),
+      image: "/services/img-salud-corporativa.png",
+      publishDate: t("article2Date"),
+      readMoreLink: "#",
+    },
+    {
+      category: t("article3Category"),
+      title: t("article3Title"),
+      description: t("article3Description"),
+      image: "/services/img-salud-corporativa.png",
+      publishDate: t("article3Date"),
+      readMoreLink: "#",
+    },
+  ];
   return (
     <section
       className="relative px-4 py-12 sm:py-16 md:py-20"
@@ -47,14 +48,14 @@ export default function BlogSection() {
             className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4]"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
-            INFORMACIÓN PARA <span className="text-[#033163]">TOMAR MEJORES</span>
+            {t("title1")}
+            <span className="text-[#033163]">{t("title2")}</span>
             <br />
-            DECISIONES <span className="text-[#033163]">FINANCIERAS</span>
+            {t("title3")}
+            <span className="text-[#033163]">{t("title4")}</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#033163] max-w-2xl">
-            En nuestro espacio de contenidos compartimos análisis y conceptos
-            clave sobre planificación financiera, seguros de vida, retiro,
-            inversión y salud internacional.
+            {t("description")}
           </p>
         </div>
         {/* LARGE WHITE BACKGROUND AREA FOR BOTTOM PART */}
@@ -98,7 +99,7 @@ export default function BlogSection() {
                           <ArrowRight className="h-3 w-3 translate-x-0 opacity-100 transition-all duration-500 ease-in group-hover:translate-x-8 group-hover:opacity-0 sm:h-4 sm:w-4" />
                           <ArrowRight className="absolute top-1/2 -left-4 h-4 w-4 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:left-2 sm:-left-5 sm:h-4 sm:w-4 sm:group-hover:left-3" />
                         </span>
-                        Read more
+                        {t("readMore")}
                       </Link>
                       <span className="flex items-center gap-2 text-[10px] text-[#033163] sm:gap-3 sm:text-xs">
                         {article.publishDate}

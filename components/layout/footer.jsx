@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { FeatureBar } from "@/components/ui/feature-bar"
 import { ButtonPrimary } from "../ui/button-primary"
@@ -22,6 +23,7 @@ const features = [
 ]
 
 export default function Footer() {
+  const t = useTranslations("footer")
   return (
     <section
       className="relative w-full min-h-[700px] flex flex-col justify-end"
@@ -33,22 +35,18 @@ export default function Footer() {
         backgroundPosition: "center",
       }}
     >
-      {/* Main content area */}
       <div className="relative z-10 flex flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-12 md:py-16">
-        {/* Left — Logo */}
         <div className="flex justify-center md:justify-start">
           <Image src="/ifs_insurance.png" alt="IFS Insurance" width={200} height={200} />
         </div>
 
-        {/* Right — Copy + CTAs */}
         <div className="flex flex-col items-center gap-6 text-center md:items-end md:text-right">
           <div className="space-y-2">
             <h2 className="text-3xl font-regular text-[#033163] text-balance">
-              Cada situación es distinta.
+              {t("title")}
             </h2>
             <p className="max-w-sm text-base text-[#033163]">
-              Una conversación puede aportar una nueva mirada sobre tu realidad
-              actual.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -57,26 +55,24 @@ export default function Footer() {
               href="#cotiza"
               hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
             >
-              Agendá una reunión
+              {t("scheduleMeeting")}
             </ButtonPrimary>
             <ButtonSecondary
               href="#agenda"
               hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
             >
-              Contacto institucional
+              {t("institutionalContact")}
             </ButtonSecondary>
           </div>
         </div>
       </div>
 
-      {/* Tagline + WhatsApp */}
       <div className="relative z-10 flex items-end justify-between px-6 pb-4 md:px-12">
         <p className="text-3xl font-regular text-[#033163]">
-          Diseñemos hoy la tranquilidad del futuro
+          {t("designFuture")}
         </p>
       </div>
 
-      {/* Bottom contact bar */}
       <div className="flex justify-center mb-12">
         <FeatureBar features={features} />
       </div>
