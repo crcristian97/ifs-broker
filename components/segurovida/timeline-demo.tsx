@@ -13,8 +13,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab1Title")}</span>
-          <span className="text-[#003163]" style={fontStyle}>{t("tab1Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -29,10 +29,10 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-2 text-2xl md:text-2xl font-regular text-[#006FC4]" >
               {tSolutions("seguroVida.description")}
             </p>
-            <p className="mb-2 text-xl md:text-2xl font-regular text-[#003163]" style={fontStyle}>
+            <p className="mb-2 text-xl md:text-xl font-regular text-[#003163]" >
               {t("tab1Subtitle")}
             </p>
             <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
@@ -45,8 +45,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab2Title")}</span>
-          <span className="text-[#003163]" style={fontStyle}>{t("tab2Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab2Title")}</span>
+          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab2Highlight")}</span>
         </span>
       ),
       content: (
@@ -61,10 +61,10 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-2 text-2xl md:text-2xl font-regular text-[#006FC4]" >
               {t("tab2Desc")}
             </p>
-            <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
+            <p className="text-base md:text-lg  font-regular text-[#003163] leading-relaxed">
               {t("tab2Body")}
             </p>
           </div>
@@ -74,8 +74,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab3Title")}</span>
-          {t("tab3Highlight") ? <span className="text-[#003163]" style={fontStyle}>{t("tab3Highlight")}</span> : null}
+          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab3Title")}</span>
+          {t("tab3Highlight") ? <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab3Highlight")}</span> : null}
         </span>
       ),
       content: (
@@ -90,7 +90,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-2 text-2xl md:text-2xl font-regular text-[#006FC4]" >
               {t("tab3Desc")}
             </p>
             <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">
@@ -103,8 +103,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab4Title")}</span>
-          <span className="text-[#003163]" style={fontStyle}>{t("tab4Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab4Title")}</span>
+          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab4Highlight")}</span>
         </span>
       ),
       content: (
@@ -119,7 +119,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-2 text-2xl md:text-2xl font-regular text-[#006FC4]" >
               {t("tab4Desc")}
             </p>
             <p className="text-base md:text-lg font-regular text-[#003163] leading-relaxed">

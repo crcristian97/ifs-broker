@@ -8,6 +8,7 @@ type HeroSubsectionProps = {
   titleHighlight?: string;
   titleSuffix?: string;
   description?: string;
+  descriptionHighlight?: string;
   imageSrc?: string;
   imageAlt?: string;
 };
@@ -15,12 +16,16 @@ type HeroSubsectionProps = {
 const DEFAULT_DESCRIPTION =
   "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.";
 
+const DEFAULT_DESCRIPTION_HIGHLIGHT =
+  "Mas que una cobertura, es una decisión de cuidado que permite anticiparse y proteger la estabilidad del hogar a largo plazo.";
+
 // Hero reutilizable para secciones de producto (seguros de vida, fondos de retiro, etc.)
 export function HeroSubsection({
   titlePrefix = "Protección para tu familia,",
   titleHighlight = "Tranquilidad para vos",
   titleSuffix = "",
   description = DEFAULT_DESCRIPTION,
+  descriptionHighlight = DEFAULT_DESCRIPTION_HIGHLIGHT,
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
 }: HeroSubsectionProps) {
@@ -65,6 +70,9 @@ export function HeroSubsection({
                 </h1>
                 <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
                   {description}
+                </p>
+                <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
+                  {descriptionHighlight}
                 </p>
               </div>
             </FadeInUp>

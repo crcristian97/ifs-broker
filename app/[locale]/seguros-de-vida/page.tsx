@@ -17,6 +17,7 @@ export default async function SegurosDeVidaPage() {
         titlePrefix={t("heroSubsection.titlePrefix")}
         titleHighlight={t("heroSubsection.titleHighlight")}
         description={t("heroSubsection.description")}
+        descriptionHighlight={t("heroSubsection.descriptionHighlight")}
         imageSrc="/seguro/seguro-de-vida.webp"
         imageAlt={t("solutions.seguroVida.title")}
       />

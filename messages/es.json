@@ -63,8 +63,9 @@
   },
   "heroSubsection": {
     "titlePrefix": "Protección para tu familia,",
-    "titleHighlight": "Tranquilidad para vos",
-    "description": "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.",
+    "titleHighlight": "tranquilidad para vos",
+    "description": "Los seguros de vida permiten resguardar los ingresos, sostener el nivel de vida familiar y proteger proyectos como la educación cuando más se necesita.",
+    "descriptionHighlight": "Mas que una cobertura, es una decisión de cuidado que permite anticiparse y proteger la estabilidad del hogar a largo plazo.",
     "retirementPrefix": "Planifica hoy",
     "retirementHighlight": "la libertad financiera",
     "retirementSuffix": "de mañana"
@@ -173,8 +174,8 @@
     "tab3Body": "Permite sostener ingresos y cubrir gastos del hogar cuando una incapacidad impide trabajar, protegiendo la estabilidad familiar y profesional.",
     "tab4Title": "Enfermedades ",
     "tab4Highlight": "terminales",
-    "tab4Desc": "Acompañamiento en etapas de alta sensibilidad.",
-    "tab4Body": "Facilita recursos para cuidados especiales, orden patrimonial y tranquilidad familiar, permitiendo enfocarse en lo verdaderamente importante en momentos delicados."
+    "tab4Desc": "Adelanto de capital en caso de diagnóstico de enfermedad terminal.",
+    "tab4Body": "permitiendo dispone de recursos para cuidados, decisiones personales o acompañamiento familiar."
   },
   "investmentQuestionnaire": {
     "title1": "Conocé tu ",
