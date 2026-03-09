@@ -66,14 +66,15 @@
   },
   "heroSection": {
     "title": "Planificación financiera internacional para proteger lo que importa",
-    "subtitle": "Acompañamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversión y salud con una visión a largo plazo y respaldo internacional.",
+    "subtitle": "Acompañamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversiónes y salud con una visión a largo plazo y respaldo internacional.",
     "description": "Planificamos el presente con una visión estratégica orientada al futuro, diseñando soluciones financieras personalizadas para cada etapa de la vida."
   },
   "whatWeDo": {
     "label": "¿Qué hacemos?",
-    "title": "SOLUCIONES FINANCIERAS PENSADAS PARA CADA MOMENTO DE LA VIDA",
+    "title": "SOLUCIONES FINANCIERAS",
+    "labelHighlight": "PENSADAS PARA CADA MOMENTO DE LA VIDA",
     "description": "IFS Insurance Financial Solution somos un broker internacional especializado en planificación financiera integral.",
-    "card1": "Nuestro enfoque se basa en el diseño de estrategias financieras que se adaptan y evolucionan junto a cada cliente.",
+    "card1": "Diseñamos coberturas que permiten blindar el patrimonio, proteger a la familia o empresa y planificar con previsión y claridad.",
     "card2": "Trabajamos con personas y empresas que buscan proteger su patrimonio, planificar el futuro y tomar decisiones financieras con información clara y acompañamiento profesional."
   },
   "howWeWork": {
