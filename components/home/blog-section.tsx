@@ -45,14 +45,15 @@ export default function BlogSection() {
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
-            className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4]"
+            className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
-            {t("title1")}
-            <span className="text-[#033163]">{t("title2")}</span>
-            <br />
-            {t("title3")}
-            <span className="text-[#033163]">{t("title4")}</span>
+            <span className="text-[#006fc4]">{t("title1")}</span>
+            <span className="text-[#033163]">
+              {t("title2")}
+              {t("title3")}
+            </span>
+            <span className="text-[#006fc4]">{t("title4")}</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#033163] max-w-2xl">
             {t("description")}

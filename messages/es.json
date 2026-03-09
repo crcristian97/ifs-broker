@@ -57,7 +57,8 @@
   "experienceGlobe": {
     "title1": "EXPERIENCIA",
     "title2": "QUE GENERA CONFIANZA",
-    "description1": "Nuestro equipo está conformado por profesionales con más de 20 años de experiencia en la industria financiera y aseguradora, con trayectoria en compañías líderes a nivel internacional.",
+    "description1": "Nuestro equipo está conformado por profesionales con más de 20 años de experiencia en la industria financiera y aseguradora, con trayectoria en ",
+    "description1highlight": "compañías líderes a nivel internacional.",
     "description2": "Ese recorrido nos permite acompañar decisiones complejas con criterio, claridad y responsabilidad."
   },
   "heroSubsection": {
@@ -92,7 +93,7 @@
     "heading": "PROCESO CLARO, ESTRATÉGICO Y ",
     "headingHighlight": "ADAPTADO A CADA CLIENTE.",
     "step1Title": "Diagnóstico inicial",
-    "step1Description": "Realizamos un análisis de necesidades, evaluando la situación actual personal, familiar o empresarial, identificando prioridades en función de objetivos a corto, mediano y largo plazo",
+    "step1Description": "Realizamos un análisis de necesidades, evaluando la situación personal, familiar o empresarial, identificando prioridades en función de objetivos a corto, mediano y largo plazo",
     "step2Title": "Diseño de estrategia",
     "step2Description": "Presentamos alternativas claras y comparables, en un lenguaje simple y sin tecnicismos innecesarios.",
     "step3Title": "Evaluación y decisión",

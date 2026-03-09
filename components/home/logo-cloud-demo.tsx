@@ -77,7 +77,7 @@ export default function LogoCloudSection() {
         <div className="relative w-full">
           <h4 className="mb-7 text-center flex flex-col items-center gap-2">
             <span
-              className="text-5xl text-[#033163] font-regular leading-tight"
+              className="text-5xl text-[#033163] font-regular leading-tight tracking-widest"
               style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
             >
               <span className="text-[#006FC4]">{t("title")}</span>

@@ -55,10 +55,11 @@
     "speakWithAdvisor": "Speak with an advisor"
   },
   "experienceGlobe": {
-    "title1": "EXPERIENCE",
-    "title2": "THAT BUILDS TRUST",
-    "description1": "Our team consists of professionals with over 20 years of experience in the financial and insurance industry, with background in leading international companies.",
-    "description2": "This journey allows us to accompany complex decisions with criteria, clarity, and responsibility."
+   "title1": "EXPERIENCE",
+    "title2": "THAT INSPIRES TRUST",
+    "description1": "Our team consists of professionals with over 20 years of experience in the financial and insurance industries, with a proven track record at ",
+    "description1highlight": "leading international companies.",
+    "description2": "This experience allows us to support complex decisions with discernment, clarity, and responsibility."
   },
   "heroSubsection": {
     "titlePrefix": "Protection for your family,",

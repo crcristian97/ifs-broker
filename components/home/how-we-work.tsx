@@ -105,7 +105,7 @@ export default function HowWeWork() {
             {t("title")}
           </h4>
           <p
-            className="text-[#033163] text-4xl md:text-5xl font-regular leading-tight"
+            className="text-[#033163] text-4xl md:text-5xl font-regular leading-tight tracking-widest"
             style={{
               fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif',
             }}

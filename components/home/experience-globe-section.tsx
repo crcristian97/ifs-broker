@@ -57,7 +57,7 @@ export function ExperienceGlobeSection() {
       <div className="mx-auto flex w-full max-w-[1400px] flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 lg:px-16">
         <div className="flex flex-1 flex-col justify-center py-12">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-tight text-[#91D8F7] leading-tight mb-4 tracking-widest"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
           >
             {t("title1")}{" "}
@@ -69,6 +69,7 @@ export function ExperienceGlobeSection() {
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             {t("description1")}
+            <span className="text-[#91D8F7]">{t("description1highlight")}</span>
           </p>
           <p className="text-sm sm:text-base md:text-lg text-[#FFFFFF] leading-relaxed">
             {t("description2")}
