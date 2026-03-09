@@ -68,7 +68,8 @@
     "descriptionHighlight": "Mas que una cobertura, es una decisión de cuidado que permite anticiparse y proteger la estabilidad del hogar a largo plazo.",
     "retirementPrefix": "Planifica hoy",
     "retirementHighlight": "la libertad financiera",
-    "retirementSuffix": "de mañana"
+    "retirementSuffix": "de mañana",
+    "retirementDescription": "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente."
   },
   "serviciosComplementarios": {
     "title1": "SOLUCIONES COMPLEMENTARIAS",
@@ -149,6 +150,8 @@
   "retirementTimeline": {
     "tab1Title": "FONDOS ",
     "tab1Highlight": "DE RETIRO",
+    "buttonPrimary" : "Habla con un asesor",
+    "buttonSecondary" : "Explorar opciones",
     "tab1Desc1": "Construcción de ingresos futuros para el retiro",
     "tab1Desc2": "Herramientas diseñadas para generar y complementar ingresos futuros, con alternativas flexibles según el horizonte elegido y las metas personales.",
     "tab2Title": "INVERSIONES",
@@ -178,7 +181,7 @@
     "tab4Body": "permitiendo dispone de recursos para cuidados, decisiones personales o acompañamiento familiar."
   },
   "investmentQuestionnaire": {
-    "title1": "Conocé tu ",
+    "title1": "Test de ",
     "title2": "perfil de inversión",
     "subtitle": "Seleccioná una opción en cada pregunta para ayudarnos a entender tus objetivos y tolerancia al riesgo.",
     "selectPlaceholder": "Seleccionar",

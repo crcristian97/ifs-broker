@@ -28,15 +28,18 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-3 text-3xl font-regular text-[#006FC4]" >
               {t("tab1Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed ">
               {t("tab1Desc2")}
             </p>
           </div>
         </div>
       ),
+      buttonPrimary: t("buttonPrimary"),
+      buttonSecondary: t("buttonSecondary"),
+      buttonHrefSecondary: "#investment-questionnaire",
     },
     {
       title: (
@@ -56,15 +59,18 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-3 text-3xl font-regular text-[#006FC4] ">
               {t("tab2Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed ">
               {t("tab2Desc2")}
             </p>
           </div>
         </div>
       ),
+      buttonPrimary: t("buttonPrimary"),
+      buttonSecondary: t("buttonSecondary"),
+      buttonHrefSecondary: "#investment-questionnaire",
     },
     {
       title: (
@@ -85,15 +91,18 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" style={fontStyle}>
+            <p className="mb-3 text-3xl font-regular text-[#006FC4] ">
               {t("tab3Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed">
+            <p className="text-lg text-[#003163] leading-relaxed   ">
               {t("tab3Desc2")}
             </p>
           </div>
         </div>
       ),
+      buttonPrimary: t("buttonPrimary"),
+      buttonSecondary: t("buttonSecondary"),
+      buttonHrefSecondary : "#investment-questionnaire",
     },
   ];
 

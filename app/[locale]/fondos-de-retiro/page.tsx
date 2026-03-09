@@ -17,12 +17,13 @@ export default async function FondosDeRetiroPage() {
         titlePrefix={t("heroSubsection.retirementPrefix")}
         titleHighlight={t("heroSubsection.retirementHighlight")}
         titleSuffix={t("heroSubsection.retirementSuffix")}
-        description={t("heroSubsection.description")}
+        description={t("heroSubsection.retirementDescription")}
         imageSrc="/retiro/fondos-de-retiro.webp"
         imageAlt={t("solutions.fondosRetiro.title")}
       />
       <RetirementTimelineDemo />
       <div
+        id="investment-questionnaire"
         className="rounded-3xl  bg-cover bg-center px-2 py-6 md:px-6"
         style={{
           backgroundImage: "url('/seguro/fondo-cuestionarios.webp')",

@@ -47,7 +47,7 @@ export function RetirementForm() {
     >
       <div className="mb-8 text-center">
         <h2
-          className="text-5xl font-regular leading-tight"
+          className="text-5xl font-regular leading-tight tracking-widest uppercase"
           style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>

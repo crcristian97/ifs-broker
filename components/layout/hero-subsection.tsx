@@ -16,8 +16,6 @@ type HeroSubsectionProps = {
 const DEFAULT_DESCRIPTION =
   "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.";
 
-const DEFAULT_DESCRIPTION_HIGHLIGHT =
-  "Mas que una cobertura, es una decisión de cuidado que permite anticiparse y proteger la estabilidad del hogar a largo plazo.";
 
 // Hero reutilizable para secciones de producto (seguros de vida, fondos de retiro, etc.)
 export function HeroSubsection({
@@ -25,7 +23,7 @@ export function HeroSubsection({
   titleHighlight = "Tranquilidad para vos",
   titleSuffix = "",
   description = DEFAULT_DESCRIPTION,
-  descriptionHighlight = DEFAULT_DESCRIPTION_HIGHLIGHT,
+  descriptionHighlight = "",
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
 }: HeroSubsectionProps) {

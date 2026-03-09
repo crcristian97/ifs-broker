@@ -68,7 +68,8 @@
     "descriptionHighlight": "More than a coverage, it's a care decision that allows anticipating and protecting the stability of the home for the long term.",
     "retirementPrefix": "Plan today",
     "retirementHighlight": "the financial freedom",
-    "retirementSuffix": "of tomorrow"
+    "retirementSuffix": "of tomorrow",
+    "retirementDescription": "We design savings strategies aligned with personal objectives, which integrate investments with guarantees and are structured in different terms according to the needs of each client."
   },
   "serviciosComplementarios": {
     "title1": "COMPLEMENTARY",
@@ -149,6 +150,9 @@
   "retirementTimeline": {
     "tab1Title": "RETIREMENT ",
     "tab1Highlight": "FUNDS",
+    "button": "Explore options",  
+    "buttonPrimary": "Talk with an advisor",
+    "buttonSecondary": "Explore options",
     "tab1Desc1": "Building future income for retirement",
     "tab1Desc2": "Tools designed to generate and complement future income, with flexible alternatives according to the chosen horizon and personal goals.",
     "tab2Title": "INVESTMENTS",
@@ -174,8 +178,8 @@
     "tab3Body": "Allows sustaining income and covering household expenses when a disability prevents working, protecting family and professional stability.",
     "tab4Title": "Terminal ",
     "tab4Highlight": "illnesses",
-    "tab4Desc": "Support during highly sensitive stages.",
-    "tab4Body": "Facilitates resources for special care, estate planning and family peace of mind, allowing focus on what truly matters in delicate moments."
+    "tab4Desc": "Advance of capital in case of diagnosis of terminal illness.",
+    "tab4Body": "Allows access to resources for care, personal decisions, or family support."
   },
   "investmentQuestionnaire": {
     "title1": "Discover your ",

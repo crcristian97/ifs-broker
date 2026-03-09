@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ButtonPrimary } from "./button-primary";
@@ -13,6 +9,9 @@ import { ConocerMasButton } from "./button-terciary";
 interface TimelineEntry {
   title: React.ReactNode;
   content: React.ReactNode;
+  buttonPrimary?: string;
+  buttonSecondary?: string;
+  buttonHref?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -26,7 +25,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -37,10 +36,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-white font-sans md:px-10"
-      ref={containerRef}
-    >
+    <div className="w-full bg-white font-sans md:px-10" ref={containerRef}>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
@@ -60,17 +56,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {/* Título + botones (columna izquierda) */}
                 <div className="flex flex-col justify-center gap-6">
                   <h3 className="text-left text-5xl font-regular leading-tight">
-                {item.title}
-              </h3>
+                    {item.title}
+                  </h3>
                   <div className="flex flex-col gap-3 max-w-xs">
                     <ButtonPrimary
-                      href="#cotiza"
+                      href={item.buttonHref ?? "#cotiza"}
                       className="px-5 py-2.5 text-xs md:text-sm"
                     >
-                      {t("heroPlanificacion.quoteLifeInsurance")}
+                      {item.buttonPrimary ?? t("heroPlanificacion.quoteLifeInsurance")}
                     </ButtonPrimary>
                     <ConocerMasButton
-                      textButton={t("footer.scheduleMeeting")}
+                      textButton={item.buttonSecondary ?? t("footer.scheduleMeeting")}
                       size="sm"
                     />
                   </div>
@@ -79,7 +75,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {/* Tarjeta principal (columna derecha) */}
                 <div className="flex justify-end">
                   <div className="w-full max-w-[640px] rounded-[32px] bg-cover bg-center shadow-[0_22px_60px_rgba(0,77,159,0.16)] border border-[#D4E7FF]/70 p-3 md:p-4 lg:p-6">
-              {item.content}
+                    {item.content}
                   </div>
                 </div>
               </div>
@@ -88,7 +84,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         ))}
         <div
           style={{
-            height: height + "px",
+            height: `${height}px`,
           }}
           className="absolute left-5 md:left-5 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
         >
