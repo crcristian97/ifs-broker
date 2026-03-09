@@ -54,7 +54,11 @@ export function HeroPlanificacion() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="flex-1">
               <p className="text-[#1a2b3d] text-xl sm:text-2xl md:text-3xl font-regular leading-relaxed text-center md:text-left">
-                {t("description1")}
+                {t("description1Part1")}
+                <span className="text-[#006FC4] font-regular">
+                  {t("description1Part2")}
+                </span>
+                {t("description1Part3")}
               </p>
             </div>
 
