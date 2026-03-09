@@ -34,7 +34,13 @@ export function HeroPlanificacion() {
                 letterSpacing: "0.02em",
               }}
             >
-              {t("title")}
+              <span className="text-[#91D8F7]">{t("title1")}</span>
+              <span className="text-white">{t("title2")}</span>
+              <span className="text-[#91D8F7]">{t("title3")}</span>
+              <span className="text-white">{t("title4")}</span>
+              <span className="text-[#91D8F7]">{t("title5")}</span>
+              <span className="text-white">{t("title6")}</span>
+              <span className="text-[#91D8F7]">{t("title7")}</span>
             </h3>
           </div>
         </div>
