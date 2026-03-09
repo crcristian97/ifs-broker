@@ -12,8 +12,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase" style={fontStyle}>{t("tab1Title")}</span>
-          <span className="text-[#003163] uppercase" style={fontStyle}>{t("tab1Highlight")}</span>
+          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163] uppercase tracking-widest" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -28,7 +28,7 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+            <p className="mb-2 text-2xl font-regular text-[#006FC4] md:text-3xl ">
               {t("tab1Block1Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
@@ -36,7 +36,7 @@ export function SaludTimelineDemo() {
             </p>
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+            <p className="mb-2 text-2xl font-regular text-[#006FC4] md:text-3xl ">
               {t("tab1Block2Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">
@@ -49,8 +49,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase" style={fontStyle}>{t("tab2Title")}</span>
-          <span className="text-[#003163] uppercase" style={fontStyle}>{t("tab2Highlight")}</span>
+          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab2Title")}</span>
+          <span className="text-[#003163] uppercase tracking-widest" style={fontStyle}>{t("tab2Highlight")}</span>
         </span>
       ),
       content: (
@@ -65,7 +65,7 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl" style={fontStyle}>
+              <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl ">
               {t("tab2Block1Title")}
             </p>
             <p className="text-sm leading-relaxed text-[#003163] md:text-base">

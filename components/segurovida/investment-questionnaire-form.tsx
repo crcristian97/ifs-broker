@@ -155,11 +155,12 @@ export function InvestmentQuestionnaireForm() {
           />
         </div>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
-          <p className="text-base text-[#000A15] font-bold leading-relaxed flex-1">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl p-4 md:p-5">
+          <p className="text-base text-[#006FC4] font-regular leading-relaxed flex-1">
             {t("infoText")}
           </p>
         </div>
+        <InvestmentProfiles items={profileItems} />
 
         <div className="relative z-10 flex justify-center mt-8 pb-8">
           <ButtonPrimary
@@ -170,7 +171,6 @@ export function InvestmentQuestionnaireForm() {
           </ButtonPrimary>
         </div>
       </div>
-      <InvestmentProfiles items={profileItems} />
     </div>
   )
 }

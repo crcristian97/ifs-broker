@@ -51,7 +51,7 @@ export function HeroBanner() {
         <div className="flex flex-1 items-center justify-center md:justify-end">
           <div className="w-full max-w-2xl rounded-[40px] bg-white/90 p-10 shadow-[0_30px_100px_rgba(0,77,159,0.25)] backdrop-blur-lg md:p-14">
             <p
-              className="text-xl leading-relaxed text-[#006FC4] md:text-2xl font-semibold"
+              className="text-xl leading-relaxed text-[#006FC4] md:text-2xl"
               style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
             >
               {t("paragraph1")}

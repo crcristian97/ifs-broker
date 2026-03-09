@@ -183,7 +183,7 @@
   "investmentQuestionnaire": {
     "title1": "Test de ",
     "title2": "perfil de inversión",
-    "subtitle": "Seleccioná una opción en cada pregunta para ayudarnos a entender tus objetivos y tolerancia al riesgo.",
+    "subtitle": "Despliega las opciones en cada pregunta y selecciona la que va más con tu perfil.",
     "selectPlaceholder": "Seleccionar",
     "q1": "¿Qué porcentaje de sus activos líquidos piensa invertir?",
     "q1_lt25": "Menos del 25%",
@@ -215,7 +215,7 @@
     "q7_3_7": "Entre 3 y 7 años",
     "q7_7_15": "Entre 7 y 15 años",
     "q7_gt15": "Más de 15 años",
-    "infoText": "Tus respuestas nos permiten definir un perfil de inversión alineado a tus objetivos y tolerancia al riesgo.",
+    "infoText": "Portafolio sugerido según puntaje y plazo de permanencia de su inversión.",
     "button": "Agendá una reunión",
     "profileGrowthTitle": "Crecimiento",
     "profileGrowthDesc": "Si está interesado en invertir más de US$ 10.000 y desea recibir opciones personalizadas de inversión, por favor, póngase en contacto con nosotros a través de las siguientes opciones.",
@@ -239,8 +239,8 @@
     "description": "La salud es un pilar fundamental dentro de la planificación financiera."
   },
   "saludTimeline": {
-    "tab1Title": "salud ",
-    "tab1Highlight": "internacional individual",
+    "tab1Title": "salud internacional ",
+    "tab1Highlight": "individual",
     "tab1Block1Title": "Mucho más que un plan de salud",
     "tab1Block1Desc": "Cobertura médica internacional con acceso a redes globales de prestadores y atención médica de primer nivel para personas y familias.",
     "tab1Block2Title": "Interconsultas médicas internacionales",
