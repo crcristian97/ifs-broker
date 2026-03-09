@@ -150,8 +150,9 @@
   "retirementTimeline": {
     "tab1Title": "FONDOS ",
     "tab1Highlight": "DE RETIRO",
-    "buttonPrimary" : "Habla con un asesor",
-    "buttonSecondary" : "Explorar opciones",
+    "button": "Explorar opciones",
+    "buttonPrimary": "Habla con un asesor",
+    "buttonSecondary": "Explorar opciones",
     "tab1Desc1": "Construcción de ingresos futuros para el retiro",
     "tab1Desc2": "Herramientas diseñadas para generar y complementar ingresos futuros, con alternativas flexibles según el horizonte elegido y las metas personales.",
     "tab2Title": "INVERSIONES",
