@@ -199,7 +199,7 @@ export function Navbar() {
           <ButtonPrimary
             href="#contacto"
             hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-            onClick={(event: MouseEvent<HTMLButtonElement>) => {
+            onClick={(event) => {
               event.preventDefault()
               scrollToSection("contacto")
             }}
