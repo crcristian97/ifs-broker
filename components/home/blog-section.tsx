@@ -65,28 +65,30 @@ export default function BlogSection() {
           <div className="relative z-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8 ">
             {articlesData.map((article, index) => (
               <div
-                className="cursor-pointer border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md rounded-3xl"
+                className="cursor-pointer border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md rounded-3xl overflow-hidden"
                 key={index}
               >
                 <div className="p-0">
-                  <div className="relative mb-4 sm:mb-6">
+                  <div className="relative mb-4 sm:mb-6 overflow-hidden rounded-t-3xl">
                     <Image
                       alt={article.title}
-                      className="aspect-square h-64 w-full object-cover sm:h-72 md:h-80 rounded-t-3xl"
+                      className="aspect-square h-64 w-full object-cover sm:h-72 md:h-80"
                       height={1080}
                       src={article.image || "/placeholder.svg"}
                       width={1920}
                     />
-                    <p
-                      className="absolute top-0 left-0 rounded-none border-0 bg-white px-2 py-0.5 font-medium text-[10px] text-black uppercase backdrop-blur-sm sm:-top-0.5 sm:-left-0.5 sm:px-3 sm:py-1 sm:text-xs"
-                    >
-                      #{article.category}
-                    </p>
+                    {/* Bottom overlay with title (solid band) */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-[#FFFFFF]/20 backdrop-blur-md flex items-end">
+                      <div className="flex w-full items-center justify-between px-3 py-2 sm:px-4 sm:py-3">
+                        <p className="text-xl font-medium text-[#033163] line-clamp-2">
+                          {article.title}
+                        </p>
+                        
+                      </div>
+                    </div>
                   </div>
                   <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-                    <h3 className="mb-2 font-normal text-base text-gray-900 tracking-tight sm:mb-2 sm:text-lg md:text-2xl">
-                      {article.title}
-                    </h3>
+                    
                     <p className="mb-4 text-gray-600 text-xs leading-relaxed sm:mb-6 sm:text-sm">
                       {article.description}
                     </p>
