@@ -136,7 +136,7 @@ export function Navbar() {
                     ? "text-[#033163] hover:text-[#033163]/80"
                     : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
                 }`}
-                style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+                style={{ fontFamily: 'var(--font-noto-sans)' }}
               >
                 {link.label}
               </Link>
@@ -159,7 +159,7 @@ export function Navbar() {
                     ? "text-[#033163]/60 hover:text-[#033163]/80"
                     : "text-foreground/60 hover:text-foreground/80"
               }`}
-              style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+              style={{ fontFamily: 'var(--font-noto-sans)' }}
             >
               ES
             </button>
@@ -174,7 +174,7 @@ export function Navbar() {
                     ? "text-[#033163]/60 hover:text-[#033163]/80"
                     : "text-foreground/60 hover:text-foreground/80"
               }`}
-              style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+              style={{ fontFamily: 'var(--font-noto-sans)' }}
             >
               EN
             </button>

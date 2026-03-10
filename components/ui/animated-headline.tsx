@@ -9,6 +9,7 @@ type AnimatedHeadlineProps = {
     className?: string
     duration?: number
     delay?: number
+    style?: React.CSSProperties
   }
 
 export default function AnimatedHeadline({
@@ -17,6 +18,7 @@ export default function AnimatedHeadline({
   className = "",
   duration = 1.8,
   delay = 0,
+  style = {},
 }: AnimatedHeadlineProps) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -43,7 +45,7 @@ export default function AnimatedHeadline({
 
   return (
     <div ref={ref}>
-      <Tag className={className}>
+      <Tag className={className} style={style}>
         <div className="line overflow-hidden">
           <span className="block">{text}</span>
         </div>

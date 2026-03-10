@@ -30,14 +30,14 @@ export function HeroSection() {
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
           <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-end">
-              <h1 className="text-balance text-4xl font-regular text-[#FEFEFE] ">
+              <h1 className="text-balance text-4xl font-regular text-[#FEFEFE]" style={{ fontFamily: '"Zalando Sans"' }}>
                 <AnimatedHeadline
                   text={t("heroSection.title")}
                   as="h1"
                   delay={0.2}
                 />
               </h1>
-              <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular noto-sans">
+              <h2 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular" style={{ fontFamily: '"Zalando Sans"' }}>
                 <AnimatedHeadline
                   text={t("heroSection.subtitle")}
                   as="h2"
@@ -51,6 +51,7 @@ export function HeroSection() {
                 text={t("heroSection.description")}
                 as="h3"
                 delay={2.0}
+                style={{ fontFamily: '"Zalando Sans"' }}
               />
               <FadeInUp delay={2.0}>
                 <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

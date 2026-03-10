@@ -23,7 +23,7 @@ export function HeroBanner() {
         <div className="flex flex-1 flex-col justify-center gap-8 items-center md:items-start">
           <h1
             className="max-w-xl text-4xl font-regular leading-tight tracking-[0.08em] text-[#033163] md:text-5xl"
-            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            style={{ fontFamily: '"Adagietto", "Zalando Sans"' }}
           >
             {t("title")}
           </h1>
@@ -52,7 +52,7 @@ export function HeroBanner() {
           <div className="w-full max-w-2xl rounded-[40px] bg-white/90 p-10 shadow-[0_30px_100px_rgba(0,77,159,0.25)] backdrop-blur-lg md:p-14">
             <p
               className="text-xl leading-relaxed text-[#006FC4] md:text-2xl"
-              style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
+              style={{ fontFamily: "var(--font-noto-sans)" }}
             >
               {t("paragraph1")}
               <span className="block mt-2">
