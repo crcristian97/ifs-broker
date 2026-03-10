@@ -89,9 +89,9 @@ export function Navbar() {
           <Image
             src={isServiciosComplementarios ? "/ifs_insurance.png" : "/ifs_insurance_white.png"}
             alt="IFS Insurance"
-            width={200}
-            height={40}
-            className="h-8 w-auto md:h-10"
+            width={260}
+            height={52}
+            className="h-10 w-auto md:h-12"
             priority
           />
         </Link>
