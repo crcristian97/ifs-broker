@@ -12,7 +12,7 @@ type ButtonPrimaryProps = {
 
 export const ButtonPrimary = ({ children, href, className, hover, onClick }: ButtonPrimaryProps) => {
   const baseClasses = cn(
-    "inline-flex items-center justify-center rounded-lg border border-[#006fc4] bg-[#006fc4] px-8 py-3 text-lg font-semibold text-white transition-colors",
+    "inline-flex items-center justify-center rounded-lg border border-[#006fc4] bg-[#006fc4] px-8 py-3 text-lg font-semibold text-white transition-colors cursor-pointer",
     hover,
     className,
   );
