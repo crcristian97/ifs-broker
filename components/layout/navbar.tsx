@@ -87,7 +87,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="nav-logo flex items-center">
           <Image
-            src="/ifs_insurance.png"
+            src={isServiciosComplementarios ? "/ifs_insurance.png" : "/ifs_insurance_white.png"}
             alt="IFS Insurance"
             width={200}
             height={40}
