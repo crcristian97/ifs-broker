@@ -42,6 +42,16 @@ export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
         ))}
       </InfiniteSlider>
 
+      {/* Edge shadow / gradient overlays with wider coverage */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-112 bg-gradient-to-r from-[#e6f3fa] via-[#e6f3fa]/80 to-transparent"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-112 bg-gradient-to-l from-[#e6f3fa] via-[#e6f3fa]/80 to-transparent"
+        aria-hidden="true"
+      />
+
     </div>
   );
 }

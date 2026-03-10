@@ -63,7 +63,7 @@ const logos = [
 export default function LogoCloudSection() {
   const t = useTranslations("logoCloud");
   return (
-    <section className="relative w-full py-16 px-6 md:px-12 lg:px-16 overflow-hidden">
+    <section className="relative w-full  overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1400px]">
         <div
           aria-hidden="true"
