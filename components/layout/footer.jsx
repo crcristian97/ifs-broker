@@ -6,6 +6,22 @@ import { FeatureBar } from "@/components/ui/feature-bar"
 import { ButtonPrimary } from "../ui/button-primary"
 import { ButtonSecondary } from "../ui/button-secondary"
 import Image from "next/image"
+import gsap from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+
+gsap.registerPlugin(ScrollToPlugin)
+
+const scrollToSection = (id) => {
+  if (typeof window === "undefined") return
+  const element = document.getElementById(id)
+  if (!element) return
+
+  gsap.to(window, {
+    duration: 1,
+    ease: "power2.out",
+    scrollTo: { y: element, offsetY: 80 },
+  })
+}
 
 const features = [
   {
@@ -26,6 +42,7 @@ export default function Footer() {
   const t = useTranslations("footer")
   return (
     <section
+      id="contacto"
       className="relative w-full min-h-[700px] flex flex-col justify-end"
       style={{
         backgroundImage:
@@ -54,6 +71,10 @@ export default function Footer() {
             <ButtonPrimary
               href="#cotiza"
               hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+              onClick={(event) => {
+                event.preventDefault()
+                scrollToSection("cotiza")
+              }}
             >
               {t("scheduleMeeting")}
             </ButtonPrimary>

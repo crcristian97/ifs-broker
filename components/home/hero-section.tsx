@@ -6,6 +6,22 @@ import { ButtonSecondary } from "../ui/button-secondary";
 import { FeatureBar } from "../ui/feature-bar";
 import AnimatedHeadline from "../ui/animated-headline";
 import { FadeInUp } from "../ui/fade-in-up";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
+const scrollToSection = (id: string) => {
+  if (typeof window === "undefined") return;
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  gsap.to(window, {
+    duration: 1,
+    ease: "power2.out",
+    scrollTo: { y: element, offsetY: 80 },
+  });
+};
 
 export function HeroSection() {
   const t = useTranslations();
@@ -58,6 +74,10 @@ export function HeroSection() {
                   <ButtonPrimary
                     href="#cotiza"
                     hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      scrollToSection("cotiza");
+                    }}
                   >
                     {t("heroPlanificacion.quoteLifeInsurance")}
                   </ButtonPrimary>

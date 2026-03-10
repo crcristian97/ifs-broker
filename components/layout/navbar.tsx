@@ -2,12 +2,27 @@
 
 import { Link, usePathname, useRouter } from "@/i18n/navigation"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, MouseEvent } from "react"
 import { Menu, X } from "lucide-react"
 import gsap from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { useTranslations, useLocale } from "next-intl"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
 import { ButtonPrimary } from "../ui/button-primary"
+
+gsap.registerPlugin(ScrollToPlugin)
+
+const scrollToSection = (id: string) => {
+  if (typeof window === "undefined") return
+  const element = document.getElementById(id)
+  if (!element) return
+
+  gsap.to(window, {
+    duration: 1,
+    ease: "power2.out",
+    scrollTo: { y: element, offsetY: 80 },
+  })
+}
 
 export function Navbar() {
   const pathname = usePathname()
@@ -181,7 +196,16 @@ export function Navbar() {
           </div>
 
           {/* Contact Button */}
-          <ButtonPrimary href="#contacto" hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]">{t("nav.contacto")}</ButtonPrimary>
+          <ButtonPrimary
+            href="#contacto"
+            hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+            onClick={(event: MouseEvent<HTMLButtonElement>) => {
+              event.preventDefault()
+              scrollToSection("contacto")
+            }}
+          >
+            {t("nav.contacto")}
+          </ButtonPrimary>
         </div>
 
         {/* Mobile menu toggle */}
@@ -249,13 +273,16 @@ export function Navbar() {
                   EN
                 </button>
               </div>
-              <Link
-                href="#contacto"
+              <button
                 className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => {
+                  event.preventDefault()
+                  scrollToSection("contacto")
+                  setMobileOpen(false)
+                }}
               >
                 {t("nav.contacto")}
-              </Link>
+              </button>
             </div>
           </div>
         </div>

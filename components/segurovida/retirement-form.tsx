@@ -43,6 +43,7 @@ export function RetirementForm() {
 
   return (
     <div
+      id="cotiza"
       className="w-full max-w-3xl mx-auto relative"
     >
       <div className="mb-8 text-center">
