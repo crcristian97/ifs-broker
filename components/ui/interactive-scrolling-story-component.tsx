@@ -39,10 +39,31 @@ export function ScrollingFeatureShowcase() {
   ];
   // State to track the currently active slide index
   const [activeIndex, setActiveIndex] = useState(0);
+  // Track if the component is currently in the viewport
+  const [isInView, setIsInView] = useState(false);
   // Ref to the main scrollable container
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   // Ref to the sticky content panel
   const stickyPanelRef = useRef<HTMLDivElement | null>(null);
+
+  // Observe when the scroll container enters the viewport
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   // --- Scroll Handler ---
   useEffect(() => {
@@ -50,7 +71,11 @@ export function ScrollingFeatureShowcase() {
     if (!container) return;
 
     const handleScroll = () => {
+      if (!isInView) return;
+
       const scrollableHeight = container.scrollHeight - window.innerHeight;
+      if (scrollableHeight <= 0) return;
+
       const stepHeight = scrollableHeight / slidesData.length;
       const newActiveIndex = Math.min(
         slidesData.length - 1,
@@ -59,9 +84,9 @@ export function ScrollingFeatureShowcase() {
       setActiveIndex(newActiveIndex);
     };
 
-    container.addEventListener('scroll', handleScroll);
-    return () => container.removeEventListener('scroll', handleScroll);
-  }, []);
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [isInView, slidesData.length]);
   
   // Dynamic styles for the background and text color transitions
   const dynamicStyles = {
