@@ -18,7 +18,7 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 export function LogoCloud({ logos, className, ...props }: LogoCloudProps) {
   return (
     <div
-      className="relative w-full py-6 overflow-hidden"
+      className="relative w-full py-6 overflow-hidden "
       {...props}
     >
       <InfiniteSlider gap={120} reverse duration={60} durationOnHover={100}>

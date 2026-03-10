@@ -64,7 +64,7 @@ export default function LogoCloudSection() {
   const t = useTranslations("logoCloud");
   return (
     <section className="relative w-full  overflow-hidden">
-      <div className="relative mx-auto w-full max-w-[1400px]">
+      <div className="relative mx-auto w-full">
         <div
           aria-hidden="true"
           className={cn(
