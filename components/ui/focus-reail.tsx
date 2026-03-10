@@ -59,8 +59,8 @@ export function FocusRail({
   items,
   initialIndex = 0,
   loop = true,
-  autoPlay = false,
-  interval = 4000,
+  autoPlay = true,
+  interval = 3000,
   className,
 }: FocusRailProps) {
   const [active, setActive] = React.useState(initialIndex);
@@ -108,10 +108,10 @@ export function FocusRail({
 
   // Autoplay logic
   React.useEffect(() => {
-    if (!autoPlay || isHovering) return;
+    if (!autoPlay || isHovering || items.length <= 1) return;
     const timer = setInterval(() => handleNext(), interval);
     return () => clearInterval(timer);
-  }, [autoPlay, isHovering, handleNext, interval]);
+  }, [autoPlay, isHovering, handleNext, interval, items.length]);
 
   // Keyboard navigation
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -219,6 +219,28 @@ export function FocusRail({
             );
           })}
         </motion.div>
+
+        {/* Navigation arrows */}
+        {items.length > 1 && (
+          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 md:px-8">
+            <button
+              type="button"
+              onClick={handlePrev}
+              className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#033163] text-[#FEFEFE] shadow-md transition hover:bg-[#033163]/80"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={handleNext}
+              className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#033163] text-[#FEFEFE] shadow-md transition hover:bg-[#033163]/80"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        )}
 
       </div>
     </div>
