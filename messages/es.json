@@ -135,16 +135,15 @@
     "international": "Respaldo internacional"
   },
   "retirementForm": {
-    "title1": "Cotizá tu ",
-    "title2": "fondo de retiro",
-    "subtitle": "Desliza el botón que está sobre la barra horizontal para modificar su información",
-    "labelYearsStart": "¿En cuántos años quisiera empezar a recibir una renta mensual?",
-    "labelYearsRent": "¿Cuántos años desea que le dure la renta de su jubilación?",
-    "labelMonthlyRent": "A valor de hoy ¿Qué renta mensual desearía recibir cuando se jubile? (en USD)",
-    "labelInflation": "Elija el porcentaje de inflación anual en USD que desea utilizar para estos cálculos (en %)",
-    "labelProfitability": "Elija la rentabilidad anual porcentual que espera obtener por su fondo una vez que empiecen los retiros (en %)",
-    "labelCoverage": "¿Qué porcentaje del fondo de pensión desea que este plan le cubra? (en %)",
-    "resultText": "Este es el déficit que debería ser cubierto por un seguro de vida",
+    "title1": "Calculá tu ",
+    "title2": "necesidad de cobertura",
+    "subtitle": "Completá la información para estimar cuánto capital deberían recibir tus dependientes ante tu fallecimiento.",
+    "labelMonthlyIncome": "¿Cuál es el ingreso mensual promedio que usted genera para sus dependientes? (en US$)",
+    "labelPercentNeeded": "¿Qué porcentaje de ese ingreso mensual necesitarían sus dependientes para mantenerse, en caso usted falleciera? (en %)",
+    "labelYearsNeeded": "¿Por cuántos años estima que sus dependientes necesitarán este ingreso para cubrir sus gastos?",
+    "labelLiquidAssets": "¿Cuál es el valor de sus activos líquidos? (Ahorros, inversiones e inmuebles liquidables) (en US$)",
+    "labelExistingInsurance": "¿Cuál es el valor de sus seguros de vida vigentes? (en US$)",
+    "resultText": "Este es el capital estimado que debería estar cubierto por seguros de vida para sostener el nivel de vida de sus dependientes.",
     "button": "Agendá una reunión"
   },
   "retirementTimeline": {

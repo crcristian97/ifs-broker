@@ -135,16 +135,15 @@
     "international": "International backing"
   },
   "retirementForm": {
-    "title1": "Quote your ",
-    "title2": "retirement fund",
-    "subtitle": "Slide the button on the horizontal bar to modify your information",
-    "labelYearsStart": "In how many years would you like to start receiving a monthly income?",
-    "labelYearsRent": "How many years do you want your retirement income to last?",
-    "labelMonthlyRent": "At today's value, what monthly income would you like to receive when you retire? (in USD)",
-    "labelInflation": "Choose the annual inflation percentage in USD you want to use for these calculations (in %)",
-    "labelProfitability": "Choose the annual percentage return you expect to earn on your fund once withdrawals begin (in %)",
-    "labelCoverage": "What percentage of your pension fund do you want this plan to cover? (in %)",
-    "resultText": "This is the deficit that should be covered by life insurance",
+    "title1": "Estimate your ",
+    "title2": "coverage need",
+    "subtitle": "Fill in the information to estimate how much capital your dependents would need if you passed away.",
+    "labelMonthlyIncome": "What is the average monthly income you generate for your dependents? (in US$)",
+    "labelPercentNeeded": "What percentage of that monthly income would your dependents need to maintain themselves if you passed away? (in %)",
+    "labelYearsNeeded": "For how many years do you estimate your dependents will need this income to cover their expenses?",
+    "labelLiquidAssets": "What is the value of your liquid assets? (Savings, investments and liquidatable real estate) (in US$)",
+    "labelExistingInsurance": "What is the value of your current life insurance coverage? (in US$)",
+    "resultText": "This is the estimated capital that should be covered by life insurance to maintain your dependents' standard of living.",
     "button": "Schedule a meeting"
   },
   "retirementTimeline": {

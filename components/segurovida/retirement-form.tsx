@@ -7,39 +7,29 @@ import { ButtonPrimary } from "../ui/button-primary"
 
 export function RetirementForm() {
   const t = useTranslations("retirementForm")
-  const [yearsToStart, setYearsToStart] = useState(16)
-  const [yearsOfRent, setYearsOfRent] = useState(16)
-  const [monthlyRent, setMonthlyRent] = useState(3000)
-  const [inflation, setInflation] = useState(3)
-  const [profitability, setProfitability] = useState(5)
-  const [coveragePercent, setCoveragePercent] = useState(70)
 
-  const deficit = useMemo(() => {
-    const annualRent = monthlyRent * 12
-    const inflationFactor = Math.pow(1 + inflation / 100, yearsToStart)
-    const futureAnnualRent = annualRent * inflationFactor
-    const realRate = (profitability - inflation) / 100
+  const [monthlyIncome, setMonthlyIncome] = useState(3000)
+  const [percentNeeded, setPercentNeeded] = useState(70)
+  const [yearsNeeded, setYearsNeeded] = useState(15)
+  const [liquidAssets, setLiquidAssets] = useState<string>("0")
+  const [existingInsurance, setExistingInsurance] = useState<string>("0")
 
-    let totalNeeded: number
-    if (realRate === 0) {
-      totalNeeded = futureAnnualRent * yearsOfRent
-    } else {
-      totalNeeded =
-        futureAnnualRent *
-        ((1 - Math.pow(1 + realRate, -yearsOfRent)) / realRate)
-    }
+  const neededCapital = useMemo(() => {
+    const liquidAssetsValue = Number(liquidAssets) || 0
+    const existingInsuranceValue = Number(existingInsurance) || 0
 
-    const covered = totalNeeded * (coveragePercent / 100)
-    const deficitValue = totalNeeded - covered
-
-    return deficitValue
-  }, [yearsToStart, yearsOfRent, monthlyRent, inflation, profitability, coveragePercent])
+    const neededAnnualIncome = monthlyIncome * 12 * (percentNeeded / 100)
+    const grossNeed = neededAnnualIncome * yearsNeeded
+    const covered = liquidAssetsValue + existingInsuranceValue
+    const deficitValue = grossNeed - covered
+    return deficitValue > 0 ? deficitValue : 0
+  }, [monthlyIncome, percentNeeded, yearsNeeded, liquidAssets, existingInsurance])
 
   const formattedDeficit = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
-  }).format(deficit)
+  }).format(neededCapital)
 
   return (
     <div
@@ -63,62 +53,62 @@ export function RetirementForm() {
       <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
         <div className="flex flex-col gap-6">
           <RangeSlider
-            label={t("labelYearsStart")}
-            min={1}
-            max={40}
-            value={yearsToStart}
-            onChange={setYearsToStart}
-          />
-
-          <RangeSlider
-            label={t("labelYearsRent")}
-            min={1}
-            max={40}
-            value={yearsOfRent}
-            onChange={setYearsOfRent}
-          />
-
-          <RangeSlider
-            label={t("labelMonthlyRent")}
+            label={t("labelMonthlyIncome")}
             min={500}
-            max={20000}
+            max={10000}
             step={100}
-            value={monthlyRent}
-            onChange={setMonthlyRent}
+            value={monthlyIncome}
+            onChange={setMonthlyIncome}
             unit="$"
           />
 
           <RangeSlider
-            label={t("labelInflation")}
-            min={1}
-            max={15}
-            value={inflation}
-            onChange={setInflation}
-            unit="%"
-          />
-
-          <RangeSlider
-            label={t("labelProfitability")}
-            min={1}
-            max={20}
-            value={profitability}
-            onChange={setProfitability}
-            unit="%"
-          />
-
-          <RangeSlider
-            label={t("labelCoverage")}
-            min={1}
+            label={t("labelPercentNeeded")}
+            min={10}
             max={100}
-            value={coveragePercent}
-            onChange={setCoveragePercent}
+            value={percentNeeded}
+            onChange={setPercentNeeded}
             unit="%"
           />
+
+          <RangeSlider
+            label={t("labelYearsNeeded")}
+            min={5}
+            max={30}
+            value={yearsNeeded}
+            onChange={setYearsNeeded}
+          />
+
+          <div className="flex flex-col gap-2">
+            <label className="text-base text-[#033163] leading-relaxed">
+              {t("labelLiquidAssets")}
+            </label>
+            <input
+              type="number"
+              min={0}
+              className="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#006FC4]/40 text-black"
+              value={liquidAssets}
+              onChange={(e) => setLiquidAssets(e.target.value)}
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-base text-[#033163] leading-relaxed">
+              {t("labelExistingInsurance")}
+            </label>
+            <input
+              type="number"
+              min={0}
+              className="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#006FC4]/40 text-black"
+              value={existingInsurance}
+              onChange={(e) => setExistingInsurance(e.target.value)}
+            />
+          </div>
         </div>
 
         {/* Result */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
-          <p className="text-base text-[#000A15] font-bold leading-relaxed flex-1">
+          <p className="text-base text-[#000A15] font-semibold leading-relaxed flex-1">
             {t("resultText")}
           </p>
           <div className="rounded-lg bg-[#91D8F7] border border-[#91D8F7] px-5 py-3 min-w-[180px] text-center">
