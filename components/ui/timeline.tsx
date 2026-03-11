@@ -13,6 +13,7 @@ interface TimelineEntry {
   buttonPrimary?: string;
   buttonSecondary?: string;
   buttonHref?: string;
+   buttonHrefSecondary?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -84,6 +85,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <ConocerMasButton
                       textButton={item.buttonSecondary ?? t("footer.scheduleMeeting")}
                       size="sm"
+                      onClick={() => {
+                        if (item.buttonHrefSecondary === "#investment-questionnaire" && pathname.includes("/fondos-de-retiro")) {
+                          if (typeof window === "undefined") return;
+                          const el = document.getElementById("investment-questionnaire");
+                          if (el) {
+                            el.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }
+                        }
+                      }}
                     />
                   </div>
                 </div>

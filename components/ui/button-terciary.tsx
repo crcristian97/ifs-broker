@@ -5,12 +5,14 @@ type ConocerMasButtonProps = {
   textButton: string
   size?: "sm" | "md"
   className?: string
+  onClick?: () => void
 }
 
 export function ConocerMasButton({
   textButton,
   size = "md",
   className,
+  onClick,
 }: ConocerMasButtonProps) {
   const isSmall = size === "sm"
 
@@ -21,6 +23,7 @@ export function ConocerMasButton({
         isSmall ? "h-9" : "h-[48px]",
         className,
       )}
+      onClick={onClick}
       style={{
         background: "linear-gradient(to right, #E5EEF5, #91D8F7)",
         borderRadius: "8px",
