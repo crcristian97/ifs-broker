@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { FeatureBar } from "@/components/ui/feature-bar"
@@ -40,6 +41,12 @@ const features = [
 
 export default function Footer() {
   const t = useTranslations("footer")
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [interests, setInterests] = useState([])
+  const [errors, setErrors] = useState({})
   return (
     <section
       id="contacto"
@@ -78,12 +85,13 @@ export default function Footer() {
             >
               {t("scheduleMeeting")}
             </ButtonPrimary>
-            <ButtonSecondary
-              href="#agenda"
-              hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60"
+              onClick={() => setIsContactModalOpen(true)}
             >
               {t("institutionalContact")}
-            </ButtonSecondary>
+            </button>
           </div>
         </div>
       </div>
@@ -97,6 +105,125 @@ export default function Footer() {
       <div className="flex justify-center mb-12">
         <FeatureBar features={features} />
       </div>
+
+      {isContactModalOpen && (
+        <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+          <div className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-6 shadow-xl">
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-[#033163]">
+                {t("institutionalContact")}
+              </h3>
+              <button
+                type="button"
+                className="text-sm text-[#033163]/70 hover:text-[#033163]"
+                onClick={() => setIsContactModalOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault()
+                const newErrors = {}
+                if (!fullName.trim()) newErrors.fullName = "Este campo es obligatorio"
+                if (!email.trim()) newErrors.email = "Este campo es obligatorio"
+                if (!phone.trim()) newErrors.phone = "Este campo es obligatorio"
+                if (!interests.length) newErrors.interests = "Seleccioná al menos una opción"
+                setErrors(newErrors)
+                if (Object.keys(newErrors).length) return
+                // Aquí podrías enviar la información a una API
+                setIsContactModalOpen(false)
+              }}
+            >
+              <div>
+                <label className="mb-1 block text-sm font-medium text-[#033163]">
+                  Nombre y apellido
+                </label>
+                <input
+                  type="text"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4] text-black"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+                {errors.fullName && (
+                  <p className="mt-1 text-xs text-red-600">{errors.fullName}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium text-[#033163]">
+                  Correo
+                </label>
+                <input
+                  type="email"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4] text-black"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {errors.email && (
+                  <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="mb-1 block text-sm font-medium text-[#033163]">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4] text-black "
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                {errors.phone && (
+                  <p className="mt-1 text-xs text-red-600">{errors.phone}</p>
+                )}
+              </div>
+
+              <div>
+                <p className="mb-2 block text-sm font-medium text-[#033163]">
+                  ¿Qué te interesa proteger?
+                </p>
+                <div className="space-y-2 text-sm text-[#033163]">
+                  {[
+                    { id: "vida", label: "Activos de vida" },
+                    { id: "retiro", label: "Mi retiro" },
+                    { id: "inversiones", label: "Mis inversiones" },
+                    { id: "viajes", label: "Mis viajes" },
+                  ].map((opt) => (
+                    <label key={opt.id} className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-[#d0d7e2] text-[#006FC4] focus:ring-[#006FC4]"
+                        checked={interests.includes(opt.id)}
+                        onChange={(e) => {
+                          setInterests((prev) =>
+                            e.target.checked
+                              ? [...prev, opt.id]
+                              : prev.filter((v) => v !== opt.id),
+                          )
+                        }}
+                      />
+                      <span>{opt.label}</span>
+                    </label>
+                  ))}
+                </div>
+                {errors.interests && (
+                  <p className="mt-1 text-xs text-red-600">{errors.interests}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="mt-2 w-full rounded-lg bg-[#006FC4] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052a0]"
+              >
+                Enviar información
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

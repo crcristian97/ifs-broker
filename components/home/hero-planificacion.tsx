@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "../ui/button-primary";
@@ -10,6 +11,12 @@ import { cn } from "@/lib/utils";
 export function HeroPlanificacion() {
   const t = useTranslations("heroPlanificacion");
   const pathname = usePathname();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [interests, setInterests] = useState<string[]>([]);
+  const [errors, setErrors] = useState<{ fullName?: string; email?: string; phone?: string; interests?: string }>({});
   return (
     <section id="nosotros" className="w-full bg-white  mt-16 md:mt-24 mb-16 md:mb-24">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
@@ -86,18 +93,122 @@ export function HeroPlanificacion() {
                 >
                   {t("quoteLifeInsurance")}
                 </ButtonPrimary>
-                <ButtonSecondary
-                  href="#agenda"
-                  hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-                  className="w-full md:w-auto justify-center"
+                <button
+                  type="button"
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 w-full md:w-auto justify-center"
                 >
                   {t("speakWithAdvisor")}
-                </ButtonSecondary>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {isContactModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-[#033163]">Contacto institucional</h3>
+              <button
+                type="button"
+                className="text-sm text-[#033163]/70 hover:text-[#033163]"
+                onClick={() => setIsContactModalOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const newErrors: typeof errors = {};
+                if (!fullName.trim()) newErrors.fullName = "Este campo es obligatorio";
+                if (!email.trim()) newErrors.email = "Este campo es obligatorio";
+                if (!phone.trim()) newErrors.phone = "Este campo es obligatorio";
+                if (interests.length === 0) newErrors.interests = "Seleccioná al menos una opción";
+                setErrors(newErrors);
+                if (Object.keys(newErrors).length > 0) return;
+                // Aquí podrías enviar la información a una API
+                setIsContactModalOpen(false);
+              }}
+            >
+              <div>
+                <label className="block text-sm font-medium text-[#033163] mb-1">
+                  Nombre y apellido
+                </label>
+                <input
+                  type="text"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4]"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+                {errors.fullName && <p className="mt-1 text-xs text-red-600">{errors.fullName}</p>}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#033163] mb-1">
+                  Correo
+                </label>
+                <input
+                  type="email"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4]"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#033163] mb-1">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  className="w-full rounded-md border border-[#d0d7e2] px-3 py-2 text-sm focus:border-[#006FC4] focus:outline-none focus:ring-1 focus:ring-[#006FC4]"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+              </div>
+              <div>
+                <p className="block text-sm font-medium text-[#033163] mb-2">
+                  ¿Qué te interesa proteger?
+                </p>
+                <div className="space-y-2 text-sm text-[#033163]">
+                  {[
+                    { id: "vida", label: "Activos de vida" },
+                    { id: "retiro", label: "Mi retiro" },
+                    { id: "inversiones", label: "Mis inversiones" },
+                    { id: "viajes", label: "Mis viajes" },
+                  ].map((opt) => (
+                    <label key={opt.id} className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-[#d0d7e2] text-[#006FC4] focus:ring-[#006FC4]"
+                        checked={interests.includes(opt.id)}
+                        onChange={(e) => {
+                          setInterests((prev) =>
+                            e.target.checked
+                              ? [...prev, opt.id]
+                              : prev.filter((v) => v !== opt.id),
+                          );
+                        }}
+                      />
+                      <span>{opt.label}</span>
+                    </label>
+                  ))}
+                </div>
+                {errors.interests && <p className="mt-1 text-xs text-red-600">{errors.interests}</p>}
+              </div>
+              <button
+                type="submit"
+                className="mt-2 w-full rounded-lg bg-[#006FC4] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052a0]"
+              >
+                Enviar información
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
