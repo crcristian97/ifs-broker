@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function BlogSection() {
   const t = useTranslations("blog");
