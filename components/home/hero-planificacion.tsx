@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "../ui/button-primary";
 import { ButtonSecondary } from "../ui/button-secondary";
 import { AnimatedGridPattern } from "../ui/background-wedosection";
@@ -8,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function HeroPlanificacion() {
   const t = useTranslations("heroPlanificacion");
+  const pathname = usePathname();
   return (
     <section className="w-full bg-white  mt-16 md:mt-24 mb-16 md:mb-24">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
@@ -68,9 +70,19 @@ export function HeroPlanificacion() {
               </p>
               <div className="flex w-full flex-col gap-3 items-stretch md:items-end md:w-auto">
                 <ButtonPrimary
-                  href="#cotiza"
+                  href="/seguros-de-vida#cotiza"
                   hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                   className="w-full md:w-auto justify-center"
+                  onClick={(event) => {
+                    // Si ya estamos en la página de seguros de vida, solo hacer scroll suave al formulario
+                    if (pathname.includes("/seguros-de-vida")) {
+                      event.preventDefault();
+                      const el = document.getElementById("cotiza");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }
+                  }}
                 >
                   {t("quoteLifeInsurance")}
                 </ButtonPrimary>

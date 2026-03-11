@@ -20,6 +20,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
+  const scrollToCotiza = () => {
+    if (typeof window === "undefined") return;
+    const element = document.getElementById("cotiza");
+    if (!element) return;
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
@@ -62,6 +69,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <ButtonPrimary
                       href={item.buttonHref ?? "#cotiza"}
                       className="px-5 py-2.5 text-xs md:text-sm"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        scrollToCotiza();
+                      }}
                     >
                       {item.buttonPrimary ?? t("heroPlanificacion.quoteLifeInsurance")}
                     </ButtonPrimary>
