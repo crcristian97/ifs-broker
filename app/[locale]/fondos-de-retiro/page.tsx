@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import HeroSubsection from "@/components/layout/hero-subsection";
@@ -7,6 +8,23 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import Footer from "@/components/layout/footer";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: t("fondosDeRetiro.title"),
+    description: t("fondosDeRetiro.description"),
+    openGraph: {
+      title: t("fondosDeRetiro.title"),
+      description: t("fondosDeRetiro.description"),
+      url: `/${locale}/fondos-de-retiro`,
+    },
+    alternates: { canonical: `/${locale}/fondos-de-retiro` },
+  };
+}
 
 export default async function FondosDeRetiroPage() {
   const t = await getTranslations();

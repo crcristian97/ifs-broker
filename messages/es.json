@@ -303,5 +303,27 @@
     "slide3Subtitle": "",
     "slide3Description": "Complementamos nuestras soluciones principales con coberturas específicas que permiten abordar escenarios particulares y reforzar una planificación integral de protección.",
     "knowMore": "Conocer más"
+  },
+  "seo": {
+    "home": {
+      "title": "IFS Broker - Planificación Financiera Internacional",
+      "description": "Soluciones patrimoniales personalizadas de alcance internacional: seguros de vida, salud internacional y fondos de retiro, diseñados para proteger tu familia y tu futuro."
+    },
+    "segurosDeVida": {
+      "title": "Seguros de Vida Internacional",
+      "description": "Protección financiera de clase mundial para tu familia con seguros de vida de alcance internacional. Coberturas respaldadas por aseguradoras de primer nivel con solidez global."
+    },
+    "saludInternacional": {
+      "title": "Salud Internacional",
+      "description": "Cobertura médica global con acceso a Mayo Clinic, Cleveland Clinic y las mejores redes internacionales. Gestión 100% digital y renovación garantizada de por vida."
+    },
+    "fondosDeRetiro": {
+      "title": "Fondos de Retiro",
+      "description": "Construí ingresos futuros con fondos de retiro internacionales. Inversión en moneda fuerte con protección de capital para asegurar tu retiro y la educación de tus hijos."
+    },
+    "serviciosComplementarios": {
+      "title": "Servicios Complementarios",
+      "description": "Coberturas específicas que complementan tu planificación financiera integral. Soluciones personalizadas para abordar escenarios particulares y reforzar tu protección patrimonial."
+    }
   }
 }

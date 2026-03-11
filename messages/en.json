@@ -267,5 +267,27 @@
     "slide3Subtitle": "",
     "slide3Description": "International medical coverage for individuals and companies seeking access to high-quality care and protection against major medical expenses.",
     "knowMore": "Learn more"
+  },
+  "seo": {
+    "home": {
+      "title": "IFS Broker - International Financial Planning",
+      "description": "Personalized international wealth solutions: life insurance, international health coverage, and retirement funds designed to protect your family and secure your future."
+    },
+    "segurosDeVida": {
+      "title": "International Life Insurance",
+      "description": "World-class financial protection for your family with international life insurance. Coverage backed by top-tier insurers with global financial strength."
+    },
+    "saludInternacional": {
+      "title": "International Health Insurance",
+      "description": "Global medical coverage with access to Mayo Clinic, Cleveland Clinic, and the world's leading networks. 100% digital management and guaranteed lifetime renewal."
+    },
+    "fondosDeRetiro": {
+      "title": "Retirement Funds",
+      "description": "Build future income with international retirement funds. Invest in hard currency with capital protection to secure your retirement and your children's education."
+    },
+    "serviciosComplementarios": {
+      "title": "Complementary Services",
+      "description": "Specific coverages that complement your comprehensive financial planning. Personalized solutions to address particular scenarios and strengthen your wealth protection."
+    }
   }
 }

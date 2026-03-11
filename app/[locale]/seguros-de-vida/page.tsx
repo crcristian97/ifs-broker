@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -7,6 +8,23 @@ import { RetirementForm } from "@/components/segurovida/retirement-form";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: t("segurosDeVida.title"),
+    description: t("segurosDeVida.description"),
+    openGraph: {
+      title: t("segurosDeVida.title"),
+      description: t("segurosDeVida.description"),
+      url: `/${locale}/seguros-de-vida`,
+    },
+    alternates: { canonical: `/${locale}/seguros-de-vida` },
+  };
+}
 
 export default async function SegurosDeVidaPage() {
   const t = await getTranslations();

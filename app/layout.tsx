@@ -2,8 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'IFS Broker - Planificación Financiera Internacional',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com'),
+  title: {
+    default: 'IFS Broker - Planificación Financiera Internacional',
+    template: '%s | IFS Broker',
+  },
   description: 'Acompañamos a personas y empresas en la toma de decisiones financieras clave, combinando seguros, inversión y salud con una visión a largo plazo y respaldo internacional.',
+  openGraph: {
+    siteName: 'IFS Broker',
+    type: 'website',
+    locale: 'es_AR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
   icons: {
     icon: '/ifs_insurance.png',
     apple: '/ifs_insurance.png',

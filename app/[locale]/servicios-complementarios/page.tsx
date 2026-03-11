@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
 import BannerSection from "@/components/saludinternacional/banner-section";
@@ -7,6 +8,23 @@ import HowWeWork from "@/components/home/how-we-work";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: t("serviciosComplementarios.title"),
+    description: t("serviciosComplementarios.description"),
+    openGraph: {
+      title: t("serviciosComplementarios.title"),
+      description: t("serviciosComplementarios.description"),
+      url: `/${locale}/servicios-complementarios`,
+    },
+    alternates: { canonical: `/${locale}/servicios-complementarios` },
+  };
+}
 
 export default async function ServiciosComplementariosPage() {
   const t = await getTranslations();
