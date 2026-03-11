@@ -3,6 +3,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "./button-primary";
 import { ConocerMasButton } from "./button-terciary";
 
@@ -19,6 +20,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const pathname = usePathname();
 
   const scrollToCotiza = () => {
     if (typeof window === "undefined") return;
@@ -67,11 +69,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   </h3>
                   <div className="flex flex-col gap-3 max-w-xs">
                     <ButtonPrimary
-                      href={item.buttonHref ?? "#cotiza"}
+                      href={item.buttonHref ?? "/seguros-de-vida#cotiza"}
                       className="px-5 py-2.5 text-xs md:text-sm"
                       onClick={(event) => {
-                        event.preventDefault();
-                        scrollToCotiza();
+                        // Solo hacemos scroll suave si ya estamos en la página que tiene el formulario
+                        if (pathname.includes("/seguros-de-vida")) {
+                          event.preventDefault();
+                          scrollToCotiza();
+                        }
                       }}
                     >
                       {item.buttonPrimary ?? t("heroPlanificacion.quoteLifeInsurance")}

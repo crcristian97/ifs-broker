@@ -37,7 +37,7 @@ export function Navbar() {
   const navLinks = [
     { label: t("nav.home"), href: "/", key: "home" },
     { label: t("nav.soluciones"), href: "#soluciones", hasDropdown: true, key: "soluciones" },
-    { label: t("nav.nosotros"), href: "#nosotros", key: "nosotros" },
+    { label: t("nav.nosotros"), href: "/#nosotros", key: "nosotros" },
     { label: t("nav.trabajaConNosotros"), href: "#trabaja-con-nosotros", key: "trabajaConNosotros" },
   ]
 
@@ -142,6 +142,7 @@ export function Navbar() {
                 </HoverMenu>
               )
             }
+            // Regular nav links
             return (
               <Link
                 key={link.key}
@@ -152,6 +153,13 @@ export function Navbar() {
                     : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
                 }`}
                 style={{ fontFamily: 'var(--font-noto-sans)' }}
+                onClick={(event) => {
+                  // Smooth scroll for "Nosotros" when already on home
+                  if (link.key === "nosotros" && pathname === "/") {
+                    event.preventDefault()
+                    scrollToSection("nosotros")
+                  }
+                }}
               >
                 {link.label}
               </Link>
@@ -231,7 +239,15 @@ export function Navbar() {
                     ? "text-[#033163]/80 hover:text-[#033163]"
                     : "text-foreground/80 hover:text-foreground"
                 }`}
-                onClick={() => setMobileOpen(false)}
+                onClick={(event) => {
+                  if (link.key === "nosotros" && pathname === "/") {
+                    event.preventDefault()
+                    scrollToSection("nosotros")
+                    setMobileOpen(false)
+                  } else {
+                    setMobileOpen(false)
+                  }
+                }}
               >
                 {link.label}
               </Link>

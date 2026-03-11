@@ -11,7 +11,7 @@ export function HeroPlanificacion() {
   const t = useTranslations("heroPlanificacion");
   const pathname = usePathname();
   return (
-    <section className="w-full bg-white  mt-16 md:mt-24 mb-16 md:mb-24">
+    <section id="nosotros" className="w-full bg-white  mt-16 md:mt-24 mb-16 md:mb-24">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="relative bg-[#0B2A4A] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <AnimatedGridPattern

@@ -45,7 +45,7 @@ export function SaludTimelineDemo() {
           </div>
         </div>
       ),
-      href: "/seguros-de-vida#cotiza",
+      buttonHref: "/seguros-de-vida#cotiza",
     },
     {
       title: (
@@ -80,7 +80,7 @@ export function SaludTimelineDemo() {
           </div>
         </div>
       ),
-      href: "/seguros-de-vida#cotiza",
+      buttonHref: "/seguros-de-vida#cotiza",
     },
   ];
 
