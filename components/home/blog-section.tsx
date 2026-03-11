@@ -9,28 +9,30 @@ export default function BlogSection() {
   const t = useTranslations("blog");
   const articlesData = [
     {
+      id: "article1",
+      slug: "seguro-patrimonial-salud-internacional",
+      categorySlug: "salud",
       category: t("article1Category"),
       title: t("article1Title"),
-      description: t("article1Description"),
-      image: "/services/img-salud-corporativa.png",
+      subtitle: t("article1Subtitle"),
+      description: t("article1Heading"),
+      image: "/blog/salud-internacional.webp",
       publishDate: t("article1Date"),
-      readMoreLink: "#",
+      readTime: t("article1ReadTime"),
+      readMoreLink: "/blog/seguro-patrimonial-salud-internacional",
     },
     {
+      id: "article2",
+      slug: "planificacion-financiera-retiro-educacion",
+      categorySlug: "finanzas",
       category: t("article2Category"),
       title: t("article2Title"),
-      description: t("article2Description"),
-      image: "/services/img-salud-corporativa.png",
+      subtitle: t("article2Subtitle"),
+      description: t("article2Heading"),
+      image: "/blog/planificacion-financiera.webp",
       publishDate: t("article2Date"),
-      readMoreLink: "#",
-    },
-    {
-      category: t("article3Category"),
-      title: t("article3Title"),
-      description: t("article3Description"),
-      image: "/services/img-salud-corporativa.png",
-      publishDate: t("article3Date"),
-      readMoreLink: "#",
+      readTime: t("article2ReadTime"),
+      readMoreLink: "/blog/planificacion-financiera-retiro-educacion",
     },
   ];
   return (
@@ -88,8 +90,14 @@ export default function BlogSection() {
                     </div>
                   </div>
                   <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-                    
-                    <p className="mb-4 text-gray-600 text-xs leading-relaxed sm:mb-6 sm:text-sm">
+                   
+                    <p className="mb-1 text-black text-[11px] uppercase tracking-[0.15em] sm:text-xs">
+                      {article.category}
+                    </p>
+                    <p className="mb-1 text-black text-sm font-semibold sm:text-base">
+                      {article.subtitle}
+                    </p>
+                    <p className="mb-4 text-black text-xs leading-relaxed sm:mb-6 sm:text-sm">
                       {article.description}
                     </p>
                     {/* Read More Link and Date */}
@@ -104,9 +112,9 @@ export default function BlogSection() {
                         </span>
                         {t("readMore")}
                       </Link>
-                      <span className="flex items-center gap-2 text-[10px] text-[#033163] sm:gap-3 sm:text-xs">
-                        {article.publishDate}
-                        <span className="w-6 border-[#033163] border-t sm:w-16" />
+                      <span className="flex items-center gap-2 text-[10px] text-black sm:gap-3 sm:text-xs">
+                        {article.publishDate} · {article.readTime}
+                        <span className="w-6 border-black border-t sm:w-16" />
                       </span>
                     </div>
                   </div>
