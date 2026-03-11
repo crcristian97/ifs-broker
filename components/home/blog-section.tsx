@@ -106,7 +106,7 @@ export default function BlogSection() {
                         {t("readMore")}
                       </Link>
                       <span className="flex items-center gap-2 text-[10px] text-black sm:gap-3 sm:text-xs">
-                        {article.publishDate} · {article.readTime}
+                        {article.publishDate} 
                         <span className="w-6 border-black border-t sm:w-16" />
                       </span>
                     </div>
