@@ -67,7 +67,7 @@ export default function BlogSection() {
           <div className="relative z-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8 ">
             {articlesData.map((article, index) => (
               <div
-                className="cursor-pointer border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md rounded-3xl overflow-hidden"
+                className="border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md rounded-3xl overflow-hidden"
                 key={index}
               >
                 <div className="p-0">
@@ -79,11 +79,37 @@ export default function BlogSection() {
                       src={article.image || "/placeholder.svg"}
                       width={1920}
                     />
-                    {/* Bottom overlay with title (solid band) */}
-                   
+                    {/* Bottom blur overlay with title */}
+                    <div className="absolute left-0 bottom-0 w-full flex flex-col items-start">
+                      <div
+                        className="relative px-5 py-2"
+                        style={{
+                          zIndex: 20,
+                        }}
+                      >
+                        {/* Title: white, text-left, at beginning */}
+                        <span className="text-white font-bold text-lg leading-snug text-left">
+                          {article.title}
+                        </span>
+                      </div>
+                      <div
+                        className="w-full"
+                        style={{
+                          // Blur band at the bottom
+                          position: "absolute",
+                          left: 0,
+                          bottom: 0,
+                          width: "100%",
+                          height: "70px",
+                          background: "linear-gradient(to top, rgba(0,0,0,0.70) 80%, rgba(0,0,0,0.2) 100%, transparent 100%)",
+                          backdropFilter: "blur(8px)",
+                          WebkitBackdropFilter: "blur(8px)",
+                          zIndex: 10,
+                        }}
+                      />
+                    </div>
                   </div>
                   <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-                   
                     <p className="mb-1 text-black text-[11px] uppercase tracking-[0.15em] sm:text-xs">
                       {article.category}
                     </p>
@@ -106,7 +132,7 @@ export default function BlogSection() {
                         {t("readMore")}
                       </Link>
                       <span className="flex items-center gap-2 text-[10px] text-black sm:gap-3 sm:text-xs">
-                        {article.publishDate} 
+                        {article.publishDate}
                         <span className="w-6 border-black border-t sm:w-16" />
                       </span>
                     </div>
