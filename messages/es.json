@@ -236,7 +236,8 @@
   "heroGlobe": {
     "title1": "Cobertura de salud internacional ",
     "title2": "para personas y empresas",
-    "description": "La salud es un pilar fundamental dentro de la planificación financiera."
+    "description": "La salud es un pilar fundamental dentro de la planificación financiera.",
+    "imageAlt": "Cobertura de salud internacional para personas y empresas"
   },
   "saludTimeline": {
     "tab1Title": "salud internacional ",

@@ -236,7 +236,9 @@
   "heroGlobe": {
     "title1": "International health coverage ",
     "title2": "for individuals and companies",
-    "description": "Health is a fundamental pillar of financial planning."
+    "description": "Health is a fundamental pillar of financial planning.",
+    "imageAlt": "International health coverage for individuals and companies"
+
   },
   "saludTimeline": {
     "tab1Title": "International ",

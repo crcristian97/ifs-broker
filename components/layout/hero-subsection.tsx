@@ -11,6 +11,7 @@ type HeroSubsectionProps = {
   descriptionHighlight?: string;
   imageSrc?: string;
   imageAlt?: string;
+  invertTitleColors?: boolean;
 };
 
 const DEFAULT_DESCRIPTION =
@@ -26,7 +27,10 @@ export function HeroSubsection({
   descriptionHighlight = "",
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
+  invertTitleColors = false,
 }: HeroSubsectionProps) {
+  const prefixColor = invertTitleColors ? "#91d8f7" : "#FFFFFF";
+  const highlightColor = invertTitleColors ? "#FFFFFF" : "#91d8f7";
   return (
     <section
       className="relative w-full"
@@ -56,9 +60,9 @@ export function HeroSubsection({
             <FadeInUp>
               <div className="flex flex-col justify-end">
                 <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                  <span className="text-[#FFFFFF]">{titlePrefix}</span>
+                  <span className={`text-[${prefixColor}]`}>{titlePrefix}</span>
                   <br />
-                  <span className="text-[#91d8f7]">{titleHighlight}</span>
+                  <span className={`text-[${highlightColor}]`}>{titleHighlight}</span>
                   {titleSuffix && (
                     <>
                       {" "}
