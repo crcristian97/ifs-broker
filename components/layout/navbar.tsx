@@ -24,12 +24,16 @@ const scrollToSection = (id: string) => {
   })
 }
 
-export function Navbar() {
+type NavbarProps = {
+  forceBlue?: boolean
+}
+
+export function Navbar({ forceBlue = false }: NavbarProps) {
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations()
-  const isServiciosComplementarios = pathname === "/servicios-complementarios"
+  const isServiciosComplementarios = forceBlue || pathname === "/servicios-complementarios"
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)

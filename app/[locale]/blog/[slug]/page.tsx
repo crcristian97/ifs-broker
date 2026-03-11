@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import BlogArticle from "@/components/home/blog-article";
@@ -77,15 +78,17 @@ export default async function BlogSlugPage({
   };
 
   return (
+    
+    <> <Navbar forceBlue />
     <main className="relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <div className="mt-">
+
         <BlogArticle articleId={articleId} />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 

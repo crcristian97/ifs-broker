@@ -80,14 +80,7 @@ export default function BlogSection() {
                       width={1920}
                     />
                     {/* Bottom overlay with title (solid band) */}
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-[#FFFFFF]/20 backdrop-blur-md flex items-end">
-                      <div className="flex w-full items-center justify-between px-3 py-2 sm:px-4 sm:py-3">
-                        <p className="text-xl font-medium text-[#033163] line-clamp-2">
-                          {article.title}
-                        </p>
-                        
-                      </div>
-                    </div>
+                   
                   </div>
                   <div className="px-3 pb-3 sm:px-4 sm:pb-4">
                    

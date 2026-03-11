@@ -28,7 +28,7 @@ export default function BlogArticle({ articleId }: BlogArticleProps) {
   const readTime = t(isFirst ? "article1ReadTime" : "article2ReadTime");
 
   return (
-    <article className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-0">
+    <article className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-0 mt-20">
       <header className="space-y-4">
         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-black/70 sm:text-xs">
           IFSBROKER / {categorySlug}
