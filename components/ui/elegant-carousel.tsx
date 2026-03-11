@@ -18,6 +18,7 @@ interface SlideData {
   accent: string;
   imageUrl: string;
   buttonText: string;
+  buttonHref: string;
 }
 
 export default function ElegantCarousel() {
@@ -32,6 +33,7 @@ export default function ElegantCarousel() {
       imageUrl: "/services/seguro-de-vida.webp",
       accent: "#006FC4",
       buttonText: knowMore,
+      buttonHref: "/seguros-de-vida",
     },
     {
       title: t("slide2Title"),
@@ -40,6 +42,7 @@ export default function ElegantCarousel() {
       imageUrl: "/services/retiro-e-inversion.webp",
       accent: "#006FC4",
       buttonText: knowMore,
+      buttonHref: "/fondos-de-retiro",
     },
     {
       title: t("slide3Title"),
@@ -48,6 +51,7 @@ export default function ElegantCarousel() {
       imageUrl: "/services/salud-internacional.webp",
       accent: "#006FC4",
       buttonText: knowMore,
+      buttonHref: "/salud-internacional",
     },
   ];
 
@@ -190,7 +194,7 @@ export default function ElegantCarousel() {
           </p>
 
           <div className="mt-4">
-            <ConocerMasButton textButton={currentSlide.buttonText} />
+            <ConocerMasButton textButton={currentSlide.buttonText} href={currentSlide.buttonHref}   />
           </div>
 
           <div className="mt-6 flex items-center gap-4">
