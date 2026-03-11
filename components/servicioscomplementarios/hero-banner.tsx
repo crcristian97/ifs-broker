@@ -49,7 +49,7 @@ export function HeroBanner() {
         </div>
 
         <div className="flex flex-1 items-center justify-center md:justify-end">
-          <div className="w-full max-w-2xl rounded-[40px] bg-white/90 p-10 shadow-[0_30px_100px_rgba(0,77,159,0.25)] backdrop-blur-lg md:p-14">
+          <div className="bg-gradient-to-br from-[#E5EEF5]/20 to-[#E5EEF5]/10 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full min-h-[220px] sm:min-h-[240px] flex flex-col backdrop-blur-md border border-white/40">
             <p
               className="text-xl leading-relaxed text-[#006FC4] md:text-2xl"
               style={{ fontFamily: "var(--font-noto-sans)" }}

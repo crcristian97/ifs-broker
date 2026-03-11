@@ -35,7 +35,7 @@ function BannerSection({
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-center">
         <div
-          className="relative w-full overflow-hidden rounded-[40px] px-6 py-16 shadow-[0_24px_80px_rgba(15,35,80,0.35)] md:px-16 md:py-24"
+          className="relative w-full overflow-hidden rounded-[40px] px-6 py-16 border bg-[#e5eef5] md:px-16 md:py-24"
           style={{ minHeight, backgroundColor: bgColor }}
         >
           <AnimatedGridPattern
@@ -56,7 +56,7 @@ function BannerSection({
           >
             {title && (
               <h2
-                className="max-w-4xl text-4xl font-regular uppercase tracking-[0.18em] text-white md:text-4xl"
+                className="max-w-4xl text-4xl font-regular uppercase tracking-widest text-white md:text-4xl"
                     style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
               >
                 {title}
@@ -64,7 +64,7 @@ function BannerSection({
             )}
             {resolvedSubtitle && (
               <p
-                className="max-w-4xl text-base xl:text-2xl font-regular leading-relaxed "
+                className="max-w-4xl text-xl font-regular leading-relaxed "
                 style={{
                   fontFamily: "var(--font-noto-sans), sans-serif",
                   color: subtitleColor,

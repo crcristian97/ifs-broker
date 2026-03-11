@@ -6,6 +6,7 @@ import { HeroBanner } from "@/components/servicioscomplementarios/hero-banner";
 import HowWeWork from "@/components/home/how-we-work";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
+import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 
 export default async function ServiciosComplementariosPage() {
   const t = await getTranslations();
@@ -32,6 +33,8 @@ export default async function ServiciosComplementariosPage() {
       />
       <HeroBanner />
       <HowWeWork />
+      <HeroPlanificacion />
+
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">

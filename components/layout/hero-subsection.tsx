@@ -60,9 +60,9 @@ export function HeroSubsection({
             <FadeInUp>
               <div className="flex flex-col justify-end">
                 <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                  <span className={`text-[${prefixColor}]`}>{titlePrefix}</span>
+                  <span className="text-[${prefixColor}]">{titlePrefix}</span>
                   <br />
-                  <span className={`text-[${highlightColor}]`}>{titleHighlight}</span>
+                  <span className="text-[${highlightColor}]">{titleHighlight}</span>
                   {titleSuffix && (
                     <>
                       {" "}
