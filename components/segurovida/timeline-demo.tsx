@@ -13,8 +13,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
-          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab1Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163] tracking-widest uppercase" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -45,8 +45,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab2Title")}</span>
-          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab2Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab2Title")}</span>
+          <span className="text-[#003163] tracking-widest uppercase" style={fontStyle}>{t("tab2Highlight")}</span>
         </span>
       ),
       content: (
@@ -74,8 +74,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab3Title")}</span>
-          {t("tab3Highlight") ? <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab3Highlight")}</span> : null}
+          <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab3Title")}</span>
+          {t("tab3Highlight") ? <span className="text-[#003163] tracking-widest uppercase" style={fontStyle}>{t("tab3Highlight")}</span> : null}
         </span>
       ),
       content: (
@@ -103,8 +103,8 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] tracking-widest" style={fontStyle}>{t("tab4Title")}</span>
-          <span className="text-[#003163] tracking-widest" style={fontStyle}>{t("tab4Highlight")}</span>
+          <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab4Title")}</span>
+          <span className="text-[#003163] tracking-widest uppercase " style={fontStyle}>{t("tab4Highlight")}</span>
         </span>
       ),
       content: (

@@ -12,8 +12,8 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab1Title")}</span>
-          <span className="text-[#003163]" style={fontStyle}>{t("tab1Highlight")}</span>
+          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
+          <span className="text-[#003163] uppercase tracking-widest " style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -44,7 +44,7 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab2Title")}</span>
+          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab2Title")}</span>
         </span>
       ),
       content: (
@@ -75,8 +75,8 @@ export function RetirementTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4]" style={fontStyle}>{t("tab3Title")}</span>
-          <span className="text-[#003163]" style={fontStyle}>{t("tab3Highlight")}</span>
+          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab3Title")}</span>
+          <span className="text-[#003163] uppercase tracking-widest" style={fontStyle}>{t("tab3Highlight")}</span>
         </span>
       ),
       content: (
