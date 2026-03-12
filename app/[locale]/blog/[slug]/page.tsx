@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import BlogArticle from "@/components/home/blog-article";
+import Footer from "@/components/layout/footer";
 
 const slugToArticleId: Record<string, "article1" | "article2"> = {
   "seguro-patrimonial-salud-internacional": "article1",
@@ -88,6 +89,8 @@ export default async function BlogSlugPage({
 
         <BlogArticle articleId={articleId} />
       </main>
+      <Footer />
+
     </>
   );
 }

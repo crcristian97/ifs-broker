@@ -164,7 +164,8 @@
     "article2Image": "/services/img-blog-retiro-inversion.png",
     "article2Date": "15 mar 2025",
     "article1ReadTime": "5 min de lectura",
-    "article2ReadTime": "6 min de lectura"
+    "article2ReadTime": "6 min de lectura",
+    "ctaContactarAsesor": "Contactá a un asesor"
   },
   "featureBar": {
     "personalized": "Asesoramiento personalizado",

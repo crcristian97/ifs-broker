@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 type ArticleId = "article1" | "article2";
 
@@ -143,9 +144,15 @@ export default function BlogArticle({ articleId }: BlogArticleProps) {
         )}
 
         <section className="mt-4 rounded-2xl bg-[#006fc4]/5 p-4 text-sm text-black sm:p-6">
-          <p className="font-medium">
+          <p className="font-medium mb-4">
             {isFirst ? t("article1Cta") : t("article2Section5Body2")}
           </p>
+          <Link
+            href="/#contacto"
+            className="inline-flex items-center justify-center rounded-full bg-[#006fc4] px-6 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#0053a0] sm:text-base"
+          >
+            {t("ctaContactarAsesor")}
+          </Link>
         </section>
       </div>
     </article>
