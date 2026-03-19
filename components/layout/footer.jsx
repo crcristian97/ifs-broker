@@ -76,12 +76,10 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3">
             <ButtonPrimary
-              href="#cotiza"
+              href="https://calendly.com/administracion-ifs-broker/30min"
+              target="_blank" 
               hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-              onClick={(event) => {
-                event.preventDefault()
-                scrollToSection("cotiza")
-              }}
+            
             >
               {t("scheduleMeeting")}
             </ButtonPrimary>
