@@ -87,7 +87,7 @@ export default function Footer() {
             </ButtonPrimary>
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60"
+              className="inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 cursor-pointer"
               onClick={() => setIsContactModalOpen(true)}
             >
               {t("institutionalContact")}
