@@ -10,7 +10,7 @@ import { FadeInUp } from "../ui/fade-in-up";
 export function HeroSection() {
   const t = useTranslations();
   return (
-    <section className="relative w-full b">
+    <section className="relative w-full ">
       {/* Wrapper con borde redondeado que contiene video, overlay y contenido */}
       <div className="relative w-full overflow-hidden rounded-b-4xl bg-[#033163]">
         {/* Background video */}
@@ -27,7 +27,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[#033163]/80 rounded-b-4xl" />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
+        <div className="relative z-10 mx-auto flex min-h-[880px] flex-col justify-end px-6 pb-8 pt-24 m md:px-12 md:pt-28 lg:px-16">
           <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-end">
               <h1 className="text-balance text-4xl font-regular text-[#FEFEFE]" style={{ fontFamily: '"Zalando Sans"' }}>
