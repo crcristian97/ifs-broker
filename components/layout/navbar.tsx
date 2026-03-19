@@ -83,19 +83,21 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
   }, [])
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
+    <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6 ">
       <div
         ref={navRef}
-        className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-md"
+        className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${
+          isServiciosComplementarios ? "bg-white/15" : "bg-[#0a1628]/35"
+        }`}
       >
         {/* Logo */}
         <Link href="/" className="nav-logo flex items-center">
           <Image
-            src={isServiciosComplementarios ? "/ifs_insurance.png" : "/ifs_insurance_white.png"}
+            src="/ifs_insurance.png" 
             alt="IFS Insurance"
-            width={260}
-            height={52}
-            className="h-10 w-auto md:h-12"
+            width={320}
+            height={64}
+            className="h-12 w-auto sm:h-14 md:h-16"
             priority
           />
         </Link>

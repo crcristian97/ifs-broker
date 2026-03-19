@@ -10,9 +10,9 @@ import { FadeInUp } from "../ui/fade-in-up";
 export function HeroSection() {
   const t = useTranslations();
   return (
-    <section className="relative w-full bg-background">
+    <section className="relative w-full b">
       {/* Wrapper con borde redondeado que contiene video, overlay y contenido */}
-      <div className="relative min-h-screen w-full overflow-hidden rounded-b-4xl">
+      <div className="relative w-full overflow-hidden rounded-b-4xl bg-[#033163]">
         {/* Background video */}
         <video
           src="/seguros-vida-ifs-broker.webm"
@@ -24,7 +24,7 @@ export function HeroSection() {
         />
 
         {/* Dark blue overlay */}
-        <div className="absolute inset-0 bg-[#033163]/50 rounded-b-4xl" />
+        <div className="absolute inset-0 bg-[#033163]/80 rounded-b-4xl" />
 
         {/* Content */}
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-end px-6 pb-8 pt-32 md:px-12 lg:px-16">
