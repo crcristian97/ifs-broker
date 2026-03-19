@@ -8,9 +8,10 @@ type ButtonSecondaryProps = {
   className?: string;
   hover?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  target?: string;
 };
 
-export const ButtonSecondary = ({ children, href, className, hover, onClick }: ButtonSecondaryProps) => {
+export const ButtonSecondary = ({ children, href, className, hover, onClick, target }: ButtonSecondaryProps) => {
   const baseClasses = cn(
     "inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors cursor-pointer",
     hover,
@@ -26,7 +27,7 @@ export const ButtonSecondary = ({ children, href, className, hover, onClick }: B
   }
 
   return (
-    <Link href={href} className={baseClasses} onClick={onClick}>
+    <Link href={href} className={baseClasses} onClick={onClick} target={target}>
       {children}
     </Link>
   );

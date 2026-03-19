@@ -8,9 +8,10 @@ type ButtonPrimaryProps = {
   className?: string;
   hover?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  target?: string;
 };
 
-export const ButtonPrimary = ({ children, href, className, hover, onClick }: ButtonPrimaryProps) => {
+export const ButtonPrimary = ({ children, href, className, hover, onClick, target }: ButtonPrimaryProps) => {
   const baseClasses = cn(
     "inline-flex items-center justify-center rounded-lg border border-[#006fc4] bg-[#006fc4] px-8 py-3 text-lg font-semibold text-white transition-colors cursor-pointer",
     hover,
@@ -26,7 +27,7 @@ export const ButtonPrimary = ({ children, href, className, hover, onClick }: But
   }
 
   return (
-    <Link href={href} className={baseClasses} onClick={onClick}>
+    <Link href={href} className={baseClasses} onClick={onClick} target={target}>
       {children}
     </Link>
   );

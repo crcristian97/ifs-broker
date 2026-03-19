@@ -164,7 +164,8 @@ export function InvestmentQuestionnaireForm() {
 
         <div className="relative z-10 flex justify-center mt-8 pb-8">
           <ButtonPrimary
-            href="#agenda"
+            href="https://calendly.com/administracion-ifs-broker/30min"
+            target="_blank" 
             hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
           >
             {t("button")}

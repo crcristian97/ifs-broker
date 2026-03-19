@@ -62,7 +62,8 @@ export function HeroSection() {
                     {t("heroPlanificacion.quoteLifeInsurance")}
                   </ButtonPrimary>
                   <ButtonSecondary
-                    href="#agenda"
+                    href="https://calendly.com/administracion-ifs-broker/30min"
+                    target="_blank" 
                     hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
                   >
                     {t("footer.scheduleMeeting")}

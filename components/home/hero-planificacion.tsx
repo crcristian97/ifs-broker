@@ -96,7 +96,7 @@ export function HeroPlanificacion() {
                 <button
                   type="button"
                   onClick={() => setIsContactModalOpen(true)}
-                  className="inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 w-full md:w-auto justify-center"
+                  className="inline-flex items-center  rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 w-full md:w-auto justify-center cursor-pointer"
                 >
                   {t("speakWithAdvisor")}
                 </button>
