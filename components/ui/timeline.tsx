@@ -86,10 +86,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <ConocerMasButton
                       textButton={item.buttonSecondary ?? t("footer.scheduleMeeting")}
                       size="sm"
+                      href={item.buttonHrefSecondary?.startsWith("#") ? undefined : (item.buttonHrefSecondary ?? "https://calendly.com/administracion-ifs-broker/30min")}
+                      target={item.buttonHrefSecondary?.startsWith("#") ? undefined : "_blank"}
                       onClick={() => {
-                        if (item.buttonHrefSecondary === "#investment-questionnaire" && pathname.includes("/fondos-de-retiro")) {
+                        if (item.buttonHrefSecondary?.startsWith("#")) {
                           if (typeof window === "undefined") return;
-                          const el = document.getElementById("investment-questionnaire");
+                          const el = document.getElementById(item.buttonHrefSecondary.slice(1));
                           if (el) {
                             el.scrollIntoView({ behavior: "smooth", block: "start" });
                           }

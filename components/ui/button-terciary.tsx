@@ -8,6 +8,7 @@ type ConocerMasButtonProps = {
   className?: string
   onClick?: () => void
   href?: string
+  target?: string
 }
 
 export function ConocerMasButton({
@@ -16,13 +17,14 @@ export function ConocerMasButton({
   className,
   onClick,
   href,
+  target,
 }: ConocerMasButtonProps) {
   const isSmall = size === "sm"
 
   const content = (
     <div
       className={cn(
-        "flex items-center justify-center gap-[8px] h-full rounded-[7px]",
+        "flex items-center justify-center gap-[8px] h-full w-full rounded-[7px]",
         isSmall ? "px-4 py-2" : "px-6 py-3",
       )}
       style={{
@@ -49,8 +51,10 @@ export function ConocerMasButton({
     return (
       <Link
         href={href}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={cn(
-          "group relative inline-flex items-stretch rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
+          "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
           isSmall ? "h-9" : "h-[48px]",
           className,
         )}
@@ -68,7 +72,7 @@ export function ConocerMasButton({
   return (
     <button
       className={cn(
-        "group relative rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
+        "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
         isSmall ? "h-9" : "h-[48px]",
         className,
       )}
