@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import type { InvestmentProfileId } from "./investment-profile-logic";
 
-type InvestmentProfile = {
+export type InvestmentProfile = {
+  id: InvestmentProfileId;
   title: string;
   description: string;
   cardBg: string;
@@ -11,33 +14,62 @@ type InvestmentProfile = {
 
 interface InvestmentProfilesProps {
   items: InvestmentProfile[];
+  /** Resaltado según respuesta Q1 (porcentaje a invertir) */
+  activeProfileId?: InvestmentProfileId | null;
 }
 
-export function InvestmentProfiles({ items }: InvestmentProfilesProps) {
+export function InvestmentProfiles({
+  items,
+  activeProfileId = null,
+}: InvestmentProfilesProps) {
+  const hasSelection = activeProfileId != null;
+  /** Una sola tarjeta (perfil elegido): sin atenuar otras */
+  const singleCard = items.length === 1;
+
   return (
-    <div className="w-full max-w-4xl mx-auto mt-10 space-y-6">
-      {items.map((item, index) => (
+    <div className="mx-auto mt-10 w-full max-w-4xl space-y-6">
+      {items.map((item, index) => {
+        const isActive = hasSelection && item.id === activeProfileId;
+
+        return (
         <motion.div
-          key={index}
+          key={item.id}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{
+            opacity: singleCard || !hasSelection ? 1 : isActive ? 1 : 0.45,
+            y: 0,
+            scale: singleCard || !hasSelection ? 1 : isActive ? 1.01 : 1,
+          }}
           transition={{
             duration: 0.6,
-            delay: index * 0.1,
+            delay: singleCard ? 0 : index * 0.1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          whileHover={{
-            scale: 1.02,
-            y: -4,
-            transition: {
-              duration: 0.3,
-              ease: [0.22, 1, 0.36, 1],
-            },
-          }}
-          className="relative flex flex-col gap-2 rounded-3xl px-6 py-6 md:px-8 md:py-7 overflow-hidden group"
+          whileHover={
+            !singleCard && hasSelection && !isActive
+              ? undefined
+              : {
+                  scale: 1.02,
+                  y: -4,
+                  transition: {
+                    duration: 0.3,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                }
+          }
+          className={cn(
+            "group relative flex flex-col gap-2 overflow-hidden rounded-3xl px-6 py-6 md:px-8 md:py-7",
+            isActive &&
+              "shadow-[0_12px_40px_rgba(0,111,196,0.25)] ring-2 ring-[#006FC4]",
+          )}
         >
           {/* Liquid background effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-white/10 backdrop-blur-md border border-white/30 rounded-3xl" />
+          <div
+            className={cn(
+              "absolute inset-0 rounded-3xl border bg-gradient-to-br from-white/30 via-white/20 to-white/10 backdrop-blur-md",
+              isActive ? "border-[#006FC4]/50" : "border-white/30",
+            )}
+          />
           
           {/* Animated liquid shimmer */}
           <motion.div
@@ -87,7 +119,8 @@ export function InvestmentProfiles({ items }: InvestmentProfilesProps) {
             }}
           />
         </motion.div>
-      ))}
+        );
+      })}
     </div>
   );
 }

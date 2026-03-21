@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { useTranslations } from "next-intl"
 import { ButtonPrimary } from "../ui/button-primary"
 import { InvestmentProfiles } from "./investment-profiles"
+import { getProfileIdFromQ1 } from "./investment-profile-logic"
 
 type SelectOption = {
   value: string
@@ -50,12 +51,47 @@ export function InvestmentQuestionnaireForm() {
   const [q6, setQ6] = useState("")
   const [q7, setQ7] = useState("")
 
-  const profileItems = [
-    { title: t("profileGrowthTitle"), description: t("profileGrowthDesc"), cardBg: "#E6F2FF", circleBg: "#2F80ED" },
-    { title: t("profileConservativeTitle"), description: t("profileConservativeDesc"), cardBg: "#FDFDE5", circleBg: "#F2C94C" },
-    { title: t("profileBalancedTitle"), description: t("profileBalancedDesc"), cardBg: "#E9FDEE", circleBg: "#27AE60" },
-    { title: t("profileAggressiveTitle"), description: t("profileAggressiveDesc"), cardBg: "#FFECEF", circleBg: "#EB5757" },
-  ]
+  const activeProfileId = useMemo(() => getProfileIdFromQ1(q1), [q1])
+
+  const profileItems = useMemo(
+    () => [
+      {
+        id: "conservative" as const,
+        title: t("profileConservativeTitle"),
+        description: t("profileConservativeDesc"),
+        cardBg: "#FDFDE5",
+        circleBg: "#F2C94C",
+      },
+      {
+        id: "balanced" as const,
+        title: t("profileBalancedTitle"),
+        description: t("profileBalancedDesc"),
+        cardBg: "#E9FDEE",
+        circleBg: "#27AE60",
+      },
+      {
+        id: "growth" as const,
+        title: t("profileGrowthTitle"),
+        description: t("profileGrowthDesc"),
+        cardBg: "#E6F2FF",
+        circleBg: "#2F80ED",
+      },
+      {
+        id: "aggressive" as const,
+        title: t("profileAggressiveTitle"),
+        description: t("profileAggressiveDesc"),
+        cardBg: "#FFECEF",
+        circleBg: "#EB5757",
+      },
+    ],
+    [t],
+  )
+
+  const selectedProfileItems = useMemo(() => {
+    if (!activeProfileId) return []
+    const found = profileItems.find((p) => p.id === activeProfileId)
+    return found ? [found] : []
+  }, [profileItems, activeProfileId])
 
   return (
     <div className="w-full max-w-3xl mx-auto relative">
@@ -160,7 +196,15 @@ export function InvestmentQuestionnaireForm() {
             {t("infoText")}
           </p>
         </div>
-        <InvestmentProfiles items={profileItems} />
+        {activeProfileId && selectedProfileItems.length > 0 ? (
+          <>
+           
+            <InvestmentProfiles
+              items={selectedProfileItems}
+              activeProfileId={activeProfileId}
+            />
+          </>
+        ) : null}
 
         <div className="relative z-10 flex justify-center mt-8 pb-8">
           <ButtonPrimary
