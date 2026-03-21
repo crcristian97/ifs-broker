@@ -49,7 +49,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
       { label: t("nav.home"), href: "/", key: "home" },
       { label: t("nav.soluciones"), href: "#soluciones", hasDropdown: true, key: "soluciones" },
       { label: t("nav.nosotros"), href: "/#nosotros", key: "nosotros" },
-      { label: t("nav.trabajaConNosotros"), href: "#trabaja-con-nosotros", key: "trabajaConNosotros" },
+      { label: t("nav.trabajaConNosotros"), href: "/trabaja-con-nosotros", key: "trabajaConNosotros" },
     ],
     [t],
   )
