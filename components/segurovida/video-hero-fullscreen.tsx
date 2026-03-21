@@ -17,11 +17,20 @@ function videoMimeType(src: string) {
   return "video/mp4";
 }
 
+/** Archivos en `public/` deben ser absolutos desde la raíz del sitio (`/carpeta/archivo.webm`). */
+function publicVideoUrl(src: string) {
+  if (src.startsWith("/")) return src;
+  return `/${src.replace(/^\.\//, "")}`;
+}
+
 export function VideoHeroFullscreen({
   videoSrc,
   posterSrc,
   className,
 }: VideoHeroFullscreenProps) {
+  const resolvedSrc = publicVideoUrl(videoSrc);
+  const resolvedPoster = posterSrc ? publicVideoUrl(posterSrc) : undefined;
+
   return (
     <section
       className={cn(
@@ -31,14 +40,14 @@ export function VideoHeroFullscreen({
     >
       <video
         className="absolute inset-0 z-0 h-full min-h-full w-full object-cover"
-        poster={posterSrc}
+        poster={resolvedPoster}
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
       >
-        <source src={videoSrc} type={videoMimeType(videoSrc)} />
+        <source src={resolvedSrc} type={videoMimeType(resolvedSrc)} />
       </video>
       
     </section>

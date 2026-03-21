@@ -12,6 +12,8 @@ type HeroSubsectionProps = {
   imageSrc?: string;
   imageAlt?: string;
   invertTitleColors?: boolean;
+  /** Imagen más ancha (ej. página Salud Internacional) */
+  largeImage?: boolean;
 };
 
 // Reusable hero for product sections (life insurance, retirement funds, etc.)
@@ -24,6 +26,7 @@ export function HeroSubsection({
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
   invertTitleColors = false,
+  largeImage = false,
 }: HeroSubsectionProps) {
   const prefixColorClass = invertTitleColors ? "text-[#91d8f7]" : "text-[#FFFFFF]";
   const highlightColorClass = invertTitleColors ? "text-[#FFFFFF]" : "text-[#91d8f7]";
@@ -77,14 +80,24 @@ export function HeroSubsection({
 
             {/* Right column: image */}
             <FadeInUp delay={0.2} className="hidden lg:flex items-center justify-end">
-              <div className="relative w-full max-w-md">
+              <div
+                className={cn(
+                  "relative w-full",
+                  largeImage ? "max-w-2xl xl:max-w-[44rem]" : "max-w-md",
+                )}
+              >
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
-                  width={600}
-                  height={600}
+                  width={largeImage ? 880 : 600}
+                  height={largeImage ? 880 : 600}
                   className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
                   priority
+                  sizes={
+                    largeImage
+                      ? "(min-width: 1280px) 44rem, (min-width: 1024px) 42rem, 100vw"
+                      : "(min-width: 1024px) 28rem, 100vw"
+                  }
                 />
               </div>
             </FadeInUp>
