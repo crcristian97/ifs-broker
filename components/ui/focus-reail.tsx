@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { motion, PanInfo } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type FocusRailItem = {
@@ -65,11 +64,8 @@ export function FocusRail({
 }: FocusRailProps) {
   const [active, setActive] = React.useState(initialIndex);
   const [isHovering, setIsHovering] = React.useState(false);
-  const lastWheelTime = React.useRef<number>(0);
 
   const count = items.length;
-  const activeIndex = wrap(0, count, active);
-  const activeItem = items[activeIndex];
 
   // --- NAVIGATION HANDLERS ---
   const handlePrev = React.useCallback(() => {
@@ -82,29 +78,7 @@ export function FocusRail({
     setActive((p) => p + 1);
   }, [loop, active, count]);
 
-  // --- MOUSE WHEEL / TRACKPAD LOGIC ---
-  const onWheel = React.useCallback(
-    (e: React.WheelEvent) => {
-      const now = Date.now();
-      // Debounce: prevent rapid firing from inertia scrolling (400ms lockout)
-      if (now - lastWheelTime.current < 400) return;
-
-      // Detect horizontal scroll primarily, but also fallback to vertical if shift is held
-      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-      const delta = isHorizontal ? e.deltaX : e.deltaY;
-
-      // Threshold to avoid accidental micro-scrolls
-      if (Math.abs(delta) > 20) {
-        if (delta > 0) {
-          handleNext();
-        } else {
-          handlePrev();
-        }
-        lastWheelTime.current = now;
-      }
-    },
-    [handleNext, handlePrev]
-  );
+  // Navegación solo por tiempo (autoPlay), flechas, teclado y arrastre — sin rueda del ratón / scroll.
 
   // Autoplay logic
   React.useEffect(() => {
@@ -147,7 +121,6 @@ export function FocusRail({
       onMouseLeave={() => setIsHovering(false)}
       tabIndex={0}
       onKeyDown={onKeyDown}
-      onWheel={onWheel}
     >
       <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
         <motion.div
@@ -182,7 +155,10 @@ export function FocusRail({
                 key={absIndex}
                 className={cn(
                   "absolute aspect-[3/4] w-[260px] md:w-[320px] rounded-2xl transition-shadow duration-300",
-                  isCenter ? "z-20 shadow-[0_18px_45px_rgba(15,35,80,0.18)]" : "z-10 shadow-[0_10px_30px_rgba(15,35,80,0.12)]"
+                  // Sombras solo con marca #033163 (rgb 3, 49, 99)
+                  isCenter
+                    ? "z-20 shadow-[0_18px_45px_rgba(3,49,99,0.28)]"
+                    : "z-10 shadow-[0_10px_36px_rgba(3,49,99,0.42)]"
                 )}
                 initial={false}
                 animate={{
@@ -191,7 +167,6 @@ export function FocusRail({
                   scale: scale,
                   rotateY: rotateY,
                   opacity: opacity,
-                  filter: `blur(${blur}px) brightness(${brightness})`,
                 }}
                 transition={(val: string) => {
                     if (val === "scale") return TAP_SPRING;

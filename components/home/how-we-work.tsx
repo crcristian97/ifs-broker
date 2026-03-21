@@ -116,7 +116,7 @@ export default function HowWeWork() {
         </div>
 
         <div className="w-full">
-          <FocusRail items={items} autoPlay={false} loop={true} />
+          <FocusRail items={items} autoPlay loop interval={5000} />
         </div>
       </div>
     </section>
