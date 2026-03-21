@@ -21,6 +21,9 @@ const sphere = { type: "Sphere" as const };
 const graticuleGenerator = geoGraticule();
 const grid = graticuleGenerator();
 
+/** Color del globo (marca) */
+const GLOBE_LAND = "#91D8F7";
+
 export function ExperienceGlobeSection() {
   const t = useTranslations("experienceGlobe");
   return (
@@ -31,8 +34,14 @@ export function ExperienceGlobeSection() {
           "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
       }}
     >
-      <div className="mx-auto flex w-full max-w-[1400px] flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 lg:px-16">
-        <div className="flex flex-1 flex-col justify-center py-12">
+      <div
+        className={cn(
+          "mx-auto flex w-full max-w-[1400px] flex-col gap-10 px-6 py-12",
+          "md:flex-row md:items-center md:gap-12 md:px-12 md:py-16",
+          "lg:gap-16 lg:px-16",
+        )}
+      >
+        <div className="flex min-w-0 flex-1 flex-col justify-center">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-widest text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: '"Adagietto", "Zalando Sans"' }}
@@ -52,9 +61,9 @@ export function ExperienceGlobeSection() {
             {t("description2")}
           </p>
         </div>
-        <div className="hidden md:flex flex-1 items-center justify-center py-12">
-          <div className="relative h-[220px] sm:h-[260px] md:h-[320px] w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]">
-            <Globe />
+        <div className="flex min-w-0 flex-1 items-center justify-center md:justify-end">
+          <div className="relative aspect-square w-full max-w-[min(100%,420px)] sm:max-w-[min(100%,480px)] md:max-w-[min(100%,520px)]">
+            <Globe className="h-full w-full" />
           </div>
         </div>
       </div>
@@ -62,7 +71,14 @@ export function ExperienceGlobeSection() {
   );
 }
 
-export function Globe({ className }: { className?: string }) {
+export function Globe({
+  className,
+  landColor = GLOBE_LAND,
+}: {
+  className?: string;
+  /** Por defecto #91D8F7; dos pasadas con el mismo color mantienen el relieve por el recorte */
+  landColor?: string;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const startRef = useRef<number>(Date.now());
@@ -130,7 +146,7 @@ export function Globe({ className }: { className?: string }) {
 
       ctx.beginPath();
       path(land);
-      ctx.fillStyle = "#dadac4";
+      ctx.fillStyle = landColor;
       ctx.fill();
 
       ctx.beginPath();
@@ -143,7 +159,7 @@ export function Globe({ className }: { className?: string }) {
 
       ctx.beginPath();
       path(land);
-      ctx.fillStyle = "#737368";
+      ctx.fillStyle = landColor;
       ctx.fill();
       ctx.lineWidth = 0;
       ctx.strokeStyle = "transparent";
@@ -161,15 +177,12 @@ export function Globe({ className }: { className?: string }) {
       ro.disconnect();
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [landColor]);
 
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "mx-auto aspect-square w-full max-w-[600px]",
-        className,
-      )}
+      className={cn("relative h-full w-full min-h-0 min-w-0", className)}
     >
       <canvas
         ref={canvasRef}
