@@ -2,24 +2,14 @@
 
 import { useTranslations } from "next-intl";
 import { FeatureCard } from "../ui/feature-card";
-import { AnimatedGridPattern } from "../ui/background-wedosection";
+import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 import { FadeInUp } from "../ui/fade-in-up";
-import { cn } from "@/lib/utils";
 
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
     <section className="relative w-full min-h-screen py-20 px-6 md:py-28 md:px-12 lg:px-16 overflow-hidden">
-      <AnimatedGridPattern
-        numSquares={50}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-10%] h-[200%] skew-y-12 -z-10",
-        )}
-      />
+      <ParticlesSkyBackground className="-z-10" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto flex min-h-[70vh] flex-col justify-start gap-10 pt-16 md:pt-24">
         <FadeInUp>

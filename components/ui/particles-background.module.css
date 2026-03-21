@@ -1,0 +1,61 @@
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.stars,
+.twinkle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.stars {
+  background: #000 url("https://sylvaingarnot.fr/media/stars.png") repeat top center;
+  z-index: 0;
+}
+
+.twinkle {
+  background: transparent url("https://sylvaingarnot.fr/media/twinkling.png") repeat top center;
+  z-index: 1;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.particlesMount {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.head {
+  font-family: var(--font-play, system-ui, sans-serif);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 12px 10px;
+  margin-bottom: 1px;
+  color: #fff;
+  pointer-events: none;
+  max-width: min(100% - 20px, 28rem);
+}
+
+.head h1 {
+  line-height: 22px;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+}
