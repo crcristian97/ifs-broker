@@ -1,12 +1,54 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogSection() {
   const t = useTranslations("blog");
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (headingRef.current) {
+        gsap.from(headingRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+      if (cardsRef.current) {
+        gsap.from(cardsRef.current.children, {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.18,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, []);
+
   const articlesData = [
     {
       id: "article1",
@@ -45,7 +87,7 @@ export default function BlogSection() {
       }}
     >
       <div className="mx-auto max-w-7xl relative z-10">
-        <div className="mb-8 sm:mb-12 text-left max-w-3xl">
+        <div ref={headingRef} className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
             className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
@@ -64,7 +106,7 @@ export default function BlogSection() {
         {/* LARGE WHITE BACKGROUND AREA FOR BOTTOM PART */}
         <div className="relative">
           <div className="absolute inset-0 z-0 bg-white rounded-3xl " style={{ minHeight: "600px" }} />
-          <div className="relative z-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8 ">
+          <div ref={cardsRef} className="relative z-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8 ">
             {articlesData.map((article, index) => (
               <div
                 className="border border-gray-300/50 bg-white/50 shadow-none backdrop-blur-sm transition-shadow hover:shadow-md rounded-3xl overflow-hidden"

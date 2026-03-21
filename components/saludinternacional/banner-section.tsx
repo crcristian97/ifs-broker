@@ -1,9 +1,13 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type BannerSectionProps = {
   bgColor?: string;
@@ -27,6 +31,28 @@ function BannerSection({
   const t = useTranslations("bannerSection");
   const defaultSubtitle = t("defaultSubtitle");
   const resolvedSubtitle = subtitle ?? defaultSubtitle;
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (contentRef.current) {
+        gsap.from(contentRef.current.children, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       className={
@@ -51,6 +77,7 @@ function BannerSection({
           />
 
           <div
+            ref={contentRef}
             className="relative z-10 flex flex-col items-center justify-center text-center gap-4"
             style={{ minHeight: contentMinHeight }}
           >

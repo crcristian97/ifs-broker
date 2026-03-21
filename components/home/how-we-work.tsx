@@ -1,7 +1,12 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { FocusRail, type FocusRailItem } from "@/components/ui/focus-reail";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function useDemoItems(): FocusRailItem[] {
   const t = useTranslations("howWeWork");
@@ -97,10 +102,46 @@ function useDemoItems(): FocusRailItem[] {
 export default function HowWeWork() {
   const t = useTranslations("howWeWork");
   const items = useDemoItems();
+  const headingRef = useRef<HTMLDivElement>(null);
+  const railRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (headingRef.current) {
+        gsap.from(headingRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.18,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+      if (railRef.current) {
+        gsap.from(railRef.current, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: railRef.current,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className="w-full bg-white py-20 lg:py-24">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-6 md:px-12 lg:px-16">
-        <div className="mb-12 text-center max-w-4xl">
+        <div ref={headingRef} className="mb-12 text-center max-w-4xl">
           <h4 className="text-3xl font-regular text-[#033163] mb-2">
             {t("title")}
           </h4>
@@ -115,7 +156,7 @@ export default function HowWeWork() {
           </p>
         </div>
 
-        <div className="w-full">
+        <div ref={railRef} className="w-full">
           <FocusRail items={items} autoPlay loop interval={5000} />
         </div>
       </div>

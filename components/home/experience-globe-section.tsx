@@ -7,6 +7,10 @@ import type { GeometryObject, Topology } from "topojson-specification";
 import { useEffect, useRef } from "react";
 import landTopology from "world-atlas/land-110m.json";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SPEED = -1e-2;
 
@@ -26,6 +30,42 @@ const GLOBE_LAND = "#91D8F7";
 
 export function ExperienceGlobeSection() {
   const t = useTranslations("experienceGlobe");
+  const textRef = useRef<HTMLDivElement>(null);
+  const globeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (textRef.current) {
+        gsap.from(textRef.current.children, {
+          x: -50,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+      if (globeRef.current) {
+        gsap.from(globeRef.current, {
+          x: 60,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: globeRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       className="w-full min-h-[500px]"
@@ -41,7 +81,7 @@ export function ExperienceGlobeSection() {
           "lg:gap-16 lg:px-16",
         )}
       >
-        <div className="flex min-w-0 flex-1 flex-col justify-center">
+        <div ref={textRef} className="flex min-w-0 flex-1 flex-col justify-center">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-widest text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: '"Adagietto", "Zalando Sans"' }}
@@ -61,7 +101,7 @@ export function ExperienceGlobeSection() {
             {t("description2")}
           </p>
         </div>
-        <div className="flex min-w-0 flex-1 items-center justify-center md:justify-end">
+        <div ref={globeRef} className="flex min-w-0 flex-1 items-center justify-center md:justify-end">
           <div className="relative aspect-square w-full max-w-[min(100%,420px)] sm:max-w-[min(100%,480px)] md:max-w-[min(100%,520px)]">
             <Globe className="h-full w-full" />
           </div>
