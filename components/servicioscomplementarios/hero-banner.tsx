@@ -31,20 +31,14 @@ export function HeroBanner() {
           <div className="relative flex flex-col gap-4 items-center md:items-start">
             <div className="relative inline-flex w-full max-w-xs">
               <ButtonPrimary
-                href="#contacto"
+              target="_blank"
+                href="https://calendly.com/administracion-ifs-broker/30min"
                 className="w-full justify-center rounded-[14px] px-6 py-3  font-semibold"
               >
                 {t("speakAdvisor")}
               </ButtonPrimary>
             </div>
-
-            <div className="inline-flex w-full max-w-xs">
-              <ConocerMasButton
-                textButton={t("scheduleMeeting")}
-                size="md"
-                className="w-full"
-              />
-            </div>
+          
           </div>
         </div>
 

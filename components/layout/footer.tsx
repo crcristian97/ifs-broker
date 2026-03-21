@@ -15,7 +15,7 @@ const features = [
   },
   {
     icon: <Mail className="h-5 w-5 shrink-0 text-[#033163]" />,
-    title: "contact@email.com",
+    title: "administracion@ifs-broker.com",
   },
   {
     icon: <MapPin className="h-5 w-5 shrink-0 text-[#033163]" />,
