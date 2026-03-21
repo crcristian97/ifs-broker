@@ -99,6 +99,11 @@
     "description1highlight": "compañías líderes a nivel internacional.",
     "description2": "Ese recorrido nos permite acompañar decisiones complejas con criterio, claridad y responsabilidad."
   },
+  "videoHeroSegurosVida": {
+    "title": "Compromiso que acompaña cada etapa",
+    "subtitle": "Planificación con visión de largo plazo y respaldo internacional para proteger lo que más importa.",
+    "videoAria": "Video de fondo con paisaje abstracto que representa continuidad y tranquilidad."
+  },
   "heroSubsection": {
     "titlePrefix": "Protección para tu familia,",
     "titleHighlight": "tranquilidad para vos",
