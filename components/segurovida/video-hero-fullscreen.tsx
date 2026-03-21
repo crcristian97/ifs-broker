@@ -25,7 +25,7 @@ export function VideoHeroFullscreen({
   return (
     <section
       className={cn(
-        "relative isolate min-h-[80vh] w-full overflow-hidden sm:min-h-[75vh] ",
+        "relative isolate min-h-[80vh] w-full overflow-hidden sm:min-h-[75vh] rounded-b-4xl ",
         className,
       )}
     >
