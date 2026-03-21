@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "./button-primary";
 import { ConocerMasButton } from "./button-terciary";
+import { cn } from "@/lib/utils";
 
 interface TimelineEntry {
   title: React.ReactNode;
@@ -46,7 +47,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full bg-white font-sans md:px-10" ref={containerRef}>
+    <div className="w-full bg-[#F4F8FC] font-sans md:px-10" ref={containerRef}>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
@@ -100,8 +101,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
                 {/* Tarjeta principal (columna derecha) */}
                 <div className="flex justify-end">
-                  <div className="w-full max-w-[640px] rounded-[32px] bg-cover bg-center shadow-[0_22px_60px_rgba(0,77,159,0.16)] border border-[#D4E7FF]/70 p-3 md:p-4 lg:p-6">
-                    {item.content}
+                  <div
+                    className={cn(
+                      "relative w-full max-w-[640px] overflow-hidden rounded-[32px] p-3 md:p-4 lg:p-6",
+                      "border border-white/70",
+                      "bg-gradient-to-br from-white/55 via-white/35 to-[#e8f4ff]/45",
+                      "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.85),0_8px_32px_-4px_rgba(3,49,99,0.12),0_4px_16px_-2px_rgba(0,0,0,0.08)]",
+                      "backdrop-blur-2xl backdrop-saturate-200 md:backdrop-blur-3xl",
+                      "ring-1 ring-inset ring-white/50",
+                      "before:pointer-events-none before:absolute before:inset-0 before:z-0 before:rounded-[32px] before:bg-[linear-gradient(135deg,rgba(255,255,255,0.55)_0%,transparent_50%,rgba(212,231,255,0.4)_100%)] before:content-['']",
+                      "after:pointer-events-none after:absolute after:inset-px after:z-0 after:rounded-[31px] after:border after:border-white/45 after:content-['']",
+                    )}
+                  >
+                    <div className="relative z-10">{item.content}</div>
                   </div>
                 </div>
               </div>
