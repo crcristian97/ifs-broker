@@ -34,7 +34,28 @@
     "subtitle": "A conversation can provide a new perspective on your current reality.",
     "scheduleMeeting": "Schedule a meeting",
     "institutionalContact": "Institutional contact",
-    "designFuture": "Let's design tomorrow's peace of mind today"
+    "designFuture": "Let's design tomorrow's peace of mind today",
+    "form": {
+      "title": "Institutional contact",
+      "nameLabel": "Full name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "interestsLabel": "What are you interested in protecting?",
+      "interests": {
+        "lifeAssets": "Life assets",
+        "retirement": "My retirement",
+        "investments": "My investments",
+        "travel": "My travels",
+        "health": "Health insurance",
+        "patrimonial": "Property insurance"
+
+      },
+      "errors": {
+        "requiredField": "This field is required",
+        "selectAtLeastOne": "Select at least one option"
+      },
+      "submit": "Send information"
+    }
   },
   "heroPlanificacion": {
     "label": "Intelligent financial planning begins with protecting what's essential",
@@ -52,7 +73,25 @@
     "description1Part3": ", designed according to the objectives and life stages of each client.",
     "description2": "Each proposal is built on a comprehensive wealth assessment that allows defining priorities, evaluating risks, and projecting stability over time.",
     "quoteLifeInsurance": "Quote your life insurance",
-    "speakWithAdvisor": "Speak with an advisor"
+    "speakWithAdvisor": "Speak with an advisor",
+    "form": {
+      "title": "Institutional contact",
+      "nameLabel": "Full name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "interestsLabel": "What are you interested in protecting?",
+      "interests": {
+        "lifeAssets": "Life assets",
+        "retirement": "My retirement",
+        "investments": "My investments",
+        "travel": "My travels"
+      },
+      "errors": {
+        "requiredField": "This field is required",
+        "selectAtLeastOne": "Select at least one option"
+      },
+      "submit": "Send information"
+    }
   },
   "experienceGlobe": {
    "title1": "EXPERIENCE",
@@ -86,7 +125,7 @@
     "label": "What do we do?",
     "title": "FINANCIAL SOLUTIONS ",
     "labelHighlight": "DESIGNED FOR EVERY MOMENT OF LIFE",
-    "description": "IFS Insurance Financial Solution is an international broker specialized in comprehensive financial planning.",
+    "description": "IFS Insurance Financial Solutions is an international broker specialized in comprehensive financial planning.",
     "card1": "Our approach is based on designing financial strategies that adapt and evolve alongside each client.",
     "card2": "We work with individuals and companies seeking to protect their wealth, plan for the future, and make financial decisions with clear information and professional guidance."
   },
@@ -108,6 +147,26 @@
     "title": "INTERNATIONAL BACKING AND ",
     "titleHighlight": "FINANCIAL STRENGTH",
     "subtitle": "We work with top-tier companies, chosen for their financial stability, track record and global reach."
+  },
+  "popup": {
+    "title": "Contacto institucional",
+    "close": "✕",
+    "fields": {
+      "nameLabel": "Nombre y apellido",
+      "emailLabel": "Correo",
+      "phoneLabel": "Teléfono",
+      "interestLabel": "¿En qué estás interesado?",
+      "interests": {
+        "lifeInsurance": "Seguro de vida",
+        "retirement": "Retiro",
+        "investment": "Inversión",
+        "healthInsurance": "Seguro de salud",
+        "travelInsurance": "Seguro de viaje",
+        "propertyInsurance": "Seguros patrimoniales"
+      }
+    },
+    
+    "submit": "Enviar información"
   },
   "blog": {
     "title1": "INFORMATION TO ",
@@ -308,24 +367,29 @@
   },
   "seo": {
     "home": {
-      "title": "IFS Broker - International Financial Planning",
-      "description": "Personalized international wealth solutions: life insurance, international health coverage, and retirement funds designed to protect your family and secure your future."
+      "title": "IFS Broker | International Financial Planning",
+      "description": "International wealth solutions: life insurance, health coverage, and retirement funds. Personalized advisory with over 20 years of experience.",
+      "keywords": "international financial planning, life insurance, international health, retirement funds, global investment, wealth protection"
     },
     "segurosDeVida": {
-      "title": "International Life Insurance",
-      "description": "World-class financial protection for your family with international life insurance. Coverage backed by top-tier insurers with global financial strength."
+      "title": "International Life Insurance Coverage",
+      "description": "Protect your family with international life insurance. World-class coverage backed by top-tier insurers with proven global financial strength.",
+      "keywords": "international life insurance, family protection, death coverage, critical illness, disability insurance, wealth planning"
     },
     "saludInternacional": {
-      "title": "International Health Insurance",
-      "description": "Global medical coverage with access to Mayo Clinic, Cleveland Clinic, and the world's leading networks. 100% digital management and guaranteed lifetime renewal."
+      "title": "International Health Insurance & Coverage",
+      "description": "Global medical coverage with access to Mayo Clinic and Cleveland Clinic. 100% digital management and consultations with 50,000+ specialists.",
+      "keywords": "international health insurance, global medical coverage, Mayo Clinic, corporate health, medical second opinion, premium health insurance"
     },
     "fondosDeRetiro": {
-      "title": "Retirement Funds",
-      "description": "Build future income with international retirement funds. Invest in hard currency with capital protection to secure your retirement and your children's education."
+      "title": "Retirement Funds & Global Investments",
+      "description": "Build future income with international retirement funds. Invest in hard currency with guaranteed capital protection for your retirement.",
+      "keywords": "retirement funds, international investment, retirement plan, education savings, capital protection, hard currency investment"
     },
     "serviciosComplementarios": {
-      "title": "Complementary Services",
-      "description": "Specific coverages that complement your comprehensive financial planning. Personalized solutions to address particular scenarios and strengthen your wealth protection."
+      "title": "Travel Insurance & Complementary Services",
+      "description": "Travel insurance and complementary coverages for your financial planning. Personalized solutions with international institutional backing.",
+      "keywords": "travel insurance, complementary services, travel coverage, comprehensive financial protection, supplementary insurance"
     }
   }
 }

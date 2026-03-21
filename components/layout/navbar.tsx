@@ -1,16 +1,19 @@
 "use client"
 
+import { useEffect, useMemo, useRef, useState } from "react"
+import { useTranslations, useLocale } from "next-intl"
 import { Link, usePathname, useRouter } from "@/i18n/navigation"
 import Image from "next/image"
-import { useEffect, useRef, useState, MouseEvent } from "react"
 import { Menu, X } from "lucide-react"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-import { useTranslations, useLocale } from "next-intl"
-import { Menu as HoverMenu, MenuItem, ProductItem } from "../ui/navbar-menu"
-import { ButtonPrimary } from "../ui/button-primary"
+import { Menu as HoverMenu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
+import { ButtonPrimary } from "@/components/ui/button-primary"
+import { LanguageSwitcher } from "@/components/layout/language-switcher"
 
 gsap.registerPlugin(ScrollToPlugin)
+
+const fontStyle = { fontFamily: "var(--font-noto-sans)" } as const
 
 const scrollToSection = (id: string) => {
   if (typeof window === "undefined") return
@@ -33,17 +36,23 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations()
-  const isServiciosComplementarios = forceBlue || pathname === "/servicios-complementarios"
+  const isBlueTheme = forceBlue || pathname === "/servicios-complementarios"
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
+  const logoRef = useRef<HTMLAnchorElement | null>(null)
+  const linksRef = useRef<HTMLDivElement | null>(null)
+  const rightRef = useRef<HTMLDivElement | null>(null)
 
-  const navLinks = [
-    { label: t("nav.home"), href: "/", key: "home" },
-    { label: t("nav.soluciones"), href: "#soluciones", hasDropdown: true, key: "soluciones" },
-    { label: t("nav.nosotros"), href: "/#nosotros", key: "nosotros" },
-    { label: t("nav.trabajaConNosotros"), href: "#trabaja-con-nosotros", key: "trabajaConNosotros" },
-  ]
+  const navLinks = useMemo(
+    () => [
+      { label: t("nav.home"), href: "/", key: "home" },
+      { label: t("nav.soluciones"), href: "#soluciones", hasDropdown: true, key: "soluciones" },
+      { label: t("nav.nosotros"), href: "/#nosotros", key: "nosotros" },
+      { label: t("nav.trabajaConNosotros"), href: "#trabaja-con-nosotros", key: "trabajaConNosotros" },
+    ],
+    [t],
+  )
 
   const handleLanguageChange = (newLocale: "es" | "en") => {
     router.replace(pathname, { locale: newLocale })
@@ -53,47 +62,53 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
     if (!navRef.current) return
 
     const ctx = gsap.context(() => {
-      gsap.from(".nav-logo", {
-        y: -20,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power4.out",
-        delay: 1.4,
-      })
+      if (logoRef.current) {
+        gsap.from(logoRef.current, {
+          y: -20,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power4.out",
+          delay: 1.4,
+        })
+      }
 
-      gsap.from(".nav-link", {
-        y: 20,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power4.out",
-        stagger: 0.05,
-        delay: 1.5,
-      })
+      if (linksRef.current) {
+        gsap.from(linksRef.current.children, {
+          y: 20,
+          opacity: 0,
+          duration: 0.7,
+          ease: "power4.out",
+          stagger: 0.05,
+          delay: 1.5,
+        })
+      }
 
-      gsap.from(".nav-right", {
-        y: 20,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power4.out",
-        delay: 1.6,
-      })
+      if (rightRef.current) {
+        gsap.from(rightRef.current, {
+          y: 20,
+          opacity: 0,
+          duration: 0.7,
+          ease: "power4.out",
+          delay: 1.6,
+        })
+      }
     }, navRef)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6 ">
+    <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
       <div
         ref={navRef}
         className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${
-          isServiciosComplementarios ? "bg-white/15" : "bg-[#0a1628]/35"
+          isBlueTheme ? "bg-white/15" : "bg-[#0a1628]/35"
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="nav-logo flex items-center">
+        <Link ref={logoRef} href="/" className="flex items-center">
           <Image
-            src="/ifs_insurance.png" 
+            src="/ifs_insurance.png"
             alt="IFS Insurance"
             width={320}
             height={64}
@@ -103,7 +118,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden items-center gap-6 lg:flex">
+        <div ref={linksRef} className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => {
             if (link.key === "soluciones" && link.hasDropdown) {
               return (
@@ -113,7 +128,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                     active={activeMenuItem}
                     item={link.label}
                     className={
-                      isServiciosComplementarios
+                      isBlueTheme
                         ? "text-[#033163] hover:text-[#033163]/80"
                         : ""
                     }
@@ -148,19 +163,17 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                 </HoverMenu>
               )
             }
-            // Regular nav links
             return (
               <Link
                 key={link.key}
                 href={link.href}
-                className={`nav-link text-[18px] font-normal transition-colors ${
-                  isServiciosComplementarios
+                className={`text-[18px] font-normal transition-colors ${
+                  isBlueTheme
                     ? "text-[#033163] hover:text-[#033163]/80"
                     : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
                 }`}
-                style={{ fontFamily: 'var(--font-noto-sans)' }}
+                style={fontStyle}
                 onClick={(event) => {
-                  // Smooth scroll for "Nosotros" when already on home
                   if (link.key === "nosotros" && pathname === "/") {
                     event.preventDefault()
                     scrollToSection("nosotros")
@@ -174,42 +187,13 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
         </div>
 
         {/* Right side */}
-        <div className="nav-right hidden items-center gap-3 lg:flex">
-          {/* Language Switcher */}
-          <div className="flex overflow-hidden rounded-md border border-foreground/20">
-            <button
-              onClick={() => handleLanguageChange("es")}
-              className={`px-3 py-1.5 text-lg font-normal transition-colors ${
-                locale === "es"
-                  ? isServiciosComplementarios
-                    ? "bg-[#033163]/10 text-[#033163]"
-                    : "bg-foreground/10 text-foreground"
-                  : isServiciosComplementarios
-                    ? "text-[#033163]/60 hover:text-[#033163]/80"
-                    : "text-foreground/60 hover:text-foreground/80"
-              }`}
-              style={{ fontFamily: 'var(--font-noto-sans)' }}
-            >
-              ES
-            </button>
-            <button
-              onClick={() => handleLanguageChange("en")}
-              className={`px-3 py-1.5 text-lg font-normal transition-colors rounded-lg ${
-                locale === "en"
-                  ? isServiciosComplementarios
-                    ? "bg-[#033163]/10 text-[#033163]"
-                    : "bg-foreground/10 text-foreground"
-                  : isServiciosComplementarios
-                    ? "text-[#033163]/60 hover:text-[#033163]/80"
-                    : "text-foreground/60 hover:text-foreground/80"
-              }`}
-              style={{ fontFamily: 'var(--font-noto-sans)' }}
-            >
-              EN
-            </button>
-          </div>
+        <div ref={rightRef} className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher
+            locale={locale}
+            onLanguageChange={handleLanguageChange}
+            isBlueTheme={isBlueTheme}
+          />
 
-          {/* Contact Button */}
           <ButtonPrimary
             href="#contacto"
             hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
@@ -224,9 +208,10 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
 
         {/* Mobile menu toggle */}
         <button
-          className={`lg:hidden ${isServiciosComplementarios ? "text-[#033163]" : "text-foreground"}`}
+          className={`lg:hidden ${isBlueTheme ? "text-[#033163]" : "text-foreground"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -234,14 +219,18 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="mt-2 rounded-xl bg-[#0a1628]/95 px-6 py-6 backdrop-blur-md lg:hidden">
+        <div
+          className="mt-2 rounded-xl bg-[#0a1628]/95 px-6 py-6 backdrop-blur-md lg:hidden"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
                 className={`text-base font-medium transition-colors ${
-                  isServiciosComplementarios
+                  isBlueTheme
                     ? "text-[#033163]/80 hover:text-[#033163]"
                     : "text-foreground/80 hover:text-foreground"
                 }`}
@@ -259,42 +248,15 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
               </Link>
             ))}
             <div className="flex items-center gap-3 pt-4 border-t border-foreground/10">
-              <div className="flex overflow-hidden rounded-lg border border-foreground/20">
-                <button
-                  onClick={() => {
-                    handleLanguageChange("es")
-                    setMobileOpen(false)
-                  }}
-                  className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
-                    locale === "es"
-                      ? isServiciosComplementarios
-                        ? "bg-[#033163]/10 text-[#033163]"
-                        : "bg-foreground/10 text-foreground"
-                      : isServiciosComplementarios
-                        ? "text-[#033163]/60"
-                        : "text-foreground/60"
-                  }`}
-                >
-                  ES
-                </button>
-                <button
-                  onClick={() => {
-                    handleLanguageChange("en")
-                    setMobileOpen(false)
-                  }}
-                  className={`px-3 py-1.5 text-sm font-semibold transition-colors ${
-                    locale === "en"
-                      ? isServiciosComplementarios
-                        ? "bg-[#033163]/10 text-[#033163]"
-                        : "bg-foreground/10 text-foreground"
-                      : isServiciosComplementarios
-                        ? "text-[#033163]/60"
-                        : "text-foreground/60"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
+              <LanguageSwitcher
+                locale={locale}
+                onLanguageChange={(newLocale) => {
+                  handleLanguageChange(newLocale)
+                  setMobileOpen(false)
+                }}
+                isBlueTheme={isBlueTheme}
+                size="sm"
+              />
               <button
                 className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 onClick={(event) => {

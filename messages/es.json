@@ -34,7 +34,27 @@
     "subtitle": "Una conversación puede aportar una nueva mirada sobre tu realidad actual.",
     "scheduleMeeting": "Agendá una reunión",
     "institutionalContact": "Contacto institucional",
-    "designFuture": "Diseñemos hoy la tranquilidad del futuro"
+    "designFuture": "Diseñemos hoy la tranquilidad del futuro",
+    "form": {
+      "title": "Contacto institucional",
+      "nameLabel": "Nombre y apellido",
+      "emailLabel": "Correo",
+      "phoneLabel": "Teléfono",
+      "interestsLabel": "¿En qué estás interesado?",
+      "interests": {
+        "lifeAssets": "Seguro de vida",
+        "retirement": "Retiro",
+        "investments": "Inversion",
+        "travel": "Seguro de viaje",
+        "health": "Seguro de salud",
+        "patrimonial": "Seguro patrimonial"
+      },
+      "errors": {
+        "requiredField": "Este campo es obligatorio",
+        "selectAtLeastOne": "Seleccioná al menos una opción"
+      },
+      "submit": "Enviar información"
+    }
   },
   "heroPlanificacion": {
     "label": "Una planificación financiera inteligente comienza por proteger lo esencial",
@@ -52,7 +72,25 @@
     "description1Part3": ", diseñadas en función de los objetivos y etapas de vida de cada cliente.",
     "description2": "Cada propuesta se construye sobre un diagnóstico patrimonial integral que permite definir prioridades, evaluar riesgos y proyectar estabilidad en el tiempo.",
     "quoteLifeInsurance": "Cotizá tu seguro de vida",
-    "speakWithAdvisor": "Habla con un asesor"
+    "speakWithAdvisor": "Habla con un asesor",
+    "form": {
+      "title": "Contacto institucional",
+      "nameLabel": "Nombre y apellido",
+      "emailLabel": "Correo",
+      "phoneLabel": "Teléfono",
+      "interestsLabel": "¿Qué te interesa proteger?",
+      "interests": {
+        "lifeAssets": "Activos de vida",
+        "retirement": "Mi retiro",
+        "investments": "Mis inversiones",
+        "travel": "Mis viajes"
+      },
+      "errors": {
+        "requiredField": "Este campo es obligatorio",
+        "selectAtLeastOne": "Seleccioná al menos una opción"
+      },
+      "submit": "Enviar información"
+    }
   },
   "experienceGlobe": {
     "title1": "EXPERIENCIA",
@@ -86,7 +124,7 @@
     "label": "¿Qué hacemos?",
     "title": "SOLUCIONES FINANCIERAS",
     "labelHighlight": "PENSADAS PARA CADA MOMENTO DE LA VIDA",
-    "description": "IFS Insurance Financial Solution somos un broker internacional especializado en planificación financiera integral.",
+    "description": "IFS Insurance Financial SolutionS somos un broker internacional especializado en planificación financiera integral.",
     "card1": "Diseñamos coberturas que permiten blindar el patrimonio, proteger a la familia o empresa y planificar con previsión y claridad.",
     "card2": "Trabajamos con personas y empresas que buscan proteger su patrimonio, planificar el futuro y tomar decisiones financieras con información clara y acompañamiento profesional."
   },
@@ -307,24 +345,29 @@
   },
   "seo": {
     "home": {
-      "title": "IFS Broker - Planificación Financiera Internacional",
-      "description": "Soluciones patrimoniales personalizadas de alcance internacional: seguros de vida, salud internacional y fondos de retiro, diseñados para proteger tu familia y tu futuro."
+      "title": "IFS Broker | Planificación Financiera Internacional",
+      "description": "Soluciones patrimoniales internacionales: seguros de vida, salud y fondos de retiro. Asesoramiento personalizado con más de 20 años de experiencia.",
+      "keywords": "planificación financiera internacional, seguros de vida, salud internacional, fondos de retiro, inversión internacional, protección patrimonial"
     },
     "segurosDeVida": {
-      "title": "Seguros de Vida Internacional",
-      "description": "Protección financiera de clase mundial para tu familia con seguros de vida de alcance internacional. Coberturas respaldadas por aseguradoras de primer nivel con solidez global."
+      "title": "Seguros de Vida con Respaldo Internacional",
+      "description": "Protección financiera para tu familia con seguros de vida internacionales. Coberturas de primer nivel con aseguradoras de solidez global.",
+      "keywords": "seguro de vida internacional, protección familiar, cobertura por fallecimiento, enfermedades críticas, incapacidad, planificación patrimonial"
     },
     "saludInternacional": {
-      "title": "Salud Internacional",
-      "description": "Cobertura médica global con acceso a Mayo Clinic, Cleveland Clinic y las mejores redes internacionales. Gestión 100% digital y renovación garantizada de por vida."
+      "title": "Seguro de Salud Internacional Premium",
+      "description": "Cobertura médica global: acceso a Mayo Clinic y Cleveland Clinic. Gestión 100% digital, interconsultas con +50.000 especialistas internacionales.",
+      "keywords": "seguro de salud internacional, cobertura médica global, Mayo Clinic, salud corporativa, interconsulta médica, seguro médico premium"
     },
     "fondosDeRetiro": {
-      "title": "Fondos de Retiro",
-      "description": "Construí ingresos futuros con fondos de retiro internacionales. Inversión en moneda fuerte con protección de capital para asegurar tu retiro y la educación de tus hijos."
+      "title": "Fondos de Retiro e Inversión Internacional",
+      "description": "Construí ingresos futuros con fondos de retiro internacionales. Inversión en moneda fuerte con protección de capital garantizada.",
+      "keywords": "fondos de retiro, inversión internacional, plan de retiro, ahorro educación, protección de capital, inversión moneda fuerte"
     },
     "serviciosComplementarios": {
-      "title": "Servicios Complementarios",
-      "description": "Coberturas específicas que complementan tu planificación financiera integral. Soluciones personalizadas para abordar escenarios particulares y reforzar tu protección patrimonial."
+      "title": "Seguro de Viaje y Servicios Complementarios",
+      "description": "Seguro de viaje y coberturas complementarias para tu planificación financiera. Soluciones personalizadas con respaldo institucional.",
+      "keywords": "seguro de viaje, servicios complementarios, cobertura de viaje, protección financiera integral, seguros complementarios"
     }
   }
 }

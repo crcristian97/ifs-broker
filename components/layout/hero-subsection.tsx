@@ -14,23 +14,19 @@ type HeroSubsectionProps = {
   invertTitleColors?: boolean;
 };
 
-const DEFAULT_DESCRIPTION =
-  "Diseñamos estrategias de ahorro alineadas a objetivos personales, que integran inversiones con garantías y se estructuran en distintos plazos según las necesidades de cada cliente.";
-
-
-// Hero reutilizable para secciones de producto (seguros de vida, fondos de retiro, etc.)
+// Reusable hero for product sections (life insurance, retirement funds, etc.)
 export function HeroSubsection({
   titlePrefix = "Protección para tu familia,",
   titleHighlight = "Tranquilidad para vos",
   titleSuffix = "",
-  description = DEFAULT_DESCRIPTION,
+  description = "",
   descriptionHighlight = "",
   imageSrc = "/seguro/seguro-de-vida.webp",
   imageAlt = "Seguro de vida",
   invertTitleColors = false,
 }: HeroSubsectionProps) {
-  const prefixColor = invertTitleColors ? "#91d8f7" : "#FFFFFF";
-  const highlightColor = invertTitleColors ? "#FFFFFF" : "#91d8f7";
+  const prefixColorClass = invertTitleColors ? "text-[#91d8f7]" : "text-[#FFFFFF]";
+  const highlightColorClass = invertTitleColors ? "text-[#FFFFFF]" : "text-[#91d8f7]";
   return (
     <section
       className="relative w-full"
@@ -39,9 +35,9 @@ export function HeroSubsection({
           "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
       }}
     >
-      {/* Wrapper con alto completo y bordes redondeados abajo, igual que HeroSection */}
+      {/* Full-height wrapper with rounded bottom corners, matching HeroSection */}
       <div className="relative min-h-screen w-full overflow-hidden rounded-b-4xl bg-transparent">
-        {/* Grid animado de fondo */}
+        {/* Animated background grid */}
         <AnimatedGridPattern
           numSquares={50}
           maxOpacity={0.15}
@@ -53,16 +49,16 @@ export function HeroSubsection({
           )}
         />
 
-        {/* Contenido centrado con mismo ancho y paddings que HeroSection */}
+        {/* Centered content with same width and padding as HeroSection */}
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pb-8 pt-32 md:px-12 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-            {/* Columna izquierda: texto */}
+            {/* Left column: text */}
             <FadeInUp>
               <div className="flex flex-col justify-end">
                 <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                  <span className="text-[${prefixColor}]">{titlePrefix}</span>
+                  <span className={prefixColorClass}>{titlePrefix}</span>
                   <br />
-                  <span className="text-[${highlightColor}]">{titleHighlight}</span>
+                  <span className={highlightColorClass}>{titleHighlight}</span>
                   {titleSuffix && (
                     <>
                       {" "}
@@ -79,7 +75,7 @@ export function HeroSubsection({
               </div>
             </FadeInUp>
 
-            {/* Columna derecha: imagen */}
+            {/* Right column: image */}
             <FadeInUp delay={0.2} className="hidden lg:flex items-center justify-end">
               <div className="relative w-full max-w-md">
                 <Image
@@ -98,6 +94,3 @@ export function HeroSubsection({
     </section>
   );
 }
-
-export default HeroSubsection;
-

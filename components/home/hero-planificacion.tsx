@@ -109,9 +109,10 @@ export function HeroPlanificacion() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-xl font-semibold text-[#033163]">Contacto institucional</h3>
+              <h3 className="text-xl font-semibold text-[#033163]">{t("form.title")}</h3>
               <button
                 type="button"
+                aria-label="Cerrar formulario de contacto"
                 className="text-sm text-[#033163]/70 hover:text-[#033163]"
                 onClick={() => setIsContactModalOpen(false)}
               >
@@ -123,10 +124,10 @@ export function HeroPlanificacion() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const newErrors: typeof errors = {};
-                if (!fullName.trim()) newErrors.fullName = "Este campo es obligatorio";
-                if (!email.trim()) newErrors.email = "Este campo es obligatorio";
-                if (!phone.trim()) newErrors.phone = "Este campo es obligatorio";
-                if (interests.length === 0) newErrors.interests = "Seleccioná al menos una opción";
+                if (!fullName.trim()) newErrors.fullName = t("form.errors.requiredField");
+                if (!email.trim()) newErrors.email = t("form.errors.requiredField");
+                if (!phone.trim()) newErrors.phone = t("form.errors.requiredField");
+                if (interests.length === 0) newErrors.interests = t("form.errors.selectAtLeastOne");
                 setErrors(newErrors);
                 if (Object.keys(newErrors).length > 0) return;
                 // Aquí podrías enviar la información a una API
@@ -135,7 +136,7 @@ export function HeroPlanificacion() {
             >
               <div>
                 <label className="block text-sm font-medium text-[#033163] mb-1">
-                  Nombre y apellido
+                  {t("form.nameLabel")}
                 </label>
                 <input
                   type="text"
@@ -147,7 +148,7 @@ export function HeroPlanificacion() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#033163] mb-1">
-                  Correo
+                  {t("form.emailLabel")}
                 </label>
                 <input
                   type="email"
@@ -159,7 +160,7 @@ export function HeroPlanificacion() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#033163] mb-1">
-                  Teléfono
+                  {t("form.phoneLabel")}
                 </label>
                 <input
                   type="tel"
@@ -171,14 +172,14 @@ export function HeroPlanificacion() {
               </div>
               <div>
                 <p className="block text-sm font-medium text-[#033163] mb-2">
-                  ¿Qué te interesa proteger?
+                  {t("form.interestsLabel")}
                 </p>
                 <div className="space-y-2 text-sm text-[#033163]">
                   {[
-                    { id: "vida", label: "Activos de vida" },
-                    { id: "retiro", label: "Mi retiro" },
-                    { id: "inversiones", label: "Mis inversiones" },
-                    { id: "viajes", label: "Mis viajes" },
+                    { id: "vida", label: t("form.interests.lifeAssets") },
+                    { id: "retiro", label: t("form.interests.retirement") },
+                    { id: "inversiones", label: t("form.interests.investments") },
+                    { id: "viajes", label: t("form.interests.travel") },
                   ].map((opt) => (
                     <label key={opt.id} className="flex items-center gap-2">
                       <input
@@ -203,7 +204,7 @@ export function HeroPlanificacion() {
                 type="submit"
                 className="mt-2 w-full rounded-lg bg-[#006FC4] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052a0]"
               >
-                Enviar información
+                {t("form.submit")}
               </button>
             </form>
           </div>

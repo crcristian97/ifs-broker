@@ -1,35 +1,77 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
-import HeroSubsection from "@/components/layout/hero-subsection";
+import { HeroSubsection } from "@/components/layout/hero-subsection";
 import { RetirementTimelineDemo } from "@/components/segurovida/retirement-timeline-demo";
 import { InvestmentQuestionnaireForm } from "@/components/segurovida/investment-questionnaire-form";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
-import Footer from "@/components/layout/footer";
+import { Footer } from "@/components/layout/footer";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo" });
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ifsbroker.com";
   return {
     title: t("fondosDeRetiro.title"),
     description: t("fondosDeRetiro.description"),
+    keywords: t("fondosDeRetiro.keywords"),
     openGraph: {
       title: t("fondosDeRetiro.title"),
       description: t("fondosDeRetiro.description"),
-      url: `/${locale}/fondos-de-retiro`,
+      url: `${baseUrl}/${locale}/fondos-de-retiro`,
+      type: "website",
+      siteName: "IFS Broker",
+      locale: locale === "es" ? "es_AR" : "en_US",
+      images: [{ url: `${baseUrl}/retiro/fondos-de-retiro.webp`, width: 1200, height: 630, alt: t("fondosDeRetiro.title") }],
     },
-    alternates: { canonical: `/${locale}/fondos-de-retiro` },
+    twitter: {
+      card: "summary_large_image",
+      title: t("fondosDeRetiro.title"),
+      description: t("fondosDeRetiro.description"),
+      images: [`${baseUrl}/retiro/fondos-de-retiro.webp`],
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/fondos-de-retiro`,
+      languages: { es: `${baseUrl}/es/fondos-de-retiro`, en: `${baseUrl}/en/fondos-de-retiro` },
+    },
   };
 }
 
-export default async function FondosDeRetiroPage() {
+export default async function FondosDeRetiroPage({ params }: Props) {
+  const { locale } = await params;
   const t = await getTranslations();
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ifsbroker.com";
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: locale === "es" ? "Fondos de Retiro e Inversión" : "Retirement Funds & Investments",
+    description: t("heroSubsection.retirementDescription"),
+    provider: {
+      "@type": "FinancialService",
+      name: "IFS Broker",
+      url: baseUrl,
+    },
+    url: `${baseUrl}/${locale}/fondos-de-retiro`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("nav.home"), item: `${baseUrl}/${locale}` },
+      { "@type": "ListItem", position: 2, name: t("solutions.fondosRetiro.title"), item: `${baseUrl}/${locale}/fondos-de-retiro` },
+    ],
+  };
+
   return (
     <main className="relative min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <HeroSubsection
         titlePrefix={t("heroSubsection.retirementPrefix")}
