@@ -72,6 +72,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <div className="flex flex-col gap-3 max-w-xs">
                     <ButtonPrimary
                       href={item.buttonHref ?? "/seguros-de-vida#cotiza"}
+                      target={item.buttonHref?.startsWith("http") ? "_blank" : undefined}
                       className="px-5 py-2.5 text-xs md:text-sm"
                       onClick={(event) => {
                         // Solo hacemos scroll suave si ya estamos en la página que tiene el formulario

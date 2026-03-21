@@ -38,6 +38,7 @@ export function RetirementTimelineDemo() {
         </div>
       ),
       buttonPrimary: t("buttonPrimary"),
+      buttonHref: "https://calendly.com/administracion-ifs-broker/30min",
       buttonSecondary: t("buttonSecondary"),
       buttonHrefSecondary: "#investment-questionnaire",
     },
@@ -69,6 +70,7 @@ export function RetirementTimelineDemo() {
         </div>
       ),
       buttonPrimary: t("buttonPrimary"),
+      buttonHref: "https://calendly.com/administracion-ifs-broker/30min",
       buttonSecondary: t("buttonSecondary"),
       buttonHrefSecondary: "#investment-questionnaire",
     },
@@ -101,8 +103,9 @@ export function RetirementTimelineDemo() {
         </div>
       ),
       buttonPrimary: t("buttonPrimary"),
+      buttonHref: "https://calendly.com/administracion-ifs-broker/30min",
       buttonSecondary: t("buttonSecondary"),
-      buttonHrefSecondary : "#investment-questionnaire",
+      buttonHrefSecondary: "#investment-questionnaire",
     },
   ];
 
