@@ -5,12 +5,16 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
+const SQRT3 = Math.sqrt(3);
+
 interface AnimatedGridPatternProps {
+  /** Longitud del lado de cada triángulo equilátero (y ancho del mosaico de rombos). */
   width?: number;
   height?: number;
   x?: number;
   y?: number;
-  strokeDasharray?: any;
+  strokeDasharray?: number | string;
+  /** Número de triángulos animados (nombre histórico: antes eran “cuadrados”). */
   numSquares?: number;
   className?: string;
   maxOpacity?: number;
@@ -18,9 +22,15 @@ interface AnimatedGridPatternProps {
   repeatDelay?: number;
 }
 
+type Cell = {
+  id: number;
+  /** Índice en mosaico de rombos: columna, fila, mitad superior o inferior del rombo. */
+  pos: [col: number, row: number, upper: 0 | 1];
+};
+
 export function AnimatedGridPattern({
   width = 80,
-  height = 80,
+  height: _height = 80,
   x = -1,
   y = -1,
   strokeDasharray = 0,
@@ -28,34 +38,70 @@ export function AnimatedGridPattern({
   className,
   maxOpacity = 0.5,
   duration = 4,
-  repeatDelay = 0.5,
+  repeatDelay: _repeatDelay = 0.5,
   ...props
 }: AnimatedGridPatternProps) {
   const id = useId();
-  const containerRef = useRef(null);
+  const containerRef = useRef<SVGSVGElement | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [squares, setSquares] = useState(() => generateSquares(numSquares));
+  const [cells, setCells] = useState<Cell[]>(() =>
+    Array.from({ length: numSquares }, (_, i) => ({
+      id: i,
+      pos: [0, 0, 0] as [number, number, 0 | 1],
+    })),
+  );
 
-  function getPos() {
+  /** Altura de un triángulo equilátero de lado `width`. */
+  const triH = (width * SQRT3) / 2;
+  /** Un tile del patrón = un rombo (dos triángulos); alto = 2 * triH. */
+  const patternH = 2 * triH;
+
+  /** Vértices del triángulo equilátero dentro del rombo (col,row) en mosaico tipo ladrillo. */
+  function getRhombusTrianglePoints(col: number, row: number, upper: 0 | 1) {
+    const s = width;
+    const h = triH;
+    const xShift = (row % 2) * (s / 2);
+    const ox = col * s + xShift;
+    const oy = row * patternH;
+    const Ax = ox + s / 2;
+    const Ay = oy;
+    const Bx = ox + s;
+    const By = oy + h;
+    const Cx = ox + s / 2;
+    const Cy = oy + 2 * h;
+    const Dx = ox;
+    const Dy = oy + h;
+    if (upper === 1) {
+      return `${Ax},${Ay} ${Bx},${By} ${Dx},${Dy}`;
+    }
+    return `${Bx},${By} ${Cx},${Cy} ${Dx},${Dy}`;
+  }
+
+  function getPos(): [number, number, 0 | 1] {
+    if (!dimensions.width || !dimensions.height || triH <= 0) {
+      return [0, 0, 0];
+    }
+    const s = width;
+    const maxCol = Math.max(1, Math.floor(dimensions.width / s) + 3);
+    const maxRow = Math.max(1, Math.floor(dimensions.height / patternH) + 3);
     return [
-      Math.floor((Math.random() * dimensions.width) / width),
-      Math.floor((Math.random() * dimensions.height) / height),
+      Math.floor(Math.random() * maxCol),
+      Math.floor(Math.random() * maxRow),
+      Math.random() < 0.5 ? 0 : 1,
     ];
   }
 
-  // Adjust the generateSquares function to return objects with an id, x, and y
-  function generateSquares(count: number) {
+  function generateCells(count: number): Cell[] {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       pos: getPos(),
     }));
   }
 
-  // Function to update a single square's position
-  const updateSquarePosition = (id: number) => {
-    setSquares((currentSquares) =>
-      currentSquares.map((sq) =>
-        sq.id === id
+  const updateCellPosition = (cellId: number) => {
+    setCells((current) =>
+      current.map((sq) =>
+        sq.id === cellId
           ? {
               ...sq,
               pos: getPos(),
@@ -65,17 +111,15 @@ export function AnimatedGridPattern({
     );
   };
 
-  // Update squares to animate in
   useEffect(() => {
     if (dimensions.width && dimensions.height) {
-      setSquares(generateSquares(numSquares));
+      setCells(generateCells(numSquares));
     }
-  }, [dimensions, numSquares]);
+  }, [dimensions, numSquares, width]);
 
-  // Resize observer to update container dimensions
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         setDimensions({
           width: entry.contentRect.width,
           height: entry.contentRect.height,
@@ -83,23 +127,26 @@ export function AnimatedGridPattern({
       }
     });
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const el = containerRef.current;
+    if (el) {
+      resizeObserver.observe(el);
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (el) {
+        resizeObserver.unobserve(el);
       }
     };
-  }, [containerRef]);
+  }, []);
+
+  /** Rombo (solo ángulos 60°/120°): sin segmentos en ángulo recto ni cuadrícula rectangular. */
+  const rhombusTilePath = `M ${width / 2} 0 L ${width} ${triH} L ${width / 2} ${patternH} L 0 ${triH} Z`;
 
   return (
     <svg
       ref={containerRef}
       aria-hidden="true"
       className={cn(
-        // Líneas del grid en 91D8F7 con algo de transparencia
         "pointer-events-none absolute inset-0 h-full w-full stroke-[#91D8F7]/40",
         className,
       )}
@@ -109,22 +156,18 @@ export function AnimatedGridPattern({
         <pattern
           id={id}
           width={width}
-          height={height}
+          height={patternH}
           patternUnits="userSpaceOnUse"
           x={x}
           y={y}
         >
-          <path
-            d={`M.5 ${height}V.5H${width}`}
-            fill="none"
-            strokeDasharray={strokeDasharray}
-          />
+          <path d={rhombusTilePath} fill="none" strokeDasharray={strokeDasharray} />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${id})`} />
       <svg x={x} y={y} className="overflow-visible">
-        {squares.map(({ pos: [x, y], id }, index) => (
-          <motion.rect
+        {cells.map(({ pos: [col, row, upper], id: cellId }, index) => (
+          <motion.polygon
             initial={{ opacity: 0 }}
             animate={{ opacity: maxOpacity }}
             transition={{
@@ -133,13 +176,9 @@ export function AnimatedGridPattern({
               delay: index * 0.1,
               repeatType: "reverse",
             }}
-            onAnimationComplete={() => updateSquarePosition(id)}
-            key={`${x}-${y}-${index}`}
-            width={width - 1}
-            height={height - 1}
-            x={x * width + 1}
-            y={y * height + 1}
-            // Cada cuadrado se llena con el color 91D8F7
+            onAnimationComplete={() => updateCellPosition(cellId)}
+            key={`tri-${cellId}-${col}-${row}-${upper}-${index}`}
+            points={getRhombusTrianglePoints(col, row, upper)}
             fill="#91D8F7"
             strokeWidth="0"
           />

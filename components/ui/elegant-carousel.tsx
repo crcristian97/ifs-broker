@@ -149,8 +149,8 @@ export default function ElegantCarousel() {
         }}
       />
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0">
-        <div className="flex flex-col justify-center px-8 py-10 md:px-12 md:py-12 space-y-6">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 md:items-stretch">
+        <div className="flex min-w-0 flex-col justify-center px-8 py-10 md:px-12 md:py-12 space-y-6">
           <div
             className={`flex items-center text-xs font-medium tracking-[0.25em] uppercase text-slate-500 transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
@@ -165,7 +165,7 @@ export default function ElegantCarousel() {
 
           <div className="space-y-3">
             <h2
-              className={`text-3xl md:text-4xl lg:text-5xl font-medium tracking-widest uppercase  text-[#006FC4] transition-all duration-500  ${
+              className={`break-words text-balance text-3xl md:text-4xl lg:text-5xl font-medium uppercase tracking-wide text-[#006FC4] transition-all duration-500 md:tracking-widest ${
                 isTransitioning
                   ? direction === "next"
                     ? "opacity-0 translate-y-2"
@@ -177,7 +177,7 @@ export default function ElegantCarousel() {
               {currentSlide.title}
             </h2>
             <p
-              className={`text-2xl font-regular  text-[#033163] transition-opacity duration-500 ${
+              className={`break-words text-2xl font-regular text-[#033163] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -186,7 +186,7 @@ export default function ElegantCarousel() {
           </div>
 
           <p
-            className={`text-base md:text-lg text-[#033163] leading-relaxed max-w-md transition-opacity duration-500 ${
+            className={`w-full max-w-none text-base md:text-lg text-[#033163] leading-relaxed transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -215,7 +215,7 @@ export default function ElegantCarousel() {
           </div>
         </div>
 
-        <div className="relative h-80 md:h-full bg-slate-900/5 flex items-center justify-center">
+        <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-slate-900/5 py-8 md:min-h-[420px] md:h-full md:py-10">
           <div
             className={`relative w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-900/5 transition-all duration-500 ${
               isTransitioning
@@ -248,14 +248,14 @@ export default function ElegantCarousel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`group flex items-center gap-2 rounded-full px-3 py-1.5 text-xs md:text-sm transition-all ${
+              className={`group flex min-w-0 max-w-full items-start gap-2 rounded-2xl px-3 py-2 text-left text-xs md:text-sm transition-all sm:max-w-[calc(50%-0.25rem)] md:max-w-[calc(33.333%-0.5rem)] lg:max-w-none ${
                 index === currentIndex
                   ? "bg-[#006FC4]/10 text-[#006FC4]"
                   : "text-slate-500 hover:bg-slate-100/80"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             >
-              <div className="h-1 w-14 rounded-full bg-slate-200 overflow-hidden">
+              <div className="mt-1.5 h-1 w-10 shrink-0 rounded-full bg-slate-200 overflow-hidden sm:w-14">
                 <div
                   className="h-full rounded-full bg-[#006FC4] transition-[width] duration-150"
                   style={{
@@ -268,7 +268,7 @@ export default function ElegantCarousel() {
                   }}
                 />
               </div>
-              <span className="truncate max-w-[120px] text-left">
+              <span className="min-w-0 flex-1 whitespace-normal break-words leading-snug">
                 {slide.title}
               </span>
             </button>
