@@ -129,11 +129,11 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                     item={link.label}
                     className={
                       isBlueTheme
-                        ? "text-[#033163] hover:text-[#033163]/80"
+                        ? "text-[#033163] "
                         : ""
                     }
                   >
-                    <div className="text-sm grid grid-cols-2 gap-4 p-4">
+                    <div className="grid grid-cols-2 gap-4 p-4 text-sm">
                       <ProductItem
                         title={t("solutions.seguroVida.title")}
                         href="/seguros-de-vida"
@@ -232,7 +232,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                 className={`text-base font-medium transition-colors ${
                   isBlueTheme
                     ? "text-[#033163]/80 hover:text-[#033163]"
-                    : "text-foreground/80 hover:text-foreground"
+                    : ""
                 }`}
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {

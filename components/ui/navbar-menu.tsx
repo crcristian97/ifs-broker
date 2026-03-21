@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const transition = {
   type: "spring",
@@ -27,17 +28,23 @@ export const MenuItem = ({
   className?: string;
 }) => {
   return (
-    <div 
+    <div
       onMouseEnter={() => setActive(item)}
       onMouseLeave={() => setActive(null)}
-      className="relative"
+      className={cn(
+        "relative rounded-lg transition-colors duration-200",
+        active === item && "bg-[#006FC4] px-3 py-2",
+      )}
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className={`nav-link cursor-pointer text-[18px] font-normal transition-colors ${
-          className ?? "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
-        }`}
-        style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+        className={cn(
+          "nav-link cursor-pointer text-[18px] font-normal transition-colors",
+          active === item
+            ? "text-[#FEFEFE]"
+            : className ?? "text-[#FEFEFE] hover:text-[#FEFEFE]/80",
+        )}
+        style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
       >
         {item}
       </motion.p>
@@ -57,7 +64,7 @@ export const MenuItem = ({
             <motion.div
               transition={transition}
               layoutId="active" // layoutId ensures smooth animation
-              className="bg-[#0a1628]/95 dark:bg-[#0a1628]/95 backdrop-blur-md rounded-2xl overflow-hidden border border-foreground/20 shadow-xl"
+              className="overflow-hidden rounded-2xl border border-[#006FC4]/40 bg-[#006FC4] shadow-xl"
             >
               <motion.div
                 layout // layout ensures smooth animation
