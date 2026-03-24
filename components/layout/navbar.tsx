@@ -143,19 +143,19 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                       <ProductItem
                         title={t("solutions.fondosRetiro.title")}
                         href="/fondos-de-retiro"
-                        src="/retiro/fondos-de-retiro.webp"
+                        src="/retiro/fondos-de-retiro-ifs.webp"
                         description={t("solutions.fondosRetiro.description")}
                       />
                       <ProductItem
                         title={t("solutions.saludInternacional.title")}
                         href="/salud-internacional"
-                        src="/seguro/cobertura-salud-internacional.webp"
+                        src="/retiro/salud-internacional-ifs.webp"
                         description={t("solutions.saludInternacional.description")}
                       />
                       <ProductItem
                         title={t("solutions.serviciosComplementarios.title")}
                         href="/servicios-complementarios"
-                        src="/seguro/cebertura-viaje.webp"
+                        src="/seguro/servicios-complementario.webp"
                         description={t("solutions.serviciosComplementarios.description")}
                       />
                     </div>
