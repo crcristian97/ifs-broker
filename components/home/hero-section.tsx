@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="relative z-10 mx-auto flex min-h-[880px] flex-col justify-end px-6 pb-8 pt-24 m md:px-12 md:pt-28 lg:px-16">
           <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-end">
-              <h1  className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
+              <h1  className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
             style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif'}} >
                 <AnimatedHeadline
                   text={t("heroSection.title")}

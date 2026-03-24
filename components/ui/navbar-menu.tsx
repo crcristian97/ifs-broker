@@ -106,24 +106,31 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link
+      href={href}
+      className={cn(
+        "flex gap-3 rounded-xl border border-transparent bg-transparent p-3 outline-none transition-all duration-200 ease-out",
+        "hover:border-[#FEFEFE]/45 hover:bg-[#0058a0]/90",
+        "focus-visible:border-[#FEFEFE]/55 focus-visible:bg-[#0058a0]/90 focus-visible:ring-2 focus-visible:ring-[#FEFEFE]/25",
+      )}
+    >
       <Image
         src={src}
         width={140}
         height={70}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl object-cover"
+        className="shrink-0 rounded-md object-cover shadow-2xl ring-1 ring-black/10"
       />
-      <div>
-        <h4 
-          className="text-[16px] font-normal mb-1 text-[#FEFEFE]"
-          style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+      <div className="min-w-0">
+        <h4
+          className="mb-1 text-[16px] font-normal text-[#FEFEFE]"
+          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
         >
           {title}
         </h4>
-        <p 
-          className="text-[12px] font-normal text-[#FEFEFE] max-w-40"
-          style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+        <p
+          className="max-w-40 text-[12px] font-normal text-[#FEFEFE]/95"
+          style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
         >
           {description}
         </p>
