@@ -30,16 +30,23 @@ export function Footer() {
   return (
     <section
       id="contacto"
-      className="relative w-full min-h-[700px] flex flex-col justify-end"
+      className="relative w-full overflow-hidden pb-8 md:pb-12"
       style={{
         backgroundImage:
           "linear-gradient(to bottom, #E5EEF5 0%, #006FC4 100%), url('/services/fondo-servicios-especificos.webp')",
         backgroundBlendMode: "overlay",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="relative z-10 flex flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-12 md:py-16">
+      {/* Capa superior: continúa el blanco de la sección blog y se funde con el degradado/imagen del footer */}
+      <div
+        aria-hidden
+        className=" bg-gradient-to-b from-white via-[#E5EEF5]/90 to-transparent "
+      />
+
+      <div className="relative z-10 flex flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-12">
         <div className="flex justify-center md:justify-start">
           <Image src="/ifs_insurance.png" alt="IFS Insurance" width={200} height={200} />
         </div>
@@ -79,7 +86,7 @@ export function Footer() {
         </p>
       </div>
 
-      <div className="flex justify-center mb-12">
+      <div className="relative z-10 flex justify-center px-4 pb-2">
         <FeatureBar features={features} />
       </div>
 
