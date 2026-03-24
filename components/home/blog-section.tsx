@@ -166,6 +166,7 @@ export default function BlogSection() {
                       <Link
                         className="group relative flex items-center overflow-hidden font-medium text-gray-900 text-xs transition-colors hover:text-[#006fc4] sm:text-sm"
                         href={article.readMoreLink}
+                        scroll
                       >
                         <span className="mr-2 overflow-hidden rounded-none border border-[#033163] p-2 transition-colors duration-300 ease-in group-hover:bg-[#006fc4] group-hover:text-white sm:p-3">
                           <ArrowRight className="h-3 w-3 translate-x-0 opacity-100 transition-all duration-500 ease-in group-hover:translate-x-8 group-hover:opacity-0 sm:h-4 sm:w-4" />

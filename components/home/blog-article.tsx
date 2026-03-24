@@ -1,5 +1,6 @@
 "use client";
 
+import { useLayoutEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -12,6 +13,12 @@ type BlogArticleProps = {
 
 export default function BlogArticle({ articleId }: BlogArticleProps) {
   const t = useTranslations("blog");
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [articleId]);
 
   const isFirst = articleId === "article1";
   const categorySlug = isFirst ? "salud" : "finanzas";
