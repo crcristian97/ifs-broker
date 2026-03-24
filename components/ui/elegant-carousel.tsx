@@ -48,7 +48,7 @@ export default function ElegantCarousel() {
       title: t("slide3Title"),
       subtitle: t("slide3Subtitle"),
       description: t("slide3Description"),
-      imageUrl: "/services/salud-internacional.webp",
+      imageUrl: "/retiro/salud-internacional-ifs.webp",
       accent: "#006FC4",
       buttonText: knowMore,
       buttonHref: "/salud-internacional",
@@ -200,14 +200,14 @@ export default function ElegantCarousel() {
           <div className="mt-6 flex items-center gap-4">
             <button
               onClick={goPrev}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-[#033163] text-[#FEFEFE] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors cursor-pointer"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={goNext}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-[#033163] text-[#FEFEFE] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors cursor-pointer"
               aria-label="Next slide"
             >
               <ChevronRight className="h-5 w-5" />
@@ -230,7 +230,8 @@ export default function ElegantCarousel() {
               alt={currentSlide.title}
               fill
               className="object-cover"
-              sizes="(min-width: 1024px) 320px, 50vw"
+              sizes="(min-width: 768px) 448px, 90vw"
+              quality={85}
             />
             <div
               className="absolute inset-0 pointer-events-none"

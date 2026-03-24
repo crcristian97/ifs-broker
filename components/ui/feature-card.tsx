@@ -32,7 +32,7 @@ export const FeatureCard = ({ text }: FeatureCardProps) => {
       <div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="bg-gradient-to-br from-[#E5EEF5]/20 to-[#E5EEF5]/10 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full min-h-[220px] sm:min-h-[240px] flex flex-col backdrop-blur-md border border-white/40"
+        className="bg-gradient-to-br from-[#E5EEF5] to-[#E5EEF5] rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full min-h-[220px] sm:min-h-[240px] flex flex-col backdrop-blur-md border border-white/40"
       >
         <div className="flex flex-col items-start gap-4">
           <div className="shrink-0">

@@ -154,7 +154,7 @@ export function FocusRail({
               <motion.div
                 key={absIndex}
                 className={cn(
-                  "absolute aspect-[3/4] w-[260px] md:w-[320px] rounded-2xl transition-shadow duration-300",
+                  "absolute aspect-[3/4] w-[260px] md:w-[320px] rounded-2xl bg-[#033163] transition-shadow duration-300",
                   // Sombras solo con marca #033163 (rgb 3, 49, 99)
                   isCenter
                     ? "z-20 shadow-[0_18px_45px_rgba(3,49,99,0.28)]"
@@ -180,15 +180,15 @@ export function FocusRail({
                 }}
               >
                 {item.content ? (
-                  <div className="h-full w-full rounded-2xl overflow-hidden bg-white pointer-events-none">
+                  <div className="h-full w-full rounded-2xl overflow-hidden bg-[#033163] text-[#FEFEFE] pointer-events-none">
                     {item.content}
                   </div>
                 ) : (
-                <img
-                  src={item.imageSrc}
-                  alt={item.title}
-                  className="h-full w-full rounded-2xl object-cover pointer-events-none"
-                />
+                  <img
+                    src={item.imageSrc}
+                    alt={item.title}
+                    className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                  />
                 )}
               </motion.div>
             );

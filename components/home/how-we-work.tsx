@@ -18,15 +18,15 @@ function useDemoItems(): FocusRailItem[] {
       description: t("step1Description"),
       meta: `${stepMeta} 1`,
       content: (
-        <div className="flex h-full w-full flex-col justify-center gap-1 bg-white px-6 py-6">
+        <div className="flex h-full w-full flex-col justify-center gap-1 px-6 py-6">
           <div className="flex flex-col gap-2">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] text-2xl font-semibold text-[#006FC4]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FEFEFE]/15 text-2xl font-semibold text-[#FEFEFE] ring-1 ring-[#FEFEFE]/25">
               1
             </div>
-            <h3 className="text-xl font-semibold text-[#006FC4] py-2">
+            <h3 className="py-2 text-xl font-semibold text-[#FEFEFE]">
               {t("step1Title")}
             </h3>
-            <p className="text-sm leading-relaxed text-[#033163]">
+            <p className="text-sm leading-relaxed text-[#FEFEFE]/90">
               {t("step1Description")}
             </p>
           </div>
@@ -39,15 +39,15 @@ function useDemoItems(): FocusRailItem[] {
       description: t("step2Description"),
       meta: `${stepMeta} 2`,
       content: (
-        <div className="flex h-full w-full flex-col justify-center gap-1 bg-white px-6 py-6">
+        <div className="flex h-full w-full flex-col justify-center gap-1 px-6 py-6">
           <div className="flex flex-col gap-2">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] text-2xl font-semibold text-[#006FC4]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FEFEFE]/15 text-2xl font-semibold text-[#FEFEFE] ring-1 ring-[#FEFEFE]/25">
               2
             </div>
-            <h3 className="text-xl font-semibold text-[#006FC4]">
+            <h3 className="text-xl font-semibold text-[#FEFEFE]">
               {t("step2Title")}
             </h3>
-            <p className="text-sm leading-relaxed text-[#033163]">
+            <p className="text-sm leading-relaxed text-[#FEFEFE]/90">
               {t("step2Description")}
             </p>
           </div>
@@ -60,15 +60,15 @@ function useDemoItems(): FocusRailItem[] {
       description: t("step3Description"),
       meta: `${stepMeta} 3`,
       content: (
-        <div className="flex h-full w-full flex-col justify-center gap-1 bg-white px-6 py-6">
+        <div className="flex h-full w-full flex-col justify-center gap-1 px-6 py-6">
           <div className="flex flex-col gap-2">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] text-2xl font-semibold text-[#006FC4]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FEFEFE]/15 text-2xl font-semibold text-[#FEFEFE] ring-1 ring-[#FEFEFE]/25">
               3
             </div>
-            <h3 className="text-xl font-semibold text-[#006FC4]">
+            <h3 className="text-xl font-semibold text-[#FEFEFE]">
               {t("step3Title")}
             </h3>
-            <p className="text-sm leading-relaxed text-[#033163]">
+            <p className="text-sm leading-relaxed text-[#FEFEFE]/90">
               {t("step3Description")}
             </p>
           </div>
@@ -81,15 +81,15 @@ function useDemoItems(): FocusRailItem[] {
       description: t("step4Description"),
       meta: `${stepMeta} 4`,
       content: (
-        <div className="flex h-full w-full flex-col justify-center gap-1 bg-white px-6 py-6">
+        <div className="flex h-full w-full flex-col justify-center gap-1 px-6 py-6">
           <div className="flex flex-col gap-2">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] text-2xl font-semibold text-[#006FC4]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FEFEFE]/15 text-2xl font-semibold text-[#FEFEFE] ring-1 ring-[#FEFEFE]/25">
               4
             </div>
-            <h3 className="text-xl font-semibold text-[#006FC4]">
+            <h3 className="text-xl font-semibold text-[#FEFEFE]">
               {t("step4Title")}
             </h3>
-            <p className="text-sm leading-relaxed text-[#033163]">
+            <p className="text-sm leading-relaxed text-[#FEFEFE]/90">
               {t("step4Description")}
             </p>
           </div>
