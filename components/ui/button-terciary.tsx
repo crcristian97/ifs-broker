@@ -54,7 +54,7 @@ export function ConocerMasButton({
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={cn(
-          "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
+          "group relative flex items-stretch w-[200px] rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
           isSmall ? "h-8" : "h-[48px]",
           className,
         )}
@@ -72,7 +72,7 @@ export function ConocerMasButton({
   return (
     <button
       className={cn(
-        "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
+        "group relative flex items-stretch w-[200px] rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer ",
         isSmall ? "h-8" : "h-[48px]",
         className,
       )}
