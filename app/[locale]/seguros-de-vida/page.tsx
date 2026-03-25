@@ -8,8 +8,6 @@ import { RetirementForm } from "@/components/segurovida/retirement-form";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
-import { VideoHeroFullscreen } from "@/components/segurovida/video-hero-fullscreen";
-
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -81,9 +79,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
         descriptionHighlight={t("heroSubsection.descriptionHighlight")}
         imageSrc="/seguro/seguro-de-vida.webp"
         imageAlt={t("solutions.seguroVida.title")}
-      />
-      <VideoHeroFullscreen
-        videoSrc="/seguro/seguro-de-vida-ifs-broker.webm"
+        videoSrc="/seguros-vida-ifs-broker.webm"
       />
       <TimelineDemo />
       <div
