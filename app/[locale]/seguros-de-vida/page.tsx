@@ -77,8 +77,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
         titleHighlight={t("heroSubsection.titleHighlight")}
         description={t("heroSubsection.description")}
         descriptionHighlight={t("heroSubsection.descriptionHighlight")}
-        imageSrc="/seguro/seguro-de-vida.webp"
-        imageAlt={t("solutions.seguroVida.title")}
+        hideImage
         videoSrc="/seguros-vida-ifs-broker.webm"
       />
       <TimelineDemo />

@@ -16,6 +16,8 @@ type HeroSubsectionProps = {
   largeImage?: boolean;
   /** Video de fondo en /public (ej. /seguros-vida-ifs-broker.webm). Sin esto se usa degradado + grid. */
   videoSrc?: string;
+  /** Oculta la imagen de la columna derecha (solo texto + glass). */
+  hideImage?: boolean;
 };
 
 // Reusable hero for product sections (life insurance, retirement funds, etc.)
@@ -30,6 +32,7 @@ export function HeroSubsection({
   invertTitleColors = false,
   largeImage = false,
   videoSrc,
+  hideImage = false,
 }: HeroSubsectionProps) {
   const prefixColorClass = invertTitleColors ? "text-[#91D8F7]" : "text-[#ffffff]";
   const highlightColorClass = invertTitleColors ? "text-[#ffffff]" : "text-[#91D8F7]";
@@ -74,7 +77,12 @@ export function HeroSubsection({
           )}
 
           <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-10 pt-24 md:pb-14 md:pt-28">
-            <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-16 lg:items-start">
+            <div
+              className={cn(
+                "grid w-full gap-8 lg:gap-16 lg:items-start",
+                hideImage ? "lg:grid-cols-1" : "lg:grid-cols-2",
+              )}
+            >
               {/* Left column: texto con glass */}
               <FadeInUp>
                 <div
@@ -105,28 +113,30 @@ export function HeroSubsection({
               </FadeInUp>
 
               {/* Right column: image */}
-              <FadeInUp delay={0.2} className="hidden lg:flex items-start justify-end">
-                <div
-                  className={cn(
-                    "relative w-full",
-                    largeImage ? "max-w-2xl xl:max-w-[44rem]" : "max-w-md",
-                  )}
-                >
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    width={largeImage ? 880 : 600}
-                    height={largeImage ? 880 : 600}
-                    className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
-                    priority
-                    sizes={
-                      largeImage
-                        ? "(min-width: 1280px) 44rem, (min-width: 1024px) 42rem, 100vw"
-                        : "(min-width: 1024px) 28rem, 100vw"
-                    }
-                  />
-                </div>
-              </FadeInUp>
+              {!hideImage && (
+                <FadeInUp delay={0.2} className="hidden lg:flex items-start justify-end">
+                  <div
+                    className={cn(
+                      "relative w-full",
+                      largeImage ? "max-w-2xl xl:max-w-[44rem]" : "max-w-md",
+                    )}
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      width={largeImage ? 880 : 600}
+                      height={largeImage ? 880 : 600}
+                      className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+                      priority
+                      sizes={
+                        largeImage
+                          ? "(min-width: 1280px) 44rem, (min-width: 1024px) 42rem, 100vw"
+                          : "(min-width: 1024px) 28rem, 100vw"
+                      }
+                    />
+                  </div>
+                </FadeInUp>
+              )}
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export function TimelineDemo() {
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/seguro/img-seguro de vida.webp"
+              src="/seguro/seguro-de-vida.webp"
               alt={tSolutions("seguroVida.title")}
               width={600}
               height={600}
@@ -82,7 +82,7 @@ export function TimelineDemo() {
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/seguro/img-incapacidad.webp"
+              src="/seguro/fondo-seguro-de-vida-ifs.webp"
               alt={t("tab3Title")}
               width={600}
               height={600}
@@ -111,7 +111,7 @@ export function TimelineDemo() {
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/seguro/img-enfermedad-terminal.webp"
+              src="/seguro/seguro-de-vida-terminal.webp"
               alt={t("tab4Title") + t("tab4Highlight")}
               width={600}
               height={600}

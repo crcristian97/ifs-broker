@@ -8,7 +8,6 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import { Footer } from "@/components/layout/footer";
-import { VideoHeroFullscreen } from "@/components/segurovida/video-hero-fullscreen";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -79,12 +78,9 @@ export default async function FondosDeRetiroPage({ params }: Props) {
         titleHighlight={t("heroSubsection.retirementHighlight")}
         titleSuffix={t("heroSubsection.retirementSuffix")}
         description={t("heroSubsection.retirementDescription")}
-        imageSrc="/retiro/fondos-de-retiro.webp"
-        imageAlt={t("solutions.fondosRetiro.title")}
-      />
-      <VideoHeroFullscreen
+        hideImage
         videoSrc="/retiro/videos-retiro.webm"
-      />  
+      />
       <RetirementTimelineDemo />
       <div
         id="investment-questionnaire"
