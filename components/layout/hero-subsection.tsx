@@ -31,8 +31,8 @@ export function HeroSubsection({
   largeImage = false,
   videoSrc,
 }: HeroSubsectionProps) {
-  const prefixColorClass = invertTitleColors ? "text-[#91d8f7]" : "text-[#FFFFFF]";
-  const highlightColorClass = invertTitleColors ? "text-[#FFFFFF]" : "text-[#91d8f7]";
+  const prefixColorClass = invertTitleColors ? "text-[#006FC4]" : "text-[#033163]";
+  const highlightColorClass = invertTitleColors ? "text-[#033163]" : "text-[#006FC4]";
   return (
     <section className="relative w-full">
       {/* Misma rejilla que Navbar: px-4 md:px-8 → max-w-[1400px] mx-auto */}
@@ -49,7 +49,7 @@ export function HeroSubsection({
                 playsInline
                 aria-hidden="true"
               />
-              <div className="absolute inset-0 z-1 rounded-b-4xl bg-[#033163]/80" />
+              <div className="absolute inset-0 z-1 rounded-b-4xl bg-[#033163]/55" />
             </>
           ) : (
             <>
@@ -73,33 +73,39 @@ export function HeroSubsection({
             </>
           )}
 
-          <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-center px-6 pb-8 pt-24 md:pt-28">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-              {/* Left column: text */}
+          <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-10 pt-24 md:pb-14 md:pt-28">
+            <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-16 lg:items-start">
+              {/* Left column: texto con glass */}
               <FadeInUp>
-                <div className="flex flex-col justify-end">
-                  <h1 className="max-w-2xl mb-4 text-4xl font-regular tracking-tight leading-none text-[#FFFFFF]">
-                    <span className={prefixColorClass}>{titlePrefix}</span>
-                    <br />
-                    <span className={highlightColorClass}>{titleHighlight}</span>
-                    {titleSuffix && (
-                      <>
-                        {" "}
-                        <span className="text-[#FFFFFF]">{titleSuffix}</span>
-                      </>
-                    )}
-                  </h1>
-                  <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                    {description}
-                  </p>
-                  <p className="max-w-2xl mb-4 font-regular text-[#FFFFFF] text-xl">
-                    {descriptionHighlight}
-                  </p>
+                <div
+                  className={cn(
+                    "hero-subsection-glass p-4 md:p-6 lg:p-8 shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]",
+                  )}
+                >
+                  <div className="relative z-10 flex flex-col justify-start">
+                    <h1 className="mb-4 text-4xl font-regular tracking-tight leading-none">
+                      <span className={prefixColorClass}>{titlePrefix}</span>
+                      <br />
+                      <span className={highlightColorClass}>{titleHighlight}</span>
+                      {titleSuffix && (
+                        <>
+                          {" "}
+                          <span className="text-[#033163]">{titleSuffix}</span>
+                        </>
+                      )}
+                    </h1>
+                    <p className="mb-4 font-regular text-xl text-[#033163]/90">
+                      {description}
+                    </p>
+                    <p className="mb-0 font-regular text-xl text-[#033163]/90">
+                      {descriptionHighlight}
+                    </p>
+                  </div>
                 </div>
               </FadeInUp>
 
               {/* Right column: image */}
-              <FadeInUp delay={0.2} className="hidden lg:flex items-center justify-end">
+              <FadeInUp delay={0.2} className="hidden lg:flex items-start justify-end">
                 <div
                   className={cn(
                     "relative w-full",

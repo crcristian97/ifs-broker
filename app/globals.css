@@ -32,3 +32,44 @@ body {
   font-family: "Zalando Sans";
   overflow-x: hidden;
 }
+
+/*
+  Hero subsection glass — técnica "blurred box" (Usama Tahir / AmJustSam), adaptada:
+  el original usa background:inherit + filter:blur sobre el pseudo; con video usamos
+  backdrop-filter para difuminar lo que hay detrás del panel.
+  https://medium.com/@AmJustSam
+*/
+.hero-subsection-glass {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  border-radius: 2.25rem;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-subsection-glass::after {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  right: -25px;
+  bottom: -25px;
+  z-index: 0;
+  border-radius: 2.25rem;
+  pointer-events: none;
+  /* Misma idea que el artículo: sombra interior muy gruesa + desenfoque */
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (min-width: 768px) {
+  .hero-subsection-glass::after {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
