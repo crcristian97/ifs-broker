@@ -58,11 +58,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             {/* Columna izquierda: solo el punto de la línea de tiempo */}
-            <div className="sticky z-40 top-40 self-start w-10 flex items-start justify-center">
-              <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-[#006FC4] border border-[#003163] p-2" />
-              </div>
-            </div>
+           
 
             {/* Columna derecha: título + botones a la izquierda, tarjeta con imagen y texto a la derecha */}
             <div className="relative pl-12 pr-4 md:pl-16 w-full">
