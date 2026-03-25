@@ -4,7 +4,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { HeroSubsection } from "@/components/layout/hero-subsection";
 import { HeroBanner } from "@/components/servicioscomplementarios/hero-banner";
-import HowWeWork from "@/components/home/how-we-work";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
@@ -81,7 +80,6 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
         videoSrc="/hero/servicio-complementario.mp4"
       />
       <HeroBanner />
-      <HowWeWork />
       <HeroPlanificacion />
 
       <LogoCloudSection />

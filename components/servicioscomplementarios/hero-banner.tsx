@@ -49,7 +49,7 @@ export function HeroBanner() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden h-[1020px]">
+    <section className="relative w-full overflow-hidden h-[800px]">
       <div className="absolute inset-0">
         <Image
           src="/seguro/fondo-seguro-de-vida.webp"
