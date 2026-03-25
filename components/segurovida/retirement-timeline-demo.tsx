@@ -85,7 +85,7 @@ export function RetirementTimelineDemo() {
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/retiro/fondos-para-estudio.webp"
+              src="/retiro/estudio-universitario-ifs.webp"
               alt={t("tab3Desc1")}
               width={600}
               height={600}
