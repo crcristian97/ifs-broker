@@ -31,8 +31,8 @@ export function HeroSubsection({
   largeImage = false,
   videoSrc,
 }: HeroSubsectionProps) {
-  const prefixColorClass = invertTitleColors ? "text-[#006FC4]" : "text-[#033163]";
-  const highlightColorClass = invertTitleColors ? "text-[#033163]" : "text-[#006FC4]";
+  const prefixColorClass = invertTitleColors ? "text-[#91D8F7]" : "text-[#ffffff]";
+  const highlightColorClass = invertTitleColors ? "text-[#ffffff]" : "text-[#91D8F7]";
   return (
     <section className="relative w-full">
       {/* Misma rejilla que Navbar: px-4 md:px-8 → max-w-[1400px] mx-auto */}
@@ -90,14 +90,14 @@ export function HeroSubsection({
                       {titleSuffix && (
                         <>
                           {" "}
-                          <span className="text-[#033163]">{titleSuffix}</span>
+                          <span className="text-[#ffffff]">{titleSuffix}</span>
                         </>
                       )}
                     </h1>
-                    <p className="mb-4 font-regular text-xl text-[#033163]/90">
+                    <p className="mb-4 font-regular text-xl text-[white]">
                       {description}
                     </p>
-                    <p className="mb-0 font-regular text-xl text-[#033163]/90">
+                    <p className="mb-0 font-regular text-xl text-[white]">
                       {descriptionHighlight}
                     </p>
                   </div>
