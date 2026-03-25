@@ -91,7 +91,7 @@ function BannerSection({
             )}
             {resolvedSubtitle && (
               <p
-                className="max-w-4xl text-xl font-regular leading-relaxed "
+                className="max-w-4xl text-2xl font-regular leading-relaxed "
                 style={{
                   fontFamily: "var(--font-noto-sans), sans-serif",
                   color: subtitleColor,

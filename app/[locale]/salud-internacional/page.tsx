@@ -8,7 +8,6 @@ import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { Footer } from "@/components/layout/footer";
 import { HeroSubsection } from "@/components/layout/hero-subsection";
-import { VideoHeroFullscreen } from "@/components/segurovida/video-hero-fullscreen";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -78,13 +77,9 @@ export default async function SaludInternacionalPage({ params }: Props) {
         titlePrefix={t("heroGlobe.title1")}
         titleHighlight={t("heroGlobe.title2")}
         description={t("heroGlobe.description")}
-        imageSrc="/salud-internacional.webp"
-        imageAlt={t("heroGlobe.imageAlt")}
         invertTitleColors
-        largeImage
-      />
-      <VideoHeroFullscreen
         videoSrc="/retiro/video-salud.webm"
+        hideImage
       />
       <BannerSection />
       <SaludTimelineDemo />

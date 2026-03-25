@@ -20,7 +20,7 @@ export function SaludTimelineDemo() {
         <div className="flex flex-col items-stretch gap-4">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/seguros-salud-internacion.webp"
+              src="/services/salud-internacional-ifs.webp"
               alt={t("tab1Block1Title")}
               width={600}
               height={600}
@@ -58,7 +58,7 @@ export function SaludTimelineDemo() {
         <div className="flex flex-col items-stretch gap-4">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/ifs-salud-internacional-seguros.webp"
+              src="/services/retiro-salud-internacional-broker.webp"
               alt={t("tab2Block1Title")}
               width={600}
               height={600}

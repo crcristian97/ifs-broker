@@ -88,6 +88,7 @@ export function HeroSubsection({
                 <div
                   className={cn(
                     "hero-subsection-glass p-4 md:p-6 lg:p-8 shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]",
+                    hideImage && "max-w-3xl",
                   )}
                 >
                   <div className="relative z-10 flex flex-col justify-start">
