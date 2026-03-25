@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ConocerMasButton } from "./button-terciary";
 
@@ -216,20 +217,22 @@ export default function ElegantCarousel() {
         </div>
 
         <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-slate-900/5 py-8 md:min-h-[420px] md:h-full md:py-10">
-          <div
-            className={`relative w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-900/5 transition-all duration-500 ${
+          <Link
+            href={currentSlide.buttonHref}
+            className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-900/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${
               isTransitioning
                 ? direction === "next"
                   ? "opacity-0 translate-x-4"
                   : "opacity-0 -translate-x-4"
                 : "opacity-100 translate-x-0"
             }`}
+            aria-label={`${currentSlide.title} — ${knowMore}`}
           >
             <Image
               src={currentSlide.imageUrl}
-              alt={currentSlide.title}
+              alt=""
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               sizes="(min-width: 768px) 448px, 90vw"
               quality={85}
             />
@@ -239,7 +242,7 @@ export default function ElegantCarousel() {
                 background: `linear-gradient(135deg, ${currentSlide.accent}22 0%, transparent 50%)`,
               }}
             />
-          </div>
+          </Link>
         </div>
       </div>
 
