@@ -63,33 +63,35 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full">
-      <div className="relative w-full overflow-hidden rounded-b-4xl bg-[#033163]">
-        {/* Carrusel de videos de fondo */}
-        <div className="absolute inset-0" aria-hidden="true">
-          {HERO_VIDEOS.map((src, index) => (
-            <video
-              key={src}
-              ref={(el) => {
-                videoRefs.current[index] = el;
-              }}
-              src={src}
-              autoPlay={index === 0}
-              loop
-              muted
-              playsInline
-              className={cn(
-                "absolute inset-0 h-full w-full object-cover rounded-b-4xl transition-opacity duration-700 ease-out",
-                index === activeIndex ? "z-1 opacity-100" : "z-0 opacity-0",
-              )}
-            />
-          ))}
-        </div>
+      {/* Misma rejilla que Navbar: px-4 md:px-8 + max-w-[1400px] mx-auto (todo el hero, no solo el texto) */}
+      <div className="px-4 pb-8 md:px-8">
+        <div className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-b-4xl bg-[#033163]">
+          {/* Carrusel de videos de fondo */}
+          <div className="absolute inset-0" aria-hidden="true">
+            {HERO_VIDEOS.map((src, index) => (
+              <video
+                key={src}
+                ref={(el) => {
+                  videoRefs.current[index] = el;
+                }}
+                src={src}
+                autoPlay={index === 0}
+                loop
+                muted
+                playsInline
+                className={cn(
+                  "absolute inset-0 h-full w-full object-cover rounded-b-4xl transition-opacity duration-700 ease-out",
+                  index === activeIndex ? "z-1 opacity-100" : "z-0 opacity-0",
+                )}
+              />
+            ))}
+          </div>
 
-        <div className="absolute inset-0 z-2 bg-[#033163]/80 rounded-b-4xl" />
+          <div className="absolute inset-0 z-2 bg-[#033163]/80 rounded-b-4xl" />
 
-        <div className="relative z-10 mx-auto flex min-h-[880px] flex-col justify-end px-6 pb-8 pt-24 md:px-12 md:pt-28 lg:px-16">
-          <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="flex flex-col justify-end">
+          <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-8 pt-24 md:pt-28">
+            <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
+              <div className="flex flex-col justify-end">
               <h1
                 className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
                 style={{
@@ -112,9 +114,9 @@ export function HeroSection() {
                   delay={0.9}
                 />
               </h2>
-            </div>
+              </div>
 
-            <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
+              <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
               <AnimatedHeadline
                 text={t("heroSection.description")}
                 as="h3"
@@ -138,38 +140,39 @@ export function HeroSection() {
                   </ButtonSecondary>
                 </div>
               </FadeInUp>
+              </div>
             </div>
-          </div>
 
-          {/* Indicadores del carrusel de videos */}
-          <div
-            className="mb-8 flex justify-center gap-3"
-            role="tablist"
-            aria-label={t("heroSection.videoCarouselLabel")}
-          >
-            {HERO_VIDEOS.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                role="tab"
-                aria-selected={index === activeIndex}
-                aria-label={t("heroSection.videoBulletLabel", { n: index + 1 })}
-                onClick={() => goToSlide(index)}
-                className={cn(
-                  "h-3 w-3 rounded-full border-2 border-[#FEFEFE]/50 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FEFEFE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#033163]/40",
-                  index === activeIndex
-                    ? "scale-125 border-[#FEFEFE] bg-[#FEFEFE] shadow-[0_0_12px_rgba(254,254,254,0.6)]"
-                    : "bg-transparent hover:border-[#FEFEFE]/80 hover:bg-[#FEFEFE]/20",
-                )}
-              />
-            ))}
-          </div>
-
-          <FadeInUp delay={2.8}>
-            <div className="flex justify-center">
-              <FeatureBar />
+            {/* Indicadores del carrusel de videos */}
+            <div
+              className="mb-8 flex justify-center gap-3"
+              role="tablist"
+              aria-label={t("heroSection.videoCarouselLabel")}
+            >
+              {HERO_VIDEOS.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === activeIndex}
+                  aria-label={t("heroSection.videoBulletLabel", { n: index + 1 })}
+                  onClick={() => goToSlide(index)}
+                  className={cn(
+                    "h-3 w-3 rounded-full border-2 border-[#FEFEFE]/50 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FEFEFE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#033163]/40",
+                    index === activeIndex
+                      ? "scale-125 border-[#FEFEFE] bg-[#FEFEFE] shadow-[0_0_12px_rgba(254,254,254,0.6)]"
+                      : "bg-transparent hover:border-[#FEFEFE]/80 hover:bg-[#FEFEFE]/20",
+                  )}
+                />
+              ))}
             </div>
-          </FadeInUp>
+
+            <FadeInUp delay={2.8}>
+              <div className="flex justify-center">
+                <FeatureBar />
+              </div>
+            </FadeInUp>
+          </div>
         </div>
       </div>
     </section>
