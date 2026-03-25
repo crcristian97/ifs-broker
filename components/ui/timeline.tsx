@@ -72,11 +72,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <h3 className="text-left text-5xl font-regular leading-tight">
                     {item.title}
                   </h3>
-                  <div className="flex flex-col gap-3 max-w-xs">
+                  <div className="flex w-full max-w-[220px] flex-col gap-2">
                     <ButtonPrimary
                       href={item.buttonHref ?? "/seguros-de-vida#cotiza"}
                       target={item.buttonHref?.startsWith("http") ? "_blank" : undefined}
-                      className="px-5 py-2.5 text-xs md:text-sm"
+                      className="flex h-8 w-full min-h-8 shrink-0 items-center justify-center px-3 py-0 text-center text-xs font-semibold leading-tight"
                       onClick={(event) => {
                         // Solo hacemos scroll suave si ya estamos en la página que tiene el formulario
                         if (pathname.includes("/seguros-de-vida")) {
@@ -90,6 +90,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <ConocerMasButton
                       textButton={item.buttonSecondary ?? t("footer.scheduleMeeting")}
                       size="sm"
+                      className="w-full"
                       href={item.buttonHrefSecondary?.startsWith("#") ? undefined : (item.buttonHrefSecondary ?? "https://calendly.com/administracion-ifs-broker/30min")}
                       target={item.buttonHrefSecondary?.startsWith("#") ? undefined : "_blank"}
                       onClick={() => {

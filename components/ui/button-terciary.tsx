@@ -25,7 +25,7 @@ export function ConocerMasButton({
     <div
       className={cn(
         "flex items-center justify-center gap-[8px] h-full w-full rounded-[7px]",
-        isSmall ? "px-4 py-2" : "px-6 py-3",
+        isSmall ? "px-3 py-1.5" : "px-6 py-3",
       )}
       style={{
         backgroundColor: "rgba(229, 238, 245, 0.6)",
@@ -34,14 +34,14 @@ export function ConocerMasButton({
       <span
         className={cn(
           "whitespace-nowrap font-bold cursor-pointer",
-          isSmall ? "text-sm" : "text-lg",
+          isSmall ? "text-xs" : "text-lg",
         )}
         style={{ color: "#006FC4" }}
       >
         {textButton}
       </span>
-      <ArrowRight
-        className={cn(isSmall ? "w-3 h-3" : "w-4 h-4")}
+        <ArrowRight
+        className={cn("shrink-0", isSmall ? "w-3 h-3" : "w-4 h-4")}
         style={{ color: "#006FC4" }}
       />
     </div>
@@ -55,7 +55,7 @@ export function ConocerMasButton({
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={cn(
           "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
-          isSmall ? "h-9" : "h-[48px]",
+          isSmall ? "h-8" : "h-[48px]",
           className,
         )}
         style={{
@@ -73,7 +73,7 @@ export function ConocerMasButton({
     <button
       className={cn(
         "group relative flex items-stretch w-full rounded-lg p-[1px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer",
-        isSmall ? "h-9" : "h-[48px]",
+        isSmall ? "h-8" : "h-[48px]",
         className,
       )}
       onClick={onClick}
