@@ -124,7 +124,9 @@
   "heroSection": {
     "title": "International financial planning to protect what matters",
     "subtitle": "We accompany individuals and companies in making key financial decisions, combining insurance, investment, and health with a long-term vision and international backing.",
-    "description": "We plan the present with a strategic vision oriented towards the future, designing personalized financial solutions for every stage of life."
+    "description": "We plan the present with a strategic vision oriented towards the future, designing personalized financial solutions for every stage of life.",
+    "videoCarouselLabel": "Background videos",
+    "videoBulletLabel": "Video {n}"
   },
   "whatWeDo": {
     "label": "What do we do?",
