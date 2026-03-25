@@ -24,7 +24,7 @@ export function ConocerMasButton({
   const content = (
     <div
       className={cn(
-        "flex items-center justify-center gap-[8px] h-full w-full rounded-[7px]",
+        "flex items-center justify-center gap-[8px] h-full  rounded-[7px]",
         isSmall ? "px-3 py-1.5" : "px-6 py-3",
       )}
       style={{
@@ -77,10 +77,7 @@ export function ConocerMasButton({
         className,
       )}
       onClick={onClick}
-      style={{
-        background: "linear-gradient(to right, #E5EEF5, #91D8F7)",
-        borderRadius: "8px",
-      }}
+     
     >
       {content}
     </button>
