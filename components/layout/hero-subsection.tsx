@@ -103,12 +103,19 @@ export function HeroSubsection({
                         </>
                       )}
                     </h1>
-                    <p className="mb-4 font-regular text-xl text-[white]">
-                      {description}
-                    </p>
-                    <p className="mb-0 font-regular text-xl text-[white]">
-                      {descriptionHighlight}
-                    </p>
+                    {description ? (
+                      <p
+                        className={cn(
+                          "font-regular text-xl text-[white]",
+                          descriptionHighlight ? "mb-4" : "mb-0",
+                        )}
+                      >
+                        {description}
+                      </p>
+                    ) : null}
+                    {descriptionHighlight ? (
+                      <p className="mb-0 font-regular text-xl text-[white]">{descriptionHighlight}</p>
+                    ) : null}
                   </div>
                 </div>
               </FadeInUp>

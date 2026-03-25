@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
-import BannerSection from "@/components/saludinternacional/banner-section";
 import { Footer } from "@/components/layout/footer";
+import { HeroSubsection } from "@/components/layout/hero-subsection";
 import { HeroBanner } from "@/components/servicioscomplementarios/hero-banner";
 import HowWeWork from "@/components/home/how-we-work";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
@@ -69,27 +69,16 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#E5EEF54D]">
+    <main className="relative min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <BannerSection
-        sectionClassName="w-full px-4 pt-6 pb-16 md:px-8 md:pt-10 md:pb-20"
-        bgColor="linear-gradient(to right, #91D8F7, #91D8F7)"
-        title={
-          <span>
-            <span className="text-[#033163] text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              {t("serviciosComplementarios.title1")}{" "}
-            </span>
-            <span className="text-[#006FC4] text-3xl" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
-              {t("serviciosComplementarios.title2")}
-            </span>
-          </span>
-        }
-        subtitle={t("serviciosComplementarios.description")}
-        subtitleColor="#033163"
-        minHeight={520}
-        contentMinHeight={320}
+      <HeroSubsection
+        titlePrefix={t("serviciosComplementarios.title1")}
+        titleHighlight={t("serviciosComplementarios.title2")}
+        description={t("serviciosComplementarios.description")}
+        hideImage
+        videoSrc="/hero/servicio-complementario.mp4"
       />
       <HeroBanner />
       <HowWeWork />
