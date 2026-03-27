@@ -155,7 +155,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                       <ProductItem
                         title={t("solutions.serviciosComplementarios.title")}
                         href="/servicios-complementarios"
-                        src="/seguro/servicios-complementario.webp"
+                        src="/services/servicio-complementario.webp"
                         description={t("solutions.serviciosComplementarios.description")}
                       />
                     </div>

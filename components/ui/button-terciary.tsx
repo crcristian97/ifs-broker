@@ -59,7 +59,6 @@ export function ConocerMasButton({
           className,
         )}
         style={{
-          background: "linear-gradient(to right, #E5EEF5, #91D8F7)",
           borderRadius: "8px",
         }}
         onClick={onClick}

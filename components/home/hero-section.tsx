@@ -90,10 +90,10 @@ export function HeroSection() {
           <div className="absolute inset-0 z-2 bg-[#033163]/80 rounded-b-4xl" />
 
           <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-8 pt-24 md:pt-28">
-            <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:gap-16">
-              <div className="flex flex-col justify-end">
+            <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
+              <div className="flex flex-col justify-start">
               <h1
-                className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
+                className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
                 style={{
                   fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif',
                 }}
@@ -116,14 +116,14 @@ export function HeroSection() {
               </h2>
               </div>
 
-              <div className="flex flex-col items-start justify-end gap-6 lg:items-end">
+              <div className="flex h-full flex-col items-start justify-start gap-6 lg:items-end">
               <AnimatedHeadline
                 text={t("heroSection.description")}
                 as="h3"
                 delay={2.0}
                 style={{ fontFamily: '"Zalando Sans"' }}
               />
-              <FadeInUp delay={2.0}>
+              <FadeInUp delay={2.0} className="mt-auto">
                 <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                   <ButtonPrimary
                     href="/seguros-de-vida#cotiza"
