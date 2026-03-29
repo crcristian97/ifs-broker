@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
-const fontStyle = { fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' };
+const fontStyle = { fontFamily: "var(--font-heading)" };
 
 export function RetirementTimelineDemo() {
   const t = useTranslations("retirementTimeline");

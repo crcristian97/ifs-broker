@@ -148,7 +148,7 @@ export default function HowWeWork() {
           <p
             className="text-[#033163] text-4xl md:text-5xl font-regular leading-tight tracking-widest"
             style={{
-              fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif',
+              fontFamily: "var(--font-heading)",
             }}
           >
             {t("heading")}

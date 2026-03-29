@@ -95,7 +95,7 @@ export function HeroSection() {
               <h1
                 className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
                 style={{
-                  fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif',
+                  fontFamily: "var(--font-heading)",
                 }}
               >
                 <AnimatedHeadline
@@ -106,7 +106,7 @@ export function HeroSection() {
               </h1>
               <h2
                 className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular"
-                style={{ fontFamily: '"Zalando Sans"' }}
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 <AnimatedHeadline
                   text={t("heroSection.subtitle")}
@@ -121,7 +121,7 @@ export function HeroSection() {
                 text={t("heroSection.description")}
                 as="h3"
                 delay={2.0}
-                style={{ fontFamily: '"Zalando Sans"' }}
+                style={{ fontFamily: "var(--font-body)" }}
               />
               <FadeInUp delay={2.0} className="mt-auto">
                 <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

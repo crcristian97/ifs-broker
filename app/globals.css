@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Display / headings — Adagietto DEMO */
 @font-face {
   font-family: "Adagietto";
   src: url("/fonts/Adagietto DEMO.woff2") format("woff2");
@@ -8,15 +9,29 @@
   font-display: swap;
 }
 
+/* Body copy — Engravers Gothic BT Regular */
+@font-face {
+  font-family: "Engravers Gothic BT";
+  src: url("/fonts/EngraversGothic BT Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Semantic stacks (use in components: fontFamily: "var(--font-body)" etc.) */
+  --font-body: "Engravers Gothic BT", "Zalando Sans", system-ui, sans-serif;
+  --font-heading: "Adagietto", "Zalando Sans", system-ui, sans-serif;
+  /* Legacy name used across components for body/UI text */
+  --font-noto-sans: var(--font-body);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Zalando Sans";
+  --font-sans: var(--font-body);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -26,11 +41,45 @@
   }
 }
 
-body {  
+body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Zalando Sans";
+  font-family: var(--font-body);
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+}
+
+p,
+a,
+li,
+label,
+blockquote,
+figcaption,
+dd,
+dt,
+td,
+th,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+b,
+strong {
+  font-family: inherit;
 }
 
 /*

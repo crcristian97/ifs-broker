@@ -147,16 +147,16 @@ export function ScrollingFeatureShowcase() {
                   >
                     <h2
                       className="text-5xl font-regular text-[#006FC4] uppercase tracking-widest"
-                      style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+                      style={{ fontFamily: "var(--font-heading)" }}
                     >
                       {slide.title}
                     </h2>
                     {slide.subttitle && (
-                      <h3 className="text-2xl font-regular mt-4 text-[#033163] tracking-widest" style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}>
+                      <h3 className="text-2xl font-regular mt-4 text-[#033163] tracking-widest" style={{ fontFamily: "var(--font-heading)" }}>
                         {slide.subttitle}
                       </h3>
                     )}
-                    <p className="mt-6 text-xl max-w-md text-[#033163] font-regular" style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}>{slide.description}</p>
+                    <p className="mt-6 text-xl max-w-md text-[#033163] font-regular" style={{ fontFamily: "var(--font-body)" }}>{slide.description}</p>
                     <div className="mt-6">
                       <ConocerMasButton textButton={slide.textButton || knowMore} />
                     </div>

@@ -83,11 +83,11 @@ export function HeroSubsection({
                 hideImage ? "lg:grid-cols-1" : "lg:grid-cols-2",
               )}
             >
-              {/* Left column: texto con glass */}
+              {/* Left column: texto con glass (ligeramente más arriba; top evita choque con GSAP transform del FadeInUp) */}
               <FadeInUp>
                 <div
                   className={cn(
-                    "hero-subsection-glass p-4 md:p-6 lg:p-8 shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]",
+                    "hero-subsection-glass relative -top-12 p-4 shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)] md:-top-18 md:p-6 lg:-top-24 lg:p-8",
                     hideImage && "max-w-3xl",
                   )}
                 >

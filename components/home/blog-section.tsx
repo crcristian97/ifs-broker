@@ -90,7 +90,7 @@ export default function BlogSection() {
         <div ref={headingRef} className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
             className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
-            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             <span className="text-[#006fc4]">{t("title1")}</span>
             <span className="text-[#033163]">

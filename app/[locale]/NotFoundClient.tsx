@@ -62,7 +62,7 @@ export default function NotFoundClient({
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col items-center justify-center"
           >
-            <h1 className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent text-7xl font-bold md:text-9xl drop-shadow-sm" style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}>
+            <h1 className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent text-7xl font-bold md:text-9xl drop-shadow-sm" style={{ fontFamily: "var(--font-heading)" }}>
               404
             </h1>
             <div className="mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-transparent via-[#006FC4] to-transparent opacity-70" />
@@ -73,7 +73,7 @@ export default function NotFoundClient({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-3xl font-semibold text-white md:text-4xl"
-            style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             {tTitle}
           </motion.h2>
@@ -83,7 +83,7 @@ export default function NotFoundClient({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
             className="mx-auto max-w-md text-lg text-white/70 md:text-xl font-light"
-            style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             {tDescription}
           </motion.p>
@@ -98,7 +98,7 @@ export default function NotFoundClient({
             <Link
               href="/"
               className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#006FC4] px-8 py-3.5 text-base font-semibold text-white shadow-[0_0_40px_-10px_rgba(0,111,196,0.8)] transition-all hover:scale-105 hover:bg-[#0059a3] hover:shadow-[0_0_60px_-15px_rgba(0,111,196,1)]"
-              style={{ fontFamily: 'var(--font-noto-sans), sans-serif' }}
+              style={{ fontFamily: "var(--font-body)" }}
             >
               <span className="absolute inset-0 -mt-1 h-full w-full rounded-full bg-gradient-to-b from-transparent via-transparent to-black opacity-20" />
               <Home className="mr-2 h-5 w-5 transition-transform group-hover:-translate-y-0.5" />

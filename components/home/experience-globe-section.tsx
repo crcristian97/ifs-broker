@@ -84,7 +84,7 @@ export function ExperienceGlobeSection() {
         <div ref={textRef} className="flex min-w-0 flex-1 flex-col justify-center">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-widest text-[#91D8F7] leading-tight mb-4"
-            style={{ fontFamily: '"Adagietto", "Zalando Sans"' }}
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title1")}{" "}
             <span className="text-[#FFFFFF]">{t("title2")}</span>

@@ -64,7 +64,7 @@ export function HeroBanner() {
         <div ref={leftRef} className="flex flex-1 flex-col justify-center gap-8 items-center md:items-start">
           <h1
             className="max-w-xl text-4xl font-regular leading-tight tracking-[0.08em] text-[#033163] md:text-5xl"
-            style={{ fontFamily: '"Adagietto", "Zalando Sans"' }}
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
           </h1>

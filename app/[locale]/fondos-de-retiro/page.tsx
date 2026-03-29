@@ -79,7 +79,7 @@ export default async function FondosDeRetiroPage({ params }: Props) {
         titleSuffix={t("heroSubsection.retirementSuffix")}
         description={t("heroSubsection.retirementDescription")}
         hideImage
-        videoSrc="/retiro/videos-retiro.webm"
+        videoSrc="/retiro/v-retiro-subtitulo.webm"
       />
       <RetirementTimelineDemo />
       <div

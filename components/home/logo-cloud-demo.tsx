@@ -78,7 +78,7 @@ export default function LogoCloudSection() {
           <h4 className="mb-7 text-center flex flex-col items-center gap-2">
             <span
               className="text-5xl text-[#033163] font-regular leading-tight tracking-widest"
-              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+              style={{ fontFamily: "var(--font-heading)" }}
             >
               <span className="text-[#006FC4]">{t("title")}</span>
               {t("titleHighlight")}

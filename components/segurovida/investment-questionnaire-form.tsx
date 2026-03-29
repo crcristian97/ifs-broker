@@ -98,7 +98,7 @@ export function InvestmentQuestionnaireForm() {
       <div className="mb-8 text-center">
         <h2
           className="text-5xl font-regular leading-tight uppercase tracking-widest"
-          style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+          style={{ fontFamily: "var(--font-heading)" }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>
           <span className="text-[#033163]">{t("title2")}</span>

@@ -173,7 +173,7 @@ export default function ElegantCarousel() {
                     : "opacity-0 -translate-y-2"
                   : "opacity-100 translate-y-0"
               }`}
-              style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+              style={{ fontFamily: "var(--font-heading)" }}
             >
               {currentSlide.title}
             </h2>

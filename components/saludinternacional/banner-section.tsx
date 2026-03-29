@@ -84,7 +84,7 @@ function BannerSection({
             {title && (
               <h2
                 className="max-w-4xl text-4xl font-regular uppercase tracking-widest text-white md:text-4xl"
-                    style={{ fontFamily: '"Adagietto", "Zalando Sans", system-ui, sans-serif' }}
+                    style={{ fontFamily: "var(--font-heading)" }}
               >
                 {title}
               </h2>
