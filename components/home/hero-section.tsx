@@ -116,30 +116,30 @@ export function HeroSection() {
               </h2>
               </div>
 
-              <div className="flex h-full flex-col items-start justify-start gap-6 lg:items-end">
-              <AnimatedHeadline
-                text={t("heroSection.description")}
-                as="h3"
-                delay={2.0}
-                style={{ fontFamily: "var(--font-body)" }}
-              />
-              <FadeInUp delay={2.0} className="mt-auto">
-                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                  <ButtonPrimary
-                    href="/seguros-de-vida#cotiza"
-                    hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                  >
-                    {t("heroPlanificacion.quoteLifeInsurance")}
-                  </ButtonPrimary>
-                  <ButtonSecondary
-                    href="https://calendly.com/administracion-ifs-broker/30min"
-                    target="_blank"
-                    hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-                  >
-                    {t("footer.scheduleMeeting")}
-                  </ButtonSecondary>
-                </div>
-              </FadeInUp>
+              <div className="flex h-full min-h-0 flex-col items-start justify-end gap-2 lg:items-end lg:gap-3">
+                <AnimatedHeadline
+                  text={t("heroSection.description")}
+                  as="h3"
+                  delay={2.0}
+                  style={{ fontFamily: "var(--font-body)" }}
+                />
+                <FadeInUp delay={2.0}>
+                  <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                    <ButtonPrimary
+                      href="/seguros-de-vida#cotiza"
+                      hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                    >
+                      {t("heroPlanificacion.quoteLifeInsurance")}
+                    </ButtonPrimary>
+                    <ButtonSecondary
+                      href="https://calendly.com/administracion-ifs-broker/30min"
+                      target="_blank"
+                      hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+                    >
+                      {t("footer.scheduleMeeting")}
+                    </ButtonSecondary>
+                  </div>
+                </FadeInUp>
               </div>
             </div>
 
