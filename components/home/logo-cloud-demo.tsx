@@ -77,13 +77,13 @@ export default function LogoCloudSection() {
         <div className="relative w-full">
           <h4 className="mb-7 text-center flex flex-col items-center gap-2">
             <span
-              className="text-5xl text-[#033163] font-regular leading-tight tracking-widest"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#033163] font-regular leading-tight tracking-widest"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <span className="text-[#006FC4]">{t("title")}</span>
               {t("titleHighlight")}
             </span>
-            <p className="text-xl font-regular mt-3 text-[#033163] max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl font-regular mt-3 text-[#033163] max-w-xl">
               {t("subtitle")}
             </p>
           </h4>

@@ -93,7 +93,7 @@ export function HeroSection() {
             <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
               <div className="flex flex-col justify-start">
               <h1
-                className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
+                className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
                 style={{
                   fontFamily: "var(--font-heading)",
                 }}
@@ -105,7 +105,7 @@ export function HeroSection() {
                 />
               </h1>
               <h2
-                className="mt-6 max-w-xl text-[20px] leading-relaxed text-[#FEFEFE] font-regular"
+                className="mt-6 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-[#FEFEFE] font-regular"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 <AnimatedHeadline

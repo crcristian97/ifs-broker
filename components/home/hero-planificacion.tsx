@@ -73,11 +73,11 @@ export function HeroPlanificacion() {
           />
 
           <div className="relative z-10 text-center">
-            <p className="text-white text-base sm:text-lg font-bold tracking-wide mb-6 sm:mb-8">
+            <p className="text-white text-base sm:text-lg md:text-xl font-bold tracking-wide mb-6 sm:mb-8">
               {t("label")}
             </p>
             <h3
-              className="text-3xl sm:text-4xl md:text-5xl font-regular uppercase tracking-tighter leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular uppercase tracking-tighter leading-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.02em",
@@ -103,7 +103,7 @@ export function HeroPlanificacion() {
         >
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="flex-1">
-              <p className="text-[#1a2b3d] text-xl sm:text-2xl md:text-3xl font-regular leading-relaxed text-center md:text-left">
+              <p className="text-[#1a2b3d] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular leading-relaxed text-center md:text-left">
                 {t("description1Part1")}
                 <span className="text-[#006FC4] font-regular">
                   {t("description1Part2")}
@@ -113,7 +113,7 @@ export function HeroPlanificacion() {
             </div>
 
             <div className="flex-1 flex flex-col items-center md:items-end gap-5">
-              <p className="text-[#000A15] text-base sm:text-lg font-regular leading-relaxed text-center md:text-right max-w-[400px]">
+              <p className="text-[#000A15] text-base sm:text-lg md:text-xl font-regular leading-relaxed text-center md:text-right max-w-[400px]">
                 {t("description2")}
               </p>
               <div className="flex w-full flex-col gap-3 items-stretch md:items-end md:w-auto">

@@ -92,7 +92,7 @@ export function HeroSubsection({
                   )}
                 >
                   <div className="relative z-10 flex flex-col justify-start">
-                    <h1 className="mb-4 text-4xl font-regular tracking-tight leading-none">
+                    <h1 className="mb-4 text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-regular tracking-tight leading-none">
                       <span className={prefixColorClass}>{titlePrefix}</span>
                       <br />
                       <span className={highlightColorClass}>{titleHighlight}</span>
@@ -106,7 +106,7 @@ export function HeroSubsection({
                     {description ? (
                       <p
                         className={cn(
-                          "font-regular text-xl text-[white]",
+                          "font-regular text-base sm:text-lg md:text-xl text-[white]",
                           descriptionHighlight ? "mb-4" : "mb-0",
                         )}
                       >
@@ -114,7 +114,7 @@ export function HeroSubsection({
                       </p>
                     ) : null}
                     {descriptionHighlight ? (
-                      <p className="mb-0 font-regular text-xl text-[white]">{descriptionHighlight}</p>
+                      <p className="mb-0 font-regular text-base sm:text-lg md:text-xl text-[white]">{descriptionHighlight}</p>
                     ) : null}
                   </div>
                 </div>

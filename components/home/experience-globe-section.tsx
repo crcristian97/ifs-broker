@@ -83,7 +83,7 @@ export function ExperienceGlobeSection() {
       >
         <div ref={textRef} className="flex min-w-0 flex-1 flex-col justify-center">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-regular tracking-widest text-[#91D8F7] leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular tracking-widest text-[#91D8F7] leading-tight mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title1")}{" "}
@@ -91,7 +91,7 @@ export function ExperienceGlobeSection() {
           </h2>
 
           <p
-            className="text-base sm:text-lg text-[#FFFFFF] leading-relaxed mb-4"
+            className="text-base sm:text-lg md:text-xl text-[#FFFFFF] leading-relaxed mb-4"
             style={{ fontFamily: "var(--font-noto-sans)" }}
           >
             {t("description1")}

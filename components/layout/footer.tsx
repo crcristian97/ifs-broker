@@ -53,7 +53,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-6 text-center md:items-end md:text-right">
           <div className="space-y-2">
-            <h2 className="text-3xl font-regular text-[#033163] text-balance">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-regular text-[#033163] text-balance">
               {t("title")}
             </h2>
             <p className="max-w-sm text-base text-[#033163]">
@@ -81,7 +81,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10 flex items-end justify-between px-6 pb-4 md:px-12">
-        <p className="text-3xl font-regular text-[#033163]">
+        <p className="text-2xl sm:text-3xl lg:text-4xl font-regular text-[#033163]">
           {t("designFuture")}
         </p>
       </div>

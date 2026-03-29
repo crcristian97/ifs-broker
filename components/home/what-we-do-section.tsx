@@ -13,14 +13,14 @@ export function WhatWeDoSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto flex min-h-[70vh] flex-col justify-start gap-10 pt-16 md:pt-24">
         <FadeInUp>
-          <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl font-regular mb-3 sm:mb-4 text-center md:text-left">
+          <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-3 sm:mb-4 text-center md:text-left">
             {t("label")} 
           </h2>
         </FadeInUp>
 
         <FadeInUp delay={0.15}>
           <h3
-            className="text-[#006FC4] text-3xl sm:text-4xl md:text-5xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
+            className="text-[#006FC4] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")} <span className="text-[#033163]">{t("labelHighlight")}</span>
@@ -29,7 +29,7 @@ export function WhatWeDoSection() {
 
         <FadeInUp delay={0.3}>
           <p
-            className="text-[#033163] text-base sm:text-lg mb-10 max-w-3xl leading-relaxed font-regular"
+            className="text-[#033163] text-base sm:text-lg md:text-xl mb-10 max-w-3xl leading-relaxed font-regular"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             {t("description")}

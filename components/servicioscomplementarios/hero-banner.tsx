@@ -63,7 +63,7 @@ export function HeroBanner() {
       <div className="relative z-10 mx-auto flex w-full max-w-[1400px] h-full min-h-[520px] flex-col items-center justify-center px-6 md:flex-row md:items-center md:justify-center md:px-12 lg:px-16">
         <div ref={leftRef} className="flex flex-1 flex-col justify-center gap-8 items-center md:items-start">
           <h1
-            className="max-w-xl text-4xl font-regular leading-tight tracking-[0.08em] text-[#033163] md:text-5xl"
+            className="max-w-xl text-3xl font-regular leading-tight tracking-[0.08em] text-[#033163] sm:text-4xl md:text-5xl lg:text-6xl"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
@@ -86,7 +86,7 @@ export function HeroBanner() {
         <div ref={rightRef} className="flex flex-1 items-center justify-center md:justify-end">
           <div className="bg-gradient-to-br from-[#E5EEF5]/20 to-[#E5EEF5]/10 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-full min-h-[220px] sm:min-h-[240px] flex flex-col backdrop-blur-md border border-white/40">
             <p
-              className="text-xl leading-relaxed text-[#006FC4] md:text-2xl"
+              className="text-lg leading-relaxed text-[#006FC4] sm:text-xl md:text-2xl"
               style={{ fontFamily: "var(--font-noto-sans)" }}
             >
               {t("paragraph1")}
