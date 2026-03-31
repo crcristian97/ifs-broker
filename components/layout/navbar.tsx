@@ -108,7 +108,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
         {/* Logo */}
         <Link ref={logoRef} href="/" className="flex items-center">
           <Image
-            src="/ifs_insurance.png"
+            src="/ifs-logo.svg"
             alt="IFS Insurance"
             width={320}
             height={64}
