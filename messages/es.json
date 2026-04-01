@@ -33,6 +33,9 @@
     "title": "Cada situación es distinta.",
     "subtitle": "Una conversación puede aportar una nueva mirada sobre tu realidad actual.",
     "navAriaLabel": "Enlaces a las secciones del sitio",
+    "columnSite": "Sitio",
+    "columnCompany": "Empresa",
+    "columnContact": "Contacto",
     "scheduleMeeting": "Agendá una reunión",
     "institutionalContact": "Contacto institucional",
     "designFuture": "Diseñemos hoy la tranquilidad del futuro",
@@ -57,6 +60,7 @@
       "submit": "Enviar información"
     }
   },
+  
   "heroPlanificacion": {
     "label": "Una planificación financiera inteligente comienza por proteger lo esencial",
     "title": "Diseñar una estrategia para proteger a la familia asegurar la continuidad de la empresa y planificar el patrimonio con visión a largo plazo.",

@@ -87,7 +87,7 @@ export function HeroSection() {
 
           <div className="absolute inset-0 z-2 bg-[#033163]/50" />
 
-          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-start px-4 pb-8 pt-24 md:px-8 md:pt-28 xl:min-h-[880px] xl:justify-end">
+          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-start px-4 pb-8 pt-24 md:px-8 md:pt-28 xl:justify-end">
             <div className="mb-8 flex max-w-4xl flex-col items-start gap-6 lg:mb-12">
               <AnimatedHeadline
                 text={t("heroSection.title")}
