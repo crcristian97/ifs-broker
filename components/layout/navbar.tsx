@@ -129,8 +129,8 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                     item={link.label}
                     className={
                       isBlueTheme
-                        ? "text-[#033163] "
-                        : ""
+                        ? "text-[#033163] hover:text-[#033163]/80"
+                        : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
                     }
                   >
                     <div className="grid grid-cols-2 gap-4 p-4 text-sm">

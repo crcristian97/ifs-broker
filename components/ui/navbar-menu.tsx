@@ -42,7 +42,9 @@ export const MenuItem = ({
           "nav-link cursor-pointer text-[18px] font-normal transition-colors",
           active === item
             ? "text-[#FEFEFE]"
-            : className ?? "text-[#FEFEFE] hover:text-[#FEFEFE]/80",
+            : className?.trim()
+              ? className
+              : "text-[#FEFEFE] hover:text-[#FEFEFE]/80",
         )}
         style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
       >

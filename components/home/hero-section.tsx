@@ -88,8 +88,8 @@ export function HeroSection() {
 
           <div className="absolute inset-0 z-2 bg-[#033163]/80" />
 
-          <div className="relative z-10 mx-auto flex min-h-[880px] w-full max-w-[1400px] flex-col justify-end px-4 pb-8 pt-24 md:px-8 md:pt-28">
-            <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-start px-4 pb-8 pt-24 md:px-8 md:pt-28 xl:min-h-[880px] xl:justify-end">
+            <div className="mb-8 grid gap-8 lg:mb-12 lg:grid-cols-2 lg:items-start lg:gap-16">
               <div className="flex flex-col justify-start">
               <h1
                 className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
@@ -116,7 +116,7 @@ export function HeroSection() {
               </h2>
               </div>
 
-              <div className="flex h-full min-h-0 flex-col items-start justify-end gap-2 lg:items-end lg:gap-3">
+              <div className="flex w-full flex-col items-start justify-start gap-2 lg:items-end lg:gap-3 xl:h-full xl:min-h-0 xl:justify-end">
                
                 <FadeInUp delay={2.0}>
                   <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
