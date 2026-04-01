@@ -111,8 +111,8 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
             src="/ifs-logo.svg"
             alt="IFS Insurance"
             width={320}
-            height={64}
-            className="h-12 w-auto sm:h-14 md:h-16"
+            height={70}
+            className="h-16 w-auto sm:h-18 md:h-20"
             priority
           />
         </Link>

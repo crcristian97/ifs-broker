@@ -1,13 +1,13 @@
 "use client";
 
-import { ShieldCheck } from "lucide-react";
 import * as React from "react";
 
 type FeatureCardProps = {
   text: string;
+  icon: React.ReactNode;
 };
 
-export const FeatureCard = ({ text }: FeatureCardProps) => {
+export const FeatureCard = ({ text, icon }: FeatureCardProps) => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -32,16 +32,16 @@ export const FeatureCard = ({ text }: FeatureCardProps) => {
       <div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="bg-gradient-to-br from-[#E5EEF5] to-[#E5EEF5] rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-[240px] sm:h-[260px] flex flex-col backdrop-blur-md border border-white/40"
+        className="bg-[#033163] rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-[240px] sm:h-[260px] flex flex-col backdrop-blur-3xl border border-white/40 glass-effect "
       >
         <div className="flex flex-col items-start gap-4">
           <div className="shrink-0">
             <div className="w-12 h-12 rounded-full bg-[#E5EEF5] flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 text-[#033163]" />
+              {icon}
             </div>
           </div>
           <p
-            className="text-[#000a15] text-xl leading-relaxed font-regular text-left flex-1"
+            className="text-[#FEFEFE] text-xl leading-relaxed font-regular text-left flex-1"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             {text}

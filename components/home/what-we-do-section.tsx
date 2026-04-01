@@ -4,14 +4,14 @@ import { useTranslations } from "next-intl";
 import { FeatureCard } from "../ui/feature-card";
 import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 import { FadeInUp } from "../ui/fade-in-up";
-
+import { ShieldCheck, Handshake  } from "lucide-react";
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
     <section className="relative w-full py-6 px-6 md:py-6 md:px-6 lg:px-16 overflow-hidden">
       <ParticlesSkyBackground className="-z-10" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col justify-start gap-10 pt-16 md:pt-8">
+      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col justify-start  pt-16 md:pt-8">
         <FadeInUp>
           <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-3 sm:mb-4 text-center md:text-left">
             {t("label")} 
@@ -38,10 +38,10 @@ export function WhatWeDoSection() {
 
         <div className="grid md:grid-cols-2 gap-6 w-full">
           <FadeInUp delay={0.45} className="h-full">
-            <FeatureCard text={t("card1")} />
+            <FeatureCard text={t("card1")} icon={<ShieldCheck className="w-6 h-6 text-[#033163]" />} />
           </FadeInUp>
           <FadeInUp delay={0.6} className="h-full">
-            <FeatureCard text={t("card2")} />
+            <FeatureCard text={t("card2")} icon={<Handshake className="w-6 h-6 text-[#033163]" />} />
           </FadeInUp>
         </div>
       </div>
