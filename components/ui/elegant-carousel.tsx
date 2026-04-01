@@ -59,10 +59,8 @@ export default function ElegantCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
-  const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -74,7 +72,6 @@ export default function ElegantCarousel() {
       if (isTransitioning || index === currentIndex) return;
       setDirection(dir || (index > currentIndex ? "next" : "prev"));
       setIsTransitioning(true);
-      setProgress(0);
 
       setTimeout(() => {
         setCurrentIndex(index);
@@ -99,20 +96,12 @@ export default function ElegantCarousel() {
   useEffect(() => {
     if (isPaused) return;
 
-    progressRef.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) return 100;
-        return prev + 100 / (SLIDE_DURATION / 50);
-      });
-    }, 50);
-
     intervalRef.current = setInterval(() => {
       goNext();
     }, SLIDE_DURATION);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
-      if (progressRef.current) clearInterval(progressRef.current);
     };
   }, [currentIndex, isPaused, goNext]);
 
@@ -136,7 +125,7 @@ export default function ElegantCarousel() {
 
   return (
     <div
-      className="relative w-full max-w-6xl mx-auto rounded-3xl bg-white/80 shadow-lg overflow-hidden border border-slate-100"
+      className="relative w-full max-w-6xl mx-auto rounded-3xl bg-[#033163] shadow-lg overflow-hidden border border-slate-100"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -153,11 +142,11 @@ export default function ElegantCarousel() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 md:items-stretch">
         <div className="flex min-w-0 flex-col justify-center px-8 py-10 md:px-12 md:py-12 space-y-6">
           <div
-            className={`flex items-center text-xs font-medium tracking-[0.25em] uppercase text-slate-500 transition-opacity duration-500 ${
+            className={`flex items-center text-xs font-medium tracking-[0.25em] uppercase text-[#ffffff] transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
-            <span className="h-px w-8 bg-slate-300 mr-3" />
+            <span className="h-px w-8 bg-[#ffffff] mr-3" />
             <span>
               {String(currentIndex + 1).padStart(2, "0")} /{" "}
               {String(slides.length).padStart(2, "0")}
@@ -178,7 +167,7 @@ export default function ElegantCarousel() {
               {currentSlide.title}
             </h2>
             <p
-              className={`break-words text-2xl font-regular text-[#033163] transition-opacity duration-500 ${
+              className={`break-words text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -187,7 +176,7 @@ export default function ElegantCarousel() {
           </div>
 
           <p
-            className={`w-full max-w-none text-base md:text-lg text-[#033163] leading-relaxed transition-opacity duration-500 ${
+            className={`w-full max-w-none text-base md:text-lg text-[#ffffff] leading-relaxed transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -195,20 +184,24 @@ export default function ElegantCarousel() {
           </p>
 
           <div className="mt-4">
-            <ConocerMasButton textButton={currentSlide.buttonText} href={currentSlide.buttonHref}   />
+            <ConocerMasButton
+              textButton={currentSlide.buttonText}
+              href={currentSlide.buttonHref}
+              variant="onDark"
+            />
           </div>
 
           <div className="mt-6 flex items-center gap-4">
             <button
               onClick={goPrev}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-[#033163] text-[#FEFEFE] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors cursor-pointer"
+              className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-[#ffffff] text-[#033163] transition-colors hover:bg-slate-50 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={goNext}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-[#033163] text-[#FEFEFE] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 transition-colors cursor-pointer"
+              className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-[#ffffff] text-[#033163] transition-colors hover:bg-slate-50 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2"
               aria-label="Next slide"
             >
               <ChevronRight className="h-5 w-5" />
@@ -219,7 +212,7 @@ export default function ElegantCarousel() {
         <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-[#033163]/80 py-8 md:min-h-[420px] md:h-full md:py-10">
           <Link
             href={currentSlide.buttonHref}
-            className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-900/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${
+            className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-[#ffffff]/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${
               isTransitioning
                 ? direction === "next"
                   ? "opacity-0 translate-x-4"
@@ -246,29 +239,33 @@ export default function ElegantCarousel() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-slate-100 bg-white/80 px-4 py-3 md:px-6">
+      <div className="relative z-10 border-t border-slate-100 bg-[#033163]/80 px-4 py-3 md:px-6">
         <div className="flex flex-wrap gap-2 md:gap-3">
           {slides.map((slide, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`group flex min-w-0 max-w-full items-start gap-2 rounded-2xl px-3 py-2 text-left text-xs md:text-sm transition-all sm:max-w-[calc(50%-0.25rem)] md:max-w-[calc(33.333%-0.5rem)] lg:max-w-none ${
+              className={`group flex min-w-0 max-w-full items-start gap-2 rounded-2xl px-3 py-2 text-left text-xs transition-all md:text-sm sm:max-w-[calc(50%-0.25rem)] md:max-w-[calc(33.333%-0.5rem)] lg:max-w-none ${
                 index === currentIndex
-                  ? "bg-[#006FC4]/10 text-[#006FC4]"
-                  : "text-slate-500 hover:bg-slate-100/80"
+                  ? "bg-white/90 text-black"
+                  : "text-[#ffffff] hover:bg-white/90 hover:text-black"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             >
               <div className="mt-1.5 h-1 w-10 shrink-0 rounded-full bg-slate-200 overflow-hidden sm:w-14">
                 <div
-                  className="h-full rounded-full bg-[#006FC4] transition-[width] duration-150"
+                  className={
+                    index === currentIndex
+                      ? "h-full w-full rounded-full bg-[#006FC4]"
+                      : "h-full rounded-full bg-[#006FC4] transition-[width] duration-150"
+                  }
                   style={{
                     width:
                       index === currentIndex
-                        ? `${progress}%`
-                        : index < currentIndex
                         ? "100%"
-                        : "0%",
+                        : index < currentIndex
+                          ? "100%"
+                          : "0%",
                   }}
                 />
               </div>

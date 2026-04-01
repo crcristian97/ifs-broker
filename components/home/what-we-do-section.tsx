@@ -46,7 +46,7 @@ export function WhatWeDoSection() {
           </FadeInUp>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 md:mt-20">
         <ElegantCarousel />
       </div>
     </section>

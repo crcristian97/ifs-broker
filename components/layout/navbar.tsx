@@ -15,6 +15,13 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const fontStyle = { fontFamily: "var(--font-noto-sans)" } as const
 
+const navLinkPillClass = (isBlueTheme: boolean) =>
+  `relative rounded-lg px-3 py-2 text-[18px] font-normal transition-colors duration-200 ${
+    isBlueTheme
+      ? "text-[#033163] hover:bg-[#033163] hover:text-[#FEFEFE]"
+      : "text-[#FEFEFE] hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+  }`
+
 const scrollToSection = (id: string) => {
   if (typeof window === "undefined") return
   const element = document.getElementById(id)
@@ -127,6 +134,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                     setActive={setActiveMenuItem}
                     active={activeMenuItem}
                     item={link.label}
+                    isBlueTheme={isBlueTheme}
                     className={
                       isBlueTheme
                         ? "text-[#033163] hover:text-[#033163]/80"
@@ -167,11 +175,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
               <Link
                 key={link.key}
                 href={link.href}
-                className={`text-[18px] font-normal transition-colors ${
-                  isBlueTheme
-                    ? "text-[#033163] hover:text-[#033163]/80"
-                    : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
-                }`}
+                className={navLinkPillClass(isBlueTheme)}
                 style={fontStyle}
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {
@@ -229,10 +233,10 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
               <Link
                 key={link.key}
                 href={link.href}
-                className={`text-base font-medium transition-colors ${
+                className={`rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   isBlueTheme
-                    ? "text-[#033163]/80 hover:text-[#033163]"
-                    : "text-[#FEFEFE] hover:text-[#FEFEFE]/85"
+                    ? "text-[#033163]/90 hover:bg-[#033163] hover:text-[#FEFEFE]"
+                    : "text-[#FEFEFE] hover:bg-[#006FC4] hover:text-[#FEFEFE]"
                 }`}
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {
