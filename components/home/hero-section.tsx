@@ -86,56 +86,34 @@ export function HeroSection() {
             ))}
           </div>
 
-          <div className="absolute inset-0 z-2 bg-[#033163]/80" />
+          <div className="absolute inset-0 z-2 bg-[#033163]/50" />
 
           <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-start px-4 pb-8 pt-24 md:px-8 md:pt-28 xl:min-h-[880px] xl:justify-end">
-            <div className="mb-8 grid gap-8 lg:mb-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-              <div className="flex flex-col justify-start">
-              <h1
-                className="text-[#FEFEFE] text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-regular mb-5 max-w-4xl leading-tight tracking-widest uppercase"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                }}
-              >
-                <AnimatedHeadline
-                  text={t("heroSection.title")}
-                  as="h1"
-                  delay={0.2}
-                  className="text-4xl"
-                />
-              </h1>
-              <h2
-                className="mt-6 max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-[#FEFEFE] font-regular"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                <AnimatedHeadline
-                  text={t("heroSection.subtitle")}
-                  as="h2"
-                  delay={0.9}
-                />
-              </h2>
-              </div>
-
-              <div className="flex w-full flex-col items-start justify-start gap-2 lg:items-end lg:gap-3 xl:h-full xl:min-h-0 xl:justify-end">
-               
-                <FadeInUp delay={2.0}>
-                  <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                    <ButtonPrimary
-                      href="/seguros-de-vida#cotiza"
-                      hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                    >
-                      {t("heroPlanificacion.quoteLifeInsurance")}
-                    </ButtonPrimary>
-                    <ButtonSecondary
-                      href="https://calendly.com/administracion-ifs-broker/30min"
-                      target="_blank"
-                      hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-                    >
-                      {t("footer.scheduleMeeting")}
-                    </ButtonSecondary>
-                  </div>
-                </FadeInUp>
-              </div>
+            <div className="mb-8 flex max-w-4xl flex-col items-start gap-6 lg:mb-12">
+              <AnimatedHeadline
+                text={t("heroSection.title")}
+                as="h1"
+                delay={0.2}
+                className="text-[#FEFEFE] text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight tracking-widest uppercase"
+                style={{ fontFamily: "var(--font-heading)" }}
+              />
+              <FadeInUp delay={2.0}>
+                <div className="flex flex-col gap-3">
+                  <ButtonPrimary
+                    href="/seguros-de-vida#cotiza"
+                    hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                  >
+                    {t("heroPlanificacion.quoteLifeInsurance")}
+                  </ButtonPrimary>
+                  <ButtonSecondary
+                    href="https://calendly.com/administracion-ifs-broker/30min"
+                    target="_blank"
+                    hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+                  >
+                    {t("footer.scheduleMeeting")}
+                  </ButtonSecondary>
+                </div>
+              </FadeInUp>
             </div>
 
             {/* Indicadores del carrusel de videos */}

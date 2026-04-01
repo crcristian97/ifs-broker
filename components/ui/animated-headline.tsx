@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
+import { cn } from "@/lib/utils"
 
 type AnimatedHeadlineProps = {
     text: string
@@ -45,8 +46,8 @@ export default function AnimatedHeadline({
 
   return (
     <div ref={ref}>
-      <Tag className={className} style={style}>
-        <div className="line overflow-hidden">
+      <Tag className={cn("leading-[1.12]", className)} style={style}>
+        <div className="line overflow-hidden leading-[inherit]">
           <span className="block">{text}</span>
         </div>
       </Tag>
