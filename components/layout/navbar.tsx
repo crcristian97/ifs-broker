@@ -102,7 +102,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
       <div
         ref={navRef}
         className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${
-          isBlueTheme ? "bg-white/15" : "bg-[#0a1628]/35"
+          isBlueTheme ? "bg-white/15" : "bg-[#033163]/45"
         }`}
       >
         {/* Logo */}
@@ -208,7 +208,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
 
         {/* Mobile menu toggle */}
         <button
-          className={`lg:hidden ${isBlueTheme ? "text-[#033163]" : "text-foreground"}`}
+          className={`lg:hidden ${isBlueTheme ? "text-[#033163]" : "text-[#FEFEFE]"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
@@ -220,7 +220,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className="mt-2 rounded-xl bg-[#0a1628]/95 px-6 py-6 backdrop-blur-md lg:hidden"
+          className="mt-2 rounded-xl bg-[#033163]/95 px-6 py-6 backdrop-blur-md lg:hidden"
           role="navigation"
           aria-label="Mobile navigation"
         >
@@ -232,7 +232,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                 className={`text-base font-medium transition-colors ${
                   isBlueTheme
                     ? "text-[#033163]/80 hover:text-[#033163]"
-                    : ""
+                    : "text-[#FEFEFE] hover:text-[#FEFEFE]/85"
                 }`}
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {
@@ -247,7 +247,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center gap-3 pt-4 border-t border-foreground/10">
+            <div className="flex items-center gap-3 border-t border-white/15 pt-4">
               <LanguageSwitcher
                 locale={locale}
                 onLanguageChange={(newLocale) => {
@@ -258,7 +258,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                 size="sm"
               />
               <button
-                className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                className="rounded-lg border border-[#006fc4] bg-[#006fc4] px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#006fc4]/90"
                 onClick={(event) => {
                   event.preventDefault()
                   scrollToSection("contacto")

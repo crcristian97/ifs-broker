@@ -24,14 +24,19 @@ export function LanguageSwitcher({
       isActive
         ? isBlueTheme
           ? "bg-[#033163]/10 text-[#033163]"
-          : "bg-foreground/10 text-foreground"
+          : "bg-white/15 text-[#FEFEFE]"
         : isBlueTheme
           ? "text-[#033163]/60 hover:text-[#033163]/80"
-          : "text-foreground/60 hover:text-foreground/80",
+          : "text-[#FEFEFE]/70 hover:text-[#FEFEFE]",
     )
 
   return (
-    <div className="flex overflow-hidden rounded-md border border-foreground/20">
+    <div
+      className={cn(
+        "flex overflow-hidden rounded-md border",
+        isBlueTheme ? "border-[#033163]/25" : "border-white/25",
+      )}
+    >
       <button
         onClick={() => onLanguageChange("es")}
         className={buttonClass(locale === "es")}
