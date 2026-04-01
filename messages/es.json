@@ -32,6 +32,7 @@
   "footer": {
     "title": "Cada situación es distinta.",
     "subtitle": "Una conversación puede aportar una nueva mirada sobre tu realidad actual.",
+    "navAriaLabel": "Enlaces a las secciones del sitio",
     "scheduleMeeting": "Agendá una reunión",
     "institutionalContact": "Contacto institucional",
     "designFuture": "Diseñemos hoy la tranquilidad del futuro",
@@ -118,7 +119,7 @@
     "title1": "SOLUCIONES COMPLEMENTARIAS",
     "title2": "DE PROTECCIÓN",
     "description": "Complementamos nuestras soluciones principales con coberturas específicas que permiten abordar escenarios particulares y reforzar una planificación integral de protección.",
-    "alliance": "Estas alianzas garantizan seguridad financiera en cada solución implementada, brindando un entorno de confianza y respaldo institucional a largo plazo."
+    "alliance": "Estas alianzas garantizan seguridad financiera y trayectoria en cada solución, brindando respaldo institucional a largo plazo."
   },
   "heroSection": {
     "title": "Planificación financiera internacional\npara proteger lo que importa",
@@ -150,7 +151,7 @@
   "logoCloud": {
     "title": "RESPALDO INTERNACIONAL Y ",
     "titleHighlight": "SOLIDEZ FINANCIERA",
-    "subtitle": "Trabajamos con compañías de primer nivel, elegidas por su estabilidad financiera, trayectoria y alcance global."
+    "subtitle": "Trabajamos con compañías de primer nivel, elegidas por su  alcance global."
   },
   "blog": {
     "title1": "INFORMACIÓN PARA ",

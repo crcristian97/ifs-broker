@@ -83,7 +83,7 @@ export default function LogoCloudSection() {
               <span className="text-[#006FC4]">{t("title")}</span>
               {t("titleHighlight")}
             </span>
-            <p className="text-base sm:text-lg md:text-xl font-regular mt-3 text-[#033163] max-w-xl">
+            <p className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-regular mt-3 text-[#000000] max-w-5xl">
               {t("subtitle")}
             </p>
           </h4>

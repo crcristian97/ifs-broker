@@ -20,9 +20,9 @@ export function HomeHeroLayout({ allianceText = "" }: HomeHeroLayoutProps) {
       <HowWeWork />
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">
-        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">
-          <div className="w-full min-h-[120px] rounded bg-transparent px-4 py-6 text-center flex items-center justify-center">
-            <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
+        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-4 md:py-5">
+          <div className="w-full rounded bg-transparent px-4 py-2 text-center flex items-center justify-center">
+            <p className="max-w-5xl text-xl font-medium  text-[#000000] sm:text-2xl md:text-2xl lg:text-3xl">
               {allianceText}
             </p>
           </div>
