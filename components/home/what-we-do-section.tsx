@@ -5,6 +5,7 @@ import { FeatureCard } from "../ui/feature-card";
 import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 import { FadeInUp } from "../ui/fade-in-up";
 import { ShieldCheck, Handshake  } from "lucide-react";
+import ElegantCarousel from "../ui/elegant-carousel";
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
@@ -44,6 +45,9 @@ export function WhatWeDoSection() {
             <FeatureCard text={t("card2")} icon={<Handshake className="w-6 h-6 text-[#033163]" />} />
           </FadeInUp>
         </div>
+      </div>
+      <div className="mt-10">
+        <ElegantCarousel />
       </div>
     </section>
   );

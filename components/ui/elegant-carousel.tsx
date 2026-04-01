@@ -216,7 +216,7 @@ export default function ElegantCarousel() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-slate-900/5 py-8 md:min-h-[420px] md:h-full md:py-10">
+        <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-[#033163]/80 py-8 md:min-h-[420px] md:h-full md:py-10">
           <Link
             href={currentSlide.buttonHref}
             className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-900/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${

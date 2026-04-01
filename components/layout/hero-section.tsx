@@ -17,7 +17,6 @@ export function HomeHeroLayout({ allianceText = "" }: HomeHeroLayoutProps) {
     <>
       <HeroSection />
       <WhatWeDoSection />
-      <ServiceSection />
       <HeroPlanificacion />
       <HowWeWork />
       <LogoCloudSection />
