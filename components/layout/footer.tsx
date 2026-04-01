@@ -39,9 +39,9 @@ export function Footer() {
       title: tNav("soluciones"),
       links: [
         { href: "/seguros-de-vida", label: tSolutions("seguroVida.title"), bold: true },
-        { href: "/fondos-de-retiro", label: tSolutions("fondosRetiro.title") },
-        { href: "/salud-internacional", label: tSolutions("saludInternacional.title") },
-        { href: "/servicios-complementarios", label: tSolutions("serviciosComplementarios.title") },
+        { href: "/fondos-de-retiro", label: tSolutions("fondosRetiro.title"), small: true },
+        { href: "/salud-internacional", label: tSolutions("saludInternacional.title"), small: true },
+        { href: "/servicios-complementarios", label: tSolutions("serviciosComplementarios.title"), small: true },
       ],
     },
     {
@@ -67,20 +67,17 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
           <div className="flex flex-col items-center gap-6 lg:items-start">
             <div className="shrink-0">
-              <Image src="/ifs_insurance.png" alt="IFS Insurance" width={200} height={200} />
+              <Image src="/logo-footer.svg" alt="IFS Insurance" width={420} height={2520} />
             </div>
-            <p className="text-lg font-regular text-[#FFFFFF]">
-          {t("designFuture")}
-        </p>
+            <div className="flex w-full justify-end">
+              <p className="text-lg md:text-2xl font-regular text-[#FFFFFF] text-right">
+                {t("designFuture")}
+              </p>
+            </div>
           </div>
 
           <div className="flex w-full min-w-0 flex-col items-center gap-6 text-center lg:min-w-0 lg:flex-1 lg:items-end lg:text-right">
-            <div className="max-w-sm space-y-2 lg:max-w-md">
-              <h2 className="text-balance text-lg font-regular text-[#FFFFFF] sm:text-3xl lg:text-4xl">
-                {t("title")}
-              </h2>
-              <p className="text-lg text-[#FFFFFF]">{t("subtitle")}</p>
-            </div>
+            
 
             <nav aria-label={t("navAriaLabel")} className="w-full min-w-0">
               <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 text-left md:grid-cols-4 md:gap-x-4 lg:text-right">
@@ -93,7 +90,10 @@ export function Footer() {
                           <Link
                             href={item.href}
                             className={cn(
-                              "text-lg text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline md:text-2xl",
+                              "text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline",
+                              item.small
+                                ? "text-sm md:text-base"
+                                : "text-lg md:text-2xl",
                               item.bold && "font-bold",
                             )}
                           >
