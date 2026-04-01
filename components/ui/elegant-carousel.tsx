@@ -155,7 +155,7 @@ export default function ElegantCarousel() {
 
           <div className="space-y-3">
             <h2
-              className={`break-words text-balance text-3xl md:text-4xl lg:text-5xl font-medium uppercase tracking-wide text-[#006FC4] transition-all duration-500 md:tracking-widest ${
+              className={`break-words text-balance text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-[#ffffff] transition-all duration-500 md:tracking-widest ${
                 isTransitioning
                   ? direction === "next"
                     ? "opacity-0 translate-y-2"
@@ -167,7 +167,7 @@ export default function ElegantCarousel() {
               {currentSlide.title}
             </h2>
             <p
-              className={`break-words text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
+              className={` text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -176,7 +176,7 @@ export default function ElegantCarousel() {
           </div>
 
           <p
-            className={`w-full max-w-none text-base md:text-lg text-[#ffffff] leading-relaxed transition-opacity duration-500 ${
+            className={`w-full max-w-none text-base md:text-lg text-[#ffffff]  transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
