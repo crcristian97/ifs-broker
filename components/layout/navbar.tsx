@@ -102,7 +102,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
       <div
         ref={navRef}
         className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${
-          isBlueTheme ? "bg-white/15" : "bg-[#033163]/45"
+          isBlueTheme ? "bg-white/15" : "bg-[#033163]"
         }`}
       >
         {/* Logo */}
