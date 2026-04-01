@@ -42,14 +42,18 @@ export default function AnimatedHeadline({
     }, ref)
 
     return () => ctx.revert()
-  }, [duration, delay])
+  }, [duration, delay, text])
+
+  const lines = text.split("\n")
 
   return (
     <div ref={ref}>
       <Tag className={cn("leading-[1.12]", className)} style={style}>
-        <div className="line overflow-hidden leading-[inherit]">
-          <span className="block">{text}</span>
-        </div>
+        {lines.map((line, index) => (
+          <div key={index} className="line overflow-hidden leading-[inherit]">
+            <span className="block">{line}</span>
+          </div>
+        ))}
       </Tag>
     </div>
   )
