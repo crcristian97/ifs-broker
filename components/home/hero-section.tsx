@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ButtonPrimary } from "../ui/button-primary";
 import { ButtonSecondary } from "../ui/button-secondary";
-import { FeatureBar } from "../ui/feature-bar";
 import AnimatedHeadline from "../ui/animated-headline";
 import { FadeInUp } from "../ui/fade-in-up";
 import { cn } from "@/lib/utils";
@@ -139,12 +138,6 @@ export function HeroSection() {
                 />
               ))}
             </div>
-
-            <FadeInUp delay={2.8}>
-              <div className="flex justify-center">
-                <FeatureBar />
-              </div>
-            </FadeInUp>
           </div>
         </div>
       </div>

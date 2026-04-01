@@ -8,10 +8,10 @@ import { FadeInUp } from "../ui/fade-in-up";
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
-    <section className="relative w-full min-h-screen py-20 px-6 md:py-28 md:px-12 lg:px-16 overflow-hidden">
+    <section className="relative w-full py-6 px-6 md:py-6 md:px-6 lg:px-16 overflow-hidden">
       <ParticlesSkyBackground className="-z-10" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto flex min-h-[70vh] flex-col justify-start gap-10 pt-16 md:pt-24">
+      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col justify-start gap-10 pt-16 md:pt-8">
         <FadeInUp>
           <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-3 sm:mb-4 text-center md:text-left">
             {t("label")} 
