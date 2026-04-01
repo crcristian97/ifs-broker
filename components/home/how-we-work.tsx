@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { FocusRail, type FocusRailItem } from "@/components/ui/focus-reail";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -139,14 +140,16 @@ export default function HowWeWork() {
   }, []);
 
   return (
-    <section className="w-full bg-white py-20 lg:py-24">
+    <section className="w-full  py-20 lg:py-24">
+      <ParticlesSkyBackground className="-z-10" />
+
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-6 md:px-12 lg:px-16">
         <div ref={headingRef} className="mb-12 text-center max-w-4xl">
           <h4 className="text-xl sm:text-2xl md:text-3xl font-regular text-[#033163] mb-2">
             {t("title")}
           </h4>
           <p
-            className="text-[#033163] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular leading-tight tracking-widest"
+            className="text-[#033163] text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-regular leading-tight tracking-widest"
             style={{
               fontFamily: "var(--font-heading)",
             }}

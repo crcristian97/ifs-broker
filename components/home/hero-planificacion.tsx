@@ -9,6 +9,7 @@ import { AnimatedGridPattern } from "../ui/background-wedosection";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,22 +59,12 @@ export function HeroPlanificacion() {
   }, []);
 
   return (
-    <section id="nosotros" className="w-full bg-white  mt-16 md:mt-24 mb-16 md:mb-24">
+    <section id="nosotros" className="w-full  mt-16 md:mt-24 mb-16 md:mb-24">
+      <ParticlesSkyBackground className="-z-10" />
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-        <div ref={topBlockRef} className="relative bg-[#0B2A4A] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
-          <AnimatedGridPattern
-            numSquares={50}
-            maxOpacity={0.15}
-            duration={4}
-            repeatDelay={1}
-            className={cn(
-              "mask-[radial-gradient(600px_circle_at_center,white,transparent)]",
-              "opacity-60"
-            )}
-          />
-
+        <div ref={topBlockRef} className="relative bg-[#033163] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
-            <p className="text-white text-base sm:text-lg md:text-xl font-bold tracking-wide mb-6 sm:mb-8">
+            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl text-white mb-6 sm:mb-8">
               {t("label")}
             </p>
             <h3
@@ -109,14 +100,11 @@ export function HeroPlanificacion() {
             </div>
 
             <div className="flex-1 flex flex-col items-center md:items-end gap-5">
-              <p className="text-[#000A15] text-base md:text-lg font-regular text-center md:text-right max-w-[400px]">
-                {t("description2")}
-              </p>
-              <div className="flex w-full flex-col gap-3 items-stretch md:items-end md:w-auto">
+              <div className="flex w-full max-w-md flex-col gap-3 items-stretch md:ml-auto">
                 <ButtonPrimary
                   href="/seguros-de-vida#cotiza"
                   hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                  className="w-full md:w-auto justify-center"
+                  className="w-full justify-center"
                   onClick={(event) => {
                     // Si ya estamos en la página de seguros de vida, solo hacer scroll suave al formulario
                     if (pathname.includes("/seguros-de-vida")) {
@@ -133,7 +121,7 @@ export function HeroPlanificacion() {
                 <button
                   type="button"
                   onClick={() => setIsContactModalOpen(true)}
-                  className="inline-flex items-center  rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 w-full md:w-auto justify-center cursor-pointer"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 cursor-pointer"
                 >
                   {t("speakWithAdvisor")}
                 </button>
