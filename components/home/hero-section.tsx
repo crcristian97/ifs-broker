@@ -62,12 +62,11 @@ export function HeroSection() {
   );
 
   return (
-    <section className="relative w-full">
-      {/* Misma rejilla que Navbar: px-4 md:px-8 + max-w-[1400px] mx-auto (todo el hero, no solo el texto) */}
-      <div className="px-4 pb-8 md:px-8">
-        <div className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-b-4xl bg-[#033163]">
-          {/* Carrusel de videos de fondo */}
-          <div className="absolute inset-0" aria-hidden="true">
+    <section className="relative w-full overflow-x-hidden">
+      {/* Video y overlay a todo el ancho del viewport; el texto sigue la rejilla max-w + padding como el Navbar */}
+      <div className="pb-8">
+        <div className="relative w-full overflow-hidden rounded-b-4xl bg-[#033163]">
+          <div className="absolute inset-0 z-0" aria-hidden="true">
             {HERO_VIDEOS.map((src, index) => (
               <video
                 key={src}
@@ -80,16 +79,16 @@ export function HeroSection() {
                 muted
                 playsInline
                 className={cn(
-                  "absolute inset-0 h-full w-full object-cover rounded-b-4xl transition-opacity duration-700 ease-out",
+                  "absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out",
                   index === activeIndex ? "z-1 opacity-100" : "z-0 opacity-0",
                 )}
               />
             ))}
           </div>
 
-          <div className="absolute inset-0 z-2 bg-[#033163]/80 rounded-b-4xl" />
+          <div className="absolute inset-0 z-2 bg-[#033163]/80" />
 
-          <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-8 pt-24 md:pt-28">
+          <div className="relative z-10 mx-auto flex min-h-[880px] w-full max-w-[1400px] flex-col justify-end px-4 pb-8 pt-24 md:px-8 md:pt-28">
             <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
               <div className="flex flex-col justify-start">
               <h1
@@ -102,6 +101,7 @@ export function HeroSection() {
                   text={t("heroSection.title")}
                   as="h1"
                   delay={0.2}
+                  className="text-4xl"
                 />
               </h1>
               <h2
@@ -117,12 +117,7 @@ export function HeroSection() {
               </div>
 
               <div className="flex h-full min-h-0 flex-col items-start justify-end gap-2 lg:items-end lg:gap-3">
-                <AnimatedHeadline
-                  text={t("heroSection.description")}
-                  as="h3"
-                  delay={2.0}
-                  style={{ fontFamily: "var(--font-body)" }}
-                />
+               
                 <FadeInUp delay={2.0}>
                   <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                     <ButtonPrimary
