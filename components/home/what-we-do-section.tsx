@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { FeatureCard } from "../ui/feature-card";
-import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 import { FadeInUp } from "../ui/fade-in-up";
 import { ShieldCheck, Handshake  } from "lucide-react";
 import ElegantCarousel from "../ui/elegant-carousel";
@@ -10,8 +9,6 @@ export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
     <section className="relative w-full py-6 px-6 md:py-6 md:px-6 lg:px-16 overflow-hidden">
-      <ParticlesSkyBackground className="-z-10" />
-
       <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col justify-start  pt-16 md:pt-8">
         <FadeInUp>
           <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-3 sm:mb-4 text-center md:text-left">
@@ -21,7 +18,7 @@ export function WhatWeDoSection() {
 
         <FadeInUp delay={0.15}>
           <h3
-            className="text-[#006FC4] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
+            className="text-[#006FC4] text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl  font-regular mb-5 max-w-4xl leading-tight tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")} <span className="text-[#033163]">{t("labelHighlight")}</span>

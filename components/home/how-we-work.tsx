@@ -5,8 +5,6 @@ import { useTranslations } from "next-intl";
 import { FocusRail, type FocusRailItem } from "@/components/ui/focus-reail";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ParticlesSkyBackground } from "../ui/particles-sky-background";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function useDemoItems(): FocusRailItem[] {
@@ -141,8 +139,6 @@ export default function HowWeWork() {
 
   return (
     <section className="w-full  py-20 lg:py-24">
-      <ParticlesSkyBackground className="-z-10" />
-
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-6 md:px-12 lg:px-16">
         <div ref={headingRef} className="mb-12 text-center max-w-4xl">
           <h4 className="text-xl sm:text-2xl md:text-3xl font-regular text-[#033163] mb-2">

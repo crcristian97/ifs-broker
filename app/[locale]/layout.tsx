@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { GlobalSiteBackground } from '@/components/layout/global-site-background';
 
 const orgSchema = {
   '@context': 'https://schema.org',
@@ -42,7 +43,7 @@ export default async function LocaleLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
       />
       <NextIntlClientProvider messages={messages}>
-        {children}
+        <GlobalSiteBackground>{children}</GlobalSiteBackground>
       </NextIntlClientProvider>
     </>
   );

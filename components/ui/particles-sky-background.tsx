@@ -184,6 +184,8 @@ type ParticlesSkyBackgroundProps = {
   className?: string;
   /** `light` = white bg + blue particles. `dark` = starfield + white particles. */
   variant?: "light" | "dark";
+  /** When `false`, particles do not capture pointer events (e.g. site-wide fixed background). */
+  interactive?: boolean;
   /** Show the demo instruction overlay (top-left). */
   showHeadline?: boolean;
   headline?: string;
@@ -192,6 +194,7 @@ type ParticlesSkyBackgroundProps = {
 export function ParticlesSkyBackground({
   className = "",
   variant = "light",
+  interactive = true,
   showHeadline = false,
   headline = "Click anywhere to add more random constellations",
 }: ParticlesSkyBackgroundProps) {
@@ -249,7 +252,7 @@ export function ParticlesSkyBackground({
 
         <div
           id={containerId}
-          className={`${styles.particlesMount} pointer-events-auto`}
+          className={`${styles.particlesMount} ${interactive ? "pointer-events-auto" : "pointer-events-none"}`}
         />
 
         {showHeadline && (

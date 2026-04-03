@@ -9,8 +9,6 @@ import { AnimatedGridPattern } from "../ui/background-wedosection";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ParticlesSkyBackground } from "../ui/particles-sky-background";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export function HeroPlanificacion() {
@@ -60,7 +58,6 @@ export function HeroPlanificacion() {
 
   return (
     <section id="nosotros" className="w-full  mt-16 md:mt-24 mb-16 md:mb-24">
-      <ParticlesSkyBackground className="-z-10" />
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         <div ref={topBlockRef} className="relative bg-[#033163] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
