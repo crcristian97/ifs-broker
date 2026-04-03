@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { siteContainer } from "@/lib/site-layout";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { HeroSubsection } from "@/components/layout/hero-subsection";
+import { HeroComplement } from "@/components/ui/hero-complement";
 import { HeroBanner } from "@/components/servicioscomplementarios/hero-banner";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
@@ -75,7 +75,7 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <HeroSubsection
+      <HeroComplement
         titlePrefix={t("serviciosComplementarios.title1")}
         titleHighlight={t("serviciosComplementarios.title2")}
         description={t("serviciosComplementarios.description")}
