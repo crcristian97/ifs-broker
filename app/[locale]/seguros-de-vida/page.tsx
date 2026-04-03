@@ -69,7 +69,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
   };
 
   return (
-    <main className="relative min-h-screen bg-white">
+    <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
