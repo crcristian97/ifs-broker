@@ -20,7 +20,7 @@ export default async function TrabajaConNosotrosPage({ params }: Props) {
 
   return (
     <>
-      <Navbar forceBlue />
+      <Navbar />
       <main className="min-h-screen bg-[#F4F8FC] flex flex-col items-center justify-center px-4 py-32">
         <div className="w-full max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold text-[#003163] text-center mb-4">

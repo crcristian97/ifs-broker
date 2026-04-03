@@ -5,14 +5,12 @@ import { cn } from "@/lib/utils"
 type LanguageSwitcherProps = {
   locale: string
   onLanguageChange: (newLocale: "es" | "en") => void
-  isBlueTheme: boolean
   size?: "sm" | "md"
 }
 
 export function LanguageSwitcher({
   locale,
   onLanguageChange,
-  isBlueTheme,
   size = "md",
 }: LanguageSwitcherProps) {
   const textSize = size === "sm" ? "text-sm font-semibold" : "text-lg font-normal"
@@ -22,21 +20,12 @@ export function LanguageSwitcher({
       "px-3 py-1.5 transition-colors",
       textSize,
       isActive
-        ? isBlueTheme
-          ? "bg-[#033163]/10 text-[#033163]"
-          : "bg-white/15 text-[#FEFEFE]"
-        : isBlueTheme
-          ? "text-[#033163]/60 hover:text-[#033163]/80"
-          : "text-[#FEFEFE]/70 hover:text-[#FEFEFE]",
+        ? "bg-white/15 text-[#FEFEFE]"
+        : "text-[#FEFEFE]/70 hover:text-[#FEFEFE]",
     )
 
   return (
-    <div
-      className={cn(
-        "flex overflow-hidden rounded-md border",
-        isBlueTheme ? "border-[#033163]/25" : "border-white/25",
-      )}
-    >
+    <div className="flex overflow-hidden rounded-md border border-white/25">
       <button
         onClick={() => onLanguageChange("es")}
         className={buttonClass(locale === "es")}

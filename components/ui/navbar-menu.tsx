@@ -20,16 +20,14 @@ export const MenuItem = ({
   item,
   children,
   className,
-  isBlueTheme,
 }: {
   setActive: (item: string | null) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
   className?: string;
-  isBlueTheme?: boolean;
 }) => {
-  const activeBg = isBlueTheme ? "bg-[#033163]" : "bg-[#006FC4]";
+  const activeBg = "bg-[#006FC4]";
   return (
     <div
       onMouseEnter={() => setActive(item)}
@@ -69,12 +67,7 @@ export const MenuItem = ({
             <motion.div
               transition={transition}
               layoutId="active" // layoutId ensures smooth animation
-              className={cn(
-              "overflow-hidden rounded-2xl shadow-xl",
-              isBlueTheme
-                ? "border border-[#033163]/40 bg-[#033163]"
-                : "border border-[#006FC4]/40 bg-[#006FC4]",
-            )}
+              className="overflow-hidden rounded-2xl border border-[#006FC4]/40 bg-[#006FC4] shadow-xl"
             >
               <motion.div
                 layout // layout ensures smooth animation

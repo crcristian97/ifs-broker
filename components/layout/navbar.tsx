@@ -17,12 +17,8 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const fontStyle = { fontFamily: "var(--font-noto-sans)" } as const
 
-const navLinkPillClass = (isBlueTheme: boolean) =>
-  `relative rounded-lg px-3 py-2 text-[18px] font-normal transition-colors duration-200 ${
-    isBlueTheme
-      ? "text-[#033163] hover:bg-[#033163] hover:text-[#FEFEFE]"
-      : "text-[#FEFEFE] hover:bg-[#006FC4] hover:text-[#FEFEFE]"
-  }`
+const navLinkPillClass =
+  "relative rounded-lg px-3 py-2 text-[18px] font-normal text-[#FEFEFE] transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
 
 const scrollToSection = (id: string) => {
   if (typeof window === "undefined") return
@@ -36,16 +32,11 @@ const scrollToSection = (id: string) => {
   })
 }
 
-type NavbarProps = {
-  forceBlue?: boolean
-}
-
-export function Navbar({ forceBlue = false }: NavbarProps) {
+export function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations()
-  const isBlueTheme = forceBlue || pathname === "/servicios-complementarios"
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
@@ -110,9 +101,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
     <nav className={cn("absolute top-0 left-0 right-0 z-50 pt-4 md:pt-6", sitePaddingX)}>
       <div
         ref={navRef}
-        className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${
-          isBlueTheme ? "bg-white/15" : "bg-[#033163]"
-        }`}
+        className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl bg-[#033163] px-6 py-4 backdrop-blur-3xl"
       >
         {/* Logo */}
         <Link ref={logoRef} href="/" className="flex items-center">
@@ -136,12 +125,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                     setActive={setActiveMenuItem}
                     active={activeMenuItem}
                     item={link.label}
-                    isBlueTheme={isBlueTheme}
-                    className={
-                      isBlueTheme
-                        ? "text-[#033163] hover:text-[#033163]/80"
-                        : "text-[#FEFEFE] hover:text-[#FEFEFE]/80"
-                    }
+                    className="text-[#FEFEFE] hover:text-[#FEFEFE]/80"
                   >
                     <div className="grid grid-cols-2 gap-4 p-4 text-sm">
                       <ProductItem
@@ -177,7 +161,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
               <Link
                 key={link.key}
                 href={link.href}
-                className={navLinkPillClass(isBlueTheme)}
+                className={navLinkPillClass}
                 style={fontStyle}
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {
@@ -194,11 +178,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
 
         {/* Right side */}
         <div ref={rightRef} className="hidden items-center gap-3 lg:flex">
-          <LanguageSwitcher
-            locale={locale}
-            onLanguageChange={handleLanguageChange}
-            isBlueTheme={isBlueTheme}
-          />
+          <LanguageSwitcher locale={locale} onLanguageChange={handleLanguageChange} />
 
           <ButtonPrimary
             href="#contacto"
@@ -214,7 +194,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
 
         {/* Mobile menu toggle */}
         <button
-          className={`lg:hidden ${isBlueTheme ? "text-[#033163]" : "text-[#FEFEFE]"}`}
+          className="text-[#FEFEFE] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
@@ -235,11 +215,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
               <Link
                 key={link.key}
                 href={link.href}
-                className={`rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                  isBlueTheme
-                    ? "text-[#033163]/90 hover:bg-[#033163] hover:text-[#FEFEFE]"
-                    : "text-[#FEFEFE] hover:bg-[#006FC4] hover:text-[#FEFEFE]"
-                }`}
+                className="rounded-lg px-3 py-2 text-base font-medium text-[#FEFEFE] transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
                 onClick={(event) => {
                   if (link.key === "nosotros" && pathname === "/") {
                     event.preventDefault()
@@ -260,7 +236,6 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
                   handleLanguageChange(newLocale)
                   setMobileOpen(false)
                 }}
-                isBlueTheme={isBlueTheme}
                 size="sm"
               />
               <button

@@ -112,8 +112,9 @@ export default async function BlogSlugPage({
   };
 
   return (
-    <> <Navbar forceBlue />
-    <main className="relative">
+    <>
+      <Navbar />
+      <main className="relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
