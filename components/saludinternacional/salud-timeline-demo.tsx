@@ -74,7 +74,7 @@ export function SaludTimelineDemo() {
             </p>
           </div>
           <div>
-            <p className="text-sm leading-relaxed text-[#003163] md:text-base">
+            <p className="text-sm leading-relaxed text-[white] md:text-base">
               {t("tab2Block2Desc")}
             </p>
           </div>

@@ -28,10 +28,10 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4]" >
+            <p className="mb-3 text-3xl font-regular text-[white]" >
               {t("tab1Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed ">
+            <p className="text-lg text-[white] leading-relaxed ">
               {t("tab1Desc2")}
             </p>
           </div>
@@ -60,10 +60,10 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4] ">
+            <p className="mb-3 text-3xl font-regular text-[white] ">
               {t("tab2Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed ">
+            <p className="text-lg text-[white] leading-relaxed ">
               {t("tab2Desc2")}
             </p>
           </div>
@@ -93,10 +93,10 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[#006FC4] ">
+            <p className="mb-3 text-3xl font-regular text-[white] ">
               {t("tab3Desc1")}
             </p>
-            <p className="text-lg text-[#003163] leading-relaxed   ">
+            <p className="text-lg text-[white] leading-relaxed   ">
               {t("tab3Desc2")}
             </p>
           </div>

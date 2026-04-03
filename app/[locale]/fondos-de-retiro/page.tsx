@@ -10,6 +10,7 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import { Footer } from "@/components/layout/footer";
+import BlogSection from "@/components/home/blog-section";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -107,6 +108,7 @@ export default async function FondosDeRetiroPage({ params }: Props) {
         </div>
       </div>
       <ExperienceGlobeSection />
+      <BlogSection /> 
       <Footer />
     </main>
   );
