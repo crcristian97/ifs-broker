@@ -8,6 +8,7 @@ import { RetirementForm } from "@/components/segurovida/retirement-form";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
+import BlogSection from "@/components/home/blog-section";
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -101,6 +102,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
         </div>
       </div>
       <ExperienceGlobeSection />
+      <BlogSection />
       <Footer />
     </main>
   );

@@ -9,6 +9,13 @@ import { cn } from "@/lib/utils"
 import { FeatureBar } from "@/components/ui/feature-bar"
 import { ContactModal } from "@/components/layout/contact-modal"
 
+type FooterLink = {
+  href: string
+  label: string
+  bold?: boolean
+  small?: boolean
+}
+
 const features = [
   {
     icon: <Phone className="h-5 w-5 shrink-0" />,
@@ -30,26 +37,23 @@ export function Footer() {
   const tSolutions = useTranslations("solutions")
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
-  const footerColumns = [
+  const footerColumns: { title?: string; links: FooterLink[] }[] = [
     {
-      title: t("columnSite"),
       links: [{ href: "/", label: tNav("home"), bold: true }],
     },
     {
       title: tNav("soluciones"),
       links: [
-        { href: "/seguros-de-vida", label: tSolutions("seguroVida.title"), bold: true },
+        { href: "/seguros-de-vida", label: tSolutions("seguroVida.title"), small: true },
         { href: "/fondos-de-retiro", label: tSolutions("fondosRetiro.title"), small: true },
         { href: "/salud-internacional", label: tSolutions("saludInternacional.title"), small: true },
         { href: "/servicios-complementarios", label: tSolutions("serviciosComplementarios.title"), small: true },
       ],
     },
     {
-      title: t("columnCompany"),
       links: [{ href: "/trabaja-con-nosotros", label: tNav("trabajaConNosotros"), bold: true }],
     },
     {
-      title: t("columnContact"),
       links: [{ href: "/#contacto", label: tNav("contacto"), bold: true }],
     },
   ]
@@ -82,8 +86,15 @@ export function Footer() {
             <nav aria-label={t("navAriaLabel")} className="w-full min-w-0">
               <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 text-left md:grid-cols-4 md:gap-x-4 lg:text-right">
                 {footerColumns.map((column) => (
-                  <div key={column.title} className="flex min-w-0 flex-col gap-3">
-                 
+                  <div
+                    key={column.title ?? column.links[0]?.href}
+                    className="flex min-w-0 flex-col gap-3"
+                  >
+                    {column.title ? (
+                      <p className="text-lg font-bold text-[#FFFFFF] md:text-2xl">
+                        {column.title}
+                      </p>
+                    ) : null}
                     <ul className="flex flex-col gap-2">
                       {column.links.map((item) => (
                         <li key={item.href}>

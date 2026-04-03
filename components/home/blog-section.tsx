@@ -80,20 +80,16 @@ export default function BlogSection() {
   return (
     <section
       className="relative px-4 py-12 sm:py-16 md:py-20"
-      style={{
-        background: "linear-gradient(to bottom, transparent 0%, #fff 30%, #fff 100%)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+     
     >
       <div className="mx-auto max-w-7xl relative z-10">
         <div ref={headingRef} className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
-            className="font-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
+            className="font-regular text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             <span className="text-[#006fc4]">{t("title1")}</span>
-            <span className="text-[#033163]">
+            <span className="text-[#033163]"> 
               {t("title2")}
               {t("title3")}
             </span>

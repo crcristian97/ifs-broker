@@ -162,7 +162,7 @@ export default function ElegantCarousel() {
 
           <div className="space-y-3">
             <h2
-              className={` text-balance text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold uppercase tracking-wide text-[#ffffff] transition-all duration-500 md:tracking-widest ${
+              className={`break-words text-balance text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-[#ffffff] transition-all duration-500 md:tracking-widest ${
                 isTransitioning
                   ? direction === "next"
                     ? "opacity-0 translate-y-2"
@@ -201,7 +201,7 @@ export default function ElegantCarousel() {
           <div className="mt-6 flex items-center gap-4">
             <button
               onClick={goPrev}
-              className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-colors duration-200 hover:bg-[#006FC4] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 "
+              className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-colors duration-200 hover:bg-[#006FC4] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-5 w-5 shrink-0" />
@@ -276,7 +276,7 @@ export default function ElegantCarousel() {
                   }}
                 />
               </div>
-              <span className="min-w-0 flex-1 whitespace-normal break-words leading-snug cursor-pointer">
+              <span className="min-w-0 flex-1 whitespace-normal break-words leading-snug">
                 {slide.title}
               </span>
             </button>
