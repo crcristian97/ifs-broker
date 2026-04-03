@@ -32,12 +32,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     "https://calendly.com/administracion-ifs-broker/30min";
 
   return (
-    <div className="relative w-full bg-transparent font-sans">
+    <div className="relative w-full font-sans">
       <div className={cn(siteContainer, "relative pb-20")}>
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:gap-10 md:pt-40"
+            className="flex justify-start pt-10 md:gap-10 md:pt-10"
           >
             <div className="relative w-full">
               <div className="grid items-stretch gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)]">

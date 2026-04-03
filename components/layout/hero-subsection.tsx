@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { FadeInUp } from "@/components/ui/fade-in-up";
 import { cn } from "@/lib/utils";
-import { heroVideoOffsetBelowNavbar, sitePaddingX } from "@/lib/site-layout";
+import { heroVideoOffsetBelowNavbar, siteContainer } from "@/lib/site-layout";
 
 type HeroSubsectionProps = {
   titlePrefix?: string;
@@ -21,7 +21,7 @@ type HeroSubsectionProps = {
   hideImage?: boolean;
 };
 
-// Reusable hero for product sections (life insurance, retirement funds, etc.)
+// Misma envoltura que components/home/hero-section.tsx: fondo a todo el ancho, contenido en siteContainer.
 export function HeroSubsection({
   titlePrefix = "Protección para tu familia,",
   titleHighlight = "Tranquilidad para vos",
@@ -38,18 +38,14 @@ export function HeroSubsection({
   const prefixColorClass = invertTitleColors ? "text-[#91D8F7]" : "text-[#ffffff]";
   const highlightColorClass = invertTitleColors ? "text-[#ffffff]" : "text-[#91D8F7]";
   return (
-    <section className={cn("relative w-full", !videoSrc && "bg-[#033163]")}>
-      <div
-        className={cn(
-          sitePaddingX,
-          "pb-8",
-          videoSrc && heroVideoOffsetBelowNavbar,
-        )}
-      >
+    <section className="relative w-full overflow-x-hidden bg-[#033163]">
+      <div className={cn("pb-8", videoSrc && heroVideoOffsetBelowNavbar)}>
         <div
           className={cn(
-            "relative mx-auto w-full max-w-[1400px] overflow-hidden bg-[#033163]",
-            videoSrc ? "rounded-t-xl rounded-b-4xl" : "rounded-b-4xl",
+            "relative overflow-hidden bg-[#033163]",
+            videoSrc
+              ? "mx-4 mb-5 rounded-t-xl rounded-b-4xl md:mx-8 md:mb-6 lg:mx-16 lg:mb-8"
+              : "w-full rounded-b-4xl",
           )}
         >
           {videoSrc ? (
@@ -63,12 +59,12 @@ export function HeroSubsection({
                 playsInline
                 aria-hidden="true"
               />
-              <div className="absolute inset-0 z-1 rounded-t-xl rounded-b-4xl bg-[#033163]/55" />
+              <div className="absolute inset-0 z-2 rounded-t-xl rounded-b-4xl bg-[#033163]/55" />
             </>
           ) : (
             <>
               <div
-                className="absolute inset-0 z-0 rounded-b-4xl "
+                className="absolute inset-0 z-0 rounded-b-4xl"
                 style={{
                   background:
                     "linear-gradient(135deg, #0a467e 0%, #033163 75%, #033163 100%)",
@@ -89,11 +85,11 @@ export function HeroSubsection({
 
           <div
             className={cn(
-              sitePaddingX,
+              siteContainer,
               "relative z-10 flex w-full flex-col justify-end",
               videoSrc
-                ? "min-h-[min(52svh,30rem)] pt-8 pb-8 md:min-h-[min(48svh,32rem)] md:pt-10 md:pb-10"
-                : "min-h-[880px] pt-24 pb-10 md:pt-28 md:pb-14",
+                ? "min-h-[min(68svh,38rem)] pb-8 pt-8 md:min-h-[min(62svh,40rem)] md:pt-10"
+                : "min-h-[880px] pb-10 pt-24 md:pb-14 md:pt-28",
             )}
           >
             <div
@@ -102,7 +98,6 @@ export function HeroSubsection({
                 hideImage ? "lg:grid-cols-1" : "lg:grid-cols-2",
               )}
             >
-              {/* Left column: texto con glass (ligeramente más arriba; top evita choque con GSAP transform del FadeInUp) */}
               <FadeInUp>
                 <div
                   className={cn(
@@ -139,7 +134,6 @@ export function HeroSubsection({
                 </div>
               </FadeInUp>
 
-              {/* Right column: image */}
               {!hideImage && (
                 <FadeInUp delay={0.2} className="hidden lg:flex items-start justify-end">
                   <div
@@ -153,7 +147,7 @@ export function HeroSubsection({
                       alt={imageAlt}
                       width={largeImage ? 880 : 600}
                       height={largeImage ? 880 : 600}
-                      className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
+                      className="h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(15,35,80,0.18)]"
                       priority
                       sizes={
                         largeImage
