@@ -1,11 +1,16 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/hero-section";
 import { WhatWeDoSection } from "@/components/home/what-we-do-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
-import HowWeWork from "@/components/home/how-we-work";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
-import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import BlogSection from "@/components/home/blog-section";
 import { Footer } from "@/components/layout/footer";
+
+// Heavy sections deferred — d3-geo (~120KB) and particles.js split into separate chunks
+const HowWeWork = dynamic(() => import("@/components/home/how-we-work"));
+const ExperienceGlobeSection = dynamic(
+  () => import("@/components/home/experience-globe-section").then((m) => ({ default: m.ExperienceGlobeSection })),
+);
 
 type HomeHeroLayoutProps = {
   allianceText?: string;

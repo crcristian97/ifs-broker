@@ -130,6 +130,11 @@
     "videoCarouselLabel": "Videos de fondo",
     "videoBulletLabel": "Video {n}"
   },
+  "featureBar": {
+    "personalized": "Soluciones personalizadas",
+    "longTerm": "Acompañamiento a largo plazo",
+    "international": "Respaldo internacional"
+  },
   "whatWeDo": {
     "label": "¿Qué hacemos?",
     "title": "SOLUCIONES FINANCIERAS",

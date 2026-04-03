@@ -206,8 +206,15 @@ export function Globe({
       ctx.stroke();
     };
 
+    let isVisible = false;
+    const io = new IntersectionObserver(
+      ([entry]) => { isVisible = entry.isIntersecting; },
+      { threshold: 0.05 },
+    );
+    io.observe(container);
+
     const loop = () => {
-      draw();
+      if (isVisible) draw();
       rafId = requestAnimationFrame(loop);
     };
     rafId = requestAnimationFrame(loop);
@@ -215,6 +222,7 @@ export function Globe({
     return () => {
       cancelAnimationFrame(rafId);
       ro.disconnect();
+      io.disconnect();
       window.removeEventListener("resize", resize);
     };
   }, [landColor]);

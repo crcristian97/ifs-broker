@@ -45,6 +45,7 @@ export function HeroSection() {
     videoRefs.current.forEach((el, i) => {
       if (!el) return;
       if (i === activeIndex) {
+        el.currentTime = 0;
         el.play().catch(() => {});
       } else {
         el.pause();
@@ -73,10 +74,10 @@ export function HeroSection() {
                   videoRefs.current[index] = el;
                 }}
                 src={src}
-                autoPlay={index === 0}
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className={cn(
                   "absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out",
                   index === activeIndex ? "z-1 opacity-100" : "z-0 opacity-0",
@@ -87,7 +88,7 @@ export function HeroSection() {
 
           <div className="absolute inset-0 z-2 bg-[#033163]/50" />
 
-          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-start px-4 pb-8 pt-24 md:px-8 md:pt-28 xl:justify-end">
+          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-end px-4 pb-8 pt-24 md:px-8 md:pt-28">
             <div className="mb-8 flex max-w-4xl flex-col items-start gap-6 lg:mb-12">
               <AnimatedHeadline
                 text={t("heroSection.title")}

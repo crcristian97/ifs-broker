@@ -63,14 +63,20 @@ export default function ElegantCarousel() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const currentIndexRef = useRef(currentIndex);
+  const isTransitioningRef = useRef(isTransitioning);
 
   const SLIDE_DURATION = 6000;
   const TRANSITION_DURATION = 800;
 
+  // Keep refs in sync so the interval closure never goes stale
+  useEffect(() => { currentIndexRef.current = currentIndex; }, [currentIndex]);
+  useEffect(() => { isTransitioningRef.current = isTransitioning; }, [isTransitioning]);
+
   const goToSlide = useCallback(
     (index: number, dir?: "next" | "prev") => {
-      if (isTransitioning || index === currentIndex) return;
-      setDirection(dir || (index > currentIndex ? "next" : "prev"));
+      if (isTransitioningRef.current || index === currentIndexRef.current) return;
+      setDirection(dir || (index > currentIndexRef.current ? "next" : "prev"));
       setIsTransitioning(true);
 
       setTimeout(() => {
@@ -80,19 +86,20 @@ export default function ElegantCarousel() {
         }, 50);
       }, TRANSITION_DURATION / 2);
     },
-    [isTransitioning, currentIndex]
+    [],
   );
 
   const goNext = useCallback(() => {
-    const nextIndex = (currentIndex + 1) % slides.length;
+    const nextIndex = (currentIndexRef.current + 1) % slides.length;
     goToSlide(nextIndex, "next");
-  }, [currentIndex, goToSlide, slides.length]);
+  }, [goToSlide, slides.length]);
 
   const goPrev = useCallback(() => {
-    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    const prevIndex = (currentIndexRef.current - 1 + slides.length) % slides.length;
     goToSlide(prevIndex, "prev");
-  }, [currentIndex, goToSlide, slides.length]);
+  }, [goToSlide, slides.length]);
 
+  // Interval only restarts when pause state changes — not on every slide advance
   useEffect(() => {
     if (isPaused) return;
 
@@ -103,7 +110,7 @@ export default function ElegantCarousel() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [currentIndex, isPaused, goNext]);
+  }, [isPaused, goNext]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX;

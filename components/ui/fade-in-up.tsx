@@ -44,7 +44,9 @@ export function FadeInUp({
     });
 
     return () => ctx.revert();
-  }, [duration, delay, y]);
+    // Props are static at call sites — no need to re-run on prop changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div ref={ref} className={cn(className)}>
