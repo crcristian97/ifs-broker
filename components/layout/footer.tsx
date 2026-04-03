@@ -11,15 +11,15 @@ import { ContactModal } from "@/components/layout/contact-modal"
 
 const features = [
   {
-    icon: <Phone className="h-5 w-5 shrink-0 text-[#FFFFFF]" />,
+    icon: <Phone className="h-5 w-5 shrink-0" />,
     title: "+00 0000 000",
   },
   {
-    icon: <Mail className="h-5 w-5 shrink-0 text-[#033163]" />,
+    icon: <Mail className="h-5 w-5 shrink-0" />,
     title: "administracion@ifs-broker.com",
   },
   {
-    icon: <MapPin className="h-5 w-5 shrink-0 text-[#033163]" />,
+    icon: <MapPin className="h-5 w-5 shrink-0" />,
     title: "Location",
   },
 ]
@@ -115,7 +115,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10 flex justify-center px-4 pb-2">
-        <FeatureBar features={features} />
+        <FeatureBar features={features} animate={false} />
       </div>
 
       <ContactModal

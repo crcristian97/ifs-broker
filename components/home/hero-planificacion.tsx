@@ -61,11 +61,11 @@ export function HeroPlanificacion() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         <div ref={topBlockRef} className="relative bg-[#033163] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
-            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl text-white mb-6 sm:mb-8">
+            <p className="text-xl sm:text-2xl md:text-3xl  text-white mb-6 sm:mb-8">
               {t("label")}
             </p>
             <h3
-              className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-regular uppercase tracking-tighter leading-tight"
+              className=" text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular uppercase tracking-tighter leading-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.02em",

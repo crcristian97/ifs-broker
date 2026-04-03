@@ -46,10 +46,11 @@
       "phoneLabel": "Teléfono",
       "interestsLabel": "¿En qué estás interesado?",
       "interests": {
-        "lifeAssets": "Seguro de vida",
-        "retirement": "Retiro",
-        "investments": "Inversion",
-        "travel": "Seguro de viaje",
+        "lifeAssets": "Soluciones",
+        "lifeAssetsDescription": "Seguro de vida",
+        "retirement": "Fondos de retiro",
+        "investments": "Salud internacional",
+        "travel": "Seguros complementarios",
         "health": "Seguro de salud",
         "patrimonial": "Seguro patrimonial"
       },

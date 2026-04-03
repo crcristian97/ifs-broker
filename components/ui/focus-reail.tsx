@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export type FocusRailItem = {
   id: string | number;
@@ -184,10 +185,12 @@ export function FocusRail({
                     {item.content}
                   </div>
                 ) : (
-                  <img
-                    src={item.imageSrc}
+                  <Image
+                    src={item.imageSrc ?? ""}
                     alt={item.title}
-                    className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                    className="rounded-2xl object-cover pointer-events-none"
+                    width={600}
+                    height={600}
                   />
                 )}
               </motion.div>
