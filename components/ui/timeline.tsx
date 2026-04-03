@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "./button-primary";
 import { ButtonSecondary } from "./button-secondary";
 import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 
 interface TimelineEntry {
   title: React.ReactNode;
@@ -31,14 +32,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     "https://calendly.com/administracion-ifs-broker/30min";
 
   return (
-    <div className="relative w-full bg-transparent font-sans md:px-10">
-      <div className="relative mx-auto max-w-7xl pb-20">
+    <div className="relative w-full bg-transparent font-sans">
+      <div className={cn(siteContainer, "relative pb-20")}>
         {data.map((item, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:gap-10 md:pt-40"
           >
-            <div className="relative w-full px-4 pr-4 md:px-8">
+            <div className="relative w-full">
               <div className="grid items-stretch gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)]">
                 <div className="flex flex-col justify-center gap-6">
                   <h3 className="text-left text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight">

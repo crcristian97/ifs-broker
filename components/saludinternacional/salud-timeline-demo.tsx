@@ -12,8 +12,8 @@ export function SaludTimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
-          <span className="text-[#003163] uppercase tracking-widest" style={fontStyle}>{t("tab1Highlight")}</span>
+         <span className="text-[#006FC4] uppercase tracking-widest" style={fontStyle}>{t("tab1Title")}</span>
+         <span className="text-[#003163] uppercase tracking-widest" style={fontStyle}>{t("tab1Highlight")}</span>
         </span>
       ),
       content: (
@@ -28,18 +28,18 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl font-regular text-[#006FC4] md:text-3xl ">
+            <p className="mb-2 text-2xl font-regular text-[white] md:text-3xl ">
               {t("tab1Block1Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[#003163] md:text-base">
+            <p className="text-sm leading-relaxed text-[white] md:text-base">
               {t("tab1Block1Desc")}
             </p>
           </div>
           <div>
-            <p className="mb-2 text-2xl font-regular text-[#006FC4] md:text-3xl ">
+            <p className="mb-2 text-2xl font-regular text-[white] md:text-3xl ">
               {t("tab1Block2Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[#003163] md:text-base">
+            <p className="text-sm leading-relaxed text-[white] md:text-base">
               {t("tab1Block2Desc")}
             </p>
           </div>
@@ -66,10 +66,10 @@ export function SaludTimelineDemo() {
             />
           </div>
           <div>
-              <p className="mb-2 text-3xl font-regular text-[#006FC4] md:text-3xl ">
+              <p className="mb-2 text-3xl font-regular text-[white] md:text-3xl ">
               {t("tab2Block1Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[#003163] md:text-base">
+            <p className="text-sm leading-relaxed text-[white] md:text-base">
               {t("tab2Block1Desc")}
             </p>
           </div>

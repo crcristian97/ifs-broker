@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
+import { siteContainer } from "@/lib/site-layout"
 import { FeatureBar } from "@/components/ui/feature-bar"
 import { ContactModal } from "@/components/layout/contact-modal"
 
@@ -67,7 +68,7 @@ export function Footer() {
       {/* Capa superior: continúa el blanco de la sección blog y se funde con el degradado/imagen del footer */}
      
 
-      <div className="relative z-10 flex flex-col gap-10 px-6 pt-12 md:px-12">
+      <div className={cn(siteContainer, "relative z-10 flex flex-col gap-10 pt-12")}>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
           <div className="flex flex-col items-center gap-6 lg:items-start">
             <div className="shrink-0">
@@ -121,11 +122,11 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 flex items-end justify-between px-6 pb-4 md:px-12">
+      <div className={cn(siteContainer, "relative z-10 flex items-end justify-between pb-4")}>
         
       </div>
 
-      <div className="relative z-10 flex justify-center px-4 pb-2">
+      <div className={cn(siteContainer, "relative z-10 flex justify-center pb-2")}>
         <FeatureBar features={features} animate={false} />
       </div>
 

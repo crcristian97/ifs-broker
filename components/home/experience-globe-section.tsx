@@ -7,6 +7,7 @@ import type { GeometryObject, Topology } from "topojson-specification";
 import { useEffect, useRef } from "react";
 import landTopology from "world-atlas/land-110m.json";
 import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -76,9 +77,8 @@ export function ExperienceGlobeSection() {
     >
       <div
         className={cn(
-          "mx-auto flex w-full max-w-[1400px] flex-col gap-10 px-6 py-12",
-          "md:flex-row md:items-center md:gap-12 md:px-12 md:py-16",
-          "lg:gap-16 lg:px-16",
+          siteContainer,
+          "flex flex-col gap-10 py-12 md:flex-row md:items-center md:gap-12 md:py-16 lg:gap-16",
         )}
       >
         <div ref={textRef} className="flex min-w-0 flex-1 flex-col justify-center">

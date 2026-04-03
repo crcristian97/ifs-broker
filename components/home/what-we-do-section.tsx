@@ -5,11 +5,18 @@ import { FeatureCard } from "../ui/feature-card";
 import { FadeInUp } from "../ui/fade-in-up";
 import { ShieldCheck, Handshake  } from "lucide-react";
 import ElegantCarousel from "../ui/elegant-carousel";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
-    <section className="relative w-full py-6 px-6 md:py-6 md:px-6 lg:px-16 overflow-hidden">
-      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col justify-start  pt-16 md:pt-8">
+    <section className="relative w-full overflow-hidden py-6">
+      <div
+        className={cn(
+          siteContainer,
+          "relative z-10 flex flex-col justify-start pt-16 md:pt-8",
+        )}
+      >
         <FadeInUp>
           <h2 className="text-[#033163] text-xl sm:text-2xl md:text-3xl font-regular mb-3 sm:mb-4 text-center md:text-left">
             {t("label")} 

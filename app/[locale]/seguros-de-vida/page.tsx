@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { HeroSubsection } from "@/components/layout/hero-subsection";
@@ -93,8 +95,8 @@ export default async function SegurosDeVidaPage({ params }: Props) {
       <HeroPlanificacion />
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">
-        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-16 py-8">
-          <div className="w-full min-h-[120px] rounded bg-transparent px-4 py-6 text-center flex items-center justify-center">
+        <div className={cn(siteContainer, "py-8")}>
+          <div className="flex min-h-[120px] w-full items-center justify-center rounded bg-transparent py-6 text-center">
             <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
               {t("serviciosComplementarios.alliance")}
             </p>

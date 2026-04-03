@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { sitePaddingX } from "@/lib/site-layout";
 import Image from "next/image";
 
 export type FocusRailItem = {
@@ -123,7 +124,12 @@ export function FocusRail({
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
+      <div
+        className={cn(
+          "relative z-10 flex flex-1 flex-col justify-center",
+          sitePaddingX,
+        )}
+      >
         <motion.div
           className="relative mx-auto flex h-[360px] w-full max-w-6xl items-center justify-center perspective-[1200px] cursor-grab active:cursor-grabbing"
           drag="x"
@@ -200,7 +206,12 @@ export function FocusRail({
 
         {/* Navigation arrows */}
         {items.length > 1 && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 md:px-8">
+          <div
+            className={cn(
+              "pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between",
+              sitePaddingX,
+            )}
+          >
             <button
               type="button"
               onClick={handlePrev}

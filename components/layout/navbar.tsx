@@ -10,6 +10,8 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
 import { ButtonPrimary } from "@/components/ui/button-primary"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { cn } from "@/lib/utils"
+import { sitePaddingX } from "@/lib/site-layout"
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -105,7 +107,7 @@ export function Navbar({ forceBlue = false }: NavbarProps) {
   }, [])
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
+    <nav className={cn("absolute top-0 left-0 right-0 z-50 pt-4 md:pt-6", sitePaddingX)}>
       <div
         ref={navRef}
         className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-xl px-6 py-4 backdrop-blur-3xl ${

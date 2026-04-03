@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ButtonPrimary } from "@/components/ui/button-primary";
 import { ConocerMasButton } from "@/components/ui/button-terciary";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -60,7 +62,12 @@ export function HeroBanner() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] h-full min-h-[520px] flex-col items-center justify-center px-6 md:flex-row md:items-center md:justify-center md:px-12 lg:px-16">
+      <div
+        className={cn(
+          siteContainer,
+          "relative z-10 flex h-full min-h-[520px] flex-col items-center justify-center md:flex-row md:items-center md:justify-center",
+        )}
+      >
         <div ref={leftRef} className="flex flex-1 flex-col justify-center gap-8 items-center md:items-start">
           <h1
             className="max-w-xl text-3xl font-regular leading-tight tracking-[0.08em] text-[#033163] sm:text-4xl md:text-5xl lg:text-6xl"

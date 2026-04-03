@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -78,11 +80,8 @@ export default function BlogSection() {
     },
   ];
   return (
-    <section
-      className="relative px-4 py-12 sm:py-16 md:py-20"
-     
-    >
-      <div className="mx-auto max-w-7xl relative z-10">
+    <section className="relative py-12 sm:py-16 md:py-20">
+      <div className={cn(siteContainer, "relative z-10")}>
         <div ref={headingRef} className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
             className="font-regular text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight text-[#006fc4] leading-tight tracking-widest"

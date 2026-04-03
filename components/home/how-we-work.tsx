@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { FocusRail, type FocusRailItem } from "@/components/ui/focus-reail";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -139,7 +141,7 @@ export default function HowWeWork() {
 
   return (
     <section className="w-full  py-20 lg:py-24">
-      <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-6 md:px-12 lg:px-16">
+      <div className={cn(siteContainer, "flex flex-col items-center")}>
         <div ref={headingRef} className="mb-12 text-center max-w-4xl">
           <h4 className="text-xl sm:text-2xl md:text-3xl font-regular text-[#033163] mb-2">
             {t("title")}

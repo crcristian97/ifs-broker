@@ -103,7 +103,7 @@ export function TimelineDemo() {
     {
       title: (
         <span>
-          <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab4Title")}</span>
+            <span className="text-[#006FC4] tracking-widest uppercase" style={fontStyle}>{t("tab4Title")}</span>
           <span className="text-[#003163] tracking-widest uppercase " style={fontStyle}>{t("tab4Highlight")}</span>
         </span>
       ),

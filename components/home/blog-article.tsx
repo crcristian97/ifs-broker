@@ -4,6 +4,8 @@ import { useLayoutEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
+import { sitePaddingX } from "@/lib/site-layout";
 
 type ArticleId = "article1" | "article2";
 
@@ -36,7 +38,12 @@ export default function BlogArticle({ articleId }: BlogArticleProps) {
   const readTime = t(isFirst ? "article1ReadTime" : "article2ReadTime");
 
   return (
-    <article className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-0 mt-20">
+    <article
+      className={cn(
+        "mx-auto mt-20 flex max-w-5xl flex-col gap-8 py-10",
+        sitePaddingX,
+      )}
+    >
       <header className="space-y-4">
         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-black/70 sm:text-xs">
           IFSBROKER / {categorySlug}

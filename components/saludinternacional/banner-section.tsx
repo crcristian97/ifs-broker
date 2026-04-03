@@ -4,6 +4,7 @@ import { ReactNode, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -55,11 +56,9 @@ function BannerSection({
 
   return (
     <section
-      className={
-        sectionClassName ?? "w-full px-4 py-14 md:px-8 md:py-24"
-      }
+      className={sectionClassName ?? "w-full py-14 md:py-24"}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-center">
+      <div className={cn(siteContainer, "flex items-center justify-center")}>
         <div
           className="relative w-full overflow-hidden rounded-[40px] px-6 py-16 border bg-[#e5eef5] md:px-16 md:py-24"
           style={{ minHeight, backgroundColor: bgColor }}

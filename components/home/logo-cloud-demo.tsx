@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
 // Las imágenes de Unsplash se ven si la URL es correcta y no hay políticas de CORS o restricciones de acceso. 
@@ -63,8 +64,8 @@ const logos = [
 export default function LogoCloudSection() {
   const t = useTranslations("logoCloud");
   return (
-    <section className="relative w-full  overflow-hidden">
-      <div className="relative mx-auto w-full">
+    <section className="relative w-full overflow-hidden">
+      <div className={cn(siteContainer, "relative")}>
         <div
           aria-hidden="true"
           className={cn(

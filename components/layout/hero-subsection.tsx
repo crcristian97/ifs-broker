@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { FadeInUp } from "@/components/ui/fade-in-up";
 import { cn } from "@/lib/utils";
+import { sitePaddingX } from "@/lib/site-layout";
 
 type HeroSubsectionProps = {
   titlePrefix?: string;
@@ -38,8 +39,7 @@ export function HeroSubsection({
   const highlightColorClass = invertTitleColors ? "text-[#ffffff]" : "text-[#91D8F7]";
   return (
     <section className="relative w-full">
-      {/* Misma rejilla que Navbar: px-4 md:px-8 → max-w-[1400px] mx-auto */}
-      <div className="px-4 pb-8 md:px-8">
+      <div className={cn(sitePaddingX, "pb-8")}>
         <div className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-b-4xl bg-[#033163]">
           {videoSrc ? (
             <>
@@ -76,7 +76,12 @@ export function HeroSubsection({
             </>
           )}
 
-          <div className="relative z-10 flex min-h-[880px] w-full flex-col justify-end px-6 pb-10 pt-24 md:pb-14 md:pt-28">
+          <div
+            className={cn(
+              sitePaddingX,
+              "relative z-10 flex min-h-[880px] w-full flex-col justify-end pb-10 pt-24 md:pb-14 md:pt-28",
+            )}
+          >
             <div
               className={cn(
                 "grid w-full gap-8 lg:gap-16 lg:items-start",

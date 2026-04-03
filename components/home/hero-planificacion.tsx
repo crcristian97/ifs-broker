@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "../ui/button-primary";
 import { ButtonSecondary } from "../ui/button-secondary";
 import { AnimatedGridPattern } from "../ui/background-wedosection";
-import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +58,7 @@ export function HeroPlanificacion() {
 
   return (
     <section id="nosotros" className="w-full  mt-16 md:mt-24 mb-16 md:mb-24">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className={siteContainer}>
         <div ref={topBlockRef} className="relative bg-[#033163] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
             <p className="text-xl sm:text-2xl md:text-3xl  text-white mb-6 sm:mb-8">

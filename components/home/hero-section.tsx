@@ -7,6 +7,7 @@ import { ButtonSecondary } from "../ui/button-secondary";
 import AnimatedHeadline from "../ui/animated-headline";
 import { FadeInUp } from "../ui/fade-in-up";
 import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 
 const HERO_VIDEOS = [
   "/hero/video-ifs.webm",
@@ -88,7 +89,12 @@ export function HeroSection() {
 
           <div className="absolute inset-0 z-2 bg-[#033163]/50" />
 
-          <div className="relative z-10 mx-auto flex min-h-[min(100svh,55rem)] w-full max-w-[1400px] flex-col justify-end px-4 pb-8 pt-24 md:px-8 md:pt-28">
+          <div
+            className={cn(
+              siteContainer,
+              "relative z-10 flex min-h-[min(100svh,55rem)] flex-col justify-end pb-8 pt-24 md:pt-28",
+            )}
+          >
             <div className="mb-8 flex max-w-4xl flex-col items-start gap-6 lg:mb-12">
               <AnimatedHeadline
                 text={t("heroSection.title")}

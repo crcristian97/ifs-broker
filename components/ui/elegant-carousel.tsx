@@ -11,6 +11,8 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ConocerMasButton } from "./button-terciary";
+import { cn } from "@/lib/utils";
+import { siteContainer } from "@/lib/site-layout";
 
 interface SlideData {
   title: string;
@@ -132,7 +134,10 @@ export default function ElegantCarousel() {
 
   return (
     <div
-      className="relative w-full max-w-6xl mx-auto rounded-3xl bg-[#033163] shadow-lg overflow-hidden border border-slate-100"
+      className={cn(
+        siteContainer,
+        "relative rounded-3xl border border-slate-100 bg-[#033163] shadow-lg overflow-hidden",
+      )}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
