@@ -89,39 +89,41 @@ export function HeroPlanificacion() {
             background: "linear-gradient(to bottom, #f0f5fa, #ffffff)",
           }}
         >
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-            <div className="flex-1">
-              <p className="text-[#1a2b3d] text-xl sm:text-2xl md:text-2xl lg:text-2xl font-regular text-center md:text-left">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-16">
+            <div className="flex w-full flex-1 md:w-auto">
+              <p className="w-full text-center text-[#1a2b3d] text-xl font-regular sm:text-2xl md:text-left md:text-2xl lg:text-2xl">
                 {t("description1Part1")}<span className="text-[#006FC4] font-regular">{t("description1Part2")}</span>{t("description1Part3")}
               </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center md:items-end gap-5">
-              <div className="flex w-full max-w-md flex-col gap-3 items-stretch md:ml-auto">
-                <ButtonPrimary
-                  href="/seguros-de-vida#cotiza"
-                  hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                  className="w-full justify-center"
-                  onClick={(event) => {
-                    // Si ya estamos en la página de seguros de vida, solo hacer scroll suave al formulario
-                    if (pathname.includes("/seguros-de-vida")) {
-                      event.preventDefault();
-                      const el = document.getElementById("cotiza");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+            <div className="flex w-full flex-1 flex-col gap-5 md:w-auto md:items-end">
+              <div className="flex w-full justify-center md:justify-end">
+                <div className="flex w-[min(100%,28rem)] flex-col items-stretch gap-3 md:w-full md:max-w-md">
+                  <ButtonPrimary
+                    href="/seguros-de-vida#cotiza"
+                    hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
+                    className="w-full justify-center"
+                    onClick={(event) => {
+                      // Si ya estamos en la página de seguros de vida, solo hacer scroll suave al formulario
+                      if (pathname.includes("/seguros-de-vida")) {
+                        event.preventDefault();
+                        const el = document.getElementById("cotiza");
+                        if (el) {
+                          el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
                       }
-                    }
-                  }}
-                >
-                  {t("quoteLifeInsurance")}
-                </ButtonPrimary>
-                <button
-                  type="button"
-                  onClick={() => setIsContactModalOpen(true)}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60 cursor-pointer"
-                >
-                  {t("speakWithAdvisor")}
-                </button>
+                    }}
+                  >
+                    {t("quoteLifeInsurance")}
+                  </ButtonPrimary>
+                  <button
+                    type="button"
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors hover:bg-[#91D8F7] hover:text-[#006FC4]/60"
+                  >
+                    {t("speakWithAdvisor")}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -88,7 +88,7 @@ export default function HowWeWork() {
           </p>
         </div>
 
-        <div ref={stepperRef} className="w-full max-w-6xl overflow-x-auto pb-2">
+        <div ref={stepperRef} className="w-full max-w-6xl md:overflow-x-auto md:pb-2">
           <Stepper
             defaultValue={1}
             orientation="horizontal"
@@ -98,27 +98,31 @@ export default function HowWeWork() {
             }}
             className="w-full"
           >
-            <StepperNav className="w-full flex-row items-stretch gap-0">
+            <StepperNav className="grid! w-full grid-cols-2 gap-x-3 gap-y-8 md:flex! md:flex-row md:items-stretch md:gap-0">
               {steps.map((step, index) => (
                 <StepperItem
                   key={index}
                   step={index + 1}
-                  className="relative min-w-[150px] sm:min-w-0 flex-1 flex-col items-stretch"
+                  className="relative min-w-0 flex-col items-stretch md:flex-1"
                 >
                   <StepperTrigger
                     className={cn(
-                      "h-auto w-full flex-col gap-2.5  border border-transparent px-2 py-3 text-center transition-colors sm:px-3",
+                      "h-auto w-full max-md:rounded-xl flex-col gap-2.5 border border-transparent px-2 py-3 text-center transition-colors sm:px-3",
+                      "hover:border-[#033163]/10 hover:bg-[#033163]/4",
+                      "data-[state=active]:border-[#006FC4]/25 data-[state=active]:bg-[#006FC4]/6",
                     )}
                   >
-                    <StepperIndicator className="mx-auto size-10 shrink-0 text-base font-semibold sm:size-11">
+                    <StepperIndicator className="mx-auto size-10 shrink-0 text-base font-semibold md:size-11">
                       {index + 1}
                     </StepperIndicator>
                     <div className="flex min-w-0 flex-col gap-1">
-                      <span className="text-base font-medium uppercase tracking-wider text-[#006FC4] ">
+                      <span className="text-xs font-medium uppercase tracking-wider text-[#006FC4] md:text-base">
                         {stepMeta} {index + 1}
                       </span>
-                      <StepperTitle className="text-base font-semibold text-[#033163] ">{step.title}</StepperTitle>
-                      <StepperDescription className="line-clamp-3 text-left text-base leading-snug text-[#033163]/80 ">
+                      <StepperTitle className="text-sm font-semibold text-[#033163] md:text-base">
+                        {step.title}
+                      </StepperTitle>
+                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 md:line-clamp-3 md:text-base">
                         {step.description}
                       </StepperDescription>
                     </div>
@@ -126,7 +130,7 @@ export default function HowWeWork() {
                   {index < steps.length - 1 ? (
                     <StepperSeparator
                       className={cn(
-                        "absolute top-5 left-[calc(50%+1.25rem)] z-0 m-0 hidden h-0.5 sm:block",
+                        "absolute top-5 left-[calc(50%+1.25rem)] z-0 m-0 hidden h-0.5 md:block",
                         "group-data-[orientation=horizontal]/stepper-nav:w-[calc(100%-2.5rem)]",
                         "group-data-[orientation=horizontal]/stepper-nav:flex-none",
                         "group-data-[state=completed]/step:bg-primary",
