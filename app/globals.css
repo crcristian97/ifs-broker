@@ -26,12 +26,29 @@
   --font-heading: "Adagietto", "Zalando Sans", system-ui, sans-serif;
   /* Legacy name used across components for body/UI text */
   --font-noto-sans: var(--font-body);
+  /* shadcn-style tokens (Stepper and other UI primitives) */
+  --primary: #006fc4;
+  --primary-foreground: #ffffff;
+  --muted: #f4f6f8;
+  --muted-foreground: #5c6b7a;
+  --accent: #eef4f9;
+  --accent-foreground: #033163;
+  --ring: #006fc4;
+  --destructive-foreground: oklch(1 0 0);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-destructive-foreground: var(--destructive-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
