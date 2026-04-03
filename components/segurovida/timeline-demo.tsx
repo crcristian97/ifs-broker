@@ -29,7 +29,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-2xl font-regular text-[white]" >
+            <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {tSolutions("seguroVida.description")}
             </p>
             <p className="mb-2 text-xl md:text-xl font-regular text-[white]" >
@@ -61,7 +61,7 @@ export function TimelineDemo() {
             />
           </div>
           <div> 
-            <p className="mb-2 text-2xl md:text-2xl font-regular text-[white]" >
+            <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab2Desc")}
             </p>
             <p className="text-base md:text-lg  font-regular text-[white] leading-relaxed">
@@ -90,7 +90,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-2 text-2xl md:text-2xl font-regular text-[white]" >
+            <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab3Desc")}
             </p>
             <p className="text-base md:text-lg font-regular text-[white] leading-relaxed">
@@ -119,7 +119,7 @@ export function TimelineDemo() {
             />
           </div>
           <div>
-              <p className="mb-2 text-2xl md:text-2xl font-regular text-[white]" >
+              <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab4Desc")}
             </p>
             <p className="text-base md:text-lg font-regular text-[white] leading-relaxed">

@@ -75,7 +75,7 @@ export function Footer() {
               <Image src="/logo-footer.svg" alt="IFS Insurance" width={420} height={2520} />
             </div>
             <div className="flex w-full justify-end">
-              <p className="text-lg md:text-2xl font-regular text-[#FFFFFF] text-right">
+              <p className="text-base sm:text-lg md:text-2xl font-regular text-[#FFFFFF] text-right">
                 {t("designFuture")}
               </p>
             </div>
@@ -92,7 +92,7 @@ export function Footer() {
                     className="flex min-w-0 flex-col gap-3"
                   >
                     {column.title ? (
-                      <p className="text-lg font-bold text-[#FFFFFF] md:text-2xl">
+                      <p className="text-base sm:text-lg font-bold text-[#FFFFFF] md:text-2xl">
                         {column.title}
                       </p>
                     ) : null}

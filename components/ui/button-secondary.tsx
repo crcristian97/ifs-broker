@@ -13,7 +13,7 @@ type ButtonSecondaryProps = {
 
 export const ButtonSecondary = ({ children, href, className, hover, onClick, target }: ButtonSecondaryProps) => {
   const baseClasses = cn(
-    "inline-flex items-center justify-center rounded-lg bg-[#033163] px-8 py-3 text-lg font-semibold text-[#FEFEFE] transition-colors cursor-pointer",
+    "inline-flex items-center justify-center rounded-lg bg-[#033163] px-5 py-2.5 text-sm sm:px-8 sm:py-3 sm:text-lg font-semibold text-[#FEFEFE] transition-colors cursor-pointer",
     hover,
     className,
   );

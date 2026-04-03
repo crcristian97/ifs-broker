@@ -42,7 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className="relative w-full">
               <div className="grid items-stretch gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)]">
                 <div className="flex flex-col justify-center gap-6">
-                  <h3 className="text-left text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight">
+                  <h3 className="text-left text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight">
                     {item.title}
                   </h3>
                   <div className="grid w-max max-w-full grid-cols-1 gap-3 self-start">

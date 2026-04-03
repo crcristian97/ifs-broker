@@ -28,7 +28,7 @@ export function RetirementTimelineDemo() {
             />
           </div>
           <div>
-            <p className="mb-3 text-3xl font-regular text-[white]" >
+            <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-regular text-[white]">
               {t("tab1Desc1")}
             </p>
             <p className="text-lg text-[white] leading-relaxed ">

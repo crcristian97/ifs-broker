@@ -110,7 +110,7 @@ export function Navbar() {
             alt="IFS Insurance"
             width={320}
             height={70}
-            className="h-16 w-auto sm:h-18 md:h-20"
+            className="h-10 w-auto sm:h-14 md:h-16 lg:h-20"
             priority
           />
         </Link>
@@ -239,7 +239,7 @@ export function Navbar() {
                 size="sm"
               />
               <button
-                className="rounded-lg border border-[#006fc4] bg-[#006fc4] px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#006fc4]/90"
+                className="rounded-lg border border-[#006fc4] bg-[#006fc4] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#006fc4]/90 flex-1"
                 onClick={(event) => {
                   event.preventDefault()
                   scrollToSection("contacto")

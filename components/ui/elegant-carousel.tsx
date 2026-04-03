@@ -152,7 +152,7 @@ export default function ElegantCarousel() {
       />
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 md:items-stretch">
-        <div className="flex min-w-0 flex-col justify-center px-8 py-10 md:px-12 md:py-12 space-y-6">
+        <div className="flex min-w-0 flex-col justify-center px-4 py-6 sm:px-8 sm:py-10 md:px-12 md:py-12 space-y-6">
           <div
             className={`flex items-center text-xs font-medium tracking-[0.25em] uppercase text-[#ffffff] transition-opacity duration-500 ${
               isTransitioning ? "opacity-0" : "opacity-100"
@@ -179,7 +179,7 @@ export default function ElegantCarousel() {
               {currentSlide.title}
             </h2>
             <p
-              className={` text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
+              className={`text-lg sm:text-xl md:text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -221,7 +221,7 @@ export default function ElegantCarousel() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[280px] h-80 items-center justify-center bg-[#033163]/80 py-8 md:min-h-[420px] md:h-full md:py-10">
+        <div className="relative hidden items-center justify-center bg-[#033163]/80 py-8 md:flex md:min-h-[420px] md:h-full md:py-10">
           <Link
             href={currentSlide.buttonHref}
             className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-[#ffffff]/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${
@@ -251,7 +251,7 @@ export default function ElegantCarousel() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-slate-100 bg-[#033163]/80 px-4 py-3 md:px-6">
+      <div className="relative z-10 hidden border-t border-slate-100 bg-[#033163]/80 px-4 py-3 md:block md:px-6">
         <div className="flex flex-wrap gap-2 md:gap-3">
           {slides.map((slide, index) => (
             <button

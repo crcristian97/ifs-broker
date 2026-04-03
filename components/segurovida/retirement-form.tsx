@@ -38,7 +38,7 @@ export function RetirementForm() {
     >
       <div className="mb-8 text-center">
         <h2
-          className="text-5xl font-regular leading-tight tracking-widest uppercase"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular leading-tight tracking-widest uppercase"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>

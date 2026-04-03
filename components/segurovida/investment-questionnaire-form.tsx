@@ -97,7 +97,7 @@ export function InvestmentQuestionnaireForm() {
     <div className="w-full max-w-3xl mx-auto relative">
       <div className="mb-8 text-center">
         <h2
-          className="text-5xl font-regular leading-tight uppercase tracking-widest"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular leading-tight uppercase tracking-widest"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>

@@ -25,7 +25,7 @@ export function WhatWeDoSection() {
 
         <FadeInUp delay={0.15}>
           <h3
-            className="text-[#006FC4] text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl  font-regular mb-5 max-w-4xl leading-tight tracking-widest"
+            className="text-[#006FC4] text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")} <span className="text-[#033163]">{t("labelHighlight")}</span>

@@ -89,7 +89,7 @@ export function HeroSubsection({
               "relative z-10 flex w-full flex-col justify-end",
               videoSrc
                 ? "min-h-[min(68svh,38rem)] pb-8 pt-8 md:min-h-[min(62svh,40rem)] md:pt-10"
-                : "min-h-[880px] pb-10 pt-24 md:pb-14 md:pt-28",
+                : "min-h-[520px] pb-8 pt-20 md:min-h-[880px] md:pb-14 md:pt-28",
             )}
           >
             <div
@@ -106,7 +106,7 @@ export function HeroSubsection({
                   )}
                 >
                   <div className="relative z-10 flex flex-col justify-start">
-                    <h1 className="mb-4 text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular tracking-tight leading-none">
+                    <h1 className="mb-4 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular tracking-tight leading-none">
                       <span className={prefixColorClass}>{titlePrefix}</span>
                       <br />
                       <span className={highlightColorClass}>{titleHighlight}</span>

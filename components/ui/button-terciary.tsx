@@ -68,7 +68,7 @@ export function ConocerMasButton({
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={cn(
-          "group relative flex w-[200px] cursor-pointer items-stretch rounded-lg p-[1px]",
+          "group relative flex w-full max-w-[200px] cursor-pointer items-stretch rounded-lg p-[1px]",
           isOnDark
             ? "transition-colors"
             : "transition-opacity hover:opacity-90 active:opacity-80",

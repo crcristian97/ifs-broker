@@ -100,7 +100,7 @@ export function HeroSection() {
                 text={t("heroSection.title")}
                 as="h1"
                 delay={0.2}
-                className="text-[#FEFEFE] text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight tracking-widest uppercase"
+                className="text-[#FEFEFE] text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-heading)" }}
               />
               <FadeInUp delay={2.0}>

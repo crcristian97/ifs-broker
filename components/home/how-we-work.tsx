@@ -88,7 +88,7 @@ export default function HowWeWork() {
           </p>
         </div>
 
-        <div ref={stepperRef} className="w-full max-w-6xl">
+        <div ref={stepperRef} className="w-full max-w-6xl overflow-x-auto pb-2">
           <Stepper
             defaultValue={1}
             orientation="horizontal"
@@ -103,7 +103,7 @@ export default function HowWeWork() {
                 <StepperItem
                   key={index}
                   step={index + 1}
-                  className="relative min-w-0 flex-1 flex-col items-stretch"
+                  className="relative min-w-[150px] sm:min-w-0 flex-1 flex-col items-stretch"
                 >
                   <StepperTrigger
                     className={cn(

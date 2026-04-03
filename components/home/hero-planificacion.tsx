@@ -59,13 +59,13 @@ export function HeroPlanificacion() {
   return (
     <section id="nosotros" className="w-full  mt-16 md:mt-24 mb-16 md:mb-24">
       <div className={siteContainer}>
-        <div ref={topBlockRef} className="relative bg-[#033163] px-8 py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
+        <div ref={topBlockRef} className="relative bg-[#033163] px-4 py-10 sm:px-8 sm:py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
             <p className="text-xl sm:text-2xl md:text-3xl  text-white mb-6 sm:mb-8">
               {t("label")}
             </p>
             <h3
-              className=" text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular uppercase tracking-tighter leading-tight"
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular uppercase tracking-tighter leading-tight"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.02em",
@@ -84,7 +84,7 @@ export function HeroPlanificacion() {
 
         <div
           ref={bottomBlockRef}
-          className="bg-white px-6 py-10 md:px-12 md:py-14 rounded-b-[56px] shadow-lg border-x-2 border-b-2 border-[#91D8F7]"
+          className="bg-white px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-14 rounded-b-[56px] shadow-lg border-x-2 border-b-2 border-[#91D8F7]"
           style={{
             background: "linear-gradient(to bottom, #f0f5fa, #ffffff)",
           }}
@@ -128,8 +128,8 @@ export function HeroPlanificacion() {
         </div>
       </div>
       {isContactModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+          <div className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-6 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-xl font-semibold text-[#033163]">{t("form.title")}</h3>
               <button
