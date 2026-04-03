@@ -44,12 +44,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <h3 className="text-left text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-regular leading-tight">
                     {item.title}
                   </h3>
-                  <div className="flex w-fit max-w-full flex-col items-start gap-3">
+                  <div className="grid w-max max-w-full grid-cols-1 gap-3 self-start">
                     <ButtonPrimary
                       href={item.buttonHref ?? "/seguros-de-vida#cotiza"}
                       target={
                         item.buttonHref?.startsWith("http") ? "_blank" : undefined
                       }
+                      className="w-full justify-center"
                       hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                       onClick={(event) => {
                         if (pathname.includes("/seguros-de-vida")) {
@@ -71,6 +72,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                           ? undefined
                           : "_blank"
                       }
+                      className="w-full justify-center"
                       hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
                       onClick={
                         item.buttonHrefSecondary?.startsWith("#")
