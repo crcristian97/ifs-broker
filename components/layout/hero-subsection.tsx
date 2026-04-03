@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AnimatedGridPattern } from "@/components/ui/background-wedosection";
 import { FadeInUp } from "@/components/ui/fade-in-up";
 import { cn } from "@/lib/utils";
-import { sitePaddingX } from "@/lib/site-layout";
+import { heroVideoOffsetBelowNavbar, sitePaddingX } from "@/lib/site-layout";
 
 type HeroSubsectionProps = {
   titlePrefix?: string;
@@ -38,13 +38,24 @@ export function HeroSubsection({
   const prefixColorClass = invertTitleColors ? "text-[#91D8F7]" : "text-[#ffffff]";
   const highlightColorClass = invertTitleColors ? "text-[#ffffff]" : "text-[#91D8F7]";
   return (
-    <section className="relative w-full">
-      <div className={cn(sitePaddingX, "pb-8")}>
-        <div className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-b-4xl bg-[#033163]">
+    <section className={cn("relative w-full", !videoSrc && "bg-[#033163]")}>
+      <div
+        className={cn(
+          sitePaddingX,
+          "pb-8",
+          videoSrc && heroVideoOffsetBelowNavbar,
+        )}
+      >
+        <div
+          className={cn(
+            "relative mx-auto w-full max-w-[1400px] overflow-hidden bg-[#033163]",
+            videoSrc ? "rounded-t-xl rounded-b-4xl" : "rounded-b-4xl",
+          )}
+        >
           {videoSrc ? (
             <>
               <video
-                className="absolute inset-0 z-0 h-full w-full object-cover rounded-b-4xl"
+                className="absolute inset-0 z-0 h-full w-full object-cover rounded-t-xl rounded-b-4xl"
                 src={videoSrc}
                 autoPlay
                 loop
@@ -52,7 +63,7 @@ export function HeroSubsection({
                 playsInline
                 aria-hidden="true"
               />
-              <div className="absolute inset-0 z-1 rounded-b-4xl bg-[#033163]/55" />
+              <div className="absolute inset-0 z-1 rounded-t-xl rounded-b-4xl bg-[#033163]/55" />
             </>
           ) : (
             <>
@@ -79,7 +90,10 @@ export function HeroSubsection({
           <div
             className={cn(
               sitePaddingX,
-              "relative z-10 flex min-h-[880px] w-full flex-col justify-end pb-10 pt-24 md:pb-14 md:pt-28",
+              "relative z-10 flex w-full flex-col justify-end",
+              videoSrc
+                ? "min-h-[min(52svh,30rem)] pt-8 pb-8 md:min-h-[min(48svh,32rem)] md:pt-10 md:pb-10"
+                : "min-h-[880px] pt-24 pb-10 md:pt-28 md:pb-14",
             )}
           >
             <div
