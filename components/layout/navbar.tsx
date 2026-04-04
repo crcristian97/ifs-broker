@@ -11,6 +11,7 @@ import { Menu as HoverMenu, MenuItem, ProductItem } from "@/components/ui/navbar
 import { ButtonPrimary } from "@/components/ui/button-primary"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { cn } from "@/lib/utils"
+import { getLenis } from "@/lib/lenis"
 import { sitePaddingX } from "@/lib/site-layout"
 
 gsap.registerPlugin(ScrollToPlugin)
@@ -24,6 +25,12 @@ const scrollToSection = (id: string) => {
   if (typeof window === "undefined") return
   const element = document.getElementById(id)
   if (!element) return
+
+  const lenis = getLenis()
+  if (lenis) {
+    lenis.scrollTo(element, { offset: -80, duration: 1 })
+    return
+  }
 
   gsap.to(window, {
     duration: 1,

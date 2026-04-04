@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { LenisSmoothScroll } from '@/components/lenis-smooth-scroll';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com'),
@@ -39,6 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <LenisSmoothScroll />
         {children}
       </body>
     </html>
