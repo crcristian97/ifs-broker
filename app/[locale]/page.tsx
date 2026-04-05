@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 import { Navbar } from "@/components/layout/navbar";
 import { HomeHeroLayout } from "@/components/layout/hero-section";
+import { getHomepage } from "@/lib/prismic-helpers";
+import { homepageToMessages, deepMerge } from "@/lib/prismic-to-messages";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -40,6 +43,15 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations();
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ifsbroker.com";
 
+  // Fetch Prismic content and merge with static translations
+  const prismicDoc = await getHomepage(locale);
+  const prismicMessages = homepageToMessages(prismicDoc);
+  const staticMessages = await getMessages({ locale });
+  const mergedMessages = deepMerge(
+    staticMessages as Record<string, unknown>,
+    prismicMessages,
+  );
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -49,10 +61,12 @@ export default async function Home({ params }: Props) {
   };
 
   return (
-    <main className="relative">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Navbar />
-      <HomeHeroLayout allianceText={t("serviciosComplementarios.alliance")} />
-    </main>
+    <NextIntlClientProvider messages={mergedMessages}>
+      <main className="relative">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <Navbar />
+        <HomeHeroLayout allianceText={t("serviciosComplementarios.alliance")} />
+      </main>
+    </NextIntlClientProvider>
   );
 }

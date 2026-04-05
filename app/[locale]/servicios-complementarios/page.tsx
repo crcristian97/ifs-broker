@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 import { cn } from "@/lib/utils";
 import { siteContainer } from "@/lib/site-layout";
 import { Navbar } from "@/components/layout/navbar";
@@ -10,6 +11,8 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import BlogSection from "@/components/home/blog-section";
+import { getServicePage } from "@/lib/prismic-helpers";
+import { servicePageToMessages, deepMerge } from "@/lib/prismic-to-messages";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -70,7 +73,16 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
     ],
   };
 
+  const prismicDoc = await getServicePage("servicios-complementarios", locale);
+  const prismicMessages = servicePageToMessages(prismicDoc, "serviciosComplementarios");
+  const staticMessages = await getMessages({ locale });
+  const mergedMessages = deepMerge(
+    staticMessages as Record<string, unknown>,
+    prismicMessages,
+  );
+
   return (
+    <NextIntlClientProvider messages={mergedMessages}>
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -99,5 +111,6 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
       <BlogSection />
       <Footer />
     </main>
+    </NextIntlClientProvider>
   );
 }
