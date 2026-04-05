@@ -5,7 +5,7 @@ import * as prismicNext from "@prismicio/next";
  * The project's Prismic repository name.
  */
 export const repositoryName =
-  process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || "broker-ifs";
+  process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || "ifs-broker";
 
 /**
  * The project's Prismic Route Resolvers. This list determines a Prismic

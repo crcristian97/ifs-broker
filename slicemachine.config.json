@@ -1,5 +1,5 @@
 {
-  "repositoryName": "broker-ifs",
+  "repositoryName": "ifs-broker",
   "adapter": "@slicemachine/adapter-next",
   "libraries": ["./slices"]
 }

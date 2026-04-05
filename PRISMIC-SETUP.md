@@ -17,7 +17,7 @@ Esta rama (`feat/prismic-migration`) tiene todo el código necesario para conect
 | `app/api/preview/` | API route para preview en vivo desde Prismic |
 | `app/api/exit-preview/` | API route para salir del preview |
 | `app/slice-simulator/` | Simulador local de slices |
-| `slicemachine.config.json` | Config de Slice Machine apuntando al repo `broker-ifs` |
+| `slicemachine.config.json` | Config de Slice Machine apuntando al repo `ifs-broker` |
 
 ---
 
@@ -41,7 +41,7 @@ Se abre en **http://localhost:9999**. Te va a pedir que te logueés con tu cuent
 
 ### 3. Configurá los locales en Prismic
 
-Entrá al dashboard de Prismic → **broker-ifs** → **Settings → Translations & Locales**:
+Entrá al dashboard de Prismic → **ifs-broker** → **Settings → Translations & Locales**:
 
 1. El locale por defecto debería ser **Spanish - Argentina (es-ar)**
 2. Agregá **English - United States (en-us)** como segundo locale
@@ -57,7 +57,7 @@ Desde Slice Machine (localhost:9999):
 
 ### 5. Verificá en el dashboard de Prismic
 
-Entrá a **https://broker-ifs.prismic.io** → deberías ver:
+Entrá a **https://ifs-broker.prismic.io** → deberías ver:
 
 - En **Page types**: Homepage, Service Page (Página de Servicio), Blog Post (Artículo de Blog)
 - En **Custom types**: Navigation (Navegación)
@@ -100,7 +100,7 @@ Hay un script que migra TODO el contenido de los JSON a Prismic automáticamente
 
 ### Paso 1: Generar un token de escritura
 
-1. Entrá a **https://broker-ifs.prismic.io/settings/api/**
+1. Entrá a **https://ifs-broker.prismic.io/settings/api/**
 2. En **Repository API** → **Permanent access tokens**
 3. Click en **"Add a token"** → poné nombre "Migration" → **Access: Write**
 4. Copiá el token generado
@@ -119,7 +119,7 @@ Esto sube automáticamente:
 
 ### Paso 3: Publicar en Prismic
 
-Después de correr el script, entrá a `broker-ifs.prismic.io` y **publicá** los documentos (se crean como draft).
+Después de correr el script, entrá a `ifs-broker.prismic.io` y **publicá** los documentos (se crean como draft).
 
 ---
 

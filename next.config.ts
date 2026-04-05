@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "broker-ifs.cdn.prismic.io",
+        hostname: "ifs-broker.cdn.prismic.io",
       },
     ],
   },

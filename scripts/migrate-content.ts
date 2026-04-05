@@ -18,12 +18,12 @@ const esMessages: any = require("../messages/es.json");
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const enMessages: any = require("../messages/en.json");
 
-const REPO_NAME = "broker-ifs";
+const REPO_NAME = "ifs-broker";
 const WRITE_TOKEN = process.env.PRISMIC_WRITE_TOKEN;
 
 if (!WRITE_TOKEN) {
   console.error("❌ Falta PRISMIC_WRITE_TOKEN. Generalo en:");
-  console.error("   https://broker-ifs.prismic.io/settings/api/");
+  console.error("   https://ifs-broker.prismic.io/settings/api/");
   console.error("   → Repository API → Permanent access tokens → Add token (con Write access)");
   process.exit(1);
 }
@@ -173,7 +173,6 @@ function createHomepage(messages: any, lang: string, altDoc?: any) {
   const doc = migration.createDocument(
     {
       type: "homepage",
-      uid: "homepage",
       lang,
       data: {
         seo_title: m.seo.home.title,
@@ -181,7 +180,7 @@ function createHomepage(messages: any, lang: string, altDoc?: any) {
         seo_keywords: m.seo.home.keywords,
         slices,
       },
-    },
+    } as any,
     `Homepage (${lang})`,
   );
 
@@ -356,12 +355,12 @@ function createNavigation(messages: any, lang: string, altDoc?: any) {
 async function main() {
   console.log("🚀 Iniciando migración de contenido a Prismic...\n");
 
-  // --- Spanish (master language) ---
-  console.log("📝 Creando documentos en español (es-ar)...");
-  const homepageEs = createHomepage(esMessages, "es-ar");
-  const blog1Es = createBlogPost(esMessages, 1, "es-ar");
-  const blog2Es = createBlogPost(esMessages, 2, "es-ar");
-  const navEs = createNavigation(esMessages, "es-ar");
+  // --- English (master language in Prismic) ---
+  console.log("📝 Creando documentos en inglés (en-us) — master locale...");
+  const homepageEn = createHomepage(enMessages, "en-us");
+  const blog1En = createBlogPost(enMessages, 1, "en-us");
+  const blog2En = createBlogPost(enMessages, 2, "en-us");
+  const navEn = createNavigation(enMessages, "en-us");
 
   const servicePages = [
     { uid: "seguros-de-vida", ns: "segurosDeVida" },
@@ -370,21 +369,21 @@ async function main() {
     { uid: "servicios-complementarios", ns: "serviciosComplementarios" },
   ];
 
-  const serviceDocsEs: any[] = [];
+  const serviceDocsEn: any[] = [];
   for (const sp of servicePages) {
-    serviceDocsEs.push(createServicePage(esMessages, sp.uid, sp.ns, "es-ar"));
+    serviceDocsEn.push(createServicePage(enMessages, sp.uid, sp.ns, "en-us"));
   }
 
-  // --- English (alternate language) ---
-  console.log("📝 Creando documentos en inglés (en-us)...");
-  createHomepage(enMessages, "en-us", homepageEs);
-  createBlogPost(enMessages, 1, "en-us", blog1Es);
-  createBlogPost(enMessages, 2, "en-us", blog2Es);
-  createNavigation(enMessages, "en-us", navEs);
+  // --- Spanish (alternate language) ---
+  console.log("📝 Creando documentos en español (es-ar)...");
+  createHomepage(esMessages, "es-ar", homepageEn);
+  createBlogPost(esMessages, 1, "es-ar", blog1En);
+  createBlogPost(esMessages, 2, "es-ar", blog2En);
+  createNavigation(esMessages, "es-ar", navEn);
 
   for (let i = 0; i < servicePages.length; i++) {
     const sp = servicePages[i];
-    createServicePage(enMessages, sp.uid, sp.ns, "en-us", serviceDocsEs[i]);
+    createServicePage(esMessages, sp.uid, sp.ns, "es-ar", serviceDocsEn[i]);
   }
 
   // --- Execute migration ---
@@ -392,17 +391,15 @@ async function main() {
   try {
     await writeClient.migrate(migration, {
       reporter: (event) => {
-        if (event.type === "documents:created") {
-          console.log(`  ✅ Documento creado`);
-        }
+        console.log(`  → ${event.type}`);
       },
     });
-    console.log("\n🎉 ¡Migración completada! Revisá broker-ifs.prismic.io");
+    console.log("\n🎉 ¡Migración completada! Revisá ifs-broker.prismic.io");
   } catch (error: any) {
     console.error("\n❌ Error en la migración:", error?.message || error);
     if (error?.message?.includes("401") || error?.message?.includes("403")) {
       console.error("\n💡 Verificá que el PRISMIC_WRITE_TOKEN tenga permisos de escritura.");
-      console.error("   Generalo en: https://broker-ifs.prismic.io/settings/api/");
+      console.error("   Generalo en: https://ifs-broker.prismic.io/settings/api/");
     }
     process.exit(1);
   }
