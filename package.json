@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "migrate:prismic": "tsx scripts/migrate-content.ts"
   },
   "dependencies": {
     "@prismicio/client": "^7.21.8",
+    "@prismicio/migrate": "^0.0.2",
     "@prismicio/next": "^2.2.3",
     "@prismicio/react": "^3.4.1",
     "d3-geo": "^3.1.1",
@@ -38,6 +40,7 @@
     "eslint-config-next": "16.1.6",
     "slice-machine-ui": "^2.21.2",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

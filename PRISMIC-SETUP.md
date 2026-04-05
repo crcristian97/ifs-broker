@@ -94,68 +94,59 @@ Entrá a **https://broker-ifs.prismic.io** → deberías ver:
 
 ---
 
-## Cómo cargar contenido de prueba
+## Cargar contenido (automático)
 
-### Crear la Homepage
+Hay un script que migra TODO el contenido de los JSON a Prismic automáticamente.
 
-1. En Prismic dashboard → **Create document** → **Homepage**
-2. Completá SEO Title, SEO Description
-3. En la **Slice Zone**, agregá los bloques en este orden:
-   - Hero (con título "Planificación financiera internacional...")
-   - FeatureCards (¿Qué hacemos?)
-   - Stepper (Cómo trabajamos)
-   - PlanningSection (planificación)
-   - GlobeSection (experiencia)
-   - LogoCloud (logos)
-   - BlogSection (artículos)
-4. **Save** → **Publish**
-5. Repetí para el locale **en-us** (botón de idioma arriba)
+### Paso 1: Generar un token de escritura
 
-### Crear un Blog Post
+1. Entrá a **https://broker-ifs.prismic.io/settings/api/**
+2. En **Repository API** → **Permanent access tokens**
+3. Click en **"Add a token"** → poné nombre "Migration" → **Access: Write**
+4. Copiá el token generado
 
-1. **Create document** → **Blog Post**
-2. UID: `seguro-patrimonial-salud-internacional`
-3. Completá título, subtítulo, categoría, imagen, fecha, contenido
-4. **Save** → **Publish**
+### Paso 2: Correr el script
 
-### Crear un Service Page
+```bash
+PRISMIC_WRITE_TOKEN=tu_token_aqui npm run migrate:prismic
+```
 
-1. **Create document** → **Service Page**
-2. UID: `seguros-de-vida` (debe coincidir con la ruta actual)
-3. Agregá slices: Hero, Timeline, PlanningSection, LogoCloud, BlogSection
-4. **Save** → **Publish**
+Esto sube automáticamente:
+- **Homepage** (es + en) con todos los slices (Hero, FeatureCards, Stepper, etc.)
+- **2 artículos de blog** (es + en) con todo el contenido
+- **4 páginas de servicio** (es + en)
+- **Navegación** (es + en) con menú, footer y soluciones
 
-UIDs para las 4 páginas de servicio:
-- `seguros-de-vida`
-- `fondos-de-retiro`
-- `salud-internacional`
-- `servicios-complementarios`
+### Paso 3: Publicar en Prismic
+
+Después de correr el script, entrá a `broker-ifs.prismic.io` y **publicá** los documentos (se crean como draft).
 
 ---
 
-## Próximos pasos (código)
+## Cómo funciona la conexión Prismic ↔ Web
 
-Una vez que el contenido esté cargado en Prismic, el próximo paso es **conectar los componentes existentes** para que lean de Prismic en vez de los archivos JSON de traducciones.
+Las páginas ya están conectadas a Prismic con **fallback automático**:
 
-El archivo `lib/prismic-helpers.ts` ya tiene las funciones listas:
+1. Cada página fetchea su documento de Prismic
+2. El contenido de Prismic se convierte al mismo formato que los JSON de traducciones
+3. Se hace un deep merge: **Prismic gana** donde hay contenido, **JSON gana** donde no
 
-```ts
-import { getHomepage, getServicePage, getBlogPost } from "@/lib/prismic-helpers";
+Esto significa:
+- Si editás un texto en Prismic → se ve en la web
+- Si no cargaste algo en Prismic → se usa el JSON actual
+- **Nada se rompe** aunque Prismic esté vacío
 
-// En una página:
-const homepage = await getHomepage("es"); // o "en"
-```
-
-Los archivos JSON (`messages/es.json`, `messages/en.json`) se mantendrán como **fallback** para strings de UI (labels de formularios, botones, mensajes de error) que no vale la pena manejar desde el CMS.
+Los archivos JSON (`messages/es.json`, `messages/en.json`) quedan como **fallback** permanente para strings de UI (labels, botones, validaciones).
 
 ---
 
 ## Comandos útiles
 
 ```bash
-npm run dev            # Levantar Next.js en desarrollo
-npm run slicemachine   # Abrir Slice Machine (localhost:9999)
-npm run build          # Build de producción
+npm run dev              # Levantar Next.js en desarrollo
+npm run slicemachine     # Abrir Slice Machine (localhost:9999)
+npm run migrate:prismic  # Migrar contenido JSON → Prismic (necesita PRISMIC_WRITE_TOKEN)
+npm run build            # Build de producción
 ```
 
 ---
