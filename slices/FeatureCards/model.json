@@ -1,0 +1,65 @@
+{
+  "id": "feature_cards",
+  "type": "SharedSlice",
+  "name": "FeatureCards",
+  "description": "Feature cards section with icon and text per card",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em"
+          }
+        },
+        "title_highlight": {
+          "type": "Text",
+          "config": {
+            "label": "Title Highlight",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "card_text": {
+          "type": "Text",
+          "config": {
+            "label": "Card Text",
+            "placeholder": ""
+          }
+        },
+        "card_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Card Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

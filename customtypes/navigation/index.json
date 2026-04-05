@@ -1,0 +1,91 @@
+{
+  "id": "navigation",
+  "label": "Navegación",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "nav_items": {
+        "type": "Group",
+        "config": {
+          "label": "Items de navegación",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Etiqueta",
+                "placeholder": "Inicio"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Enlace",
+                "allowTargetBlank": true
+              }
+            }
+          }
+        }
+      },
+      "solutions": {
+        "type": "Group",
+        "config": {
+          "label": "Soluciones (dropdown)",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Título"
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Descripción"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Enlace"
+              }
+            }
+          }
+        }
+      },
+      "footer_title": {
+        "type": "Text",
+        "config": {
+          "label": "Título del footer",
+          "placeholder": "Cada situación es distinta."
+        }
+      },
+      "footer_subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "Subtítulo del footer"
+        }
+      },
+      "footer_cta": {
+        "type": "Text",
+        "config": {
+          "label": "CTA del footer",
+          "placeholder": "Diseñemos hoy la tranquilidad del futuro"
+        }
+      },
+      "contact_email": {
+        "type": "Text",
+        "config": {
+          "label": "Email de contacto"
+        }
+      },
+      "calendly_url": {
+        "type": "Text",
+        "config": {
+          "label": "URL de Calendly"
+        }
+      }
+    }
+  }
+}

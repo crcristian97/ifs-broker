@@ -1,0 +1,57 @@
+{
+  "id": "form_section",
+  "type": "SharedSlice",
+  "name": "FormSection",
+  "description": "Form section with configurable form type and HubSpot integration",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "form_type": {
+          "type": "Select",
+          "config": {
+            "label": "Tipo de formulario",
+            "placeholder": "Seleccionar",
+            "options": ["retirement_calculator", "investment_questionnaire", "hubspot"]
+          }
+        },
+        "hubspot_portal_id": {
+          "type": "Text",
+          "config": {
+            "label": "HubSpot Portal ID",
+            "placeholder": ""
+          }
+        },
+        "hubspot_form_id": {
+          "type": "Text",
+          "config": {
+            "label": "HubSpot Form ID",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

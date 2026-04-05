@@ -1,0 +1,79 @@
+{
+  "id": "service_page",
+  "label": "Página de Servicio",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "URL Slug"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Título",
+          "placeholder": "Título del servicio",
+          "allowTargetBlank": true,
+          "single": "heading1,strong,em"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Descripción",
+          "placeholder": "Descripción del servicio",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Imagen Hero",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Title",
+          "placeholder": "Título para SEO"
+        }
+      },
+      "seo_description": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Description",
+          "placeholder": "Descripción para SEO"
+        }
+      },
+      "seo_keywords": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Keywords"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero": { "type": "SharedSlice" },
+            "timeline": { "type": "SharedSlice" },
+            "planning_section": { "type": "SharedSlice" },
+            "logo_cloud": { "type": "SharedSlice" },
+            "blog_section": { "type": "SharedSlice" },
+            "banner_section": { "type": "SharedSlice" },
+            "form_section": { "type": "SharedSlice" },
+            "rich_text_section": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}

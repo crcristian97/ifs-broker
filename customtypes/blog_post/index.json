@@ -1,0 +1,99 @@
+{
+  "id": "blog_post",
+  "label": "Artículo de Blog",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "URL Slug"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Título",
+          "placeholder": "Título del artículo"
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "Subtítulo",
+          "placeholder": "Subtítulo del artículo"
+        }
+      },
+      "category": {
+        "type": "Text",
+        "config": {
+          "label": "Categoría",
+          "placeholder": "Ej: SALUD INTERNACIONAL"
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Imagen destacada",
+          "constraint": {},
+          "thumbnails": [
+            {
+              "name": "card",
+              "width": 600,
+              "height": 400
+            }
+          ]
+        }
+      },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Fecha de publicación"
+        }
+      },
+      "read_time": {
+        "type": "Text",
+        "config": {
+          "label": "Tiempo de lectura",
+          "placeholder": "5 min de lectura"
+        }
+      },
+      "body": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Contenido del artículo",
+          "placeholder": "Escribí el contenido del artículo",
+          "allowTargetBlank": true,
+          "multi": "paragraph,heading2,heading3,heading4,strong,em,hyperlink,image,list-item,o-list-item"
+        }
+      },
+      "cta_text": {
+        "type": "Text",
+        "config": {
+          "label": "Texto CTA final",
+          "placeholder": "¿Te gustaría recibir un análisis personalizado?"
+        }
+      },
+      "seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Title"
+        }
+      },
+      "seo_description": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Description"
+        }
+      },
+      "seo_keywords": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Keywords"
+        }
+      }
+    }
+  }
+}
