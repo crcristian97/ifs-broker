@@ -5,6 +5,7 @@ import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import BlogSection from "@/components/home/blog-section";
 import { Footer } from "@/components/layout/footer";
+import { StickyScrollArticle, StickyScrollPanel } from "@/components/ui/smooth-scroll";
 import { cn } from "@/lib/utils";
 import { siteContainer } from "@/lib/site-layout";
 
@@ -21,8 +22,14 @@ type HomeHeroLayoutProps = {
 export function HomeHeroLayout({ allianceText = "" }: HomeHeroLayoutProps) {
   return (
     <>
-      <HeroSection />
-      <WhatWeDoSection />
+      <StickyScrollArticle>
+        <StickyScrollPanel layer={1}>
+          <HeroSection />
+        </StickyScrollPanel>
+        <StickyScrollPanel layer={2} variant="raised">
+          <WhatWeDoSection />
+        </StickyScrollPanel>
+      </StickyScrollArticle>
       <HeroPlanificacion />
       <HowWeWork />
       <LogoCloudSection />
