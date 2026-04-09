@@ -108,7 +108,7 @@ export function Navbar() {
     <nav className={cn("absolute top-0 left-0 right-0 z-50 pt-4 md:pt-6", sitePaddingX)}>
       <div
         ref={navRef}
-        className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl bg-[#033163] px-6 py-4 backdrop-blur-3xl"
+        className="mx-auto flex max-w-[1400px] items-center justify-between rounded-xl bg-[#033163] backdrop-blur-3xl"
       >
         {/* Logo */}
         <Link ref={logoRef} href="/" className="flex items-center">
