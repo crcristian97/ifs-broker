@@ -107,9 +107,8 @@ export default function HowWeWork() {
                 >
                   <StepperTrigger
                     className={cn(
-                      "h-auto w-full max-md:rounded-xl flex-col gap-2.5 border border-transparent px-2 py-3 text-center transition-colors sm:px-3",
-                      "hover:border-[#033163]/10 hover:bg-[#033163]/4",
-                      "data-[state=active]:border-[#006FC4]/25 data-[state=active]:bg-[#006FC4]/6",
+                      "h-auto w-full rounded-none! flex-col gap-2.5 border-0 bg-transparent px-2 py-3 text-center shadow-none sm:px-3",
+                      "focus-visible:ring-0 focus-visible:ring-offset-0",
                     )}
                   >
                     <StepperIndicator className="mx-auto size-10 shrink-0 text-base font-semibold md:size-11">
@@ -122,7 +121,7 @@ export default function HowWeWork() {
                       <StepperTitle className="text-sm font-semibold text-[#033163] md:text-base">
                         {step.title}
                       </StepperTitle>
-                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 md:line-clamp-3 md:text-base">
+                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 md:text-base">
                         {step.description}
                       </StepperDescription>
                     </div>
