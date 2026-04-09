@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { getTranslations, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,7 @@ import { ExperienceGlobeSection } from "@/components/home/experience-globe-secti
 import BlogSection from "@/components/home/blog-section";
 import { getServicePage } from "@/lib/prismic-helpers";
 import { servicePageToMessages, deepMerge } from "@/lib/prismic-to-messages";
+
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -87,15 +89,30 @@ export default async function SegurosDeVidaPage({ params }: Props) {
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+      <Script src="https://fast.wistia.com/embed/lydl9g18t3.js" type="module" strategy="afterInteractive" />
       <Navbar />
-      <HeroSubsection
-        titlePrefix={t("heroSubsection.titlePrefix")}
-        titleHighlight={t("heroSubsection.titleHighlight")}
-        description={t("heroSubsection.description")}
-        descriptionHighlight={t("heroSubsection.descriptionHighlight")}
-        hideImage
-        videoSrc="/seguros-vida-ifs-broker.webm"
-      />
+      <section className={cn("w-full bg-[#033163]", "pb-8 pt-28 md:pt-32")}>
+        <div className={cn(siteContainer)}>
+          <style>{`
+            wistia-player[media-id='lydl9g18t3']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lydl9g18t3/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+              border-radius: 1.25rem;
+              overflow: hidden;
+            }
+          `}</style>
+          <div className="overflow-hidden rounded-3xl shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<wistia-player media-id="lydl9g18t3" aspect="1.7777777777777777" volume="1"></wistia-player>`,
+              }}
+            />
+          </div>
+        </div>
+      </section>
       <TimelineDemo />
       <div
         className="rounded-3xl  bg-cover bg-center px-2 py-6 md:px-6"

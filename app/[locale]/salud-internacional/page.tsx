@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { getTranslations, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -9,7 +10,6 @@ import LogoCloudSection from "@/components/home/logo-cloud-demo";
 import { HeroPlanificacion } from "@/components/home/hero-planificacion";
 import { ExperienceGlobeSection } from "@/components/home/experience-globe-section";
 import { Footer } from "@/components/layout/footer";
-import { HeroSubsection } from "@/components/layout/hero-subsection";
 import BlogSection from "@/components/home/blog-section";
 import { getServicePage } from "@/lib/prismic-helpers";
 import { servicePageToMessages, deepMerge } from "@/lib/prismic-to-messages";
@@ -86,15 +86,30 @@ export default async function SaludInternacionalPage({ params }: Props) {
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+      <Script src="https://fast.wistia.com/embed/b48gj3x82t.js" type="module" strategy="afterInteractive" />
       <Navbar />
-      <HeroSubsection
-        titlePrefix={t("heroGlobe.title1")}
-        titleHighlight={t("heroGlobe.title2")}
-        description={t("heroGlobe.description")}
-        invertTitleColors
-        videoSrc="/retiro/video-salud.webm"
-        hideImage
-      />
+      <section className={cn("w-full bg-[#033163]", "pb-8 pt-28 md:pt-32")}>
+        <div className={cn(siteContainer)}>
+          <style>{`
+            wistia-player[media-id='b48gj3x82t']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/b48gj3x82t/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+              border-radius: 1.25rem;
+              overflow: hidden;
+            }
+          `}</style>
+          <div className="overflow-hidden rounded-3xl shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<wistia-player media-id="b48gj3x82t" aspect="1.7777777777777777"></wistia-player>`,
+              }}
+            />
+          </div>
+        </div>
+      </section>
       <SaludTimelineDemo />
       <HeroPlanificacion />
       <LogoCloudSection />
