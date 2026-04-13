@@ -54,14 +54,50 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${baseUrl}/${locale}/servicios-complementarios#service`,
     name: locale === "es" ? "Servicios Complementarios" : "Complementary Services",
     description: t("serviciosComplementarios.description"),
+    url: `${baseUrl}/${locale}/servicios-complementarios`,
+    image: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/seguro/cebertura-viaje.webp`,
+      width: 1200,
+      height: 630,
+    },
     provider: {
       "@type": "FinancialService",
+      "@id": `${baseUrl}/#organization`,
       name: "IFS Broker",
       url: baseUrl,
     },
+    potentialAction: {
+      "@type": "ServeAction",
+      actionStatus: "https://schema.org/PotentialActionStatus",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/${locale}/servicios-complementarios#contact`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      "query-input": [
+        { "@type": "PropertyValueSpecification", valueName: "name", valueRequired: true },
+        { "@type": "PropertyValueSpecification", valueName: "email", valueRequired: true },
+      ],
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${baseUrl}/${locale}/servicios-complementarios#webpage`,
     url: `${baseUrl}/${locale}/servicios-complementarios`,
+    name: locale === "es" ? "Servicios Complementarios" : "Complementary Services",
+    description: t("serviciosComplementarios.description"),
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about: { "@id": `${baseUrl}/#organization` },
+    inLanguage: locale,
   };
 
   const breadcrumbSchema = {
@@ -85,6 +121,7 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
     <NextIntlClientProvider messages={mergedMessages}>
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <HeroComplement

@@ -56,14 +56,51 @@ export default async function SegurosDeVidaPage({ params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${baseUrl}/${locale}/seguros-de-vida#service`,
     name: locale === "es" ? "Seguros de Vida Internacional" : "International Life Insurance",
     description: t("heroSubsection.description"),
+    url: `${baseUrl}/${locale}/seguros-de-vida`,
+    image: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/seguro/seguro-de-vida.webp`,
+      width: 1200,
+      height: 630,
+    },
     provider: {
       "@type": "FinancialService",
+      "@id": `${baseUrl}/#organization`,
       name: "IFS Broker",
       url: baseUrl,
     },
+    potentialAction: {
+      "@type": "ServeAction",
+      actionStatus: "https://schema.org/PotentialActionStatus",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/${locale}/seguros-de-vida#form`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      "query-input": [
+        { "@type": "PropertyValueSpecification", valueName: "name", valueRequired: true },
+        { "@type": "PropertyValueSpecification", valueName: "email", valueRequired: true },
+        { "@type": "PropertyValueSpecification", valueName: "phone", valueRequired: false },
+      ],
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${baseUrl}/${locale}/seguros-de-vida#webpage`,
     url: `${baseUrl}/${locale}/seguros-de-vida`,
+    name: locale === "es" ? "Seguros de Vida Internacional" : "International Life Insurance",
+    description: t("heroSubsection.description"),
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about: { "@id": `${baseUrl}/#organization` },
+    inLanguage: locale,
   };
 
   const breadcrumbSchema = {
@@ -88,6 +125,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
     <NextIntlClientProvider messages={mergedMessages}>
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/lydl9g18t3.js" type="module" strategy="afterInteractive" />

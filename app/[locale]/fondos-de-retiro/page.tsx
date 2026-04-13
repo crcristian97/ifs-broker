@@ -55,14 +55,52 @@ export default async function FondosDeRetiroPage({ params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${baseUrl}/${locale}/fondos-de-retiro#service`,
     name: locale === "es" ? "Fondos de Retiro e Inversión" : "Retirement Funds & Investments",
     description: t("heroSubsection.retirementDescription"),
+    url: `${baseUrl}/${locale}/fondos-de-retiro`,
+    image: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/retiro/fondos-de-retiro.webp`,
+      width: 1200,
+      height: 630,
+    },
     provider: {
       "@type": "FinancialService",
+      "@id": `${baseUrl}/#organization`,
       name: "IFS Broker",
       url: baseUrl,
     },
+    potentialAction: {
+      "@type": "ServeAction",
+      actionStatus: "https://schema.org/PotentialActionStatus",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/${locale}/fondos-de-retiro#investment-questionnaire`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      "query-input": [
+        { "@type": "PropertyValueSpecification", valueName: "name", valueRequired: true },
+        { "@type": "PropertyValueSpecification", valueName: "email", valueRequired: true },
+        { "@type": "PropertyValueSpecification", valueName: "phone", valueRequired: false },
+        { "@type": "PropertyValueSpecification", valueName: "investment_amount", valueRequired: false },
+      ],
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${baseUrl}/${locale}/fondos-de-retiro#webpage`,
     url: `${baseUrl}/${locale}/fondos-de-retiro`,
+    name: locale === "es" ? "Fondos de Retiro e Inversión" : "Retirement Funds & Investments",
+    description: t("heroSubsection.retirementDescription"),
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about: { "@id": `${baseUrl}/#organization` },
+    inLanguage: locale,
   };
 
   const breadcrumbSchema = {
@@ -86,6 +124,7 @@ export default async function FondosDeRetiroPage({ params }: Props) {
     <NextIntlClientProvider messages={mergedMessages}>
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/rwf6keju04.js" type="module" strategy="afterInteractive" />

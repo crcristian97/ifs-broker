@@ -60,10 +60,23 @@ export default async function Home({ params }: Props) {
     ],
   };
 
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${baseUrl}/${locale}#webpage`,
+    url: `${baseUrl}/${locale}`,
+    name: t("seo.home.title"),
+    description: t("seo.home.description"),
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about: { "@id": `${baseUrl}/#organization` },
+    inLanguage: locale,
+  };
+
   return (
     <NextIntlClientProvider messages={mergedMessages}>
       <main className="relative">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
         <Navbar />
         <HomeHeroLayout allianceText={t("serviciosComplementarios.alliance")} />
       </main>

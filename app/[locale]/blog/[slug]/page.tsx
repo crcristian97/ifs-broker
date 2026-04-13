@@ -82,20 +82,55 @@ export default async function BlogSlugPage({
     "@type": "Article",
     headline: metaTitle,
     description: metaDescription,
-    image: imageUrl,
+    image: {
+      "@type": "ImageObject",
+      url: imageUrl,
+      width: 1200,
+      height: 630,
+    },
     datePublished,
-    author: { "@type": "Organization", name: "IFS Broker" },
+    author: {
+      "@type": "Person",
+      name: "IFS Broker Team",
+      url: baseUrl,
+    },
     publisher: {
       "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
       name: "IFS Broker",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/ifs_insurance.png`,
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${baseUrl}/${locale}/blog/${slug}`,
+      "@id": `${baseUrl}/${locale}/blog/${slug}#webpage`,
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${baseUrl}/${locale}/blog/${slug}#webpage`,
+    url: `${baseUrl}/${locale}/blog/${slug}`,
+    name: metaTitle,
+    description: metaDescription,
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about: { "@id": `${baseUrl}/#organization` },
+    inLanguage: locale,
+    potentialAction: {
+      "@type": "ReadAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/${locale}/blog/${slug}`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
     },
   };
 
@@ -118,6 +153,10 @@ export default async function BlogSlugPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
         type="application/ld+json"

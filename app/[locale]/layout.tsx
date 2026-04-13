@@ -4,13 +4,49 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { GlobalSiteBackground } from '@/components/layout/global-site-background';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com';
+
+const logoImageObject = {
+  '@type': 'ImageObject',
+  '@id': `${BASE_URL}/#logo`,
+  url: `${BASE_URL}/ifs_insurance.png`,
+  contentUrl: `${BASE_URL}/ifs_insurance.png`,
+  width: 512,
+  height: 512,
+  caption: 'IFS Broker',
+};
+
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'FinancialService',
+  '@id': `${BASE_URL}/#organization`,
   name: 'IFS Broker',
   description: 'Planificación financiera internacional: seguros de vida, salud y retiro.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com',
-  logo: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com'}/ifs_insurance.png`,
+  url: BASE_URL,
+  logo: logoImageObject,
+  image: logoImageObject,
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${BASE_URL}/#website`,
+  url: BASE_URL,
+  name: 'IFS Broker',
+  description: 'Planificación financiera internacional: seguros de vida, salud y retiro.',
+  publisher: { '@id': `${BASE_URL}/#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${BASE_URL}/es/blog?q={search_term_string}`,
+    },
+    'query-input': {
+      '@type': 'PropertyValueSpecification',
+      valueRequired: true,
+      valueName: 'search_term_string',
+    },
+  },
 };
 
 export default async function LocaleLayout({
@@ -41,6 +77,10 @@ export default async function LocaleLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <NextIntlClientProvider messages={messages}>
         <GlobalSiteBackground>{children}</GlobalSiteBackground>
