@@ -189,6 +189,7 @@ export function Navbar() {
 
           <ButtonPrimary
             href="#contacto"
+            className="mr-3"
             hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
             onClick={(event) => {
               event.preventDefault()
@@ -201,7 +202,7 @@ export function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="text-[#FEFEFE] lg:hidden"
+          className="mr-3 text-[#FEFEFE] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
