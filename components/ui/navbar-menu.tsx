@@ -27,7 +27,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
   className?: string;
 }) => {
-  const activeBg = "bg-[#006FC4]";
+  const activeBg = "bg-[#033163]";
   return (
     <div
       onMouseEnter={() => setActive(item)}
@@ -67,7 +67,7 @@ export const MenuItem = ({
             <motion.div
               transition={transition}
               layoutId="active" // layoutId ensures smooth animation
-              className="overflow-hidden rounded-2xl border border-[#006FC4]/40 bg-[#006FC4] shadow-xl"
+              className="overflow-hidden rounded-2xl border border-[#006FC4] bg-[#033163] shadow-xl"
             >
               <motion.div
                 layout // layout ensures smooth animation

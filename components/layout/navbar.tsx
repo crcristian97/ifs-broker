@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
-import { ButtonPrimary } from "@/components/ui/button-primary"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { cn } from "@/lib/utils"
 import { getLenis } from "@/lib/lenis"
@@ -186,18 +185,14 @@ export function Navbar() {
         {/* Right side */}
         <div ref={rightRef} className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher locale={locale} onLanguageChange={handleLanguageChange} />
-
-          <ButtonPrimary
-            href="#contacto"
-            className="mr-3"
-            hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-            onClick={(event) => {
-              event.preventDefault()
-              scrollToSection("contacto")
-            }}
+        
+          <button
+            type="button"
+            className="mr-3 rounded-md border border-[#006fc4] bg-[#006fc4] px-3 py-1.5 text-lg font-normal text-white transition-colors hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163] cursor-pointer font-semibold"
+            onClick={() => scrollToSection("contacto")}
           >
             {t("nav.contacto")}
-          </ButtonPrimary>
+          </button>
         </div>
 
         {/* Mobile menu toggle */}
