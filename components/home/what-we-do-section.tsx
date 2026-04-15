@@ -5,12 +5,18 @@ import { FeatureCard } from "../ui/feature-card";
 import { FadeInUp } from "../ui/fade-in-up";
 import { ShieldCheck, Handshake  } from "lucide-react";
 import ElegantCarousel from "../ui/elegant-carousel";
+import { ParticlesSkyBackground } from "../ui/particles-sky-background";
 import { cn } from "@/lib/utils";
 import { siteContainer } from "@/lib/site-layout";
 export function WhatWeDoSection() {
   const t = useTranslations("whatWeDo");
   return (
     <section className="relative w-full overflow-hidden py-6">
+      <ParticlesSkyBackground
+        className="absolute! inset-0 z-0"
+        variant="light"
+        interactive={false}
+      />
       <div
         className={cn(
           siteContainer,
@@ -50,7 +56,7 @@ export function WhatWeDoSection() {
           </FadeInUp>
         </div>
       </div>
-      <div className="mt-10 md:mt-20">
+      <div className="relative z-10 mt-10 md:mt-20">
         <ElegantCarousel />
       </div>
     </section>

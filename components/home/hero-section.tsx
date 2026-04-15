@@ -10,9 +10,10 @@ import { cn } from "@/lib/utils";
 import { siteContainer } from "@/lib/site-layout";
 
 const HERO_VIDEOS = [
-  "/hero/video-ifs.webm",
-  "/hero/ifs-broker-video.webm",
   "/hero/ifs-broker.webm",
+  "/hero/ifs-broker-video.webm",
+  "/hero/video-ifs.webm"
+  ,
 ] as const;
 
 const AUTO_ADVANCE_MS = 8000;

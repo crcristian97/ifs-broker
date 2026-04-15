@@ -53,10 +53,7 @@ export function Footer() {
     },
     {
       links: [{ href: "/trabaja-con-nosotros", label: tNav("trabajaConNosotros"), bold: true }],
-    },
-    {
-      links: [{ href: "/#contacto", label: tNav("contacto"), bold: true }],
-    },
+    }
   ]
 
   return (

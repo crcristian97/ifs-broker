@@ -2,6 +2,36 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { LenisSmoothScroll } from '@/components/lenis-smooth-scroll';
 
+const speculationRules = {
+  prerender: [
+    {
+      where: {
+        and: [
+          {
+            or: [
+              { href_matches: '/' },
+              { href_matches: '/es' },
+              { href_matches: '/en' },
+              { href_matches: '/es/seguros-de-vida' },
+              { href_matches: '/en/seguros-de-vida' },
+              { href_matches: '/es/salud-internacional' },
+              { href_matches: '/en/salud-internacional' },
+              { href_matches: '/es/fondos-de-retiro' },
+              { href_matches: '/en/fondos-de-retiro' },
+              { href_matches: '/es/servicios-complementarios' },
+              { href_matches: '/en/servicios-complementarios' },
+            ],
+          },
+          { not: { href_matches: '/logout' } },
+          { not: { selector_matches: '[rel~=nofollow]' } },
+          { not: { selector_matches: '[data-no-prerender]' } },
+        ],
+      },
+      eagerness: 'moderate',
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ifsbroker.com'),
   title: {
@@ -50,6 +80,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(speculationRules) }}
         />
       </head>
       <body className="antialiased">
