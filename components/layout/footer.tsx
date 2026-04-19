@@ -28,7 +28,7 @@ const features = [
   },
   {
     icon: <MapPin className="h-5 w-5 shrink-0" />,
-    title: "Location",
+    title: "16192 Coastal Highway, Lewes, Delaware 19958, Sussex",
   },
 ]
 
@@ -68,17 +68,25 @@ export function Footer() {
       <div className={cn(siteContainer, "relative z-10 flex flex-col gap-10 pt-12")}>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
           <div className="flex flex-col items-center gap-6 lg:items-start">
-            <div className="shrink-0">
-              <Image src="/logo-footer.svg" alt="IFS Insurance" width={420} height={2520} />
+            <div className="w-[190px] shrink-0 sm:w-[210px] md:w-[230px] lg:w-[250px]">
+              <Image
+                src="/logo-footer.svg"
+                alt="IFS Insurance"
+                width={250}
+                height={1500}
+                className="h-auto w-full"
+              />
             </div>
-            <div className="flex w-full justify-end">
-              <p className="text-base sm:text-lg md:text-2xl font-regular text-[#FFFFFF] text-right">
+            <div className="flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
+              <p className="text-left text-sm font-regular text-[#FFFFFF]">
                 {t("designFuture")}
               </p>
             </div>
+       
+       
           </div>
 
-          <div className="flex w-full min-w-0 flex-col items-center gap-6 text-center lg:min-w-0 lg:flex-1 lg:items-end lg:text-right">
+          <div className="flex w-full min-w-0 flex-col items-center gap-6 text-center lg:min-w-0 lg:flex-1 lg:items-end lg:pt-10 lg:text-right">
             
 
             <nav aria-label={t("navAriaLabel")} className="w-full min-w-0">
@@ -124,7 +132,31 @@ export function Footer() {
       </div>
 
       <div className={cn(siteContainer, "relative z-10 flex justify-center pb-2")}>
-        <FeatureBar features={features} animate={false} />
+        <FeatureBar
+          features={features}
+          animate={false}
+          className="max-w-6xl md:flex-nowrap md:items-center md:justify-between"
+        />
+      </div>
+
+      <div className={cn(siteContainer, "relative z-10 mt-2 flex justify-center pb-2")}>
+        <div className="flex items-center gap-4 text-xs text-white/70">
+          <Link
+            href="/politicas-de-privacidad"
+            className="transition-colors hover:text-white hover:underline"
+          >
+            Políticas de Privacidad
+          </Link>
+          <span aria-hidden="true" className="text-white/40">
+            |
+          </span>
+          <Link
+            href="/terminos-y-condiciones"
+            className="transition-colors hover:text-white hover:underline"
+          >
+            Términos y Condiciones
+          </Link>
+        </div>
       </div>
 
       <ContactModal
