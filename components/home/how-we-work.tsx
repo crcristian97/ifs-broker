@@ -98,7 +98,7 @@ export default function HowWeWork() {
             }}
             className="w-full"
           >
-            <StepperNav className="grid! w-full grid-cols-2 gap-x-3 gap-y-8 md:flex! md:flex-row md:items-stretch md:gap-0">
+            <StepperNav className="grid! w-full grid-cols-2 gap-3 md:flex! md:flex-row md:items-stretch md:gap-3">
               {steps.map((step, index) => (
                 <StepperItem
                   key={index}
@@ -107,21 +107,25 @@ export default function HowWeWork() {
                 >
                   <StepperTrigger
                     className={cn(
-                      "h-auto w-full rounded-none! flex-col gap-2.5 border-0 bg-transparent px-2 py-3 text-center shadow-none sm:px-3",
+                      "group/trigger h-auto w-full rounded-2xl! flex-col gap-2.5 border border-transparent bg-transparent px-3 py-4 text-center shadow-none transition-all duration-300 sm:px-4",
+                      "hover:border-[#033163]/10 hover:bg-[#033163] hover:shadow-lg",
+                      "hover:text-white",
+                      "data-[state=active]:border-[#033163]/10 data-[state=active]:bg-[#033163] data-[state=active]:text-white data-[state=active]:shadow-md",
+                      "data-[state=completed]:border-[#033163]/10 data-[state=completed]:bg-[#033163] data-[state=completed]:text-white data-[state=completed]:shadow-md",
                       "focus-visible:ring-0 focus-visible:ring-offset-0",
                     )}
                   >
-                    <StepperIndicator className="mx-auto size-10 shrink-0 text-base font-semibold md:size-11">
+                    <StepperIndicator className="mx-auto size-10 shrink-0 text-base font-semibold transition-transform duration-300 group-hover/trigger:scale-105 group-hover/trigger:bg-white group-hover/trigger:text-[#033163] group-data-[state=active]/step:bg-white group-data-[state=active]/step:text-[#033163] group-data-[state=completed]/step:bg-white group-data-[state=completed]/step:text-[#033163] md:size-11">
                       {index + 1}
                     </StepperIndicator>
                     <div className="flex min-w-0 flex-col gap-1">
-                      <span className="text-xs font-medium uppercase tracking-wider text-[#006FC4] md:text-base">
+                      <span className="text-xs font-medium uppercase tracking-wider text-[#006FC4] transition-colors duration-300 group-hover/trigger:text-[#91D8F7] group-data-[state=active]/step:text-[#91D8F7] group-data-[state=completed]/step:text-[#91D8F7] md:text-base">
                         {stepMeta} {index + 1}
                       </span>
-                      <StepperTitle className="text-sm font-semibold text-[#033163] md:text-base">
+                      <StepperTitle className="text-sm font-semibold text-[#033163] transition-colors duration-300 group-hover/trigger:text-white group-data-[state=active]/step:text-white group-data-[state=completed]/step:text-white md:text-base">
                         {step.title}
                       </StepperTitle>
-                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 md:text-base">
+                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 transition-colors duration-300 group-hover/trigger:text-white/90 group-data-[state=active]/step:text-white/90 group-data-[state=completed]/step:text-white/90 md:text-base">
                         {step.description}
                       </StepperDescription>
                     </div>
