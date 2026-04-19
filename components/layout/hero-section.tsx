@@ -36,7 +36,7 @@ export function HomeHeroLayout({ allianceText = "" }: HomeHeroLayoutProps) {
       <div className="w-full bg-[#e6f3fa]">
         <div className={cn(siteContainer, "py-4 md:py-5")}>
           <div className="flex w-full items-center justify-center rounded bg-transparent py-2 text-center">
-            <p className="max-w-5xl text-xl font-medium  text-[#000000] sm:text-2xl md:text-2xl lg:text-3xl">
+            <p className="max-w-5xl text-xl font-medium  text-[#000000] text-xl">
               {allianceText}
             </p>
           </div>
