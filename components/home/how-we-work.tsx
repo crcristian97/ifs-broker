@@ -78,7 +78,7 @@ export default function HowWeWork() {
             {t("title")}
           </h4>
           <p
-            className="text-3xl font-regular leading-tight tracking-widest text-[#033163] sm:text-4xl md:text-4xl lg:text-4xl"
+            className="text-3xl font-regular tracking-widest text-[#033163] sm:text-4xl md:text-4xl lg:text-4xl"
             style={{
               fontFamily: "var(--font-heading)",
             }}
@@ -125,7 +125,7 @@ export default function HowWeWork() {
                       <StepperTitle className="text-sm font-semibold text-[#033163] transition-colors duration-300 group-hover/trigger:text-white group-data-[state=active]/step:text-white group-data-[state=completed]/step:text-white md:text-base">
                         {step.title}
                       </StepperTitle>
-                      <StepperDescription className="text-left text-xs leading-snug text-[#033163]/80 transition-colors duration-300 group-hover/trigger:text-white/90 group-data-[state=active]/step:text-white/90 group-data-[state=completed]/step:text-white/90 md:text-base">
+                      <StepperDescription className="text-left text-xs text-[#033163]/80 transition-colors duration-300 group-hover/trigger:text-white/90 group-data-[state=active]/step:text-white/90 group-data-[state=completed]/step:text-white/90 md:text-base">
                         {step.description}
                       </StepperDescription>
                     </div>

@@ -22,7 +22,7 @@ interface QuestionSelectProps {
 function QuestionSelect({ label, options, value, onChange, placeholder = "Seleccionar" }: QuestionSelectProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-base text-[#000A15] leading-relaxed">
+      <label className="text-base text-[#000A15]">
         {label}
       </label>
       <select
@@ -97,7 +97,7 @@ export function InvestmentQuestionnaireForm() {
     <div className="w-full max-w-3xl mx-auto relative">
       <div className="mb-8 text-center">
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular leading-tight uppercase tracking-widest"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular uppercase tracking-widest"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>
@@ -192,7 +192,7 @@ export function InvestmentQuestionnaireForm() {
         </div>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl p-4 md:p-5">
-          <p className="text-base text-[#006FC4] font-regular leading-relaxed flex-1">
+          <p className="text-base text-[#006FC4] font-regular flex-1">
             {t("infoText")}
           </p>
         </div>

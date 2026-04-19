@@ -32,7 +32,7 @@ export default function QRPage() {
 
         <div className="w-10 h-0.5 bg-[#032363] rounded-full" />
 
-        <p className="text-sm text-center text-[#032363] font-medium leading-snug">
+        <p className="text-sm text-center text-[#032363] font-medium">
           Escaneá el código para<br />conocer todos nuestros servicios
         </p>
 

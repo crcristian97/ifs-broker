@@ -314,7 +314,7 @@ export default function ElegantCarousel() {
                   }}
                 />
               </div>
-              <span className="min-w-0 flex-1 whitespace-normal break-words leading-snug">
+              <span className="min-w-0 flex-1 whitespace-normal break-words">
                 {slide.title}
               </span>
             </button>

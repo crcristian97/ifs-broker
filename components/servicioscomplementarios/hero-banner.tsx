@@ -30,7 +30,7 @@ export function HeroBanner() {
             <p className="mb-3 text-3xl font-regular text-[white]" >
               {t("paragraph2")}
             </p>
-            <p className="text-lg text-[white] leading-relaxed ">
+            <p className="text-lg text-[white] ">
               {t("paragraph1")}
             </p>
           </div>

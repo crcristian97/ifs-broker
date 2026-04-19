@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
 const fontStyle = { fontFamily: "var(--font-heading)" };
-
 export function SaludTimelineDemo() {
   const t = useTranslations("saludTimeline");
   const data = [
@@ -31,7 +30,7 @@ export function SaludTimelineDemo() {
             <p className="mb-2 text-2xl font-regular text-[white] md:text-3xl ">
               {t("tab1Block1Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[white] md:text-base">
+            <p className="text-sm text-[white] md:text-base">
               {t("tab1Block1Desc")}
             </p>
           </div>
@@ -39,7 +38,7 @@ export function SaludTimelineDemo() {
             <p className="mb-2 text-2xl font-regular text-[white] md:text-3xl ">
               {t("tab1Block2Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[white] md:text-base">
+            <p className="text-sm text-[white] md:text-base">
               {t("tab1Block2Desc")}
             </p>
           </div>
@@ -69,12 +68,12 @@ export function SaludTimelineDemo() {
               <p className="mb-2 text-3xl font-regular text-[white] md:text-3xl ">
               {t("tab2Block1Title")}
             </p>
-            <p className="text-sm leading-relaxed text-[white] md:text-base">
+            <p className="text-sm text-[white] md:text-base">
               {t("tab2Block1Desc")}
             </p>
           </div>
           <div>
-            <p className="text-sm leading-relaxed text-[white] md:text-base">
+            <p className="text-sm text-[white] md:text-base">
               {t("tab2Block2Desc")}
             </p>
           </div>

@@ -92,7 +92,7 @@ export function RangeSlider({
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-base text-[#033163] leading-relaxed">
+      <label className="text-base text-[#033163]">
         {label}
       </label>
       <div className="relative pb-2">

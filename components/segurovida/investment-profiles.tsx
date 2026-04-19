@@ -97,7 +97,7 @@ export function InvestmentProfiles({
             >
               {item.title}
             </motion.h3>
-            <p className="text-sm md:text-base leading-relaxed text-[#033163]">
+            <p className="text-sm md:text-base text-[#033163]">
               {item.description}
             </p>
           </div>

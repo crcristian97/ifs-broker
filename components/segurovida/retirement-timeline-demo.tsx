@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
 const fontStyle = { fontFamily: "var(--font-heading)" };
-
 export function RetirementTimelineDemo() {
   const t = useTranslations("retirementTimeline");
   const data = [
@@ -31,7 +30,7 @@ export function RetirementTimelineDemo() {
             <p className="mb-3 text-xl sm:text-2xl md:text-3xl font-regular text-[white]">
               {t("tab1Desc1")}
             </p>
-            <p className="text-lg text-[white] leading-relaxed ">
+            <p className="text-lg text-[white] ">
               {t("tab1Desc2")}
             </p>
           </div>
@@ -63,7 +62,7 @@ export function RetirementTimelineDemo() {
             <p className="mb-3 text-3xl font-regular text-[white] ">
               {t("tab2Desc1")}
             </p>
-            <p className="text-lg text-[white] leading-relaxed ">
+            <p className="text-lg text-[white] ">
               {t("tab2Desc2")}
             </p>
           </div>
@@ -96,7 +95,7 @@ export function RetirementTimelineDemo() {
             <p className="mb-3 text-3xl font-regular text-[white] ">
               {t("tab3Desc1")}
             </p>
-            <p className="text-lg text-[white] leading-relaxed   ">
+            <p className="text-lg text-[white]   ">
               {t("tab3Desc2")}
             </p>
           </div>

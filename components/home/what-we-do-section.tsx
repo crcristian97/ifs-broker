@@ -31,7 +31,7 @@ export function WhatWeDoSection() {
 
         <FadeInUp delay={0.15}>
           <h3
-            className="text-[#006FC4] text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular mb-5 max-w-4xl leading-tight tracking-widest"
+            className="text-[#006FC4] text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular mb-5 max-w-4xl tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")} <span className="text-[#033163]">{t("labelHighlight")}</span>
@@ -40,7 +40,7 @@ export function WhatWeDoSection() {
 
         <FadeInUp delay={0.3}>
           <p
-            className="text-[#033163] text-base sm:text-lg md:text-xl mb-10 max-w-3xl leading-relaxed font-regular"
+            className="text-[#033163] text-base sm:text-lg md:text-xl mb-10 max-w-3xl font-regular"
             style={{ fontFamily: "var(--font-noto-sans), sans-serif" }}
           >
             {t("description")}

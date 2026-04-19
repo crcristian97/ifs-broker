@@ -27,7 +27,7 @@ export function HeroPlanificacion() {
               {t("label")}
             </p>
             <h3
-              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular uppercase tracking-tighter leading-tight"
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular uppercase tracking-tighter"
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "0.02em",

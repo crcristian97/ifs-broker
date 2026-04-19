@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
 
 const fontStyle = { fontFamily: "var(--font-heading)" };
-
 export function TimelineDemo() {
   const t = useTranslations("timelineDemo");
   const tSolutions = useTranslations("solutions");
@@ -35,7 +34,7 @@ export function TimelineDemo() {
             <p className="mb-2 text-xl md:text-xl font-regular text-[white]" >
               {t("tab1Subtitle")}
             </p>
-            <p className="text-base md:text-lg font-regular text-[white] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[white]">
               {t("tab1Body")}
             </p>
           </div>
@@ -64,7 +63,7 @@ export function TimelineDemo() {
             <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab2Desc")}
             </p>
-            <p className="text-base md:text-lg  font-regular text-[white] leading-relaxed">
+            <p className="text-base md:text-lg  font-regular text-[white]">
               {t("tab2Body")}
             </p>
           </div>
@@ -93,7 +92,7 @@ export function TimelineDemo() {
             <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab3Desc")}
             </p>
-            <p className="text-base md:text-lg font-regular text-[white] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[white]">
               {t("tab3Body")}
             </p>
           </div>
@@ -122,7 +121,7 @@ export function TimelineDemo() {
               <p className="mb-2 text-lg sm:text-xl md:text-2xl font-regular text-[white]">
               {t("tab4Desc")}
             </p>
-            <p className="text-base md:text-lg font-regular text-[white] leading-relaxed">
+            <p className="text-base md:text-lg font-regular text-[white]">
               {t("tab4Body")}
             </p>
           </div>

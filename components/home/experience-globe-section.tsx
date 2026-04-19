@@ -70,7 +70,7 @@ export function ExperienceGlobeSection() {
       >
         <div ref={textRef} className="flex min-w-0 max-w-3xl flex-col items-start justify-center text-left">
           <h2
-            className="mb-4 text-2xl leading-tight font-regular tracking-widest text-[#91D8F7] sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="mb-4 text-2xl font-regular tracking-widest text-[#91D8F7] sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl"
             style={{ fontFamily: "var(--font-heading)" }}
             
           >
@@ -78,13 +78,13 @@ export function ExperienceGlobeSection() {
           </h2>
 
           <p
-            className="mb-4 text-base leading-relaxed text-[#FFFFFF] sm:text-lg md:text-xl"
+            className="mb-4 text-base text-[#FFFFFF] sm:text-lg md:text-xl"
             style={{ fontFamily: "var(--font-noto-sans)" }}
           >
             {t("description1")}
             <span className="text-[#91D8F7]">{t("description1highlight")}</span>
           </p>
-          <p className="text-sm leading-relaxed text-[#FFFFFF] sm:text-base md:text-lg">
+          <p className="text-sm text-[#FFFFFF] sm:text-base md:text-lg">
             {t("description2")}
           </p>
         </div>

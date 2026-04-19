@@ -48,9 +48,9 @@ export default function AnimatedHeadline({
 
   return (
     <div ref={ref}>
-      <Tag className={cn("leading-[1.12]", className)} style={style}>
+      <Tag className={cn(className)} style={style}>
         {lines.map((line, index) => (
-          <div key={index} className="line overflow-hidden leading-[inherit]">
+          <div key={index} className="line overflow-hidden">
             <span className="block">{line}</span>
           </div>
         ))}

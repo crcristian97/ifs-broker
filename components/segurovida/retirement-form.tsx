@@ -38,7 +38,7 @@ export function RetirementForm() {
     >
       <div className="mb-8 text-center">
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular leading-tight tracking-widest uppercase"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular tracking-widest uppercase"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           <span className="text-[#006FC4]">{t("title1")}</span>
@@ -80,7 +80,7 @@ export function RetirementForm() {
           />
 
           <div className="flex flex-col gap-2">
-            <label className="text-base text-[#033163] leading-relaxed">
+            <label className="text-base text-[#033163]">
               {t("labelLiquidAssets")}
             </label>
             <input
@@ -93,7 +93,7 @@ export function RetirementForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-base text-[#033163] leading-relaxed">
+            <label className="text-base text-[#033163]">
               {t("labelExistingInsurance")}
             </label>
             <input
@@ -108,7 +108,7 @@ export function RetirementForm() {
 
         {/* Result */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
-          <p className="text-base text-[#000A15] font-semibold leading-relaxed flex-1">
+          <p className="text-base text-[#000A15] font-semibold flex-1">
             {t("resultText")}
           </p>
           <div className="rounded-lg bg-[#91D8F7] border border-[#91D8F7] px-5 py-3 min-w-[180px] text-center">

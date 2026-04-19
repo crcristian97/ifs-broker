@@ -154,7 +154,7 @@ export default async function SaludInternacionalPage({ params }: Props) {
       <div className="w-full bg-[#e6f3fa]">
         <div className={cn(siteContainer, "py-8")}>
           <div className="flex min-h-[120px] w-full items-center justify-center rounded bg-transparent py-6 text-center">
-            <p className="text-[#1163b2] text-2xl font-regular leading-snug max-w-3xl mx-auto">
+            <p className="text-[#1163b2] text-2xl font-regular max-w-3xl mx-auto">
               {t("serviciosComplementarios.alliance")}
             </p>
           </div>

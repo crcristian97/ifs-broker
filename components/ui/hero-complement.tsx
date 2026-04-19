@@ -63,7 +63,7 @@ export function HeroComplement({
           >
             <div className="mb-8 flex max-w-4xl flex-col items-start gap-6 lg:mb-12">
               <h1
-                className="text-xl font-regular leading-tight tracking-widest text-[#FEFEFE] sm:text-2xl lg:text-3xl xl:text-4xl"
+                className="text-xl font-regular tracking-widest text-[#FEFEFE] sm:text-2xl lg:text-3xl xl:text-4xl"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <span className="text-[#ffffff]">{titlePrefix}</span>

@@ -105,7 +105,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       "shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)]",
                     )}
                   >
-                    <div className="relative z-10">{item.content}</div>
+                    <div className="relative z-10 text-base md:text-lg">{item.content}</div>
                   </div>
                 </div>
               </div>

@@ -84,7 +84,7 @@ export default function BlogSection() {
       <div className={cn(siteContainer, "relative z-10")}>
         <div ref={headingRef} className="mb-8 sm:mb-12 text-left max-w-3xl">
           <h2
-            className="font-regular text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight text-[#006fc4] leading-tight tracking-widest"
+            className="font-regular text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight text-[#006fc4] tracking-widest"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             <span className="text-[#006fc4]">{t("title1")}</span>
@@ -125,7 +125,7 @@ export default function BlogSection() {
                         }}
                       >
                         {/* Title: white, text-left, at beginning */}
-                        <span className="text-white font-bold text-lg leading-snug text-left">
+                        <span className="text-white font-bold text-lg text-left">
                           {article.title}
                         </span>
                       </div>
@@ -153,7 +153,7 @@ export default function BlogSection() {
                     <p className="mb-1 text-black text-sm font-semibold sm:text-base">
                       {article.subtitle}
                     </p>
-                    <p className="mb-4 text-black text-xs leading-relaxed sm:mb-6 sm:text-sm">
+                    <p className="mb-4 text-black text-xs sm:mb-6 sm:text-sm">
                       {article.description}
                     </p>
                     {/* Read More Link and Date */}

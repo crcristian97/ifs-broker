@@ -106,7 +106,7 @@ export function HeroSubsection({
                   )}
                 >
                   <div className="relative z-10 flex flex-col justify-start">
-                    <h1 className="mb-4 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular tracking-tight leading-none">
+                    <h1 className="mb-4 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-regular tracking-tight">
                       <span className={prefixColorClass}>{titlePrefix}</span>
                       <br />
                       <span className={highlightColorClass}>{titleHighlight}</span>

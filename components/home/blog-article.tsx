@@ -52,7 +52,7 @@ export default function BlogArticle({ articleId }: BlogArticleProps) {
           {category}
         </p>
         <h1
-          className="text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-5xl"
+          className="text-3xl font-semibold text-black sm:text-4xl md:text-5xl"
          
         >
           {title}
@@ -76,7 +76,7 @@ export default function BlogArticle({ articleId }: BlogArticleProps) {
         />
       </div>
 
-      <div className="space-y-8 text-sm leading-relaxed text-black sm:text-base">
+      <div className="space-y-8 text-sm text-black sm:text-base">
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-black sm:text-2xl">
             {heading}
