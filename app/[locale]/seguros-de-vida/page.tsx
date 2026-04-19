@@ -129,25 +129,27 @@ export default async function SegurosDeVidaPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/lydl9g18t3.js" type="module" strategy="afterInteractive" />
-      <Navbar />
-      <section className={cn("w-full bg-[#033163]", "pb-8 pt-28 md:pt-32")}>
-        <div className={cn(siteContainer)}>
+      <Navbar disableEntranceAnimation />
+      <section className={cn("w-full", "pb-14 pt-32 md:pb-20 md:pt-36")}>
+        <div className={cn(siteContainer, "flex justify-center")}>
           <style>{`
             wistia-player[media-id='lydl9g18t3']:not(:defined) {
               background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lydl9g18t3/swatch');
               display: block;
               filter: blur(5px);
               padding-top: 56.25%;
-              border-radius: 1.25rem;
+              border-radius: 1rem;
               overflow: hidden;
             }
           `}</style>
-          <div className="overflow-hidden rounded-3xl shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `<wistia-player media-id="lydl9g18t3" aspect="1.7777777777777777" volume="1"></wistia-player>`,
-              }}
-            />
+          <div className="relative flex w-full max-w-4xl flex-col items-stretch overflow-hidden rounded-[32px] border border-[#006FC4]/35 bg-linear-to-br from-[#033163] via-[#044a8c] to-[#006FC4] p-3 shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)] md:p-4 lg:p-6">
+            <div className="overflow-hidden rounded-2xl">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<wistia-player media-id="lydl9g18t3" aspect="1.7777777777777777" volume="1"></wistia-player>`,
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

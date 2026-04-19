@@ -38,7 +38,11 @@ const scrollToSection = (id: string) => {
   })
 }
 
-export function Navbar() {
+type NavbarProps = {
+  disableEntranceAnimation?: boolean
+}
+
+export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
@@ -65,6 +69,7 @@ export function Navbar() {
   }
 
   useEffect(() => {
+    if (disableEntranceAnimation) return
     if (!navRef.current) return
 
     const ctx = gsap.context(() => {
@@ -101,7 +106,7 @@ export function Navbar() {
     }, navRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [disableEntranceAnimation])
 
   return (
     <nav className={cn("absolute top-0 left-0 right-0 z-50 pt-4 md:pt-6", sitePaddingX)}>
