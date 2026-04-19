@@ -1,15 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { ButtonPrimary } from "../ui/button-primary";
 import { ButtonSecondary } from "../ui/button-secondary";
 import { AnimatedGridPattern } from "../ui/background-wedosection";
 import { siteContainer } from "@/lib/site-layout";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 export function HeroPlanificacion() {
   const t = useTranslations("heroPlanificacion");
@@ -20,46 +17,11 @@ export function HeroPlanificacion() {
   const [phone, setPhone] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [errors, setErrors] = useState<{ fullName?: string; email?: string; phone?: string; interests?: string }>({});
-  const topBlockRef = useRef<HTMLDivElement>(null);
-  const bottomBlockRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (topBlockRef.current) {
-        gsap.from(topBlockRef.current, {
-          y: 50,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: topBlockRef.current,
-            start: "top 88%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-      if (bottomBlockRef.current) {
-        gsap.from(bottomBlockRef.current, {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: bottomBlockRef.current,
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-    });
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section id="nosotros" className="w-full  mt-16 md:mt-24 mb-16 md:mb-24">
       <div className={siteContainer}>
-        <div ref={topBlockRef} className="relative bg-[#033163] px-4 py-10 sm:px-8 sm:py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
+        <div className="relative bg-[#033163] px-4 py-10 sm:px-8 sm:py-16 md:px-12 md:py-20 overflow-hidden rounded-t-[56px] rounded-b-none shadow-lg">
           <div className="relative z-10 text-center">
             <p className="text-xl sm:text-2xl md:text-3xl  text-white mb-6 sm:mb-8">
               {t("label")}
@@ -83,7 +45,6 @@ export function HeroPlanificacion() {
         </div>
 
         <div
-          ref={bottomBlockRef}
           className="bg-white px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-14 rounded-b-[56px] shadow-lg border-x-2 border-b-2 border-[#91D8F7]"
           style={{
             background: "linear-gradient(to bottom, #f0f5fa, #ffffff)",

@@ -70,6 +70,39 @@ export default function ElegantCarousel() {
 
   const SLIDE_DURATION = 6000;
   const TRANSITION_DURATION = 800;
+  const HIGHLIGHT_CLASS = "text-[#91D8F7]";
+  const highlightTerms = [
+    "proteger a la familia o empresa",
+    "proteger su patrimonio",
+    "planificar el futuro",
+    "Salud Internacional",
+    "inversiones",
+    "Retiro",
+  ];
+
+  const highlightText = useCallback((text: string) => {
+    if (!text) return text;
+
+    const escapedTerms = highlightTerms.map((term) =>
+      term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+    );
+    const regex = new RegExp(`(${escapedTerms.join("|")})`, "gi");
+    const parts = text.split(regex);
+
+    return parts.map((part, index) => {
+      if (!part) return null;
+      const isMatch = highlightTerms.some(
+        (term) => part.toLowerCase() === term.toLowerCase(),
+      );
+      return isMatch ? (
+        <span key={`${part}-${index}`} className={HIGHLIGHT_CLASS}>
+          {part}
+        </span>
+      ) : (
+        <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>
+      );
+    });
+  }, []);
 
   // Keep refs in sync so the interval closure never goes stale
   useEffect(() => { currentIndexRef.current = currentIndex; }, [currentIndex]);
@@ -176,14 +209,14 @@ export default function ElegantCarousel() {
               }`}
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              {currentSlide.title}
+              {highlightText(currentSlide.title)}
             </h2>
             <p
               className={`text-lg sm:text-xl md:text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
-              {currentSlide.subtitle}
+              {highlightText(currentSlide.subtitle)}
             </p>
           </div>
 
@@ -192,7 +225,7 @@ export default function ElegantCarousel() {
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
-            {currentSlide.description}
+            {highlightText(currentSlide.description)}
           </p>
 
           <div className="mt-4">
