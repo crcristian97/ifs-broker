@@ -85,38 +85,40 @@ export function ExperienceGlobeSection() {
           "relative z-10 flex justify-start pt-20 pb-12 md:pt-28 md:pb-16",
         )}
       >
-        <div
-          ref={textRef}
-          className="ml-[52px] flex min-w-0 max-w-3xl flex-col items-start justify-center text-left"
-        >
-          <h2
-            ref={titleRef}
-            className="mb-4 w-max max-w-full text-2xl font-regular tracking-widest text-[#91D8F7] sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl"
-            style={{ fontFamily: "var(--font-heading)" }}
+        <div className="ml-[52px] flex min-w-0 max-w-3xl flex-col items-start justify-center text-left">
+          <div
+            ref={textRef}
+            className="w-full rounded-2xl bg-black/55 p-5 shadow-lg ring-1 ring-white/10 backdrop-blur-sm sm:p-6 md:p-8"
           >
-            {t("title1")} <span className="text-[#FFFFFF]">{t("title2")}</span>
-          </h2>
+            <h2
+              ref={titleRef}
+              className="mb-4 w-max max-w-full text-2xl font-regular tracking-widest text-[#91D8F7] sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              {t("title1")} <span className="text-[#FFFFFF]">{t("title2")}</span>
+            </h2>
 
-          <p
-            className="mb-4 min-w-0 text-base text-[#FFFFFF] sm:text-lg md:text-xl"
-            style={{
-              fontFamily: "var(--font-noto-sans)",
-              width:
-                paragraphWidthPx != null ? `${paragraphWidthPx}px` : undefined,
-            }}
-          >
-            {t("description1")}
-            <span className="text-[#91D8F7]">{t("description1highlight")}</span>
-          </p>
-          <p
-            className="min-w-0 text-sm text-[#FFFFFF] sm:text-base md:text-lg"
-            style={{
-              width:
-                paragraphWidthPx != null ? `${paragraphWidthPx}px` : undefined,
-            }}
-          >
-            {t("description2")}
-          </p>
+            <p
+              className="mb-4 min-w-0 text-base text-[#FFFFFF] sm:text-lg md:text-xl"
+              style={{
+                fontFamily: "var(--font-noto-sans)",
+                width:
+                  paragraphWidthPx != null ? `${paragraphWidthPx}px` : undefined,
+              }}
+            >
+              {t("description1")}
+              <span className="text-[#91D8F7]">{t("description1highlight")}</span>
+            </p>
+            <p
+              className="min-w-0 text-sm text-[#FFFFFF] sm:text-base md:text-lg"
+              style={{
+                width:
+                  paragraphWidthPx != null ? `${paragraphWidthPx}px` : undefined,
+              }}
+            >
+              {t("description2")}
+            </p>
+          </div>
         </div>
       </div>
     </section>
