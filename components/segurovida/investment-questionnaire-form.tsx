@@ -4,7 +4,7 @@ import { useMemo, useState } from "react"
 import { useTranslations } from "next-intl"
 import { ButtonPrimary } from "../ui/button-primary"
 import { InvestmentProfiles } from "./investment-profiles"
-import { getProfileIdFromQ1 } from "./investment-profile-logic"
+import { getInvestmentProfileId } from "./investment-profile-logic"
 
 type SelectOption = {
   value: string
@@ -51,7 +51,19 @@ export function InvestmentQuestionnaireForm() {
   const [q6, setQ6] = useState("")
   const [q7, setQ7] = useState("")
 
-  const activeProfileId = useMemo(() => getProfileIdFromQ1(q1), [q1])
+  const activeProfileId = useMemo(
+    () =>
+      getInvestmentProfileId({
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6,
+        q7,
+      }),
+    [q1, q2, q3, q4, q5, q6, q7],
+  )
 
   const profileItems = useMemo(
     () => [
@@ -116,10 +128,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ1}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "lt25", label: t("q1_lt25") },
-              { value: "25-50", label: t("q1_25_50") },
-              { value: "50-75", label: t("q1_50_75") },
-              { value: "gt75", label: t("q1_gt75") },
+              { value: "lt20", label: t("q1_lt20") },
+              { value: "r21_40", label: t("q1_21_40") },
+              { value: "r41_60", label: t("q1_41_60") },
+              { value: "r61_80", label: t("q1_61_80") },
+              { value: "gt80", label: t("q1_gt80") },
             ]}
           />
           <QuestionSelect
@@ -128,9 +141,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ2}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "baja", label: t("q2_baja") },
-              { value: "media", label: t("q2_media") },
-              { value: "alta", label: t("q2_alta") },
+              { value: "r12_v25", label: t("q2_r12_v25") },
+              { value: "r10_v15", label: t("q2_r10_v15") },
+              { value: "r8_v10", label: t("q2_r8_v10") },
+              { value: "r6_v5", label: t("q2_r6_v5") },
+              { value: "r4_v2", label: t("q2_r4_v2") },
             ]}
           />
           <QuestionSelect
@@ -139,9 +154,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ3}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "evita", label: t("q3_evita") },
-              { value: "tolera", label: t("q3_tolera") },
-              { value: "busca", label: t("q3_busca") },
+              { value: "att_high_long", label: t("q3_att_high_long") },
+              { value: "att_some_vol", label: t("q3_att_some_vol") },
+              { value: "att_long_not_short", label: t("q3_att_long_not_short") },
+              { value: "att_above_inflation", label: t("q3_att_above_inflation") },
+              { value: "att_preserve", label: t("q3_att_preserve") },
             ]}
           />
           <QuestionSelect
@@ -150,9 +167,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ4}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "estable", label: t("q4_estable") },
-              { value: "crecientes", label: t("q4_crecientes") },
-              { value: "variables", label: t("q4_variables") },
+              { value: "inc_sig", label: t("q4_inc_sig") },
+              { value: "inc_10pct", label: t("q4_inc_10pct") },
+              { value: "above_inf", label: t("q4_above_inf") },
+              { value: "same", label: t("q4_same") },
+              { value: "decrease", label: t("q4_decrease") },
             ]}
           />
           <QuestionSelect
@@ -161,9 +180,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ5}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "preservar", label: t("q5_preservar") },
-              { value: "mixto", label: t("q5_mixto") },
-              { value: "crecer", label: t("q5_crecer") },
+              { value: "short_high", label: t("q5_short_high") },
+              { value: "long_growth", label: t("q5_long_growth") },
+              { value: "sustained", label: t("q5_sustained") },
+              { value: "income", label: t("q5_income") },
+              { value: "preserve_inf", label: t("q5_preserve_inf") },
             ]}
           />
           <QuestionSelect
@@ -172,9 +193,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ6}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "vender", label: t("q6_vender") },
-              { value: "mantener", label: t("q6_mantener") },
-              { value: "aumentar", label: t("q6_aumentar") },
+              { value: "buy_more", label: t("q6_buy_more") },
+              { value: "nothing", label: t("q6_nothing") },
+              { value: "switch_if_year", label: t("q6_switch_if_year") },
+              { value: "switch_cons", label: t("q6_switch_cons") },
+              { value: "sell_all", label: t("q6_sell_all") },
             ]}
           />
           <QuestionSelect
@@ -183,9 +206,11 @@ export function InvestmentQuestionnaireForm() {
             onChange={setQ7}
             placeholder={t("selectPlaceholder")}
             options={[
-              { value: "lt3", label: t("q7_lt3") },
-              { value: "3-7", label: t("q7_3_7") },
-              { value: "7-15", label: t("q7_7_15") },
+              { value: "lt1y", label: t("q7_lt1y") },
+              { value: "y1_3", label: t("q7_1_3") },
+              { value: "y4_6", label: t("q7_4_6") },
+              { value: "y7_10", label: t("q7_7_10") },
+              { value: "y11_15", label: t("q7_11_15") },
               { value: "gt15", label: t("q7_gt15") },
             ]}
           />
@@ -197,19 +222,16 @@ export function InvestmentQuestionnaireForm() {
           </p>
         </div>
         {activeProfileId && selectedProfileItems.length > 0 ? (
-          <>
-           
-            <InvestmentProfiles
-              items={selectedProfileItems}
-              activeProfileId={activeProfileId}
-            />
-          </>
+          <InvestmentProfiles
+            items={selectedProfileItems}
+            activeProfileId={activeProfileId}
+          />
         ) : null}
 
         <div className="relative z-10 flex justify-center mt-8 pb-8">
           <ButtonPrimary
             href="https://calendly.com/administracion-ifs-broker/30min"
-            target="_blank" 
+            target="_blank"
             hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
           >
             {t("button")}
@@ -219,4 +241,3 @@ export function InvestmentQuestionnaireForm() {
     </div>
   )
 }
-
