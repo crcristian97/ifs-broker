@@ -71,7 +71,7 @@ export default function ElegantCarousel() {
   const SLIDE_DURATION = 6000;
   const TRANSITION_DURATION = 800;
   const HIGHLIGHT_CLASS = "text-[#91D8F7]";
-  const highlightTerms = [
+  const baseHighlightTerms = [
     "proteger a la familia o empresa",
     "proteger su patrimonio",
     "planificar el futuro",
@@ -80,29 +80,48 @@ export default function ElegantCarousel() {
     "Retiro",
   ];
 
-  const highlightText = useCallback((text: string) => {
-    if (!text) return text;
+  const highlightTermsFor = (
+    slideIndex: number,
+    field: "title" | "subtitle" | "description",
+  ): string[] => {
+    const terms = [...baseHighlightTerms];
+    if (slideIndex === 0 && field === "title") {
+      terms.push("personas", "People");
+    }
+    return terms;
+  };
 
-    const escapedTerms = highlightTerms.map((term) =>
-      term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-    );
-    const regex = new RegExp(`(${escapedTerms.join("|")})`, "gi");
-    const parts = text.split(regex);
+  const highlightText = useCallback(
+    (
+      text: string,
+      slideIndex: number,
+      field: "title" | "subtitle" | "description",
+    ) => {
+      if (!text) return text;
 
-    return parts.map((part, index) => {
-      if (!part) return null;
-      const isMatch = highlightTerms.some(
-        (term) => part.toLowerCase() === term.toLowerCase(),
+      const terms = highlightTermsFor(slideIndex, field);
+      const escapedTerms = terms.map((term) =>
+        term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
       );
-      return isMatch ? (
-        <span key={`${part}-${index}`} className={HIGHLIGHT_CLASS}>
-          {part}
-        </span>
-      ) : (
-        <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>
-      );
-    });
-  }, []);
+      const regex = new RegExp(`(${escapedTerms.join("|")})`, "gi");
+      const parts = text.split(regex);
+
+      return parts.map((part, index) => {
+        if (!part) return null;
+        const isMatch = terms.some(
+          (term) => part.toLowerCase() === term.toLowerCase(),
+        );
+        return isMatch ? (
+          <span key={`${part}-${index}`} className={HIGHLIGHT_CLASS}>
+            {part}
+          </span>
+        ) : (
+          <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>
+        );
+      });
+    },
+    [],
+  );
 
   // Keep refs in sync so the interval closure never goes stale
   useEffect(() => { currentIndexRef.current = currentIndex; }, [currentIndex]);
@@ -209,14 +228,14 @@ export default function ElegantCarousel() {
               }`}
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              {highlightText(currentSlide.title)}
+              {highlightText(currentSlide.title, currentIndex, "title")}
             </h2>
             <p
               className={`text-lg sm:text-xl md:text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
-              {highlightText(currentSlide.subtitle)}
+              {highlightText(currentSlide.subtitle, currentIndex, "subtitle")}
             </p>
           </div>
 
@@ -225,7 +244,7 @@ export default function ElegantCarousel() {
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
           >
-            {highlightText(currentSlide.description)}
+            {highlightText(currentSlide.description, currentIndex, "description")}
           </p>
 
           <div className="mt-4">
