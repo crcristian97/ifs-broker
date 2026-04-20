@@ -82,7 +82,7 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      <NextIntlClientProvider messages={messages}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         <GlobalSiteBackground>{children}</GlobalSiteBackground>
       </NextIntlClientProvider>
     </>

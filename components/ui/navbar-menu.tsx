@@ -27,7 +27,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
   className?: string;
 }) => {
-  const activeBg = "bg-[#033163]";
+  const activeBg = "bg-[#006FC4]";
   return (
     <div
       onMouseEnter={() => setActive(item)}

@@ -119,7 +119,7 @@ export default async function SaludInternacionalPage({ params }: Props) {
   );
 
   return (
-    <NextIntlClientProvider messages={mergedMessages}>
+    <NextIntlClientProvider locale={locale} messages={mergedMessages}>
     <main className="relative min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />

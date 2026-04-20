@@ -73,7 +73,7 @@ export default async function Home({ params }: Props) {
   };
 
   return (
-    <NextIntlClientProvider messages={mergedMessages}>
+    <NextIntlClientProvider locale={locale} messages={mergedMessages}>
       <main className="relative">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
