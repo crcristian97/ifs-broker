@@ -143,16 +143,16 @@
     "card1": "Our approach is based on designing financial strategies that adapt and evolve alongside each client.",
     "card2": "We work with individuals and companies seeking to protect their wealth, plan for the future, and make financial decisions with clear information and professional guidance."
   },
-  "howWeWork": {
+ "howWeWork": {
     "title": "How we work",
     "heading": "CLEAR, STRATEGIC PROCESS ",
     "headingHighlight": "TAILORED TO EACH CLIENT.",
-    "step1Title": "Initial assessment",
-    "step1Description": "We analyze needs, assessing current personal, family or business situation, identifying priorities based on short, medium and long-term objectives.",
+    "step1Title": "Initial diagnosis",
+    "step1Description": "We conduct a needs analysis, identifying priorities based on short, medium, and long-term objectives.",
     "step2Title": "Strategy design",
-    "step2Description": "We present clear, comparable alternatives in simple language without unnecessary jargon.",
+    "step2Description": "We present alternatives tailored to each client's reality in a straightforward way.",
     "step3Title": "Evaluation and decision",
-    "step3Description": "We accompany the decision-making process respecting each client's timeline.",
+    "step3Description": "We guide clients through the analysis process and help them make the best decision.",
     "step4Title": "Long-term follow-up",
     "step4Description": "Planning evolves over time; we also accompany you at every stage.",
     "stepMeta": "Step"
