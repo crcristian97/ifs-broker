@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { ShieldCheck, Handshake, UserKey } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { FadeInUp } from "./fade-in-up";
 
 type FeatureItem = {
@@ -43,7 +44,10 @@ export function FeatureBar({
 
   return (
     <div
-      className={`flex w-full max-w-4xl flex-col items-stretch justify-center gap-4 rounded-xl bg-[#91D8F766] backdrop-blur-md px-6 py-4 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-6 md:px-10 md:py-5 md:gap-10 ${className ?? ""}`}
+      className={cn(
+        "flex w-full max-w-4xl flex-col items-stretch justify-center gap-0 bg-[#91D8F766] backdrop-blur-md px-3 py-0 sm:flex-row sm:flex-wrap sm:justify-between sm:px-4",
+        className,
+      )}
     >
       {items.map((feature, index) =>
         animate ? (
