@@ -21,8 +21,8 @@ export function RetirementTimelineDemo() {
             <Image
               src="/retiro/img-fondos-de-retiro.webp"
               alt={t("tab1Desc1")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -53,8 +53,8 @@ export function RetirementTimelineDemo() {
             <Image
               src="/retiro/img-inversiones.webp"
               alt={t("tab2Desc1")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -86,8 +86,8 @@ export function RetirementTimelineDemo() {
             <Image
               src="/retiro/estudio-universitario-ifs.webp"
               alt={t("tab3Desc1")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>

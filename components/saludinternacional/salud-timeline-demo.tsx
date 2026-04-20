@@ -21,8 +21,8 @@ export function SaludTimelineDemo() {
             <Image
               src="/services/salud-internacional-ifs.webp"
               alt={t("tab1Block1Title")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -59,8 +59,8 @@ export function SaludTimelineDemo() {
             <Image
               src="/services/retiro-salud-internacional-broker.webp"
               alt={t("tab2Block1Title")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>

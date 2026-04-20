@@ -22,8 +22,8 @@ export function TimelineDemo() {
             <Image
               src="/seguro/seguro-de-vida.webp"
               alt={tSolutions("seguroVida.title")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -54,8 +54,8 @@ export function TimelineDemo() {
             <Image
               src="/seguro/img-enfermedades-criticas.webp"
               alt={t("tab2Title") + t("tab2Highlight")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -83,8 +83,8 @@ export function TimelineDemo() {
             <Image
               src="/seguro/fondo-seguro-de-vida-ifs.webp"
               alt={t("tab3Title")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>
@@ -112,8 +112,8 @@ export function TimelineDemo() {
             <Image
               src="/seguro/seguro-de-vida-terminal.webp"
               alt={t("tab4Title") + t("tab4Highlight")}
-              width={600}
-              height={600}
+              width={480}
+              height={480}
               className="w-full h-auto rounded-3xl shadow-[0_18px_45px_rgba(15,35,80,0.18)] object-cover"
             />
           </div>

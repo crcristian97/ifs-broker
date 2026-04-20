@@ -120,9 +120,9 @@ export const ProductItem = ({
       <Image
         src={src}
         width={140}
-        height={70}
+        height={80}
         alt={title}
-        className="shrink-0 rounded-md object-cover shadow-2xl ring-1 ring-black/10"
+        className="h-20 w-[140px] shrink-0 rounded-md object-cover shadow-2xl ring-1 ring-black/10"
       />
       <div className="min-w-0">
         <h4
