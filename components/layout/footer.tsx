@@ -66,7 +66,7 @@ export function Footer() {
      
 
       <div className={cn(siteContainer, "relative z-10 flex flex-col gap-10 pt-12")}>
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-start lg:gap-6">
           <div className="flex flex-col items-center gap-6 lg:items-start">
             <div className="w-[190px] shrink-0 sm:w-[210px] md:w-[230px] lg:w-[250px]">
               <Image
@@ -86,22 +86,22 @@ export function Footer() {
        
           </div>
 
-          <div className="flex w-full min-w-0 flex-col items-center gap-6 text-center lg:min-w-0 lg:flex-1 lg:items-end lg:pt-10 lg:text-right">
-            
+          <div aria-hidden="true" className="hidden lg:block lg:w-8" />
 
+          <div className="flex w-full min-w-0 flex-col items-start gap-6 text-left lg:min-w-0 lg:flex-1 lg:pt-6">
             <nav aria-label={t("navAriaLabel")} className="w-full min-w-0">
-              <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 text-left md:grid-cols-4 md:gap-x-4 lg:text-right">
+              <div className="inline-grid grid-cols-3 gap-x-4 gap-y-4 text-left">
                 {footerColumns.map((column) => (
                   <div
                     key={column.title ?? column.links[0]?.href}
-                    className="flex min-w-0 flex-col gap-3"
+                    className="flex min-w-0 flex-col items-start gap-2"
                   >
                     {column.title ? (
-                      <p className="text-base sm:text-lg font-bold text-[#FFFFFF] md:text-2xl">
+                      <p className="text-sm font-bold text-[#FFFFFF] sm:text-base md:text-xl">
                         {column.title}
                       </p>
                     ) : null}
-                    <ul className="flex flex-col gap-2">
+                    <ul className="flex flex-col gap-1">
                       {column.links.map((item) => (
                         <li key={item.href}>
                           <Link
@@ -109,8 +109,8 @@ export function Footer() {
                             className={cn(
                               "text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline",
                               item.small
-                                ? "text-sm md:text-base"
-                                : "text-lg md:text-2xl",
+                                ? "text-xs md:text-sm"
+                                : "text-base md:text-xl",
                               item.bold && "font-bold",
                             )}
                           >
