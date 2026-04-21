@@ -52,14 +52,18 @@ export function Footer() {
       ],
     },
     {
-      links: [{ href: "/trabaja-con-nosotros", label: tNav("trabajaConNosotros"), bold: true }],
+      links: [
+        { href: "/trabaja-con-nosotros", label: tNav("trabajaConNosotros"), bold: true },
+        { href: "/politicas-de-privacidad", label: "Políticas de Privacidad", small: true },
+        { href: "/terminos-y-condiciones", label: "Términos y Condiciones", small: true },
+      ],
     }
   ]
 
   return (
     <section
       id="contacto"
-      className="relative w-full overflow-hidden pb-8 md:pb-12 bg-[#033163]"
+      className="relative w-full overflow-hidden pb-4 bg-[#033163]"
       
     >
       {/* Capa superior: continúa el blanco de la sección blog y se funde con el degradado/imagen del footer */}
@@ -78,7 +82,7 @@ export function Footer() {
               />
             </div>
             <div className="flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
-              <p className="text-left text-sm font-regular text-[#FFFFFF]">
+              <p className="text-left text-[12px] font-regular text-[#FFFFFF]">
                 {t("designFuture")}
               </p>
             </div>
@@ -137,26 +141,6 @@ export function Footer() {
           animate={false}
           className="max-w-6xl md:flex-nowrap md:items-center md:justify-between"
         />
-      </div>
-
-      <div className={cn(siteContainer, "relative z-10 mt-2 flex justify-center pb-2")}>
-        <div className="flex items-center gap-4 text-xs text-white/70">
-          <Link
-            href="/politicas-de-privacidad"
-            className="transition-colors hover:text-white hover:underline"
-          >
-            Políticas de Privacidad
-          </Link>
-          <span aria-hidden="true" className="text-white/40">
-            |
-          </span>
-          <Link
-            href="/terminos-y-condiciones"
-            className="transition-colors hover:text-white hover:underline"
-          >
-            Términos y Condiciones
-          </Link>
-        </div>
       </div>
 
       <ContactModal
