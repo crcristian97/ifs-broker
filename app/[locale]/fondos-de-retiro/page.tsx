@@ -141,7 +141,7 @@ export default async function FondosDeRetiroPage({ params }: Props) {
               overflow: hidden;
             }
           `}</style>
-          <div className="relative flex w-full max-w-4xl flex-col items-stretch overflow-hidden rounded-[32px] border border-[#006FC4]/35 bg-linear-to-br from-[#033163] via-[#044a8c] to-[#006FC4] p-1 shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)] md:p-1 lg:p-2">
+          <div className="relative flex w-full max-w-4xl flex-col items-stretch overflow-hidden rounded-3xl border border-[#006FC4]/35 bg-linear-to-br from-[#033163] via-[#044a8c] to-[#006FC4] p-1 shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)] md:p-1 lg:p-2">
             <div className="overflow-hidden rounded-2xl">
               <div
                 dangerouslySetInnerHTML={{
@@ -152,16 +152,15 @@ export default async function FondosDeRetiroPage({ params }: Props) {
           </div>
         </div>
       </section>
+      <div className={cn(siteContainer, "py-6")}>
+        <div
+          className="rounded-3xl bg-cover bg-center px-2 py-6 md:px-6"
+        >
       <RetirementTimelineDemo />
-      <div
-        id="investment-questionnaire"
-        className="rounded-3xl  bg-cover bg-center px-2 py-6 md:px-6"
-        style={{
-          backgroundImage: "url('/seguro/fondo-cuestionarios.webp')",
-        }}
-      >
-        <InvestmentQuestionnaireForm />
       </div>
+      </div>
+          <InvestmentQuestionnaireForm />
+     
 
       <HeroPlanificacion />
 
