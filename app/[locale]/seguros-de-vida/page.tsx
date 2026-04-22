@@ -159,7 +159,7 @@ export default async function SegurosDeVidaPage({ params }: Props) {
         </div>
       </div>
       <div
-        className="rounded-3xl  bg-cover bg-center px-2 py-6 md:px-6"
+        className="rounded-3xl bg-cover bg-center px-2 py-6 md:px-6"
         style={{
           backgroundImage: "url('/seguro/fondo-cuestionarios.webp')",
         }}
