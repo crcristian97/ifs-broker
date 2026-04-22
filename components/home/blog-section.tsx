@@ -100,7 +100,7 @@ export default function BlogSection() {
         </div>
         {/* LARGE WHITE BACKGROUND AREA FOR BOTTOM PART */}
         <div className="relative">
-          <div className="absolute inset-0 z-0 bg-white rounded-3xl " style={{ minHeight: "600px" }} />
+          <div className="absolute inset-0 z-0  rounded-3xl " style={{ minHeight: "600px" }} />
           <div ref={cardsRef} className="relative z-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 p-4 sm:p-8 ">
             {articlesData.map((article, index) => (
               <div

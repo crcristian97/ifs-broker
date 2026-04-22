@@ -156,6 +156,7 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
                         href="/salud-internacional"
                         src="/retiro/salud-internacional-ifs.webp"
                         description={t("solutions.saludInternacional.description")}
+                        imageClassName="object-[center_10%_bottom]"
                       />
                       <ProductItem
                         title={t("solutions.serviciosComplementarios.title")}

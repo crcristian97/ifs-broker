@@ -70,7 +70,7 @@ export function Footer() {
      
 
       <div className={cn(siteContainer, "relative z-10 flex flex-col gap-3 pt-6")}>
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-start lg:gap-6">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-start lg:gap-6">
           <div className="flex flex-col items-center lg:items-start">
             <div className="mt-2 w-[190px] shrink-0 sm:w-[210px] md:w-[230px] lg:w-[250px]">
               <Image
@@ -139,9 +139,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        <div className="flex w-full flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div className="-mt-2 flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
-            <p className="text-left text-SM font-regular text-[#FFFFFF]">
+            <p className="text-left text-sm font-regular text-[#FFFFFF]">
               {t("designFuture")}
             </p>
           </div>

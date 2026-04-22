@@ -102,11 +102,13 @@ export const ProductItem = ({
   description,
   href,
   src,
+  imageClassName,
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
+  imageClassName?: string;
 }) => {
   return (
     <Link
@@ -122,7 +124,7 @@ export const ProductItem = ({
         width={140}
         height={80}
         alt={title}
-        className="h-20 w-[140px] shrink-0 rounded-md object-cover shadow-2xl ring-1 ring-black/10"
+        className={cn("h-20 w-[140px] shrink-0 rounded-md object-cover object-top shadow-2xl ring-1 ring-black/10", imageClassName)}
       />
       <div className="min-w-0">
         <h4
