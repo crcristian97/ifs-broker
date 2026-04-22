@@ -157,8 +157,23 @@ export default async function FondosDeRetiroPage({ params }: Props) {
           <RetirementTimelineDemo />
         </div>
       </div>
+
+      <div
+        className="relative rounded-3xl bg-cover bg-center px-2 py-6 md:px-6 overflow-hidden"
+        style={{
+          backgroundImage: "url('/seguro/test-de-inversion.webp')",
+        }}
+      >
+        <div
+          className="absolute inset-0 z-0 bg-[#91D8F7]/70"
+          style={{ pointerEvents: "none" }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10">
           <InvestmentQuestionnaireForm />
-     
+        </div>
+      </div>
+    
 
       <HeroPlanificacion />
 
