@@ -69,10 +69,10 @@ export function Footer() {
       {/* Capa superior: continúa el blanco de la sección blog y se funde con el degradado/imagen del footer */}
      
 
-      <div className={cn(siteContainer, "relative z-10 flex flex-col gap-10 pt-12")}>
+      <div className={cn(siteContainer, "relative z-10 flex flex-col gap-3 pt-6")}>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-start lg:gap-6">
-          <div className="flex flex-col items-center gap-6 lg:items-start">
-            <div className="w-[190px] shrink-0 sm:w-[210px] md:w-[230px] lg:w-[250px]">
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="mt-2 w-[190px] shrink-0 sm:w-[210px] md:w-[230px] lg:w-[250px]">
               <Image
                 src="/logo-footer.svg"
                 alt="IFS Insurance"
@@ -81,21 +81,14 @@ export function Footer() {
                 className="h-auto w-full"
               />
             </div>
-            <div className="flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
-              <p className="text-left text-[12px] font-regular text-[#FFFFFF]">
-                {t("designFuture")}
-              </p>
-            </div>
-       
-       
           </div>
 
           <div aria-hidden="true" className="hidden lg:block lg:w-8" />
 
           <div className="flex w-full min-w-0 flex-col items-start gap-6 text-left lg:min-w-0 lg:flex-1 lg:pt-6">
             <nav aria-label={t("navAriaLabel")} className="w-full min-w-0">
-              <div className="inline-grid grid-cols-3 gap-x-4 gap-y-4 text-left">
-                {footerColumns.map((column) => (
+              <div className=" inline-grid grid-cols-3  text-left">
+                {footerColumns.map((column, columnIndex) => (
                   <div
                     key={column.title ?? column.links[0]?.href}
                     className="flex min-w-0 flex-col items-start gap-2"
@@ -105,28 +98,67 @@ export function Footer() {
                         {column.title}
                       </p>
                     ) : null}
-                    <ul className="flex flex-col gap-1">
-                      {column.links.map((item) => (
-                        <li key={item.href}>
-                          <Link
-                            href={item.href}
-                            className={cn(
-                              "text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline",
-                              item.small
-                                ? "text-xs md:text-sm"
-                                : "text-base md:text-xl",
-                              item.bold && "font-bold",
-                            )}
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    {columnIndex === 2 ? (
+                      <div className="flex flex-col items-start gap-5">
+                        <Link
+                          href={column.links[0].href}
+                          className="text-base font-bold text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline md:text-xl"
+                        >
+                          {column.links[0].label}
+                        </Link>
+                      </div>
+                    ) : (
+                      <ul
+                        className={cn(
+                          "flex flex-col gap-1",
+                          columnIndex === 1 && "gap-0.5 leading-tight",
+                        )}
+                      >
+                        {column.links.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className={cn(
+                                "text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline",
+                                item.small
+                                  ? "text-xs leading-tight md:text-sm"
+                                  : "text-base md:text-xl",
+                                item.bold && "font-bold",
+                              )}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
             </nav>
+          </div>
+        </div>
+
+        <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <div className="-mt-2 flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
+            <p className="text-left text-SM font-regular text-[#FFFFFF]">
+              {t("designFuture")}
+            </p>
+          </div>
+          <div className="flex items-center gap-2 whitespace-nowrap md:pr-2">
+            <Link
+              href={footerColumns[2].links[1].href}
+              className="text-xs text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline md:text-sm"
+            >
+              {footerColumns[2].links[1].label}
+            </Link>
+            <span className="text-xs text-[#FFFFFF] md:text-sm">|</span>
+            <Link
+              href={footerColumns[2].links[2].href}
+              className="text-xs text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline md:text-sm"
+            >
+              {footerColumns[2].links[2].label}
+            </Link>
           </div>
         </div>
       </div>
