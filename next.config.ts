@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "broker-ifs.cdn.prismic.io",
       },
+      {
+        protocol: "https",
+        hostname: "advisorlinks.olelife.com",
+      },
     ],
   },
 };
