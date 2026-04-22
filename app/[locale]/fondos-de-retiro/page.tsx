@@ -129,24 +129,26 @@ export default async function FondosDeRetiroPage({ params }: Props) {
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/rwf6keju04.js" type="module" strategy="afterInteractive" />
       <Navbar />
-      <section className={cn("w-full bg-[#033163]", "pb-8 pt-28 md:pt-32")}>
-        <div className={cn(siteContainer)}>
+      <section className={cn("w-full", "pb-14 pt-32 md:pb-20 md:pt-36")}>
+        <div className={cn(siteContainer, "flex justify-center")}>
           <style>{`
             wistia-player[media-id='rwf6keju04']:not(:defined) {
               background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rwf6keju04/swatch');
               display: block;
               filter: blur(5px);
               padding-top: 56.25%;
-              border-radius: 1.25rem;
+              border-radius: 1rem;
               overflow: hidden;
             }
           `}</style>
-          <div className="overflow-hidden rounded-3xl shadow-[0_18px_42px_-8px_rgba(3,49,99,0.22)]">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `<wistia-player media-id="rwf6keju04" aspect="1.7777777777777777"></wistia-player>`,
-              }}
-            />
+          <div className="relative flex w-full max-w-4xl flex-col items-stretch overflow-hidden rounded-[32px] border border-[#006FC4]/35 bg-linear-to-br from-[#033163] via-[#044a8c] to-[#006FC4] p-1 shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)] md:p-1 lg:p-2">
+            <div className="overflow-hidden rounded-2xl">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<wistia-player media-id="rwf6keju04" aspect="1.7777777777777777"></wistia-player>`,
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

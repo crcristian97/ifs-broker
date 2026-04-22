@@ -127,7 +127,7 @@ export default async function SaludInternacionalPage({ params }: Props) {
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/b48gj3x82t.js" type="module" strategy="afterInteractive" />
       <Navbar />
-      <section className={cn("w-full bg-[#033163]", "pb-8 pt-28 md:pt-32")}>
+      <section className={cn("w-full bg-[#033163]", "pb-2 pt-28 md:pt-32")}>
         <div className={cn(siteContainer)}>
           <style>{`
             wistia-player[media-id='b48gj3x82t']:not(:defined) {
