@@ -99,7 +99,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="flex justify-end">
                   <div
                     className={cn(
-                      "relative w-full max-w-[480px] overflow-hidden rounded-[32px] p-3 md:p-4 lg:p-6",
+                      "relative w-full max-w-[480px] overflow-hidden rounded-3xl p-3 md:p-4 lg:p-6",
                       "border border-[#006FC4]/35",
                       "bg-gradient-to-br from-[#033163] via-[#044a8c] to-[#006FC4]",
                       "shadow-[0_8px_32px_-4px_rgba(3,49,99,0.35),0_4px_16px_-2px_rgba(0,111,196,0.2)]",

@@ -150,7 +150,11 @@ export default async function SaludInternacionalPage({ params }: Props) {
           </div>
         </div>
       </section>
-      <SaludTimelineDemo />
+      <div className={cn(siteContainer, "py-6")}>
+        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-6 md:px-[29px]">
+          <SaludTimelineDemo />
+        </div>
+      </div>
       <HeroPlanificacion />
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">

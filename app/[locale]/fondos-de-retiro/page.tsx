@@ -153,11 +153,9 @@ export default async function FondosDeRetiroPage({ params }: Props) {
         </div>
       </section>
       <div className={cn(siteContainer, "py-6")}>
-        <div
-          className="rounded-3xl bg-cover bg-center px-2 py-6 md:px-6"
-        >
-      <RetirementTimelineDemo />
-      </div>
+        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-6 md:px-[29px]">
+          <RetirementTimelineDemo />
+        </div>
       </div>
           <InvestmentQuestionnaireForm />
      
