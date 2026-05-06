@@ -37,7 +37,7 @@ export function HeroBanner() {
         </div>
       ),
       buttonPrimary: t("speakAdvisor"),
-      buttonHref: "",
+      buttonHref: "#contacto",
       hideSecondaryButton: true,
     },
    
