@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { siteContainer } from "@/lib/site-layout";
+import { sitePaddingX } from "@/lib/site-layout";
 import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
 // Las imágenes de Unsplash se ven si la URL es correcta y no hay políticas de CORS o restricciones de acceso. 
@@ -76,18 +76,20 @@ export default function LogoCloudSection() {
         />
 
         <div className="relative w-full">
-          <h4 className="mb-7 text-center flex flex-col items-center gap-2">
-            <span
-              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#033163] font-regular tracking-widest"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              <span className="text-[#006FC4]">{t("title")}</span>
-              {t("titleHighlight")}
-            </span>
-            <p className="text-base sm:text-xl md:text-xl lg:text-xl font-regular mt-3 text-[#000000] max-w-5xl">
-              {t("subtitle")}
-            </p>
-          </h4>
+          <div className={cn("mx-auto w-full max-w-[1400px]", sitePaddingX)}>
+            <h4 className="mb-7 flex flex-col items-center gap-2 text-center">
+              <span
+                className="block w-full text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#033163] font-regular tracking-widest"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                <span className="text-[#006FC4]">{t("title")}</span>
+                {t("titleHighlight")}
+              </span>
+              <p className="mt-3 w-full max-w-5xl px-6 font-regular text-base text-[#000000] sm:px-0 sm:text-xl md:text-xl lg:text-xl">
+                {t("subtitle")}
+              </p>
+            </h4>
+          </div>
 
           <LogoCloud logos={logos} />
           {/* Texto institucional institucional debajo del LogoCloud que ocupa todo el width */}

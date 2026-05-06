@@ -7,6 +7,9 @@ export const sitePaddingX = "px-4 md:px-8 lg:px-8";
 export const siteContainer =
   "mx-auto w-full max-w-[1400px] " + sitePaddingX;
 
+/** Inset extra en mobile para párrafos bajo un título de sección (más angosto que el título). */
+export const sectionBodyInsetMobile = "px-3 sm:px-0";
+
 /**
  * El panel del hero con video empieza justo debajo del pill del Navbar (mismo max-w-[1400px] y sitePaddingX).
  * Cálculo: nav pt-4/md:pt-6 + bar py-4 + logo h-16/sm:h-18/md:h-20 + respiro 6px.

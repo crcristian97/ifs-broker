@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { useTranslations, useLocale } from "next-intl"
 import { Link, usePathname, useRouter } from "@/i18n/navigation"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { Menu as HoverMenu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
@@ -48,6 +48,7 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
   const locale = useLocale()
   const t = useTranslations()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileSolucionesOpen, setMobileSolucionesOpen] = useState(false)
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
   const logoRef = useRef<HTMLAnchorElement | null>(null)
@@ -220,24 +221,73 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.key}
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-base font-medium text-[#FEFEFE] transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
-                onClick={(event) => {
-                  if (link.key === "nosotros" && pathname === "/") {
-                    event.preventDefault()
-                    scrollToSection("nosotros")
-                    setMobileOpen(false)
-                  } else {
-                    setMobileOpen(false)
-                  }
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.key === "soluciones" && link.hasDropdown) {
+                return (
+                  <div key={link.key}>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-base font-medium text-[#FEFEFE] transition-colors duration-200 hover:bg-[#006FC4]"
+                      onClick={() => setMobileSolucionesOpen((v) => !v)}
+                      aria-expanded={mobileSolucionesOpen}
+                    >
+                      {link.label}
+                      <ChevronDown className={cn("ml-0.5 h-4 w-4 transition-transform duration-200", mobileSolucionesOpen && "rotate-180")} />
+                    </button>
+                    {mobileSolucionesOpen && (
+                      <div className="mt-1 flex flex-col gap-1 pl-3">
+                        <Link
+                          href="/seguros-de-vida"
+                          className="rounded-lg px-3 py-2 text-sm text-[#FEFEFE]/90 transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {t("solutions.seguroVida.title")}
+                        </Link>
+                        <Link
+                          href="/fondos-de-retiro"
+                          className="rounded-lg px-3 py-2 text-sm text-[#FEFEFE]/90 transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {t("solutions.fondosRetiro.title")}
+                        </Link>
+                        <Link
+                          href="/salud-internacional"
+                          className="rounded-lg px-3 py-2 text-sm text-[#FEFEFE]/90 transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {t("solutions.saludInternacional.title")}
+                        </Link>
+                        <Link
+                          href="/servicios-complementarios"
+                          className="rounded-lg px-3 py-2 text-sm text-[#FEFEFE]/90 transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {t("solutions.serviciosComplementarios.title")}
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+              return (
+                <Link
+                  key={link.key}
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-base font-medium text-[#FEFEFE] transition-colors duration-200 hover:bg-[#006FC4] hover:text-[#FEFEFE]"
+                  onClick={(event) => {
+                    if (link.key === "nosotros" && pathname === "/") {
+                      event.preventDefault()
+                      scrollToSection("nosotros")
+                      setMobileOpen(false)
+                    } else {
+                      setMobileOpen(false)
+                    }
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
             <div className="flex items-center gap-3 border-t border-white/15 pt-4">
               <LanguageSwitcher
                 locale={locale}

@@ -3,7 +3,7 @@ import Script from "next/script";
 import { getTranslations, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { cn } from "@/lib/utils";
-import { siteContainer } from "@/lib/site-layout";
+import { siteContainer, sectionBodyInsetMobile } from "@/lib/site-layout";
 import { Navbar } from "@/components/layout/navbar";
 import { SaludTimelineDemo } from "@/components/saludinternacional/salud-timeline-demo";
 import LogoCloudSection from "@/components/home/logo-cloud-demo";
@@ -160,7 +160,12 @@ export default async function SaludInternacionalPage({ params }: Props) {
       <div className="w-full bg-[#e6f3fa]">
         <div className={cn(siteContainer, "py-8")}>
           <div className="flex min-h-[120px] w-full items-center justify-center rounded bg-transparent py-6 text-center">
-            <p className="text-[#1163b2] text-2xl font-regular max-w-3xl mx-auto">
+            <p
+              className={cn(
+                "mx-auto max-w-3xl text-2xl font-regular text-[#1163b2]",
+                sectionBodyInsetMobile,
+              )}
+            >
               {t("serviciosComplementarios.alliance")}
             </p>
           </div>
