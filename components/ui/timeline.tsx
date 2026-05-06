@@ -46,22 +46,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     {item.title}
                   </h3>
                   <div className="grid w-max max-w-full grid-cols-1 gap-3 self-start">
-                    <ButtonPrimary
-                      href={item.buttonHref ?? "/seguros-de-vida#capital-estimado"}
-                      target={
-                        item.buttonHref?.startsWith("http") ? "_blank" : undefined
-                      }
-                      className="w-full justify-center"
-                      hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
-                      onClick={(event) => {
-                        if (pathname.includes("/seguros-de-vida")) {
-                          event.preventDefault();
-                          scrollToCapitalEstimado();
-                        }
-                      }}
-                    >
-                      {item.buttonPrimary ?? t("heroPlanificacion.quoteLifeInsurance")}
-                    </ButtonPrimary>
+                    
                     <ButtonSecondary
                       href={
                         item.buttonHrefSecondary?.startsWith("#")

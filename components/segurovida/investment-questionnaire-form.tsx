@@ -107,7 +107,10 @@ export function InvestmentQuestionnaireForm() {
 
   return (
     <div className="w-full max-w-3xl mx-auto relative">
-      <div className="mb-8 text-center">
+      <div
+        id="investment-questionnaire"
+        className="mb-8 scroll-mt-28 text-center"
+      >
         <h2
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular uppercase tracking-widest"
           style={{ fontFamily: "var(--font-heading)" }}
