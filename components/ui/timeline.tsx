@@ -21,9 +21,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const t = useTranslations();
   const pathname = usePathname();
 
-  const scrollToCotiza = () => {
+  const scrollToCapitalEstimado = () => {
     if (typeof window === "undefined") return;
-    const element = document.getElementById("cotiza");
+    const element = document.getElementById("capital-estimado");
     if (!element) return;
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -47,7 +47,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   </h3>
                   <div className="grid w-max max-w-full grid-cols-1 gap-3 self-start">
                     <ButtonPrimary
-                      href={item.buttonHref ?? "/seguros-de-vida#cotiza"}
+                      href={item.buttonHref ?? "/seguros-de-vida#capital-estimado"}
                       target={
                         item.buttonHref?.startsWith("http") ? "_blank" : undefined
                       }
@@ -56,7 +56,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       onClick={(event) => {
                         if (pathname.includes("/seguros-de-vida")) {
                           event.preventDefault();
-                          scrollToCotiza();
+                          scrollToCapitalEstimado();
                         }
                       }}
                     >

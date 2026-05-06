@@ -89,7 +89,7 @@ export function HeroComplement({
               <FadeInUp delay={0.35}>
                 <div className="flex flex-col gap-3">
                   <ButtonPrimary
-                    href="/seguros-de-vida#cotiza"
+                    href="/seguros-de-vida#capital-estimado"
                     hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                   >
                     {t("heroPlanificacion.quoteLifeInsurance")}

@@ -61,14 +61,14 @@ export function HeroPlanificacion() {
               <div className="flex w-full justify-center md:justify-end">
                 <div className="flex w-[min(100%,28rem)] flex-col items-stretch gap-3 md:w-full md:max-w-md">
                   <ButtonPrimary
-                    href="/seguros-de-vida#cotiza"
+                    href="/seguros-de-vida#capital-estimado"
                     hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                     className="w-full justify-center"
                     onClick={(event) => {
                       // Si ya estamos en la página de seguros de vida, solo hacer scroll suave al formulario
                       if (pathname.includes("/seguros-de-vida")) {
                         event.preventDefault();
-                        const el = document.getElementById("cotiza");
+                        const el = document.getElementById("capital-estimado");
                         if (el) {
                           el.scrollIntoView({ behavior: "smooth", block: "start" });
                         }

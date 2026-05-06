@@ -35,10 +35,7 @@ export function RetirementForm() {
   }).format(neededCapital)
 
   return (
-    <div
-      id="cotiza"
-      className="w-full max-w-3xl mx-auto relative"
-    >
+    <div className="w-full max-w-3xl mx-auto relative">
       <div className="mb-8 text-center">
         <h2
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-regular tracking-widest uppercase"
@@ -52,8 +49,11 @@ export function RetirementForm() {
         </p>
       </div>
 
-      {/* Form card */}
-      <div className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg">
+      {/* Form card — #form alineado con JSON-LD de la página */}
+      <div
+        id="form"
+        className="relative z-10 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6 md:p-10 shadow-lg"
+      >
         <div className="flex flex-col gap-6">
           <RangeSlider
             label={t("labelMonthlyIncome")}
@@ -109,8 +109,11 @@ export function RetirementForm() {
           </div>
         </div>
 
-        {/* Result */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5">
+        {/* Result — ancla del CTA "Cotizá tu seguro de vida" */}
+        <div
+          id="capital-estimado"
+          className="mt-8 scroll-mt-28 flex flex-col sm:flex-row items-center gap-4 rounded-xl border border-[#91D8F7] bg-[#91D8F7]/20 p-4 md:p-5"
+        >
           <p className="text-base text-[#000A15] font-semibold flex-1">
             {t("resultText")}
           </p>
