@@ -128,6 +128,8 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
         titlePrefix={t("serviciosComplementarios.title1")}
         titleHighlight={t("serviciosComplementarios.title2")}
         description={t("serviciosComplementarios.description")}
+        ctaPrimaryLabel={t("heroBanner.quoteTravelInsurance")}
+        ctaPrimaryHref="#contacto"
         hideImage
         videoSrc="/hero/servicio-complementario.mp4"
       />

@@ -35,8 +35,8 @@ export function HomeHeroLayout({ allianceText = "" }: HomeHeroLayoutProps) {
       <LogoCloudSection />
       <div className="w-full bg-[#e6f3fa]">
         <div className={cn(siteContainer, "py-4 md:py-5")}>
-          <div className="flex w-full items-center justify-center rounded bg-transparent px-2 py-2 text-center sm:px-0">
-            <p className="max-w-3xl px-4 text-lg font-medium text-[#000000] sm:px-0 sm:text-xl">
+          <div className="flex w-full items-center justify-center rounded bg-transparent text-center sm:px-0">
+            <p className="max-w-2xl px-4 text-base font-medium text-[#000000]  sm:text-lg">
               {allianceText}
             </p>
           </div>

@@ -79,13 +79,13 @@ export default function LogoCloudSection() {
           <div className={cn("mx-auto w-full max-w-[1400px]", sitePaddingX)}>
             <h4 className="mb-7 flex flex-col items-center gap-2 text-center">
               <span
-                className="block w-full text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#033163] font-regular tracking-widest"
+                className="text-3xl font-regular tracking-widest text-[#033163] sm:text-4xl md:text-4xl lg:text-4xl"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <span className="text-[#006FC4]">{t("title")}</span>
                 {t("titleHighlight")}
               </span>
-              <p className="mt-3 w-full max-w-5xl px-6 font-regular text-base text-[#000000] sm:px-0 sm:text-xl md:text-xl lg:text-xl">
+              <p className="mt-3 w-full max-w-[42rem] font-regular text-base text-[#000000] sm:text-lg md:text-lg lg:text-lg">
                 {t("subtitle")}
               </p>
             </h4>

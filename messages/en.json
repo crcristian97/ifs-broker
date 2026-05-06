@@ -37,6 +37,7 @@
     "columnCompany": "Company",
     "columnContact": "Contact",
     "scheduleMeeting": "Schedule a meeting",
+    "talkWithAdvisor": "Talk with an advisor",
     "institutionalContact": "Institutional contact",
     "designFuture": "Let's design tomorrow's peace of mind today",
     "form": {
@@ -350,6 +351,7 @@
     "title": "TRAVEL INSURANCE",
     "speakAdvisor": "Speak with an advisor",
     "scheduleMeeting": "Schedule a meeting",
+    "quoteTravelInsurance": "Quote your travel insurance",
     "paragraph1": "Comprehensive coverage for national and international travel that protects against medical emergencies, cancellations, luggage loss and other unforeseen events,",
     "paragraph2": "providing peace of mind during your trip."
   },

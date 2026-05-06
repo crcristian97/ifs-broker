@@ -14,6 +14,7 @@ interface TimelineEntry {
   buttonSecondary?: string;
   buttonHref?: string;
   buttonHrefSecondary?: string;
+  hideSecondaryButton?: boolean;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -77,37 +78,39 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                         {item.buttonPrimary ?? t("footer.scheduleMeeting")}
                       </ButtonPrimary>
 
-                      <ButtonSecondary
-                        href={
-                          item.buttonHrefSecondary?.startsWith("#")
-                            ? item.buttonHrefSecondary
-                            : (item.buttonHrefSecondary ?? defaultSecondaryHref)
-                        }
-                        target={
-                          (item.buttonHrefSecondary ?? defaultSecondaryHref).startsWith("#")
-                            ? undefined
-                            : "_blank"
-                        }
-                        className="min-w-[8ch] whitespace-nowrap justify-center text-xs sm:text-sm"
-                        hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
-                        onClick={
-                          (item.buttonHrefSecondary ?? defaultSecondaryHref).startsWith("#")
-                            ? () => {
-                                if (typeof window === "undefined") return;
-                                const id = (item.buttonHrefSecondary ?? defaultSecondaryHref).slice(1);
-                                const el = document.getElementById(id);
-                                if (el) {
-                                  el.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
-                                  });
+                      {!item.hideSecondaryButton ? (
+                        <ButtonSecondary
+                          href={
+                            item.buttonHrefSecondary?.startsWith("#")
+                              ? item.buttonHrefSecondary
+                              : (item.buttonHrefSecondary ?? defaultSecondaryHref)
+                          }
+                          target={
+                            (item.buttonHrefSecondary ?? defaultSecondaryHref).startsWith("#")
+                              ? undefined
+                              : "_blank"
+                          }
+                          className="min-w-[8ch] whitespace-nowrap justify-center text-xs sm:text-sm"
+                          hover="hover:bg-[#91D8F7] hover:border-[#91D8F7] hover:text-[#006FC4]/60"
+                          onClick={
+                            (item.buttonHrefSecondary ?? defaultSecondaryHref).startsWith("#")
+                              ? () => {
+                                  if (typeof window === "undefined") return;
+                                  const id = (item.buttonHrefSecondary ?? defaultSecondaryHref).slice(1);
+                                  const el = document.getElementById(id);
+                                  if (el) {
+                                    el.scrollIntoView({
+                                      behavior: "smooth",
+                                      block: "start",
+                                    });
+                                  }
                                 }
-                              }
-                            : undefined
-                        }
-                      >
-                        {item.buttonSecondary ?? "Cotizá tu seguro de vida"}
-                      </ButtonSecondary>
+                              : undefined
+                          }
+                        >
+                          {item.buttonSecondary ?? t("footer.talkWithAdvisor")}
+                        </ButtonSecondary>
+                      ) : null}
                     </div>
                   </div>
                 </div>

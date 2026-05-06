@@ -37,6 +37,7 @@
     "columnCompany": "Empresa",
     "columnContact": "Contacto",
     "scheduleMeeting": "Agendá una reunión",
+    "talkWithAdvisor": "Hablar con un asesor",
     "institutionalContact": "Contacto institucional",
     "designFuture": "Diseñemos hoy la tranquilidad del futuro",
     "form": {
@@ -238,8 +239,8 @@
     "tab1Title": "FONDOS ",
     "tab1Highlight": "DE RETIRO",
     "button": "Explorar opciones",
-    "buttonPrimary": "Habla con un asesor",
-    "buttonSecondary": "Explorar opciones",
+    "buttonPrimary": "Agenda una reunión",
+    "buttonSecondary": "Explorar más opciones",
     "tab1Desc1": "Construcción de ingresos futuros para el retiro",
     "tab1Desc2": "Herramientas diseñadas para generar y complementar ingresos futuros, con alternativas flexibles según el horizonte elegido y las metas personales.",
     "tab2Title": "INVERSIONES",
@@ -331,6 +332,7 @@
     "title": "SEGURO DE VIAJES",
     "speakAdvisor": "Hablar con un asesor",
     "scheduleMeeting": "Agendár una reunión",
+    "quoteTravelInsurance": "Cotizá tu seguro de viaje",
     "paragraph1": "Cobertura integral para viajes nacionales e internacionales que protege ante emergencias médicas, cancelaciones, pérdidas de equipaje y otros imprevistos,",
     "paragraph2": "brindando tranquilidad durante el viaje."
   },

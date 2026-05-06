@@ -38,8 +38,7 @@ export function HeroBanner() {
       ),
       buttonPrimary: t("speakAdvisor"),
       buttonHref: "",
-      buttonSecondary: t("scheduleMeeting"),
-      buttonHrefSecondary: "https://calendly.com/administracion-ifs-broker/30min",
+      hideSecondaryButton: true,
     },
    
   ];

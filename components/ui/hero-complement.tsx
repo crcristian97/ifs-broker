@@ -14,6 +14,8 @@ export type HeroComplementProps = {
   titleSuffix?: string;
   description?: string;
   descriptionHighlight?: string;
+  ctaPrimaryLabel?: string;
+  ctaPrimaryHref?: string;
   /** Ruta en /public (ej. /retiro/v-retiro-subtitulo.webm) */
   videoSrc: string;
   /** Paridad con HeroSubsection; no afecta el layout de este hero. */
@@ -26,6 +28,8 @@ export function HeroComplement({
   titleSuffix = "",
   description = "",
   descriptionHighlight = "",
+  ctaPrimaryLabel,
+  ctaPrimaryHref = "/seguros-de-vida#capital-estimado",
   videoSrc,
 }: HeroComplementProps) {
   const t = useTranslations();
@@ -89,10 +93,10 @@ export function HeroComplement({
               <FadeInUp delay={0.35}>
                 <div className="flex flex-col gap-3">
                   <ButtonPrimary
-                    href="/seguros-de-vida#capital-estimado"
+                    href={ctaPrimaryHref}
                     hover="hover:bg-[#FEFEFE] hover:border-[#FEFEFE] hover:text-[#033163]"
                   >
-                    {t("heroPlanificacion.quoteLifeInsurance")}
+                    {ctaPrimaryLabel ?? t("heroPlanificacion.quoteLifeInsurance")}
                   </ButtonPrimary>
                   <ButtonSecondary
                     href="https://calendly.com/administracion-ifs-broker/30min"
