@@ -36,7 +36,7 @@ export function FeatureBar({
   const row = (feature: FeatureItem) => (
     <div className="flex min-w-0 items-center justify-start gap-2.5">
       <span className={iconShellClassName}>{feature.icon}</span>
-      <span className="text-sm sm:text-[18px] font-normal text-[#F3F3F3] text-left">
+      <span className="text-xs font-normal text-[#F3F3F3] text-left sm:text-sm">
         {feature.title}
       </span>
     </div>
@@ -45,7 +45,7 @@ export function FeatureBar({
   return (
     <div
       className={cn(
-        "flex w-full max-w-4xl flex-col items-stretch justify-center gap-0 bg-[#91D8F766] backdrop-blur-md px-3 py-0 sm:flex-row sm:flex-wrap sm:justify-between sm:px-4",
+        "flex w-full flex-col items-stretch justify-center gap-0 bg-[#91D8F766] backdrop-blur-md px-3 py-0 sm:flex-row sm:flex-wrap sm:justify-between sm:px-4",
         className,
       )}
     >

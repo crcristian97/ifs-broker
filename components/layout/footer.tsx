@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
-import { siteContainer } from "@/lib/site-layout"
+import { siteContainer, sitePaddingX } from "@/lib/site-layout"
 import { FeatureBar } from "@/components/ui/feature-bar"
 import { ContactModal } from "@/components/layout/contact-modal"
 
@@ -170,11 +170,16 @@ export function Footer() {
         
       </div>
 
-      <div className={cn(siteContainer, "relative z-10 flex justify-center pb-2")}>
+      <div
+        className={cn(
+          "relative z-10 mx-auto flex w-full max-w-[1424px] justify-center pb-2",
+          sitePaddingX,
+        )}
+      >
         <FeatureBar
           features={features}
           animate={false}
-          className="max-w-6xl md:flex-nowrap md:items-center md:justify-between"
+          className="w-full md:flex-nowrap md:items-center md:justify-between"
         />
       </div>
 
