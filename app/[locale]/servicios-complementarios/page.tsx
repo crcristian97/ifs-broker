@@ -135,7 +135,7 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
       />
       <div className={cn(siteContainer, "pb-6 pt-2 md:pb-8 md:pt-6")}>
         <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-4 md:px-[29px] md:py-6">
-          <HeroBanner />
+          <HeroBanner imageSrc="/seguro-complementarios.webp" />
         </div>
       </div>
       <HeroPlanificacion />

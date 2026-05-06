@@ -6,7 +6,7 @@ import { Timeline } from "@/components/ui/timeline";
 
 const fontStyle = { fontFamily: "var(--font-heading)" };
 
-export function HeroBanner() {
+export function HeroBanner({ imageSrc }: { imageSrc: string }) {
   const t = useTranslations("heroBanner");
   const data = [
     {
@@ -19,7 +19,7 @@ export function HeroBanner() {
         <div className="flex flex-col gap-4 items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/retiro/img-fondos-de-retiro.webp"
+              src={imageSrc}
               alt={t("paragraph1")}
               width={600}
               height={600}

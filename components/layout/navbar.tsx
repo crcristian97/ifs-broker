@@ -159,7 +159,7 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
                       <ProductItem
                         title={t("solutions.serviciosComplementarios.title")}
                         href="/servicios-complementarios"
-                        src="/seguro-complementarios.webp"
+                        src="/services/servicio-complementario.webp"
                         description={t("solutions.serviciosComplementarios.description")}
                       />
                     </div>
