@@ -42,7 +42,6 @@ export default function HowWeWork() {
       if (headingRef.current) {
         gsap.from(headingRef.current.children, {
           y: 30,
-          opacity: 0,
           duration: 0.7,
           stagger: 0.18,
           ease: "power3.out",
@@ -56,7 +55,6 @@ export default function HowWeWork() {
       if (stepperRef.current) {
         gsap.from(stepperRef.current, {
           y: 40,
-          opacity: 0,
           duration: 0.8,
           ease: "power3.out",
           scrollTrigger: {

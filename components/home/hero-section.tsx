@@ -81,8 +81,8 @@ export function HeroSection() {
                 playsInline
                 preload="auto"
                 className={cn(
-                  "absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out",
-                  index === activeIndex ? "z-1 opacity-100" : "z-0 opacity-0",
+                  "absolute inset-0 h-full w-full object-cover",
+                  index === activeIndex ? "z-1 block" : "z-0 hidden",
                 )}
               />
             ))}

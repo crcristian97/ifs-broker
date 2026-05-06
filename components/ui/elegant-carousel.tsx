@@ -206,9 +206,7 @@ export default function ElegantCarousel() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-0 md:items-stretch">
         <div className="flex min-w-0 flex-col justify-center px-4 py-6 sm:px-8 sm:py-10 md:px-12 md:py-12 space-y-6">
           <div
-            className={`flex items-center text-xs font-medium tracking-[0.25em] uppercase text-[#ffffff] transition-opacity duration-500 ${
-              isTransitioning ? "opacity-0" : "opacity-100"
-            }`}
+            className="flex items-center text-xs font-medium tracking-[0.25em] uppercase text-[#ffffff]"
           >
             <span className="h-px w-8 bg-[#ffffff] mr-3" />
             <span>
@@ -222,27 +220,23 @@ export default function ElegantCarousel() {
               className={`break-words text-balance text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-[#ffffff] transition-all duration-500 md:tracking-widest ${
                 isTransitioning
                   ? direction === "next"
-                    ? "opacity-0 translate-y-2"
-                    : "opacity-0 -translate-y-2"
-                  : "opacity-100 translate-y-0"
+                    ? "translate-y-2"
+                    : "-translate-y-2"
+                  : "translate-y-0"
               }`}
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {highlightText(currentSlide.title, currentIndex, "title")}
             </h2>
             <p
-              className={`text-lg sm:text-xl md:text-2xl font-regular text-[#ffffff] transition-opacity duration-500 ${
-                isTransitioning ? "opacity-0" : "opacity-100"
-              }`}
+              className="text-lg sm:text-xl md:text-2xl font-regular text-[#ffffff]"
             >
               {highlightText(currentSlide.subtitle, currentIndex, "subtitle")}
             </p>
           </div>
 
           <p
-            className={`w-full max-w-none text-base md:text-lg text-[#ffffff]  transition-opacity duration-500 ${
-              isTransitioning ? "opacity-0" : "opacity-100"
-            }`}
+            className="w-full max-w-none text-base md:text-lg text-[#ffffff]"
           >
             {highlightText(currentSlide.description, currentIndex, "description")}
           </p>
@@ -279,9 +273,9 @@ export default function ElegantCarousel() {
             className={`group relative block w-[88%] max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-[#ffffff]/5 outline-none transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#006FC4] focus-visible:ring-offset-2 ${
               isTransitioning
                 ? direction === "next"
-                  ? "opacity-0 translate-x-4"
-                  : "opacity-0 -translate-x-4"
-                : "opacity-100 translate-x-0"
+                  ? "translate-x-4"
+                  : "-translate-x-4"
+                : "translate-x-0"
             }`}
             aria-label={`${currentSlide.title} — ${knowMore}`}
           >

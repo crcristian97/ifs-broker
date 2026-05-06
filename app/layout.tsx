@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { LenisSmoothScroll } from '@/components/lenis-smooth-scroll';
+import { WhatsAppFab } from '@/components/layout/whatsapp-fab';
 
 const gtmId = 'GTM-5N7M3MP2';
 
@@ -111,6 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <LenisSmoothScroll />
         {children}
+        <WhatsAppFab />
       </body>
     </html>
   );

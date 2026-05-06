@@ -56,9 +56,9 @@ export const MenuItem = ({
           {/* Invisible bridge to prevent gap between text and dropdown */}
           <div className="absolute top-full left-0 right-0 h-5" />
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.85, y: 10 }}
+            initial={{ scale: 0.85, y: 10 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.85, y: 10 }}
             transition={transition}
             onMouseEnter={() => setActive(item)}
             onMouseLeave={() => setActive(null)}

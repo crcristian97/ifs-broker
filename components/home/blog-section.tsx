@@ -22,7 +22,6 @@ export default function BlogSection() {
       if (headingRef.current) {
         gsap.from(headingRef.current.children, {
           y: 30,
-          opacity: 0,
           duration: 0.7,
           stagger: 0.15,
           ease: "power3.out",
@@ -36,7 +35,6 @@ export default function BlogSection() {
       if (cardsRef.current) {
         gsap.from(cardsRef.current.children, {
           y: 50,
-          opacity: 0,
           duration: 0.7,
           stagger: 0.18,
           ease: "power3.out",

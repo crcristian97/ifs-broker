@@ -32,7 +32,6 @@ export default function AnimatedHeadline({
 
       gsap.from(spans, {
         y: 100,
-        opacity: 0,
         duration: duration,
         ease: "power4.out",
         skewY: 7,

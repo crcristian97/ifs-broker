@@ -34,7 +34,7 @@ export function InvestmentProfiles({
         return (
         <motion.div
           key={item.id}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ y: 20 }}
           animate={{
             opacity: singleCard || !hasSelection ? 1 : isActive ? 1 : 0.45,
             y: 0,

@@ -36,7 +36,6 @@ export function ExperienceGlobeSection() {
       if (textRef.current) {
         gsap.from(textRef.current.children, {
           x: -50,
-          opacity: 0,
           duration: 0.8,
           stagger: 0.2,
           ease: "power3.out",
@@ -51,7 +50,6 @@ export function ExperienceGlobeSection() {
       if (backgroundRef.current) {
         gsap.from(backgroundRef.current, {
           scale: 0.96,
-          opacity: 0,
           duration: 1,
           ease: "power3.out",
           scrollTrigger: {

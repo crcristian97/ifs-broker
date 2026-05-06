@@ -38,8 +38,8 @@ export default function NotFoundClient({
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
         {/* SVG Illustration */}
         <motion.div
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -40 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-8 w-full max-w-xl lg:max-w-2xl"
         >
@@ -57,8 +57,8 @@ export default function NotFoundClient({
         {/* Content */}
         <div className="space-y-6">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col items-center justify-center"
           >
@@ -69,8 +69,8 @@ export default function NotFoundClient({
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-3xl font-semibold text-white md:text-4xl"
             style={{ fontFamily: "var(--font-heading)" }}
@@ -79,8 +79,8 @@ export default function NotFoundClient({
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
             className="mx-auto max-w-md text-lg text-white/70 md:text-xl font-light"
             style={{ fontFamily: "var(--font-body)" }}
@@ -90,8 +90,8 @@ export default function NotFoundClient({
 
           {/* Actions */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
             className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4"
           >

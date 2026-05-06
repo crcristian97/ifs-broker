@@ -168,7 +168,6 @@ export function AnimatedGridPattern({
       <svg x={x} y={y} className="overflow-visible">
         {cells.map(({ pos: [col, row, upper], id: cellId }, index) => (
           <motion.polygon
-            initial={{ opacity: 0 }}
             animate={{ opacity: maxOpacity }}
             transition={{
               duration,

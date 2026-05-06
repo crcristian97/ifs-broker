@@ -77,7 +77,6 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
       if (logoRef.current) {
         gsap.from(logoRef.current, {
           y: -20,
-          opacity: 0,
           duration: 0.8,
           ease: "power4.out",
           delay: 1.4,
@@ -87,7 +86,6 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
       if (linksRef.current) {
         gsap.from(linksRef.current.children, {
           y: 20,
-          opacity: 0,
           duration: 0.7,
           ease: "power4.out",
           stagger: 0.05,
@@ -98,7 +96,6 @@ export function Navbar({ disableEntranceAnimation = false }: NavbarProps) {
       if (rightRef.current) {
         gsap.from(rightRef.current, {
           y: 20,
-          opacity: 0,
           duration: 0.7,
           ease: "power4.out",
           delay: 1.6,
