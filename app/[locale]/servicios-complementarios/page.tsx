@@ -131,8 +131,8 @@ export default async function ServiciosComplementariosPage({ params }: Props) {
         hideImage
         videoSrc="/hero/servicio-complementario.mp4"
       />
-      <div className={cn(siteContainer, "py-6")}>
-        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-6 md:px-[29px]">
+      <div className={cn(siteContainer, "pb-6 pt-2 md:pb-8 md:pt-6")}>
+        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-4 md:px-[29px] md:py-6">
           <HeroBanner />
         </div>
       </div>

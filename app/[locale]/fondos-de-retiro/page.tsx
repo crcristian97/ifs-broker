@@ -129,7 +129,7 @@ export default async function FondosDeRetiroPage({ params }: Props) {
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script src="https://fast.wistia.com/embed/rwf6keju04.js" type="module" strategy="afterInteractive" />
       <Navbar />
-      <section className={cn("w-full", "pb-14 pt-32 md:pb-20 md:pt-36")}>
+      <section className={cn("w-full", "pb-4 pt-32 md:pb-10 md:pt-36")}>
         <div className={cn(siteContainer, "flex justify-center")}>
           <style>{`
             wistia-player[media-id='rwf6keju04']:not(:defined) {
@@ -152,8 +152,8 @@ export default async function FondosDeRetiroPage({ params }: Props) {
           </div>
         </div>
       </section>
-      <div className={cn(siteContainer, "py-6")}>
-        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-6 md:px-[29px]">
+      <div className={cn(siteContainer, "pb-6 pt-2 md:pb-8 md:pt-6")}>
+        <div className="mx-auto w-full max-w-5xl rounded-3xl bg-cover bg-center px-[13px] py-4 md:px-[29px] md:py-6">
           <RetirementTimelineDemo />
         </div>
       </div>
