@@ -81,6 +81,9 @@ export function Footer() {
                 className="h-auto w-full"
               />
             </div>
+            <p className="mt-4 max-w-md px-4 text-center text-sm font-regular text-[#FFFFFF] sm:max-w-lg lg:hidden">
+              {t("designFuture")}
+            </p>
           </div>
 
           <div aria-hidden="true" className="hidden lg:block lg:w-8" />
@@ -139,13 +142,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2 md:flex-row md:items-end md:justify-between">
-          <div className="-mt-2 flex w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:w-[330px] lg:pl-6">
+        <div className="flex w-full flex-col items-center gap-2 md:flex-row md:items-end md:justify-between">
+          <div className="-mt-2 hidden w-[230px] justify-start pl-4 sm:w-[250px] sm:pl-6 md:w-[290px] md:pl-8 lg:flex lg:w-[330px] lg:pl-6">
             <p className="text-left text-sm font-regular text-[#FFFFFF]">
               {t("designFuture")}
             </p>
           </div>
-          <div className="flex items-center gap-2 whitespace-nowrap md:pr-2">
+          <div className="flex items-center justify-center gap-2 whitespace-nowrap md:justify-start md:pr-2">
             <Link
               href={footerColumns[2].links[1].href}
               className="text-xs text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline md:text-sm"
