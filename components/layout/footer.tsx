@@ -54,7 +54,7 @@ export function Footer() {
     {
       links: [
         { href: "/trabaja-con-nosotros", label: tNav("trabajaConNosotros"), bold: true },
-        { href: "/politicas-de-privacidad", label: "Políticas de Privacidad", small: true },
+        { href: "/politica-de-privacidad", label: "Política de Privacidad", small: true },
         { href: "/terminos-y-condiciones", label: "Términos y Condiciones", small: true },
       ],
     }

@@ -6,7 +6,10 @@ import { ParticlesSkyBackground } from "@/components/ui/particles-sky-background
 
 export function GlobalSiteBackground({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const showParticles = !pathname.includes("/blog/");
+  const showParticles =
+    !pathname.includes("/blog/") &&
+    !pathname.includes("/politica-de-privacidad") &&
+    !pathname.includes("/terminos-y-condiciones");
 
   return (
     <>

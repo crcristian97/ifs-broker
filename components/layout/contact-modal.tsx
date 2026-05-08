@@ -23,6 +23,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [interests, setInterests] = useState<string[]>([])
+  const [aceptTyc, setAceptTyc] = useState(false)
+  const [aceptIniciativa, setAceptIniciativa] = useState(false)
+  const [aceptMarketing, setAceptMarketing] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   if (!isOpen) return null
@@ -57,6 +60,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             if (!email.trim()) newErrors.email = t("form.errors.requiredField")
             if (!phone.trim()) newErrors.phone = t("form.errors.requiredField")
             if (!interests.length) newErrors.interests = t("form.errors.selectAtLeastOne")
+            if (!aceptTyc) newErrors.aceptTyc = "Debés aceptar los Términos y Condiciones para continuar."
+            if (!aceptIniciativa) newErrors.aceptIniciativa = "Debés confirmar que solicitás información por iniciativa propia."
             setErrors(newErrors)
             if (Object.keys(newErrors).length) return
             // TODO: Send form data to an API
@@ -136,9 +141,61 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             )}
           </div>
 
+          <div className="space-y-3 rounded-lg border-l-4 border-[#0098DA] bg-[#f0f2f7] p-4 text-sm text-[#1a1a2e]">
+            <label className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#d0d7e2] accent-[#3E4095]"
+                checked={aceptTyc}
+                onChange={(e) => setAceptTyc(e.target.checked)}
+              />
+              <span>
+                He leído y acepto los{" "}
+                <a href="/terminos-y-condiciones" target="_blank" rel="noopener" className="text-[#0098DA] underline">
+                  Términos y Condiciones
+                </a>{" "}
+                y la{" "}
+                <a href="/politica-de-privacidad" target="_blank" rel="noopener" className="text-[#0098DA] underline">
+                  Política de Privacidad
+                </a>
+                . Reconozco que IFS actúa como intermediario y que los productos son emitidos por compañías internacionales.{" "}
+                <span className="font-semibold text-red-600">*</span>
+              </span>
+            </label>
+            {errors.aceptTyc && <p className="text-xs text-red-600">{errors.aceptTyc}</p>}
+
+            <label className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#d0d7e2] accent-[#3E4095]"
+                checked={aceptIniciativa}
+                onChange={(e) => setAceptIniciativa(e.target.checked)}
+              />
+              <span>
+                Declaro que solicito información por{" "}
+                <strong>iniciativa propia, libre y voluntaria</strong>, sin solicitud previa de IFS dirigida a mi persona.{" "}
+                <span className="font-semibold text-red-600">*</span>
+              </span>
+            </label>
+            {errors.aceptIniciativa && <p className="text-xs text-red-600">{errors.aceptIniciativa}</p>}
+
+            <label className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#d0d7e2] accent-[#3E4095]"
+                checked={aceptMarketing}
+                onChange={(e) => setAceptMarketing(e.target.checked)}
+              />
+              <span className="italic text-[#5a5a6e]">
+                (Opcional) Acepto recibir comunicaciones comerciales y newsletters de IFS. Puedo cancelar en cualquier momento.
+              </span>
+            </label>
+          </div>
+
           <button
             type="submit"
-            className="mt-2 w-full rounded-lg bg-[#006FC4] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052a0]"
+            disabled={!aceptTyc || !aceptIniciativa}
+            className="mt-2 w-full rounded-lg bg-[#006FC4] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052a0] disabled:cursor-not-allowed disabled:opacity-50"
           >
             {t("form.submit")}
           </button>
