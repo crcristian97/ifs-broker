@@ -183,6 +183,20 @@ export function Footer() {
         />
       </div>
 
+      <div className={cn("relative z-10 w-full pb-4", sitePaddingX)}>
+        <p className="text-center text-xs text-[#FFFFFF]/80">
+          {t("developedBy")}{" "}
+          <a
+            href="https://wemakeitlab.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#FFFFFF] underline-offset-4 transition-colors hover:text-[#006FC4] hover:underline"
+          >
+            We make it Lab
+          </a>
+        </p>
+      </div>
+
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
