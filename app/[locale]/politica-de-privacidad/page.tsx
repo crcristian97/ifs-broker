@@ -96,7 +96,7 @@ const mainContent = `
   <h2 style="margin-top:0;font-size:18px;color:#3E4095;border:none;padding:0">Datos de contacto para asuntos de privacidad</h2>
   <ul style="margin:12px 0 0 0;padding-left:20px">
     <li>Correo electrónico: <a href="mailto:administracion@ifs-broker.com">administracion@ifs-broker.com</a></li>
-    <li>WhatsApp: +54 9 351 242 3294</li>
+    <li>WhatsApp: +54 9 351 242 3249</li>
     <li>Canal de atención: área de administración de IFS</li>
   </ul>
 </div>
@@ -316,7 +316,7 @@ const mainContent = `
   <p><strong>Insurance Financial Solution LLC</strong></p>
   <ul style="margin-top:8px">
     <li>Correo electrónico: <a href="mailto:administracion@ifs-broker.com">administracion@ifs-broker.com</a></li>
-    <li>WhatsApp: +54 9 351 242 3294</li>
+    <li>WhatsApp: +54 9 351 242 3249</li>
     <li>Domicilio legal: 16192 Coastal Highway, Lewes, Delaware 19958, Estados Unidos</li>
     <li>Sitio web: <a href="https://www.broker-ifs.com">www.broker-ifs.com</a></li>
   </ul>

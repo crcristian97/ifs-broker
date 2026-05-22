@@ -108,7 +108,7 @@ const mainContent = `
     <li>Sociedad constituida bajo las leyes del Estado de Delaware, Estados Unidos de América.</li>
     <li>Domicilio legal: 16192 Coastal Highway, Lewes, Delaware 19958, Sussex County, Estados Unidos.</li>
     <li>Correo electrónico: <a href="mailto:administracion@ifs-broker.com">administracion@ifs-broker.com</a></li>
-    <li>WhatsApp: +54 9 351 242 3294</li>
+    <li>WhatsApp: +54 9 351 242 3249</li>
   </ul>
 </div>
 
@@ -332,7 +332,7 @@ const mainContent = `
   <p><strong>Insurance Financial Solution LLC</strong></p>
   <ul style="margin-top:8px">
     <li>Correo electrónico: <a href="mailto:administracion@ifs-broker.com">administracion@ifs-broker.com</a></li>
-    <li>WhatsApp: +54 9 351 242 3294</li>
+    <li>WhatsApp: +54 9 351 242 3249</li>
     <li>Domicilio legal: 16192 Coastal Highway, Lewes, Delaware 19958, Estados Unidos</li>
     <li>Sitio web: <a href="https://www.broker-ifs.com">www.broker-ifs.com</a></li>
   </ul>

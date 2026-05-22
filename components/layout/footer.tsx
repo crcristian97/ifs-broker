@@ -20,7 +20,7 @@ type FooterLink = {
 const features = [
   {
     icon: <Phone className="h-5 w-5 shrink-0" />,
-    title: "+54 9 3512 42 3294",
+    title: "+54 9 3512 42 3249",
   },
   {
     icon: <Mail className="h-5 w-5 shrink-0" />,
